@@ -1,12 +1,13 @@
-
 const { spawnSync } = require('child_process');
 const path = require('path');
 
 const BACKEND_DIR = path.resolve(__dirname, '../..');
 
-console.log('================================================================================');
-console.log('FieldWise Phase 3C.6.2.2: Unified Backend Test Execution Suite');
-console.log('================================================================================');
+/**
+ * Deterministic, explicitly test-only JWT secret for backend automated test suites.
+ * Never used in production or staging (validateStartupConfig strictly rejects it).
+ */
+const DETERMINISTIC_TEST_JWT_SECRET = 'fieldwise-test-only-deterministic-jwt-secret-do-not-use-in-production-2026';
 
 const testSuites = [
     {
@@ -44,38 +45,65 @@ const testSuites = [
         file: 'src/tests/firebase_handoff_security.test.js',
         useNodeTest: true,
     },
+    {
+        name: 'Phase 2C: Test Runner & Startup Config Security Tests',
+        file: 'src/tests/backend_config_security.test.js',
+        useNodeTest: true,
+    },
 ];
 
-let totalPassedSuites = 0;
-let totalFailedSuites = 0;
+function runAllBackendTests() {
+    console.log('================================================================================');
+    console.log('FieldWise Phase 3C.6.2.2: Unified Backend Test Execution Suite');
+    console.log('================================================================================');
 
-for (const suite of testSuites) {
-    console.log(`\n▶ Running: ${suite.name} (${suite.file})...`);
-    const filePath = path.resolve(BACKEND_DIR, suite.file);
-    const args = suite.useNodeTest ? ['--test', filePath] : [filePath];
+    let totalPassedSuites = 0;
+    let totalFailedSuites = 0;
 
-    const result = spawnSync(process.execPath, args, {
-        cwd: BACKEND_DIR,
-        stdio: 'inherit',
-        env: process.env,
-    });
+    for (const suite of testSuites) {
+        console.log(`\n▶ Running: ${suite.name} (${suite.file})...`);
+        const filePath = path.resolve(BACKEND_DIR, suite.file);
+        const args = suite.useNodeTest ? ['--test', filePath] : [filePath];
 
-    if (result.status === 0) {
-        console.log(`✔ ${suite.name}: PASSED`);
-        totalPassedSuites++;
+        // Supply deterministic test-only JWT secret if none is provided in current environment
+        const testEnv = {
+            ...process.env,
+            JWT_SECRET: process.env.JWT_SECRET || DETERMINISTIC_TEST_JWT_SECRET,
+        };
+
+        const result = spawnSync(process.execPath, args, {
+            cwd: BACKEND_DIR,
+            stdio: 'inherit',
+            env: testEnv,
+        });
+
+        if (result.status === 0) {
+            console.log(`✔ ${suite.name}: PASSED`);
+            totalPassedSuites++;
+        } else {
+            console.error(`✖ ${suite.name}: FAILED (exit code ${result.status})`);
+            totalFailedSuites++;
+        }
+    }
+
+    console.log('\n================================================================================');
+    console.log(`Backend Test Summary: ${totalPassedSuites}/${testSuites.length} Suites Passed`);
+    console.log('================================================================================');
+
+    if (totalFailedSuites > 0) {
+        process.exit(1);
     } else {
-        console.error(`✖ ${suite.name}: FAILED (exit code ${result.status})`);
-        totalFailedSuites++;
+        console.log('🎉 All backend tests executed cleanly and successfully!');
+        process.exit(0);
     }
 }
 
-console.log('\n================================================================================');
-console.log(`Backend Test Summary: ${totalPassedSuites}/${testSuites.length} Suites Passed`);
-console.log('================================================================================');
-
-if (totalFailedSuites > 0) {
-    process.exit(1);
-} else {
-    console.log('🎉 All backend tests executed cleanly and successfully!');
-    process.exit(0);
+if (require.main === module) {
+    runAllBackendTests();
 }
+
+module.exports = {
+    DETERMINISTIC_TEST_JWT_SECRET,
+    testSuites,
+    runAllBackendTests,
+};

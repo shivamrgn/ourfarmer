@@ -13,6 +13,7 @@ function validateStartupConfig(env = process.env) {
     const knownInsecureSecrets = [
         'your-super-secret-key-change-in-production',
         'croppredict_production_jwt_secret_key_2026',
+        'fieldwise-test-only-deterministic-jwt-secret-do-not-use-in-production-2026',
         'secret',
         'test',
         'default',

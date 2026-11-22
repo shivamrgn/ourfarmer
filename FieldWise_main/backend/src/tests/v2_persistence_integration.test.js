@@ -31,7 +31,7 @@ const {
     UnauthenticatedPersistenceError,
 } = require('../services/v2/recommendationPersistenceService');
 
-const JWT_SECRET = process.env.JWT_SECRET || 'croppredict_production_jwt_secret_key_2026';
+const JWT_SECRET = process.env.JWT_SECRET || 'fieldwise-test-only-deterministic-jwt-secret-do-not-use-in-production-2026';
 
 function generateTestToken(farmer) {
     return jwt.sign(
