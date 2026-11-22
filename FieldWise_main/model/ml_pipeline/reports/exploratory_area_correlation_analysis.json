@@ -1,0 +1,133 @@
+{
+  "metadata": {
+    "title": "Exploratory Bivariate Correlation & Cultivated Area Sensitivity Review",
+    "pipeline_stage": "Phase 3A.5: Final Consistency and Training Readiness Audit",
+    "analysis_type": "Exploratory Bivariate Correlation & Distribution Analysis (NO ML Models Trained)",
+    "timestamp": "2026-11-17T09:33:10.246737",
+    "methodological_disclaimer": "IMPORTANT: This report presents exploratory correlation metrics and statistical distribution analysis only. No machine learning models have been trained with or without Cultivated_Area_Ha. Cultivated_Area_Ha is excluded from the default baseline feature set because of mathematical coupling (Yield = Production / Area) and district-level scale disparity. Production is excluded because it causes deterministic target leakage. No claims regarding area-inclusive predictive performance are made."
+  },
+  "mathematical_coupling_analysis": {
+    "target_derivation_equation": "Yield_Tonnes_Per_Ha = Production / Cultivated_Area_Ha",
+    "coupling_risk": "Because Cultivated_Area_Ha is the explicit denominator in the target calculation, including it as an input feature introduces direct mathematical coupling. Any reporting irregularity or measurement noise in Area directly influences both the predictor X and target Y simultaneously, creating an artificial inverse artifact in small areas.",
+    "log_transform_perspective": "log(Yield) = log(Production) - log(Area). Giving log(Area) to a regression model allows it to act as an unconstrained coefficient offset rather than capturing biological yield factors."
+  },
+  "scale_disparity_analysis": {
+    "training_data_scale": "District-level administrative aggregate acreage (median: 620 ha, mean: 12,031 ha, max: 8.58M ha)",
+    "inference_application_scale": "Farmer-level private parcel size entered in FieldWise frontend (0.4 ha to 20 ha; median 1.01 ha / 2.5 acres)",
+    "extrapolation_risk": "In historical data, small district area (< 10 ha) indicates marginal, non-adapted crops with depressed yields (e.g., 5 ha of non-adapted wheat in Kerala), while large area (> 100,000 ha) indicates prime commercial belts (e.g., Ludhiana wheat). A model trained with Area will learn a strong spurious positive relationship for staple crops (Wheat r=+0.604, Potato r=+0.331). At inference time, when an individual farmer in Ludhiana inputs their 1 ha farm size, the model evaluates in the lowest 2% of the training area distribution and erroneously predicts severe yield penalty."
+  },
+  "empirical_correlation_metrics": {
+    "overall_pearson_r": -0.0139,
+    "overall_spearman_rho": 0.0337,
+    "overall_log_log_r": 0.0049,
+    "major_crop_correlations": {
+      "Wheat": {
+        "records_count": 7875,
+        "pearson_r": 0.6044,
+        "spearman_rho": 0.613,
+        "median_area_ha": 35700.0,
+        "median_yield_t_ha": 1.892
+      },
+      "Rice": {
+        "records_count": 15075,
+        "pearson_r": 0.1275,
+        "spearman_rho": 0.1312,
+        "median_area_ha": 19000.0,
+        "median_yield_t_ha": 1.939
+      },
+      "Maize": {
+        "records_count": 13715,
+        "pearson_r": 0.034,
+        "spearman_rho": 0.0927,
+        "median_area_ha": 1362.0,
+        "median_yield_t_ha": 1.8
+      },
+      "Sugarcane": {
+        "records_count": 7801,
+        "pearson_r": 0.17,
+        "spearman_rho": 0.3951,
+        "median_area_ha": 823.0,
+        "median_yield_t_ha": 53.241
+      },
+      "Potato": {
+        "records_count": 6909,
+        "pearson_r": 0.3307,
+        "spearman_rho": 0.3791,
+        "median_area_ha": 615.0,
+        "median_yield_t_ha": 10.841
+      },
+      "Gram": {
+        "records_count": 7185,
+        "pearson_r": 0.0104,
+        "spearman_rho": 0.1084,
+        "median_area_ha": 1700.0,
+        "median_yield_t_ha": 0.806
+      },
+      "Groundnut": {
+        "records_count": 8730,
+        "pearson_r": -0.0416,
+        "spearman_rho": 0.1324,
+        "median_area_ha": 928.0,
+        "median_yield_t_ha": 1.046
+      },
+      "Soyabean": {
+        "records_count": 3175,
+        "pearson_r": -0.0027,
+        "spearman_rho": 0.0601,
+        "median_area_ha": 1350.0,
+        "median_yield_t_ha": 1.0
+      },
+      "Bajra": {
+        "records_count": 5360,
+        "pearson_r": -0.1264,
+        "spearman_rho": 0.0352,
+        "median_area_ha": 1667.0,
+        "median_yield_t_ha": 1.035
+      },
+      "Jowar": {
+        "records_count": 6960,
+        "pearson_r": -0.1184,
+        "spearman_rho": -0.1226,
+        "median_area_ha": 2400.0,
+        "median_yield_t_ha": 0.968
+      },
+      "Onion": {
+        "records_count": 6976,
+        "pearson_r": -0.0013,
+        "spearman_rho": 0.039,
+        "median_area_ha": 192.0,
+        "median_yield_t_ha": 10.299
+      },
+      "Arhar/Tur": {
+        "records_count": 7457,
+        "pearson_r": -0.0924,
+        "spearman_rho": -0.1676,
+        "median_area_ha": 1252.0,
+        "median_yield_t_ha": 0.732
+      }
+    }
+  },
+  "feature_set_specification": {
+    "baseline_features_default": [
+      "State",
+      "District",
+      "Crop_Year",
+      "Season",
+      "Crop",
+      "district_normal_annual_rainfall_mm",
+      "district_normal_monsoon_rainfall_mm"
+    ],
+    "baseline_rationale": "Captures agro-climatic zone, geography, seasonal weather regime, crop identity, and temporal technology trend without administrative area artifacts.",
+    "target_variable": "Yield_Tonnes_Per_Ha (Pure mass basis)",
+    "strictly_excluded_leakage_features": [
+      "Production (Causes exact deterministic leakage Y = P / A)"
+    ],
+    "experimental_sensitivity_features": [
+      "Cultivated_Area_Ha (Preserved in CSV strictly as an auxiliary column; excluded from baseline models; reserved for separate sensitivity experiments)"
+    ]
+  },
+  "climatic_feature_distinction": {
+    "district_normal_rainfall_source": "IMD 30-year normal climatological baseline (1951-2000 / 1971-2000)",
+    "distinction_note": "District normal rainfall reflects long-term climatological water availability for the administrative territory, not the actual high-resolution in-season daily precipitation experienced during the specific crop phenology. It serves as a macro-climatic agro-ecological feature, not a real-time weather observation."
+  }
+}

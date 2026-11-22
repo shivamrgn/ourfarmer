@@ -1,0 +1,171 @@
+{
+  "engine_version": "2.2.3-CLOSURE",
+  "phase": "Phase 3C.5.2.1",
+  "execution_timestamp": "2026-11-20T08:55:32.104875+00:00",
+  "total_tests": 43,
+  "passed": 43,
+  "failures": 0,
+  "errors": 0,
+  "pass_rate_pct": 100.0,
+  "execution_duration_sec": 0.041029,
+  "acceptance_tests_evaluated": 19,
+  "acceptance_tests": [
+    {
+      "test_id": "TEST-01-S1",
+      "test_name": "Arid Desert Drought (Jaisalmer Regression Scenario S1)",
+      "expected_status": "PARTIAL_PASS (No fatal recommendations; Millets top-ranked)",
+      "actual_status": "PASSED (Top: Millets (Pearl Millet / Bajra) score=36.4)",
+      "result": "PASS",
+      "notes": "Rainfed threshold did not cause hard exclusion; winter pulses excluded; millets top-ranked."
+    },
+    {
+      "test_id": "TEST-02-S2",
+      "test_name": "Monsoon High Rainfall Wetland (Assam Regression Scenario S2)",
+      "expected_status": "PARTIAL_PASS (Wheat/Mustard excluded; Rice eligible with high score)",
+      "actual_status": "PASSED (Top: Rice (Paddy) score=82.8)",
+      "result": "PASS",
+      "notes": "Wheat, Chickpea, Mustard strictly excluded via season gate; Rice top-ranked."
+    },
+    {
+      "test_id": "TEST-03-S3",
+      "test_name": "Peak Kharif Summer Heat (Punjab Regression Scenario S3)",
+      "expected_status": "PARTIAL_PASS (Cool-season crops excluded; Kharif eligible with unmeasured water notice)",
+      "actual_status": "PASSED (All Rabi crops excluded; unmeasured water risk preserved)",
+      "result": "PASS",
+      "notes": "Cool-season crops excluded via season & thermal gates; water gate returned UNKNOWN."
+    },
+    {
+      "test_id": "TEST-04-S4",
+      "test_name": "Severe Soil Alkalinity (Haryana Regression Scenario S4)",
+      "expected_status": "FAIL_ALL_ARABLE_CROPS (NO_RECOMMENDATION_SUITABLE with Gypsum Advisory)",
+      "actual_status": "PASSED (Status: NO_RECOMMENDATION_SUITABLE, 0 eligible crops, Gypsum advisory emitted)",
+      "result": "PASS",
+      "notes": "Severe sodicity gate triggered; 0 crops pass; gypsum reclamation advisory generated."
+    },
+    {
+      "test_id": "TEST-05-S5",
+      "test_name": "Soil Health Card Medium Fertility Plain (UP Regression Scenario S5)",
+      "expected_status": "PASS_SUITABLE_CROPS (DAP N credit deducted; stoichiometric Urea generated)",
+      "actual_status": "PASSED (DAP: 130.4 kg/ha, N credit: 23.5 kg/ha, Urea: 209.8 kg/ha, MOP: 66.7 kg/ha)",
+      "result": "PASS",
+      "notes": "Wheat eligible; DAP nitrogen credit correctly deducted from Urea; stoichiometry verified."
+    },
+    {
+      "test_id": "TEST-06",
+      "test_name": "Rainfall vs ETc Separation (Irrigated Wheat NWPZ)",
+      "expected_status": "CONDITIONALLY_ELIGIBLE_WITH_PROVISIONAL_WATER_BALANCE (Net water 242.0 mm)",
+      "actual_status": "PASSED (NIR: 196.0 mm, Peff: 46.0 mm, Wnet: 242.0 mm)",
+      "result": "PASS",
+      "notes": "Decoupled semantics verified; raw rain not compared directly against ETc."
+    },
+    {
+      "test_id": "TEST-07",
+      "test_name": "Net vs Gross Irrigation Accounting (Furrow Application Efficiency)",
+      "expected_status": "PASS_SUITABLE_CROPS (GIR=280 mm, NIR=196 mm, eta=0.70 segregated)",
+      "actual_status": "PASSED (GIR: 280.0 mm, NIR: 196.0 mm)",
+      "result": "PASS",
+      "notes": "GIR and NIR segregated in metadata; application efficiency eta=0.70 applied."
+    },
+    {
+      "test_id": "TEST-08",
+      "test_name": "Effective Rainfall Being Unknown (No Invented Fractions)",
+      "expected_status": "PASS_SUITABLE_CROPS (Peff marked unmeasured; no flat multipliers)",
+      "actual_status": "PASSED (Peff is None; monthly breakdown required for USDA-SCS)",
+      "result": "PASS",
+      "notes": "Seasonal rain not multiplied by unsupported flat fractions; unmeasured status documented."
+    },
+    {
+      "test_id": "TEST-09",
+      "test_name": "Rainfed Threshold Not Automatically Creating Hard Exclusion",
+      "expected_status": "CONDITIONALLY_ELIGIBLE_WITH_HIGH_WATER_RISK (Cotton passes Tier 1 with soft penalty)",
+      "actual_status": "PASSED (Cotton score: 58.7, Tier 1: CONDITIONALLY_ELIGIBLE)",
+      "result": "PASS",
+      "notes": "Rainfed threshold did not trigger hard exclusion; soft penalty applied in Tier 2."
+    },
+    {
+      "test_id": "TEST-10",
+      "test_name": "Unmeasured Irrigation Producing UNKNOWN Water Outcome",
+      "expected_status": "CONDITIONALLY_ELIGIBLE_WITH_UNKNOWN_WATER_RISK (Provisional score 70.0)",
+      "actual_status": "PASSED (Status: CONDITIONALLY_ELIGIBLE_WITH_UNKNOWN_WATER_RISK, score: 70.0)",
+      "result": "PASS",
+      "notes": "Unmeasured irrigation did not invent 120 mm or 600 mm; assigned UNKNOWN outcome."
+    },
+    {
+      "test_id": "TEST-11",
+      "test_name": "Unsupported Hard-Exclusion Citations Being Downgraded",
+      "expected_status": "AUDIT_VERIFIED (0 HARD_EXCLUSION, 61 DOWNGRADE_TO_SOFT_PENALTY)",
+      "actual_status": "PASSED (Audit count: 61, Hard exclusions: 0)",
+      "result": "PASS",
+      "notes": "All candidate rules verified against lethality standard; zero unjustified hard exclusions."
+    },
+    {
+      "test_id": "TEST-12",
+      "test_name": "Monthly vs Seasonal Effective Rainfall Calculation",
+      "expected_status": "CALCULATION_VALIDATED (Monthly Peff=589.0 mm, Loss=561.0 mm, Discrepancy=349.0 mm)",
+      "actual_status": "PASSED (Peff: 589.0 mm, Runoff: 561.0 mm, Discrepancy: 349.0 mm)",
+      "result": "PASS",
+      "notes": "Monthly USDA-SCS aggregation validated; seasonal formula error (349 mm) demonstrated."
+    },
+    {
+      "test_id": "TEST-13",
+      "test_name": "Rainfed Screening Threshold Met Without Automatic PASS_VERIFIED",
+      "expected_status": "CONDITIONALLY_ELIGIBLE_WITH_PROVISIONAL_WATER_BALANCE (Never PASS_VERIFIED)",
+      "actual_status": "PASSED (Status: CONDITIONALLY_ELIGIBLE_WITH_PROVISIONAL_WATER_BALANCE)",
+      "result": "PASS",
+      "notes": "Exceeding screening threshold marked provisional; zero claim of PASS_VERIFIED."
+    },
+    {
+      "test_id": "TEST-14",
+      "test_name": "Residual Soil Moisture Accounting in Vertisols",
+      "expected_status": "CONDITIONALLY_ELIGIBLE_WITH_HIGH_WATER_RISK (Vertisol AWC=240 mm, s_water=17.20)",
+      "actual_status": "PASSED (Score: 17.2, Status: CONDITIONALLY_ELIGIBLE_WITH_HIGH_WATER_RISK)",
+      "result": "PASS",
+      "notes": "Vertisol capacity computed (240 mm); unmeasured moisture not fabricated; high risk flagged."
+    },
+    {
+      "test_id": "TEST-15",
+      "test_name": "High Rainfall with Runoff and Drainage Losses",
+      "expected_status": "CONDITIONALLY_ELIGIBLE_WITH_PROVISIONAL_WATER_BALANCE (Peff=719.0 mm, Loss=731.0 mm, 50.4%)",
+      "actual_status": "PASSED (Peff: 719.0 mm, Runoff: 731.0 mm (50.4%))",
+      "result": "PASS",
+      "notes": "Runoff loss partitioned independently; zero assumption of 100% rain effectiveness."
+    },
+    {
+      "test_id": "TEST-16",
+      "test_name": "Incompatible Measurement Periods for Irrigation and Rainfall",
+      "expected_status": "TEMPORAL_MISMATCH_PROVISIONAL (30-day irrigation vs 140-day crop duration)",
+      "actual_status": "PASSED (Status: TEMPORAL_MISMATCH_PROVISIONAL)",
+      "result": "PASS",
+      "notes": "Temporal incompatibility flagged; status marked provisional; no extrapolation."
+    },
+    {
+      "test_id": "TEST-17",
+      "test_name": "Full DCI Benchmark Recalculation Across 4 Scenarios",
+      "expected_status": "ALL_SCENARIOS_VERIFIED (A=1.000, B=0.850, C=0.640, D=0.775)",
+      "actual_status": "PASSED (A=1.0, B=0.85, C=0.64, D=0.775)",
+      "result": "PASS",
+      "notes": "All 4 benchmark DCI calculations match exact mathematical formulations."
+    },
+    {
+      "test_id": "TEST-18",
+      "test_name": "Historical Checksum Manifest Preservation",
+      "expected_status": "PRESERVED_IMMUTABLE (All 5 historical manifests bitwise identical)",
+      "actual_status": "PASSED (All 5 SHA-256 hashes verified bitwise identical)",
+      "result": "PASS",
+      "notes": "All historical checksum manifests verified read-only and immutable."
+    },
+    {
+      "test_id": "TEST-11",
+      "test_name": "Unsupported Hard-Exclusion Citations Being Downgraded",
+      "expected_status": "AUDIT_VERIFIED (0 HARD_EXCLUSION, 61 DOWNGRADE_TO_SOFT_PENALTY)",
+      "actual_status": "PASSED (Audit count: 61, Hard exclusions: 0)",
+      "result": "PASS",
+      "notes": "All candidate rules verified against lethality standard; zero unjustified hard exclusions."
+    }
+  ],
+  "regression_tests_evaluated": 16,
+  "phase_3c_5_1_regressions_evaluated": 7,
+  "phase_3c_5_2_regressions_evaluated": 4,
+  "phase_3c_5_2_1_regressions_evaluated": 5,
+  "edge_case_tests_evaluated": 9
+}

@@ -1,0 +1,123 @@
+{
+  "experiment_track": "experiment_b_provisional",
+  "phase": "Phase 3B.1.2",
+  "timestamp": "2026-11-17T11:30:24.412499",
+  "training_partition": "1997-2011",
+  "validation_partition": "2012-2013",
+  "sealed_test_partition": "2014-2015 (SEALED)",
+  "train_rows": 137164,
+  "val_rows": 17254,
+  "random_seed": 42,
+  "environment": {
+    "python_version": "3.13.5",
+    "sklearn_version": "1.8.0",
+    "xgboost_version": "3.2.0"
+  },
+  "models": {
+    "challenger_min_obs_1": {
+      "type": "SeasonalHierarchicalChallenger",
+      "min_obs": 1,
+      "fit_time_seconds": 0.414,
+      "level_counts": {
+        "1:District+Crop+Season": 16478,
+        "2:District+Crop": 553,
+        "3:State+Crop+Season": 80,
+        "7:Global": 57,
+        "5:Crop+Season": 43,
+        "6:Crop": 36,
+        "4:State+Crop": 7
+      }
+    },
+    "challenger_min_obs_3": {
+      "type": "SeasonalHierarchicalChallenger",
+      "min_obs": 3,
+      "fit_time_seconds": 0.276,
+      "level_counts": {
+        "1:District+Crop+Season": 15292,
+        "2:District+Crop": 1270,
+        "3:State+Crop+Season": 417,
+        "4:State+Crop": 139,
+        "7:Global": 57,
+        "5:Crop+Season": 43,
+        "6:Crop": 36
+      }
+    },
+    "challenger_min_obs_5": {
+      "type": "SeasonalHierarchicalChallenger",
+      "min_obs": 5,
+      "fit_time_seconds": 0.264,
+      "level_counts": {
+        "1:District+Crop+Season": 14351,
+        "2:District+Crop": 1635,
+        "3:State+Crop+Season": 973,
+        "4:State+Crop": 147,
+        "7:Global": 57,
+        "5:Crop+Season": 55,
+        "6:Crop": 36
+      }
+    },
+    "random_forest_one_hot": {
+      "type": "RandomForestRegressor",
+      "n_estimators": 100,
+      "max_depth": 16,
+      "min_samples_leaf": 5,
+      "fit_time_seconds": 8.886
+    },
+    "extra_trees_one_hot": {
+      "type": "ExtraTreesRegressor",
+      "n_estimators": 100,
+      "max_depth": 16,
+      "min_samples_leaf": 5,
+      "fit_time_seconds": 8.786
+    },
+    "xgboost_native_categorical": {
+      "type": "XGBRegressor",
+      "n_estimators": 150,
+      "max_depth": 8,
+      "learning_rate": 0.08,
+      "enable_categorical": true,
+      "fit_time_seconds": 1.681
+    },
+    "random_forest_target_encoded": {
+      "type": "RandomForestRegressor",
+      "n_estimators": 100,
+      "max_depth": 16,
+      "min_samples_leaf": 5,
+      "fit_time_seconds": 4.896
+    }
+  },
+  "preprocessors": {
+    "one_hot_encoder": {
+      "cat_cols": [
+        "State",
+        "District",
+        "Season",
+        "Crop"
+      ],
+      "num_cols": [
+        "Crop_Year",
+        "district_normal_annual_rainfall_mm",
+        "district_normal_monsoon_rainfall_mm"
+      ],
+      "handle_unknown": "ignore",
+      "output_features_count": 564,
+      "fit_time_seconds": 0.087
+    },
+    "target_encoder": {
+      "cat_cols": [
+        "State",
+        "District",
+        "Season",
+        "Crop"
+      ],
+      "num_cols": [
+        "Crop_Year",
+        "district_normal_annual_rainfall_mm",
+        "district_normal_monsoon_rainfall_mm"
+      ],
+      "cv": 5,
+      "smooth": "auto",
+      "fit_time_seconds": 0.101
+    }
+  }
+}

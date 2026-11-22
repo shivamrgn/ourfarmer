@@ -1,0 +1,271 @@
+Crop,Model_Label,Prediction_Column,Validation_Sample_Count,ExpA_MAE,ExpB_MAE,Absolute_MAE_Diff_B_minus_A,Percentage_MAE_Change
+Arhar/Tur,Existing District Mean (Phase 3B.1),pred_existing_district_mean,614,0.2578,0.2578,0.0,0.0
+Arhar/Tur,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,614,0.2313,0.2543,0.023,9.96
+Arhar/Tur,Challenger (min_obs=1),pred_challenger_min_obs_1,614,0.2591,0.2591,0.0,0.0
+Arhar/Tur,Challenger (min_obs=3),pred_challenger_min_obs_3,614,0.2592,0.2592,0.0,0.0
+Arhar/Tur,Challenger (min_obs=5),pred_challenger_min_obs_5,614,0.2552,0.2552,0.0,0.0
+Arhar/Tur,Random Forest (One-Hot Encoded),pred_rf_one_hot,614,0.3319,0.3379,0.006,1.81
+Arhar/Tur,Extra Trees (One-Hot Encoded),pred_et_one_hot,614,0.3319,0.334,0.0021,0.63
+Arhar/Tur,Native Categorical XGBoost,pred_xgb_native_categorical,614,0.2309,0.2457,0.0148,6.4
+Arhar/Tur,Target-Encoded Random Forest,pred_rf_target_encoded,614,0.2419,0.244,0.0021,0.86
+Bajra,Existing District Mean (Phase 3B.1),pred_existing_district_mean,381,0.4179,0.4179,0.0,0.0
+Bajra,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,381,0.3785,0.4649,0.0864,22.83
+Bajra,Challenger (min_obs=1),pred_challenger_min_obs_1,381,0.4278,0.4278,0.0,0.0
+Bajra,Challenger (min_obs=3),pred_challenger_min_obs_3,381,0.4024,0.4024,0.0,0.0
+Bajra,Challenger (min_obs=5),pred_challenger_min_obs_5,381,0.4074,0.4074,0.0,0.0
+Bajra,Random Forest (One-Hot Encoded),pred_rf_one_hot,381,0.6365,0.6341,-0.0024,-0.38
+Bajra,Extra Trees (One-Hot Encoded),pred_et_one_hot,381,0.6352,0.645,0.0098,1.55
+Bajra,Native Categorical XGBoost,pred_xgb_native_categorical,381,0.3667,0.3781,0.0114,3.11
+Bajra,Target-Encoded Random Forest,pred_rf_target_encoded,381,0.4357,0.4379,0.0022,0.52
+Banana,Existing District Mean (Phase 3B.1),pred_existing_district_mean,192,8.0757,8.0757,0.0,0.0
+Banana,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,192,6.9607,7.0258,0.065,0.93
+Banana,Challenger (min_obs=1),pred_challenger_min_obs_1,192,7.7673,7.7673,0.0,0.0
+Banana,Challenger (min_obs=3),pred_challenger_min_obs_3,192,7.975,7.975,0.0,0.0
+Banana,Challenger (min_obs=5),pred_challenger_min_obs_5,192,7.9544,7.9544,0.0,0.0
+Banana,Random Forest (One-Hot Encoded),pred_rf_one_hot,192,6.7229,6.9428,0.2199,3.27
+Banana,Extra Trees (One-Hot Encoded),pred_et_one_hot,192,6.7652,6.8201,0.0549,0.81
+Banana,Native Categorical XGBoost,pred_xgb_native_categorical,192,7.2688,7.2151,-0.0537,-0.74
+Banana,Target-Encoded Random Forest,pred_rf_target_encoded,192,6.8791,7.0704,0.1913,2.78
+Barley,Existing District Mean (Phase 3B.1),pred_existing_district_mean,325,0.5253,0.5253,0.0,0.0
+Barley,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,325,0.3669,0.5179,0.151,41.17
+Barley,Challenger (min_obs=1),pred_challenger_min_obs_1,325,0.5496,0.5496,0.0,0.0
+Barley,Challenger (min_obs=3),pred_challenger_min_obs_3,325,0.526,0.526,0.0,0.0
+Barley,Challenger (min_obs=5),pred_challenger_min_obs_5,325,0.5259,0.5259,0.0,0.0
+Barley,Random Forest (One-Hot Encoded),pred_rf_one_hot,325,0.4612,1.2066,0.7454,161.64
+Barley,Extra Trees (One-Hot Encoded),pred_et_one_hot,325,0.5574,1.2248,0.6674,119.72
+Barley,Native Categorical XGBoost,pred_xgb_native_categorical,325,0.3902,0.4117,0.0215,5.52
+Barley,Target-Encoded Random Forest,pred_rf_target_encoded,325,0.4141,0.4404,0.0263,6.34
+Cabbage,Existing District Mean (Phase 3B.1),pred_existing_district_mean,36,13.9301,13.9301,0.0,0.0
+Cabbage,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,36,18.702,18.9058,0.2038,1.09
+Cabbage,Challenger (min_obs=1),pred_challenger_min_obs_1,36,13.9301,13.9301,0.0,0.0
+Cabbage,Challenger (min_obs=3),pred_challenger_min_obs_3,36,13.9301,13.9301,0.0,0.0
+Cabbage,Challenger (min_obs=5),pred_challenger_min_obs_5,36,13.9301,13.9301,0.0,0.0
+Cabbage,Random Forest (One-Hot Encoded),pred_rf_one_hot,36,19.5137,14.7976,-4.7161,-24.17
+Cabbage,Extra Trees (One-Hot Encoded),pred_et_one_hot,36,19.5138,18.2656,-1.2482,-6.4
+Cabbage,Native Categorical XGBoost,pred_xgb_native_categorical,36,49.434,51.2477,1.8137,3.67
+Cabbage,Target-Encoded Random Forest,pred_rf_target_encoded,36,26.2586,37.3133,11.0546,42.1
+Castor seed,Existing District Mean (Phase 3B.1),pred_existing_district_mean,216,0.2115,0.2115,0.0,0.0
+Castor seed,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,216,0.5616,0.3872,-0.1744,-31.05
+Castor seed,Challenger (min_obs=1),pred_challenger_min_obs_1,216,0.2107,0.2107,0.0,0.0
+Castor seed,Challenger (min_obs=3),pred_challenger_min_obs_3,216,0.2062,0.2062,0.0,0.0
+Castor seed,Challenger (min_obs=5),pred_challenger_min_obs_5,216,0.2091,0.2091,0.0,0.0
+Castor seed,Random Forest (One-Hot Encoded),pred_rf_one_hot,216,0.4369,0.4602,0.0233,5.33
+Castor seed,Extra Trees (One-Hot Encoded),pred_et_one_hot,216,0.4368,0.4469,0.0101,2.31
+Castor seed,Native Categorical XGBoost,pred_xgb_native_categorical,216,0.2284,0.2495,0.0211,9.25
+Castor seed,Target-Encoded Random Forest,pred_rf_target_encoded,216,0.2096,0.1943,-0.0152,-7.27
+Gram,Existing District Mean (Phase 3B.1),pred_existing_district_mean,550,0.2719,0.2719,0.0,0.0
+Gram,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,550,0.2656,0.3006,0.0351,13.22
+Gram,Challenger (min_obs=1),pred_challenger_min_obs_1,550,0.272,0.272,0.0,0.0
+Gram,Challenger (min_obs=3),pred_challenger_min_obs_3,550,0.2727,0.2727,0.0,0.0
+Gram,Challenger (min_obs=5),pred_challenger_min_obs_5,550,0.2694,0.2694,0.0,0.0
+Gram,Random Forest (One-Hot Encoded),pred_rf_one_hot,550,0.3307,0.3334,0.0028,0.83
+Gram,Extra Trees (One-Hot Encoded),pred_et_one_hot,550,0.3307,0.3316,0.0009,0.26
+Gram,Native Categorical XGBoost,pred_xgb_native_categorical,550,0.2664,0.2612,-0.0053,-1.98
+Gram,Target-Encoded Random Forest,pred_rf_target_encoded,550,0.2701,0.2723,0.0022,0.83
+Grapes,Existing District Mean (Phase 3B.1),pred_existing_district_mean,6,3.4583,3.4583,0.0,0.0
+Grapes,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,6,20.2546,20.6107,0.3561,1.76
+Grapes,Challenger (min_obs=1),pred_challenger_min_obs_1,6,3.4583,3.4583,0.0,0.0
+Grapes,Challenger (min_obs=3),pred_challenger_min_obs_3,6,3.3554,3.3554,0.0,0.0
+Grapes,Challenger (min_obs=5),pred_challenger_min_obs_5,6,3.3554,3.3554,0.0,0.0
+Grapes,Random Forest (One-Hot Encoded),pred_rf_one_hot,6,20.323,5.0803,-15.2427,-75.0
+Grapes,Extra Trees (One-Hot Encoded),pred_et_one_hot,6,20.3232,8.4263,-11.8969,-58.54
+Grapes,Native Categorical XGBoost,pred_xgb_native_categorical,6,4.0177,5.0885,1.0708,26.65
+Grapes,Target-Encoded Random Forest,pred_rf_target_encoded,6,6.5679,6.4192,-0.1486,-2.26
+Groundnut,Existing District Mean (Phase 3B.1),pred_existing_district_mean,728,0.3975,0.3975,0.0,0.0
+Groundnut,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,728,0.3935,0.389,-0.0045,-1.16
+Groundnut,Challenger (min_obs=1),pred_challenger_min_obs_1,728,0.3453,0.3453,0.0,0.0
+Groundnut,Challenger (min_obs=3),pred_challenger_min_obs_3,728,0.3655,0.3655,0.0,0.0
+Groundnut,Challenger (min_obs=5),pred_challenger_min_obs_5,728,0.3688,0.3688,0.0,0.0
+Groundnut,Random Forest (One-Hot Encoded),pred_rf_one_hot,728,0.558,0.5692,0.0112,2.01
+Groundnut,Extra Trees (One-Hot Encoded),pred_et_one_hot,728,0.5588,0.5802,0.0214,3.83
+Groundnut,Native Categorical XGBoost,pred_xgb_native_categorical,728,0.3434,0.3375,-0.0059,-1.73
+Groundnut,Target-Encoded Random Forest,pred_rf_target_encoded,728,0.3451,0.3888,0.0437,12.65
+Jowar,Existing District Mean (Phase 3B.1),pred_existing_district_mean,537,0.4537,0.4537,0.0,0.0
+Jowar,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,537,0.5819,0.3937,-0.1882,-32.34
+Jowar,Challenger (min_obs=1),pred_challenger_min_obs_1,537,0.417,0.417,0.0,0.0
+Jowar,Challenger (min_obs=3),pred_challenger_min_obs_3,537,0.4341,0.4341,0.0,0.0
+Jowar,Challenger (min_obs=5),pred_challenger_min_obs_5,537,0.4358,0.4358,0.0,0.0
+Jowar,Random Forest (One-Hot Encoded),pred_rf_one_hot,537,0.55,0.5573,0.0073,1.32
+Jowar,Extra Trees (One-Hot Encoded),pred_et_one_hot,537,0.5501,0.565,0.015,2.72
+Jowar,Native Categorical XGBoost,pred_xgb_native_categorical,537,0.3946,0.3904,-0.0042,-1.06
+Jowar,Target-Encoded Random Forest,pred_rf_target_encoded,537,0.3965,0.4518,0.0553,13.94
+Lentil,Existing District Mean (Phase 3B.1),pred_existing_district_mean,9,4.6289,3.7877,-0.8412,-18.17
+Lentil,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,9,0.392,1.5716,1.1797,300.96
+Lentil,Challenger (min_obs=1),pred_challenger_min_obs_1,9,4.6289,3.7877,-0.8412,-18.17
+Lentil,Challenger (min_obs=3),pred_challenger_min_obs_3,9,4.6289,3.7877,-0.8412,-18.17
+Lentil,Challenger (min_obs=5),pred_challenger_min_obs_5,9,4.6289,3.7877,-0.8412,-18.17
+Lentil,Random Forest (One-Hot Encoded),pred_rf_one_hot,9,0.0874,0.1249,0.0375,42.87
+Lentil,Extra Trees (One-Hot Encoded),pred_et_one_hot,9,0.0873,0.1037,0.0165,18.87
+Lentil,Native Categorical XGBoost,pred_xgb_native_categorical,9,26.8999,28.2154,1.3156,4.89
+Lentil,Target-Encoded Random Forest,pred_rf_target_encoded,9,6.0184,5.6401,-0.3783,-6.29
+Maize,Existing District Mean (Phase 3B.1),pred_existing_district_mean,1204,0.9302,0.9302,0.0,0.0
+Maize,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,1204,0.7619,0.7242,-0.0377,-4.95
+Maize,Challenger (min_obs=1),pred_challenger_min_obs_1,1204,0.8605,0.8605,0.0,0.0
+Maize,Challenger (min_obs=3),pred_challenger_min_obs_3,1204,0.8775,0.8775,0.0,0.0
+Maize,Challenger (min_obs=5),pred_challenger_min_obs_5,1204,0.8805,0.8805,0.0,0.0
+Maize,Random Forest (One-Hot Encoded),pred_rf_one_hot,1204,0.7635,1.0689,0.3054,40.01
+Maize,Extra Trees (One-Hot Encoded),pred_et_one_hot,1204,0.8144,1.103,0.2886,35.44
+Maize,Native Categorical XGBoost,pred_xgb_native_categorical,1204,0.6935,0.6944,0.0009,0.14
+Maize,Target-Encoded Random Forest,pred_rf_target_encoded,1204,0.7317,0.8643,0.1326,18.12
+Masoor,Existing District Mean (Phase 3B.1),pred_existing_district_mean,392,0.2259,0.2259,0.0,0.0
+Masoor,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,392,0.2091,0.2105,0.0014,0.67
+Masoor,Challenger (min_obs=1),pred_challenger_min_obs_1,392,0.2272,0.2272,0.0,0.0
+Masoor,Challenger (min_obs=3),pred_challenger_min_obs_3,392,0.2247,0.2247,0.0,0.0
+Masoor,Challenger (min_obs=5),pred_challenger_min_obs_5,392,0.2246,0.2246,0.0,0.0
+Masoor,Random Forest (One-Hot Encoded),pred_rf_one_hot,392,0.2885,0.3039,0.0154,5.35
+Masoor,Extra Trees (One-Hot Encoded),pred_et_one_hot,392,0.2884,0.295,0.0065,2.27
+Masoor,Native Categorical XGBoost,pred_xgb_native_categorical,392,0.2006,0.1963,-0.0043,-2.13
+Masoor,Target-Encoded Random Forest,pred_rf_target_encoded,392,0.2298,0.2175,-0.0123,-5.36
+Moong(Green Gram),Existing District Mean (Phase 3B.1),pred_existing_district_mean,977,0.1634,0.1634,0.0,0.0
+Moong(Green Gram),Existing Random Forest (Phase 3B.1),pred_existing_random_forest,977,0.1379,0.1382,0.0003,0.21
+Moong(Green Gram),Challenger (min_obs=1),pred_challenger_min_obs_1,977,0.1545,0.1545,0.0,0.0
+Moong(Green Gram),Challenger (min_obs=3),pred_challenger_min_obs_3,977,0.1523,0.1523,0.0,0.0
+Moong(Green Gram),Challenger (min_obs=5),pred_challenger_min_obs_5,977,0.1523,0.1523,0.0,0.0
+Moong(Green Gram),Random Forest (One-Hot Encoded),pred_rf_one_hot,977,0.1937,0.4305,0.2369,122.3
+Moong(Green Gram),Extra Trees (One-Hot Encoded),pred_et_one_hot,977,0.1951,0.4134,0.2183,111.9
+Moong(Green Gram),Native Categorical XGBoost,pred_xgb_native_categorical,977,0.1499,0.1542,0.0043,2.89
+Moong(Green Gram),Target-Encoded Random Forest,pred_rf_target_encoded,977,0.1402,0.1533,0.0131,9.36
+Onion,Existing District Mean (Phase 3B.1),pred_existing_district_mean,598,3.6305,3.6305,0.0,0.0
+Onion,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,598,2.4994,2.445,-0.0544,-2.18
+Onion,Challenger (min_obs=1),pred_challenger_min_obs_1,598,3.2055,3.2055,0.0,0.0
+Onion,Challenger (min_obs=3),pred_challenger_min_obs_3,598,3.1769,3.1769,0.0,0.0
+Onion,Challenger (min_obs=5),pred_challenger_min_obs_5,598,3.1888,3.1888,0.0,0.0
+Onion,Random Forest (One-Hot Encoded),pred_rf_one_hot,598,3.1,2.7407,-0.3593,-11.59
+Onion,Extra Trees (One-Hot Encoded),pred_et_one_hot,598,2.768,2.7163,-0.0518,-1.87
+Onion,Native Categorical XGBoost,pred_xgb_native_categorical,598,2.339,2.3723,0.0333,1.43
+Onion,Target-Encoded Random Forest,pred_rf_target_encoded,598,2.8799,2.8147,-0.0652,-2.26
+Paddy,Existing District Mean (Phase 3B.1),pred_existing_district_mean,103,0.6622,0.6622,0.0,0.0
+Paddy,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,103,0.7912,0.6881,-0.1031,-13.03
+Paddy,Challenger (min_obs=1),pred_challenger_min_obs_1,103,0.4899,0.4899,0.0,0.0
+Paddy,Challenger (min_obs=3),pred_challenger_min_obs_3,103,0.6641,0.6641,0.0,0.0
+Paddy,Challenger (min_obs=5),pred_challenger_min_obs_5,103,0.5099,0.5099,0.0,0.0
+Paddy,Random Forest (One-Hot Encoded),pred_rf_one_hot,103,1.0464,1.1318,0.0854,8.16
+Paddy,Extra Trees (One-Hot Encoded),pred_et_one_hot,103,1.046,1.1509,0.1049,10.03
+Paddy,Native Categorical XGBoost,pred_xgb_native_categorical,103,0.311,0.3895,0.0785,25.24
+Paddy,Target-Encoded Random Forest,pred_rf_target_encoded,103,0.4233,0.4222,-0.001,-0.25
+Papaya,Existing District Mean (Phase 3B.1),pred_existing_district_mean,69,6.4211,6.4211,0.0,0.0
+Papaya,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,69,26.5856,26.4669,-0.1187,-0.45
+Papaya,Challenger (min_obs=1),pred_challenger_min_obs_1,69,5.1222,5.1222,0.0,0.0
+Papaya,Challenger (min_obs=3),pred_challenger_min_obs_3,69,6.3438,6.3438,0.0,0.0
+Papaya,Challenger (min_obs=5),pred_challenger_min_obs_5,69,6.7956,6.7956,0.0,0.0
+Papaya,Random Forest (One-Hot Encoded),pred_rf_one_hot,69,25.4387,7.8589,-17.5798,-69.11
+Papaya,Extra Trees (One-Hot Encoded),pred_et_one_hot,69,25.3041,9.5417,-15.7624,-62.29
+Papaya,Native Categorical XGBoost,pred_xgb_native_categorical,69,8.6453,8.4694,-0.176,-2.04
+Papaya,Target-Encoded Random Forest,pred_rf_target_encoded,69,23.3261,23.1298,-0.1963,-0.84
+Potato,Existing District Mean (Phase 3B.1),pred_existing_district_mean,494,3.0259,3.0259,0.0,0.0
+Potato,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,494,2.9049,2.8912,-0.0137,-0.47
+Potato,Challenger (min_obs=1),pred_challenger_min_obs_1,494,2.7342,2.7342,0.0,0.0
+Potato,Challenger (min_obs=3),pred_challenger_min_obs_3,494,2.6962,2.6962,0.0,0.0
+Potato,Challenger (min_obs=5),pred_challenger_min_obs_5,494,2.7125,2.7125,0.0,0.0
+Potato,Random Forest (One-Hot Encoded),pred_rf_one_hot,494,3.0261,2.9715,-0.0545,-1.8
+Potato,Extra Trees (One-Hot Encoded),pred_et_one_hot,494,3.1134,2.91,-0.2034,-6.53
+Potato,Native Categorical XGBoost,pred_xgb_native_categorical,494,2.7038,2.6665,-0.0373,-1.38
+Potato,Target-Encoded Random Forest,pred_rf_target_encoded,494,2.8762,3.0052,0.1291,4.49
+Ragi,Existing District Mean (Phase 3B.1),pred_existing_district_mean,326,0.3407,0.3407,0.0,0.0
+Ragi,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,326,0.2728,0.2772,0.0044,1.6
+Ragi,Challenger (min_obs=1),pred_challenger_min_obs_1,326,0.2974,0.2974,0.0,0.0
+Ragi,Challenger (min_obs=3),pred_challenger_min_obs_3,326,0.3377,0.3377,0.0,0.0
+Ragi,Challenger (min_obs=5),pred_challenger_min_obs_5,326,0.3377,0.3377,0.0,0.0
+Ragi,Random Forest (One-Hot Encoded),pred_rf_one_hot,326,0.666,0.6637,-0.0023,-0.35
+Ragi,Extra Trees (One-Hot Encoded),pred_et_one_hot,326,0.6672,0.6725,0.0053,0.8
+Ragi,Native Categorical XGBoost,pred_xgb_native_categorical,326,0.3052,0.316,0.0108,3.55
+Ragi,Target-Encoded Random Forest,pred_rf_target_encoded,326,0.2964,0.3341,0.0378,12.74
+Rapeseed &Mustard,Existing District Mean (Phase 3B.1),pred_existing_district_mean,549,0.2203,0.2203,0.0,0.0
+Rapeseed &Mustard,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,549,0.2146,0.2094,-0.0051,-2.4
+Rapeseed &Mustard,Challenger (min_obs=1),pred_challenger_min_obs_1,549,0.2208,0.2208,0.0,0.0
+Rapeseed &Mustard,Challenger (min_obs=3),pred_challenger_min_obs_3,549,0.2201,0.2201,0.0,0.0
+Rapeseed &Mustard,Challenger (min_obs=5),pred_challenger_min_obs_5,549,0.2201,0.2201,0.0,0.0
+Rapeseed &Mustard,Random Forest (One-Hot Encoded),pred_rf_one_hot,549,0.392,0.3973,0.0053,1.35
+Rapeseed &Mustard,Extra Trees (One-Hot Encoded),pred_et_one_hot,549,0.392,0.3941,0.0021,0.53
+Rapeseed &Mustard,Native Categorical XGBoost,pred_xgb_native_categorical,549,0.2222,0.2213,-0.0009,-0.4
+Rapeseed &Mustard,Target-Encoded Random Forest,pred_rf_target_encoded,549,0.2577,0.2117,-0.0461,-17.87
+Rice,Existing District Mean (Phase 3B.1),pred_existing_district_mean,1164,0.569,0.569,0.0,0.0
+Rice,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,1164,0.4541,0.4493,-0.0048,-1.06
+Rice,Challenger (min_obs=1),pred_challenger_min_obs_1,1164,0.5295,0.5295,0.0,0.0
+Rice,Challenger (min_obs=3),pred_challenger_min_obs_3,1164,0.5314,0.5314,0.0,0.0
+Rice,Challenger (min_obs=5),pred_challenger_min_obs_5,1164,0.5322,0.5322,0.0,0.0
+Rice,Random Forest (One-Hot Encoded),pred_rf_one_hot,1164,0.6291,0.7958,0.1667,26.5
+Rice,Extra Trees (One-Hot Encoded),pred_et_one_hot,1164,0.6869,0.7919,0.105,15.28
+Rice,Native Categorical XGBoost,pred_xgb_native_categorical,1164,0.416,0.4341,0.0181,4.35
+Rice,Target-Encoded Random Forest,pred_rf_target_encoded,1164,0.4384,0.4943,0.0559,12.75
+Sesamum,Existing District Mean (Phase 3B.1),pred_existing_district_mean,661,0.1156,0.1156,0.0,0.0
+Sesamum,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,661,0.1033,0.1047,0.0015,1.43
+Sesamum,Challenger (min_obs=1),pred_challenger_min_obs_1,661,0.1092,0.1092,0.0,0.0
+Sesamum,Challenger (min_obs=3),pred_challenger_min_obs_3,661,0.1097,0.1097,0.0,0.0
+Sesamum,Challenger (min_obs=5),pred_challenger_min_obs_5,661,0.11,0.11,0.0,0.0
+Sesamum,Random Forest (One-Hot Encoded),pred_rf_one_hot,661,0.147,0.5192,0.3722,253.23
+Sesamum,Extra Trees (One-Hot Encoded),pred_et_one_hot,661,0.1658,0.5,0.3341,201.5
+Sesamum,Native Categorical XGBoost,pred_xgb_native_categorical,661,0.1336,0.1376,0.004,2.99
+Sesamum,Target-Encoded Random Forest,pred_rf_target_encoded,661,0.101,0.1014,0.0004,0.42
+Soyabean,Existing District Mean (Phase 3B.1),pred_existing_district_mean,257,0.3473,0.3473,0.0,0.0
+Soyabean,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,257,0.3221,0.3229,0.0008,0.24
+Soyabean,Challenger (min_obs=1),pred_challenger_min_obs_1,257,0.3483,0.3483,0.0,0.0
+Soyabean,Challenger (min_obs=3),pred_challenger_min_obs_3,257,0.3493,0.3493,0.0,0.0
+Soyabean,Challenger (min_obs=5),pred_challenger_min_obs_5,257,0.3512,0.3512,0.0,0.0
+Soyabean,Random Forest (One-Hot Encoded),pred_rf_one_hot,257,0.4661,0.4523,-0.0138,-2.95
+Soyabean,Extra Trees (One-Hot Encoded),pred_et_one_hot,257,0.4661,0.4599,-0.0063,-1.34
+Soyabean,Native Categorical XGBoost,pred_xgb_native_categorical,257,0.3346,0.3441,0.0095,2.83
+Soyabean,Target-Encoded Random Forest,pred_rf_target_encoded,257,0.3914,0.438,0.0465,11.88
+Sugarcane,Existing District Mean (Phase 3B.1),pred_existing_district_mean,628,12.785,12.785,0.0,0.0
+Sugarcane,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,628,12.5304,12.5637,0.0333,0.27
+Sugarcane,Challenger (min_obs=1),pred_challenger_min_obs_1,628,12.5405,12.5405,0.0,0.0
+Sugarcane,Challenger (min_obs=3),pred_challenger_min_obs_3,628,12.3449,12.3449,0.0,0.0
+Sugarcane,Challenger (min_obs=5),pred_challenger_min_obs_5,628,12.3452,12.3452,0.0,0.0
+Sugarcane,Random Forest (One-Hot Encoded),pred_rf_one_hot,628,12.8285,12.7372,-0.0913,-0.71
+Sugarcane,Extra Trees (One-Hot Encoded),pred_et_one_hot,628,14.1195,14.1528,0.0333,0.24
+Sugarcane,Native Categorical XGBoost,pred_xgb_native_categorical,628,12.2902,12.3743,0.0842,0.68
+Sugarcane,Target-Encoded Random Forest,pred_rf_target_encoded,628,13.4709,12.6963,-0.7746,-5.75
+Sunflower,Existing District Mean (Phase 3B.1),pred_existing_district_mean,423,0.2797,0.2797,0.0,0.0
+Sunflower,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,423,0.2482,0.2419,-0.0063,-2.54
+Sunflower,Challenger (min_obs=1),pred_challenger_min_obs_1,423,0.2863,0.2863,0.0,0.0
+Sunflower,Challenger (min_obs=3),pred_challenger_min_obs_3,423,0.2818,0.2818,0.0,0.0
+Sunflower,Challenger (min_obs=5),pred_challenger_min_obs_5,423,0.2817,0.2817,0.0,0.0
+Sunflower,Random Forest (One-Hot Encoded),pred_rf_one_hot,423,0.4432,0.4144,-0.0288,-6.5
+Sunflower,Extra Trees (One-Hot Encoded),pred_et_one_hot,423,0.4433,0.4129,-0.0304,-6.87
+Sunflower,Native Categorical XGBoost,pred_xgb_native_categorical,423,0.2897,0.2793,-0.0104,-3.6
+Sunflower,Target-Encoded Random Forest,pred_rf_target_encoded,423,0.3043,0.3021,-0.0022,-0.72
+Sweet potato,Existing District Mean (Phase 3B.1),pred_existing_district_mean,358,1.7465,1.7465,0.0,0.0
+Sweet potato,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,358,1.3903,1.5498,0.1595,11.48
+Sweet potato,Challenger (min_obs=1),pred_challenger_min_obs_1,358,1.6553,1.6553,0.0,0.0
+Sweet potato,Challenger (min_obs=3),pred_challenger_min_obs_3,358,1.7372,1.7372,0.0,0.0
+Sweet potato,Challenger (min_obs=5),pred_challenger_min_obs_5,358,1.6974,1.6974,0.0,0.0
+Sweet potato,Random Forest (One-Hot Encoded),pred_rf_one_hot,358,1.7459,1.5892,-0.1567,-8.97
+Sweet potato,Extra Trees (One-Hot Encoded),pred_et_one_hot,358,1.8505,1.5588,-0.2917,-15.76
+Sweet potato,Native Categorical XGBoost,pred_xgb_native_categorical,358,1.819,1.7271,-0.0919,-5.05
+Sweet potato,Target-Encoded Random Forest,pred_rf_target_encoded,358,1.602,2.5248,0.9228,57.6
+Tapioca,Existing District Mean (Phase 3B.1),pred_existing_district_mean,122,5.2887,5.2887,0.0,0.0
+Tapioca,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,122,3.8838,3.9429,0.059,1.52
+Tapioca,Challenger (min_obs=1),pred_challenger_min_obs_1,122,4.2788,4.2788,0.0,0.0
+Tapioca,Challenger (min_obs=3),pred_challenger_min_obs_3,122,5.2709,5.2709,0.0,0.0
+Tapioca,Challenger (min_obs=5),pred_challenger_min_obs_5,122,5.2849,5.2849,0.0,0.0
+Tapioca,Random Forest (One-Hot Encoded),pred_rf_one_hot,122,3.9175,4.1944,0.2768,7.07
+Tapioca,Extra Trees (One-Hot Encoded),pred_et_one_hot,122,4.131,4.2212,0.0901,2.18
+Tapioca,Native Categorical XGBoost,pred_xgb_native_categorical,122,3.9853,3.8583,-0.1269,-3.18
+Tapioca,Target-Encoded Random Forest,pred_rf_target_encoded,122,4.1192,4.6064,0.4871,11.83
+Tomato,Existing District Mean (Phase 3B.1),pred_existing_district_mean,40,8.8908,8.8908,0.0,0.0
+Tomato,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,40,7.094,16.1053,9.0112,127.03
+Tomato,Challenger (min_obs=1),pred_challenger_min_obs_1,40,8.8908,8.8908,0.0,0.0
+Tomato,Challenger (min_obs=3),pred_challenger_min_obs_3,40,8.8908,8.8908,0.0,0.0
+Tomato,Challenger (min_obs=5),pred_challenger_min_obs_5,40,8.8908,8.8908,0.0,0.0
+Tomato,Random Forest (One-Hot Encoded),pred_rf_one_hot,40,16.1987,14.8171,-1.3816,-8.53
+Tomato,Extra Trees (One-Hot Encoded),pred_et_one_hot,40,16.1989,16.1824,-0.0165,-0.1
+Tomato,Native Categorical XGBoost,pred_xgb_native_categorical,40,7.5959,7.4433,-0.1526,-2.01
+Tomato,Target-Encoded Random Forest,pred_rf_target_encoded,40,6.7558,5.9878,-0.768,-11.37
+Urad,Existing District Mean (Phase 3B.1),pred_existing_district_mean,868,0.153,0.153,0.0,0.0
+Urad,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,868,0.1326,0.1291,-0.0035,-2.64
+Urad,Challenger (min_obs=1),pred_challenger_min_obs_1,868,0.1464,0.1464,0.0,0.0
+Urad,Challenger (min_obs=3),pred_challenger_min_obs_3,868,0.1456,0.1456,0.0,0.0
+Urad,Challenger (min_obs=5),pred_challenger_min_obs_5,868,0.1462,0.1462,0.0,0.0
+Urad,Random Forest (One-Hot Encoded),pred_rf_one_hot,868,0.1931,0.3849,0.1918,99.35
+Urad,Extra Trees (One-Hot Encoded),pred_et_one_hot,868,0.1931,0.3671,0.174,90.13
+Urad,Native Categorical XGBoost,pred_xgb_native_categorical,868,0.1338,0.1328,-0.001,-0.75
+Urad,Target-Encoded Random Forest,pred_rf_target_encoded,868,0.1337,0.1436,0.0099,7.37
+Wheat,Existing District Mean (Phase 3B.1),pred_existing_district_mean,595,0.5167,0.5167,0.0,0.0
+Wheat,Existing Random Forest (Phase 3B.1),pred_existing_random_forest,595,0.3582,0.3195,-0.0388,-10.82
+Wheat,Challenger (min_obs=1),pred_challenger_min_obs_1,595,0.5161,0.5161,0.0,0.0
+Wheat,Challenger (min_obs=3),pred_challenger_min_obs_3,595,0.5145,0.5145,0.0,0.0
+Wheat,Challenger (min_obs=5),pred_challenger_min_obs_5,595,0.5123,0.5123,0.0,0.0
+Wheat,Random Forest (One-Hot Encoded),pred_rf_one_hot,595,0.6252,1.0508,0.4256,68.08
+Wheat,Extra Trees (One-Hot Encoded),pred_et_one_hot,595,0.6553,0.937,0.2818,43.0
+Wheat,Native Categorical XGBoost,pred_xgb_native_categorical,595,0.3455,0.3615,0.016,4.62
+Wheat,Target-Encoded Random Forest,pred_rf_target_encoded,595,0.3775,0.3998,0.0223,5.92

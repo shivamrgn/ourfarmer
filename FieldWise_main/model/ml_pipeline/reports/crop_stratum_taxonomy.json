@@ -1,0 +1,934 @@
+{
+  "crops": {
+    "Arhar/Tur": {
+      "citation": "IIPR Pigeonpea Production Guide 2019, Section 3.2",
+      "commercial_moisture_notes": "Clean dry pigeonpea seed at 10-12% moisture.",
+      "crop_label": "Arhar/Tur",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 9.0,
+      "product_basis": "air dry clean pulse seed 10 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 4.5,
+      "stratum": "Pulses & Legumes",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Bajra": {
+      "citation": "AICRP on Pearl Millet Annual Report 2019, Table 3.4",
+      "commercial_moisture_notes": "Clean pearl millet grain at 12% moisture.",
+      "crop_label": "Bajra",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 14.0,
+      "product_basis": "air dry pearl millet grain 12 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 7.0,
+      "stratum": "Cereals & Millets",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Banana": {
+      "citation": "NRCB Annual Report & Crop Production Guide 2018, Section 4.2",
+      "commercial_moisture_notes": "Whole fresh fruit bunches. Edible pulp-to-peel ratio ~2:1.",
+      "crop_label": "Banana",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 280.0,
+      "product_basis": "fresh fruit bunch 75 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 140.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Barley": {
+      "citation": "IIWBR Barley Crop Management Bulletin 2019, pp. 10-14",
+      "commercial_moisture_notes": "Clean threshed barley grain at 12% moisture.",
+      "crop_label": "Barley",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 16.0,
+      "product_basis": "air dry clean grain 12 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 8.0,
+      "stratum": "Cereals & Millets",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Bhindi": {
+      "citation": "IIVR Technical Bulletin on Okra Hybrid Seed and Crop Production, pp. 19-24",
+      "commercial_moisture_notes": "Fresh tender edible pods (~88-90% moisture).",
+      "crop_label": "Bhindi",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 50.0,
+      "product_basis": "fresh tender pod 89 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 25.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": false
+      }
+    },
+    "Black pepper": {
+      "citation": "IISR Black Pepper Cultivation Manual, pp. 22-26",
+      "commercial_moisture_notes": "Sun-dried black peppercorns (~11% moisture). Green-to-dry ratio ~3:1.",
+      "crop_label": "Black pepper",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 20.0,
+      "product_basis": "sun dried black peppercorn 11 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 10.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Brinjal": {
+      "citation": "IIVR Technical Bulletin on Solanaceous Vegetable Production, pp. 28-32",
+      "commercial_moisture_notes": "Fresh tender marketable eggplant fruit (~92% water).",
+      "crop_label": "Brinjal",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 70.0,
+      "product_basis": "fresh fruit 92 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 35.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Cabbage": {
+      "citation": "IIVR Technical Bulletin No. 42 (Cole Crop Production Technologies), pp. 34-38",
+      "commercial_moisture_notes": "Fresh trimmed marketable heads containing ~90-93% moisture.",
+      "crop_label": "Cabbage",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 140.0,
+      "product_basis": "fresh compact head 92 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 70.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Cardamom": {
+      "citation": "Spices Board Production Guide: Small Cardamom (Elettaria cardamomum)",
+      "commercial_moisture_notes": "Commercial cured green cardamom capsules at 10-12% moisture. Fresh green capsule weight is ~5x dry capsule.",
+      "crop_label": "Cardamom",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 6.0,
+      "product_basis": "cured dry capsule 10 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 3.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Cashewnut": {
+      "citation": "DCR Cashew Production Technology Manual, Table 2.2",
+      "commercial_moisture_notes": "Raw unshelled cashew nuts with pericarp (~8% moisture). Kernel recovery ~25-28%.",
+      "crop_label": "Cashewnut",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 8.0,
+      "product_basis": "raw unshelled nut in shell 8 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 4.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Cashewnut Raw": {
+      "citation": "Identical commercial product as Cashewnut in raw unprocessed nut form",
+      "commercial_moisture_notes": "Raw unshelled cashew nuts (alias of Cashewnut in DAC&FW records).",
+      "crop_label": "Cashewnut Raw",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 8.0,
+      "product_basis": "raw unshelled nut in shell 8 pct moisture",
+      "provenance_status": "PROJECT_CLASSIFICATION",
+      "screening_threshold_t_ha": 4.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": false
+      }
+    },
+    "Castor seed": {
+      "citation": "IIOR Castor Production Technologies, Bulletin 22",
+      "commercial_moisture_notes": "Clean dehulled castor seed (~6% moisture).",
+      "crop_label": "Castor seed",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 16.0,
+      "product_basis": "dry clean seed 6 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 8.0,
+      "stratum": "Oilseeds",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Coffee": {
+      "citation": "Coffee Board Technical Bulletin on Arabica & Robusta Productivity",
+      "commercial_moisture_notes": "Clean cured green coffee beans (Arabica/Robusta) at 10-11% moisture. Fresh cherry is ~5-6x bean weight.",
+      "crop_label": "Coffee",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 8.0,
+      "product_basis": "cured clean green coffee bean 11 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 4.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": false
+      }
+    },
+    "Coriander": {
+      "citation": "NRCSS Package of Practices for Coriander, Technical Bulletin 14",
+      "commercial_moisture_notes": "Dry clean coriander seeds (schizocarps) at 9-10% moisture.",
+      "crop_label": "Coriander",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 8.0,
+      "product_basis": "dry clean seed 9 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 4.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Drum Stick": {
+      "citation": "TNAU Agritech Portal: Moringa Cultivation (PKM-1 / PKM-2 Annual Moringa)",
+      "commercial_moisture_notes": "Fresh green moringa pods (~85-88% moisture).",
+      "crop_label": "Drum Stick",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 20.0,
+      "product_basis": "fresh tender pod 87 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 10.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Dry chillies": {
+      "citation": "Spices Board Package of Practices for Chillies; IIHR Chilli Production Guide",
+      "commercial_moisture_notes": "Sun-dried cured ripe chillies (~10% moisture). Caution: fresh green chilli yield is ~3.5-4x dry yield.",
+      "crop_label": "Dry chillies",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 24.0,
+      "product_basis": "sun dried cured red pod 10 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 12.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Dry ginger": {
+      "citation": "IISR Package of Practices: Ginger, pp. 14-18",
+      "commercial_moisture_notes": "Sun-dried cured rhizomes (~10-12% moisture). Fresh-to-dry conversion ratio ~4.5:1.",
+      "crop_label": "Dry ginger",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 80.0,
+      "product_basis": "sun dried cured rhizome 10 pct moisture",
+      "provenance_status": "PROJECT_CLASSIFICATION",
+      "screening_threshold_t_ha": 40.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Garlic": {
+      "citation": "DOGR Bulletin on High-Yielding Garlic Varieties (Bhima Purple / Yamuna Safed-3)",
+      "commercial_moisture_notes": "Cured dry bulbs with papery scales (~62-66% moisture).",
+      "crop_label": "Garlic",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 50.0,
+      "product_basis": "cured dry bulb 65 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 25.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Ginger": {
+      "citation": "IISR Package of Practices: Ginger, Extension Pamphlet No. 12",
+      "commercial_moisture_notes": "Fresh green unpeeled rhizomes (~78-82% water content).",
+      "crop_label": "Ginger",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 50.0,
+      "product_basis": "fresh green rhizome 80 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 25.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Gram": {
+      "citation": "IIPR Pulses in India: Varietal Profile and Technologies 2018, Gram Chapter",
+      "commercial_moisture_notes": "Clean threshed chickpea seed at 10-12% moisture content.",
+      "crop_label": "Gram",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 10.0,
+      "product_basis": "air dry clean pulse seed 10 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 5.0,
+      "stratum": "Pulses & Legumes",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Grapes": {
+      "citation": "NRCG Viticulture in India Technical Guide, Section 5.3 (Table Grape Productivity)",
+      "commercial_moisture_notes": "Fresh marketable table/wine grape clusters (~78-82% water).",
+      "crop_label": "Grapes",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 90.0,
+      "product_basis": "fresh table grape 80 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 45.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Groundnut": {
+      "citation": "DGR Groundnut in India: Research Highlights, Technical Bulletin 36",
+      "commercial_moisture_notes": "Clean sun-dried pods in shell (~7-8% moisture). Shelling turnover ~70%.",
+      "crop_label": "Groundnut",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 16.0,
+      "product_basis": "dry pod in shell 7 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 8.0,
+      "stratum": "Oilseeds",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Guar seed": {
+      "citation": "CAZRI Technical Bulletin on Clusterbean Technologies for Arid Regions, pp. 15-20",
+      "commercial_moisture_notes": "Air-dry clean cluster bean seed (~10% moisture). Pod yield is ~4x seed yield.",
+      "crop_label": "Guar seed",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 30.0,
+      "product_basis": "dry clean seed 10 pct moisture",
+      "provenance_status": "PROJECT_CLASSIFICATION",
+      "screening_threshold_t_ha": 15.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Horse-gram": {
+      "citation": "CRIDA Technical Bulletin on Rainfed Horse-Gram (Macrotyloma uniflorum)",
+      "commercial_moisture_notes": "Clean dry kulthi pulse seed at 10% moisture.",
+      "crop_label": "Horse-gram",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 8.0,
+      "product_basis": "air dry clean pulse seed 10 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 4.0,
+      "stratum": "Pulses & Legumes",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Jowar": {
+      "citation": "IIMR Sorghum Technology Bulletin 2018, Table 4.1",
+      "commercial_moisture_notes": "Clean grain sorghum at 12% moisture content.",
+      "crop_label": "Jowar",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 16.0,
+      "product_basis": "air dry sorghum grain 12 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 8.0,
+      "stratum": "Cereals & Millets",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Lemon": {
+      "citation": "CCRI Acid Lime Cultivation Manual, pp. 24-28",
+      "commercial_moisture_notes": "Fresh acid lime/lemon fruit (~88-90% water).",
+      "crop_label": "Lemon",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 40.0,
+      "product_basis": "fresh citrus fruit 89 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 20.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Lentil": {
+      "citation": "IIPR Technical Bulletin on Lentil Varieties (L-4076, DPL-62), pp. 10-14",
+      "commercial_moisture_notes": "Clean dry lentil seed at 10-12% moisture.",
+      "crop_label": "Lentil",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 8.0,
+      "product_basis": "air dry clean pulse seed 10 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 4.0,
+      "stratum": "Pulses & Legumes",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Linseed": {
+      "citation": "IIOR Linseed Technical Bulletin No. 19, Table 3.1",
+      "commercial_moisture_notes": "Clean flaxseed/linseed at 7% moisture.",
+      "crop_label": "Linseed",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 11.0,
+      "product_basis": "dry clean seed 7 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 5.5,
+      "stratum": "Oilseeds",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Maize": {
+      "citation": "IIMR Maize Production Technologies in India, Table 3.1; AICRP Annual Report 2019",
+      "commercial_moisture_notes": "Clean shelled dry grain normalized to 14% moisture content.",
+      "crop_label": "Maize",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 32.0,
+      "product_basis": "air dry shelled grain 14 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 16.0,
+      "stratum": "Cereals & Millets",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Mango": {
+      "citation": "CISH Mango Cultivation Bulletin No. 28, High Density Orchard Management",
+      "commercial_moisture_notes": "Fresh mature harvest fruit (~80-84% moisture).",
+      "crop_label": "Mango",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 50.0,
+      "product_basis": "fresh fruit 83 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 25.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Masoor": {
+      "citation": "Identical botanical species (Lens culinaris) as Lentil; regional Hindi nomenclature",
+      "commercial_moisture_notes": "Clean dry red lentil seed at 10-12% moisture (botanically identical to Lentil).",
+      "crop_label": "Masoor",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 8.0,
+      "product_basis": "air dry clean pulse seed 10 pct moisture",
+      "provenance_status": "PROJECT_CLASSIFICATION",
+      "screening_threshold_t_ha": 4.0,
+      "stratum": "Pulses & Legumes",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Moong(Green Gram)": {
+      "citation": "IIPR Green Gram Production Bulletin (IPM-02-03, Samrat), pp. 12-16",
+      "commercial_moisture_notes": "Clean dry mungbean seed at 10-12% moisture.",
+      "crop_label": "Moong(Green Gram)",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 7.0,
+      "product_basis": "air dry clean pulse seed 10 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 3.5,
+      "stratum": "Pulses & Legumes",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Niger seed": {
+      "citation": "IIOR Niger Production Technologies, Table 1.3",
+      "commercial_moisture_notes": "Clean dry niger seed at 7-8% moisture.",
+      "crop_label": "Niger seed",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 6.0,
+      "product_basis": "dry clean seed 7 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 3.0,
+      "stratum": "Oilseeds",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Onion": {
+      "citation": "DOGR Bulletin No. 18 (Varietal Performance and Production Technologies), pp. 12-16",
+      "commercial_moisture_notes": "Field-cured dry bulbs with tops trimmed (~84-86% moisture).",
+      "crop_label": "Onion",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 110.0,
+      "product_basis": "cured dry bulb 85 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 55.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Orange": {
+      "citation": "CCRI Nagpur Mandarin Production Guide, Technical Bulletin 58",
+      "commercial_moisture_notes": "Fresh whole fruit (~86-88% water).",
+      "crop_label": "Orange",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 50.0,
+      "product_basis": "fresh citrus fruit 87 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 25.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Paddy": {
+      "citation": "Identical agronomic species (Oryza sativa) as Rice; unhusked grain equivalent",
+      "commercial_moisture_notes": "Rough paddy grain with husk (~13% moisture). Hull-to-rice ratio ~66%.",
+      "crop_label": "Paddy",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 30.0,
+      "product_basis": "unmilled rough grain with husk 13 pct moisture",
+      "provenance_status": "PROJECT_CLASSIFICATION",
+      "screening_threshold_t_ha": 15.0,
+      "stratum": "Cereals & Millets",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Papaya": {
+      "citation": "NHB Indian Horticulture Database 2014, Fruit Productivity: Papaya, pp. 78-82",
+      "commercial_moisture_notes": "Fresh commercial whole fruit at table-ripe maturity.",
+      "crop_label": "Papaya",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 280.0,
+      "product_basis": "fresh fruit 88 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 140.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Pineapple": {
+      "citation": "NHB Indian Horticulture Database, Commercial Pineapple Cultivation, pp. 112-116",
+      "commercial_moisture_notes": "Fresh mature fruit with crown (~85-87% moisture).",
+      "crop_label": "Pineapple",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 70.0,
+      "product_basis": "fresh fruit 86 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 35.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Pome Granet": {
+      "citation": "NRCP Pomegranate Production Guide, Table 4.1 (Bhagwa Variety Performance)",
+      "commercial_moisture_notes": "Fresh whole pomegranate fruit (~76-80% moisture).",
+      "crop_label": "Pome Granet",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 40.0,
+      "product_basis": "fresh fruit 78 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 20.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Potato": {
+      "citation": "CPRI Technical Bulletin No. 102 (Potato in India: 75 Years of Research, 2020), Table 6.1",
+      "commercial_moisture_notes": "Fresh marketable ware tubers (~78% water, ~20-22% dry matter).",
+      "crop_label": "Potato",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 120.0,
+      "product_basis": "fresh unpeeled tuber 78 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 60.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Ragi": {
+      "citation": "AICRP on Small Millets Annual Report 2019, Table 2.4",
+      "commercial_moisture_notes": "Clean finger millet grain at 12% standard moisture content.",
+      "crop_label": "Ragi",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 20.0,
+      "product_basis": "air dry finger millet grain 12 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 10.0,
+      "stratum": "Cereals & Millets",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Rapeseed &Mustard": {
+      "citation": "DRMR Technical Bulletin on Mustard Varieties (Giriraj / NRCHB-101), pp. 14-18",
+      "commercial_moisture_notes": "Clean dry oilseed (Brassica juncea / campestris) at 6-8% moisture.",
+      "crop_label": "Rapeseed &Mustard",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 11.0,
+      "product_basis": "dry clean seed 6 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 5.5,
+      "stratum": "Oilseeds",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Rice": {
+      "citation": "IIRR Progress Report 2018 (Agronomy Section); Handbook of Agriculture, Rice Chapter",
+      "commercial_moisture_notes": "Clean dry grain at 12-14% moisture (DAC&FW state reported series).",
+      "crop_label": "Rice",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 30.0,
+      "product_basis": "milled or clean grain 12 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 15.0,
+      "stratum": "Cereals & Millets",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Rubber": {
+      "citation": "Rubber Board of India Rubber Growers' Companion, Table on Clone Yields (RRII-105)",
+      "commercial_moisture_notes": "Commercial Dry Rubber Content (DRC) coagulated sheet/crepe (~1-2% moisture). Raw latex is ~30-35% DRC.",
+      "crop_label": "Rubber",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 8.0,
+      "product_basis": "dry rubber content drc",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 4.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": false
+      }
+    },
+    "Safflower": {
+      "citation": "IIOR Safflower Production Technology Bulletin, Table 2.1",
+      "commercial_moisture_notes": "Clean dry spiny/non-spiny safflower seed at 6-7% moisture.",
+      "crop_label": "Safflower",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 8.0,
+      "product_basis": "dry clean seed 6 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 4.0,
+      "stratum": "Oilseeds",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Sannhamp": {
+      "citation": "CRIJAF Technical Bulletin on Sunnhemp (Crotalaria juncea) Fiber & Green Manure",
+      "commercial_moisture_notes": "Air-dry extracted bast fiber (~12% moisture). Total dry stem biomass is ~4x fiber yield.",
+      "crop_label": "Sannhamp",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 20.0,
+      "product_basis": "air dry retted fiber 12 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 10.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Sapota": {
+      "citation": "NHB Indian Horticulture Database, Sapota Production Bulletin",
+      "commercial_moisture_notes": "Fresh ripe sapodilla fruit (~70-74% moisture).",
+      "crop_label": "Sapota",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 40.0,
+      "product_basis": "fresh fruit 72 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 20.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Sesamum": {
+      "citation": "IIOR Sesame Production Manual, Technical Bulletin 28",
+      "commercial_moisture_notes": "Clean dry sesame seeds at 6% moisture content.",
+      "crop_label": "Sesamum",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 6.0,
+      "product_basis": "dry clean seed 6 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 3.0,
+      "stratum": "Oilseeds",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Small millets": {
+      "citation": "IIMR Small Millets Production Package (Kodo, Foxtail, Proso, Little millets)",
+      "commercial_moisture_notes": "Clean grain of minor millets (kodo, foxtail, proso, barnyard, little) at 12% moisture.",
+      "crop_label": "Small millets",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 12.0,
+      "product_basis": "air dry grain 12 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 6.0,
+      "stratum": "Cereals & Millets",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Soyabean": {
+      "citation": "IISR Soybean Production Guide 2020, Table 2.1",
+      "commercial_moisture_notes": "Clean threshed dry soybeans at 8-10% moisture.",
+      "crop_label": "Soyabean",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 12.0,
+      "product_basis": "dry clean seed 8 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 6.0,
+      "stratum": "Oilseeds",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Sugarcane": {
+      "citation": "ICAR Handbook of Agriculture (6th ed., 2011, pp. 1184-1192); Agricultural Statistics at a Glance 2021 Table 4.15",
+      "commercial_moisture_notes": "Fresh millable cane containing ~70-75% water. Commercial sucrose recovery 9-11%.",
+      "crop_label": "Sugarcane",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 360.0,
+      "product_basis": "fresh vegetative stalk",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 180.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Sunflower": {
+      "citation": "IIOR Sunflower Production Technologies Bulletin, pp. 12-16",
+      "commercial_moisture_notes": "Clean sun-dried sunflower achenes (~7-8% moisture).",
+      "crop_label": "Sunflower",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 10.0,
+      "product_basis": "dry clean seed 7 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 5.0,
+      "stratum": "Oilseeds",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Sweet potato": {
+      "citation": "CTCRI Extension Bulletin on Biofortified Sweet Potato, pp. 22-26",
+      "commercial_moisture_notes": "Fresh marketable storage roots (~70-74% moisture).",
+      "crop_label": "Sweet potato",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 90.0,
+      "product_basis": "fresh storage tuber 72 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 45.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Tapioca": {
+      "citation": "CTCRI Package of Practices for Cassava, Technical Bulletin 45, Table 3.2",
+      "commercial_moisture_notes": "Fresh harvested cassava roots containing ~60-65% moisture and ~30-35% starch.",
+      "crop_label": "Tapioca",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 150.0,
+      "product_basis": "fresh storage root 65 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 75.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Tea": {
+      "citation": "Tea Board of India Tea Statistics; UPASI Package of Practices",
+      "commercial_moisture_notes": "Commercial made black tea (~3% moisture). Green leaf weight is ~4.5x made tea.",
+      "crop_label": "Tea",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 18.0,
+      "product_basis": "made tea processed dry leaf 3 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 9.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": false
+      }
+    },
+    "Tobacco": {
+      "citation": "CTRI Annual Report 2019, Table 3.2; Tobacco in India Monograph",
+      "commercial_moisture_notes": "Barn-cured or sun-cured dry leaf (~10-12% moisture).",
+      "crop_label": "Tobacco",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 16.0,
+      "product_basis": "farm cured dry leaf 12 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 8.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Tomato": {
+      "citation": "IIHR Extension Bulletin on High Yielding F1 Tomato Hybrids (Arka Rakshak / Samrat), 2017",
+      "commercial_moisture_notes": "Fresh ripe salad/processing fruit with ~93-95% water content.",
+      "crop_label": "Tomato",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 160.0,
+      "product_basis": "fresh fruit 94 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 80.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Turmeric": {
+      "citation": "IISR Package of Practices: Turmeric (IISR Pratibha / IISR Kedaram), Bulletin 16",
+      "commercial_moisture_notes": "Officially cured dry rhizome (Spice Board standard). Caution: local district figures occasionally conflate with green rhizome (15-25 t/ha).",
+      "crop_label": "Turmeric",
+      "eligibility_tier": "Provisional",
+      "extreme_plausibility_bound_t_ha": 40.0,
+      "product_basis": "cured dry rhizome 10 pct moisture",
+      "provenance_status": "PROVISIONAL",
+      "screening_threshold_t_ha": 20.0,
+      "stratum": "Commercial & Horticultural",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": false,
+        "in_experiment_b_val": true
+      }
+    },
+    "Urad": {
+      "citation": "IIPR Black Gram Technologies Bulletin (Pant U-31, Shekhar-2), Table 2.2",
+      "commercial_moisture_notes": "Clean dry blackgram seed at 10-12% moisture.",
+      "crop_label": "Urad",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 7.0,
+      "product_basis": "air dry clean pulse seed 10 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 3.5,
+      "stratum": "Pulses & Legumes",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    },
+    "Wheat": {
+      "citation": "IIWBR Wheat Crop Management Bulletin 2020, Table 2; Progress Report 2019-20",
+      "commercial_moisture_notes": "Clean threshed wheat grain at 12% moisture. Distinct from total biological biomass.",
+      "crop_label": "Wheat",
+      "eligibility_tier": "Prime",
+      "extreme_plausibility_bound_t_ha": 24.0,
+      "product_basis": "air dry clean grain 12 pct moisture",
+      "provenance_status": "SOURCE_VERIFIED",
+      "screening_threshold_t_ha": 12.0,
+      "stratum": "Cereals & Millets",
+      "validation_presence_2012_2013": {
+        "in_experiment_a_val": true,
+        "in_experiment_b_val": true
+      }
+    }
+  },
+  "metadata": {
+    "artifact_name": "crop_stratum_taxonomy.json",
+    "experiment_a_prime_crops_count": 30,
+    "experiment_b_provisional_crops_count": 30,
+    "generated_by": "generate_crop_stratum_taxonomy.py",
+    "strata_counts": {
+      "Cereals & Millets": 9,
+      "Commercial & Horticultural": 35,
+      "Oilseeds": 9,
+      "Pulses & Legumes": 7
+    },
+    "taxonomy_version": "3.5",
+    "total_eligible_crops": 60,
+    "universe_reconciliation": {
+      "experiment_a_eligibility_count": 30,
+      "experiment_a_validation_absent_count": 0,
+      "experiment_a_validation_observed_count": 30,
+      "experiment_b_absent_validation_crops": [
+        "Bhindi",
+        "Cashewnut Raw",
+        "Coffee",
+        "Rubber",
+        "Tea"
+      ],
+      "experiment_b_eligibility_count": 60,
+      "experiment_b_validation_absent_count": 5,
+      "experiment_b_validation_observed_count": 55,
+      "taxonomy_universe_count": 60
+    }
+  }
+}

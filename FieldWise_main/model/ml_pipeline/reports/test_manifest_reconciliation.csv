@@ -1,0 +1,7 @@
+Partition_Description,Record_Count,Verification_Method,Subset_Relationship,Agronomic_Composition
+Experiment A Test Manifest (Prime-Only),5433,Independently verified from Exp A split_manifest.json raw_row_ids (0 duplicates asserted),Strict subset of Experiment B (A ⊂ B),30 verified prime crops with yield <= T and matched IMD rainfall
+Experiment B Test Manifest (Prime + Provisional),6852,Independently verified from Exp B split_manifest.json raw_row_ids (0 duplicates asserted),Superset of Experiment A (B ⊃ A),60 documented crops (30 prime + 30 provisional) with yield <= T and matched IMD rainfall
+Intersection (Experiment A ∩ Experiment B),5433,Independently computed set intersection of manifests (A ∩ B),Exact match with Experiment A,Common prime crop test records present in both experiments
+Union (Experiment A ∪ Experiment B),6852,Independently computed set union of manifests (A ∪ B),Exact match with Experiment B,All eligible baseline test records across both experiments
+Difference (Experiment B \ Experiment A),1419,Independently computed set difference of manifests (B \ A),Provisional-only test records,30 provisional crop test records in 2014-2015
+Dataset-Wide Test Partition (Cleaned Universe),10905,Inherited record count from reports/validation_summary.json (Phase 3A.6 summary; NOT independently verified via test ID list),Entire 2014-2015 chronological holdout across all categories,"6,852 eligible baseline (verified from manifests) + 4,053 conditional/excluded records (calculated strictly by subtraction)"

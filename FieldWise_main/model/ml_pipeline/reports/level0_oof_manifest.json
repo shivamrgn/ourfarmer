@@ -1,0 +1,191 @@
+{
+  "experiment_a_prime": {
+    "expected_oof_records": 67374,
+    "folds": [
+      {
+        "H_k": 6,
+        "base_fold": 1,
+        "collision_counts": {
+          "0": 22461,
+          "1": 202
+        },
+        "eval_records": 22663,
+        "eval_years": "2003-2005",
+        "level_counts": {
+          "1": 20948,
+          "2": 581,
+          "3": 647,
+          "4": 4,
+          "5": 483
+        },
+        "oof_base_mae": 1.1704838167989502,
+        "train_records": 40146,
+        "train_years": "1997-2002"
+      },
+      {
+        "H_k": 9,
+        "base_fold": 2,
+        "collision_counts": {
+          "0": 15207,
+          "1": 156
+        },
+        "eval_records": 15363,
+        "eval_years": "2006-2007",
+        "level_counts": {
+          "1": 14561,
+          "2": 559,
+          "3": 202,
+          "4": 3,
+          "5": 38
+        },
+        "oof_base_mae": 1.0527326012444909,
+        "train_records": 62809,
+        "train_years": "1997-2005"
+      },
+      {
+        "H_k": 11,
+        "base_fold": 3,
+        "collision_counts": {
+          "0": 14716,
+          "1": 185
+        },
+        "eval_records": 14901,
+        "eval_years": "2008-2009",
+        "level_counts": {
+          "1": 13961,
+          "2": 779,
+          "3": 134,
+          "4": 20,
+          "5": 7
+        },
+        "oof_base_mae": 1.071126093468648,
+        "train_records": 78172,
+        "train_years": "1997-2007"
+      },
+      {
+        "H_k": 13,
+        "base_fold": 4,
+        "collision_counts": {
+          "0": 14268,
+          "1": 179
+        },
+        "eval_records": 14447,
+        "eval_years": "2010-2011",
+        "level_counts": {
+          "1": 13950,
+          "2": 319,
+          "3": 95,
+          "5": 83
+        },
+        "oof_base_mae": 1.137358785818755,
+        "train_records": 93073,
+        "train_years": "1997-2009"
+      }
+    ],
+    "output_file": "experiments/phase_3b_2/level0_oof_residuals_exp_a.csv",
+    "overall_pooled_oof_base_mae": 1.1145557335253007,
+    "sha256": "74eb7de5f04643573dd5d04c163f01db9842a4a4bbb3ab60cb09de63d7beb257",
+    "total_oof_records": 67374
+  },
+  "experiment_b_provisional": {
+    "expected_oof_records": 86083,
+    "folds": [
+      {
+        "H_k": 6,
+        "base_fold": 1,
+        "collision_counts": {
+          "0": 29069,
+          "1": 238
+        },
+        "eval_records": 29307,
+        "eval_years": "2003-2005",
+        "level_counts": {
+          "1": 26718,
+          "2": 812,
+          "3": 834,
+          "4": 16,
+          "5": 927
+        },
+        "oof_base_mae": 0.9992931008839704,
+        "train_records": 51081,
+        "train_years": "1997-2002"
+      },
+      {
+        "H_k": 9,
+        "base_fold": 2,
+        "collision_counts": {
+          "0": 19364,
+          "1": 183
+        },
+        "eval_records": 19547,
+        "eval_years": "2006-2007",
+        "level_counts": {
+          "1": 18111,
+          "2": 998,
+          "3": 269,
+          "4": 10,
+          "5": 141,
+          "6": 18
+        },
+        "oof_base_mae": 0.9183777178775042,
+        "train_records": 80388,
+        "train_years": "1997-2005"
+      },
+      {
+        "H_k": 11,
+        "base_fold": 3,
+        "collision_counts": {
+          "0": 18833,
+          "1": 231
+        },
+        "eval_records": 19064,
+        "eval_years": "2008-2009",
+        "level_counts": {
+          "1": 17802,
+          "2": 997,
+          "3": 201,
+          "4": 24,
+          "5": 40
+        },
+        "oof_base_mae": 0.9414280030919827,
+        "train_records": 99935,
+        "train_years": "1997-2007"
+      },
+      {
+        "H_k": 13,
+        "base_fold": 4,
+        "collision_counts": {
+          "0": 17935,
+          "1": 230
+        },
+        "eval_records": 18165,
+        "eval_years": "2010-2011",
+        "level_counts": {
+          "1": 17415,
+          "2": 458,
+          "3": 133,
+          "4": 3,
+          "5": 106,
+          "7": 50
+        },
+        "oof_base_mae": 1.0204843564301358,
+        "train_records": 118999,
+        "train_years": "1997-2009"
+      }
+    ],
+    "output_file": "experiments/phase_3b_2/level0_oof_residuals_exp_b.csv",
+    "overall_pooled_oof_base_mae": 0.9725763965528279,
+    "sha256": "cf95f5e3d1af71410144c865889e1a1172e64031f46a4071b82dd438633f47c1",
+    "total_oof_records": 86083
+  },
+  "metadata": {
+    "architecture_revision": "3.5",
+    "artifact_name": "level0_oof_manifest.json",
+    "base_challenger_min_obs": 1,
+    "generated_by": "generate_level0_oof_residuals.py",
+    "holdout_isolation_status": "VERIFIED_STREAMING_FILTER_1997_2011_ONLY",
+    "pipeline_phase": "3B.2",
+    "temporal_coverage": "2003-2011",
+    "warm_up_window": "1997-2002 (6 years)"
+  }
+}

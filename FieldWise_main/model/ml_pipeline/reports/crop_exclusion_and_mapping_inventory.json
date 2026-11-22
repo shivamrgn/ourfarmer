@@ -1,0 +1,964 @@
+{
+  "metadata": {
+    "title": "FieldWise Crop Exclusion & Mapping Inventory (Phase 3A.6)",
+    "total_unique_crops": 97,
+    "total_cleaned_records": 227573,
+    "excluded_crops_count": 17,
+    "excluded_records_count": 13819
+  },
+  "macro_aggregate_totals": {
+    "Total foodgrain": {
+      "type": "macro_aggregate_total",
+      "model_eligibility": "excluded",
+      "rationale": "District-wide sum of all cereals and pulses; causes double-counting and has no single biological crop identity."
+    },
+    "Pulses total": {
+      "type": "macro_aggregate_total",
+      "model_eligibility": "excluded",
+      "rationale": "District-wide sum of all pulse crops; double-counts individual pulses."
+    },
+    "Oilseeds total": {
+      "type": "macro_aggregate_total",
+      "model_eligibility": "excluded",
+      "rationale": "District-wide sum of 9 major oilseeds; double-counts individual oilseeds."
+    }
+  },
+  "composite_residual_categories": {
+    "Other Kharif pulses": {
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Heterogeneous multi-species mixture of minor kharif legumes (cowpea, kulthi, moth, lablab) without fixed botanical proportions."
+    },
+    "Other  Rabi pulses": {
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Heterogeneous multi-species mixture of minor rabi pulses (khesari, field pea, lathyrus residuals)."
+    },
+    "Peas & beans (Pulses)": {
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Combines dry field peas (Pisum sativum) with diverse grain beans (Phaseolus, Vicia spp.) with differing growth habits."
+    },
+    "Other Cereals & Millets": {
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Residual bin for minor millets and pseudo-cereals without individual yield characteristics."
+    },
+    "other oilseeds": {
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Residual bin for minor or wild oilseeds with undefined species composition."
+    },
+    "Other Fresh Fruits": {
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Heterogeneous mixture of perennial tree fruits (custard apple, ber, fig, passion fruit, jamun) with wildly differing tree spacings and bearing cycles."
+    },
+    "Other Vegetables": {
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Heterogeneous mixture of leafy greens, gourds, and tubers with moisture content ranging 80-95%."
+    },
+    "other misc. pulses": {
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Miscellaneous pulse residual."
+    },
+    "Cond-spcs other": {
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Miscellaneous condiments and spices residual."
+    },
+    "Pome Fruit": {
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Combines apple, pear, and quince across temperate hill tracts; distinct chilling and yield curves."
+    },
+    "Citrus Fruit": {
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Combines mandarin, sweet orange, lime, and pomelo across diverse rootstocks and densities."
+    },
+    "Beans & Mutter(Vegetable)": {
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Fresh green vegetable pods (~80-85% moisture) harvested for horticulture, not comparable to dry pulse grain."
+    }
+  },
+  "ambiguous_product_basis_categories": {
+    "Kapas": {
+      "type": "ambiguous_product_basis",
+      "model_eligibility": "excluded",
+      "rationale": "Raw unginned seed cotton (contains ~65% heavy seed and ~35% lint). Standard commercial cotton reporting is ginned lint in bales of 170 kg. Non-comparable product basis."
+    },
+    "Cashewnut Processed": {
+      "type": "ambiguous_product_basis",
+      "model_eligibility": "excluded",
+      "rationale": "Edible deshelled cashew kernels. Standard reporting in India is raw unshelled nut in shell (Cashewnut / Cashewnut Raw), which has only 22-28% kernel recovery. 4x conversion disparity."
+    }
+  },
+  "all_crop_catalog": {
+    "Arhar/Tur": {
+      "records_count": 7457,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "air_dry_clean_pulse_seed_10_pct_moisture",
+      "screening_threshold_t_ha": 4.5,
+      "extreme_limit_t_ha": 9.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Bajra": {
+      "records_count": 5360,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "air_dry_pearl_millet_grain_12_pct_moisture",
+      "screening_threshold_t_ha": 7.0,
+      "extreme_limit_t_ha": 14.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Banana": {
+      "records_count": 3104,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "fresh_fruit_bunch_75_pct_moisture",
+      "screening_threshold_t_ha": 140.0,
+      "extreme_limit_t_ha": 280.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Barley": {
+      "records_count": 4078,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "air_dry_clean_grain_12_pct_moisture",
+      "screening_threshold_t_ha": 8.0,
+      "extreme_limit_t_ha": 16.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Bean": {
+      "records_count": 20,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Beans & Mutter(Vegetable)": {
+      "records_count": 102,
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Fresh green vegetable pods (~80-85% moisture) harvested for horticulture, not comparable to dry pulse grain."
+    },
+    "Bhindi": {
+      "records_count": 117,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "fresh_tender_pod_89_pct_moisture",
+      "screening_threshold_t_ha": 25.0,
+      "extreme_limit_t_ha": 50.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Bitter Gourd": {
+      "records_count": 10,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Black pepper": {
+      "records_count": 903,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "sun_dried_black_peppercorn_11_pct_moisture",
+      "screening_threshold_t_ha": 10.0,
+      "extreme_limit_t_ha": 20.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Blackgram": {
+      "records_count": 99,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Bottle Gourd": {
+      "records_count": 11,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Brinjal": {
+      "records_count": 267,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "fresh_fruit_92_pct_moisture",
+      "screening_threshold_t_ha": 35.0,
+      "extreme_limit_t_ha": 70.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Cabbage": {
+      "records_count": 97,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "fresh_compact_head_92_pct_moisture",
+      "screening_threshold_t_ha": 70.0,
+      "extreme_limit_t_ha": 140.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Cardamom": {
+      "records_count": 341,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "cured_dry_capsule_10_pct_moisture",
+      "screening_threshold_t_ha": 3.0,
+      "extreme_limit_t_ha": 6.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Carrot": {
+      "records_count": 19,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Cashewnut": {
+      "records_count": 1064,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "raw_unshelled_nut_in_shell_8_pct_moisture",
+      "screening_threshold_t_ha": 4.0,
+      "extreme_limit_t_ha": 8.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Cashewnut Processed": {
+      "records_count": 19,
+      "type": "ambiguous_product_basis",
+      "model_eligibility": "excluded",
+      "rationale": "Edible deshelled cashew kernels. Standard reporting in India is raw unshelled nut in shell (Cashewnut / Cashewnut Raw), which has only 22-28% kernel recovery. 4x conversion disparity."
+    },
+    "Cashewnut Raw": {
+      "records_count": 35,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "raw_unshelled_nut_in_shell_8_pct_moisture",
+      "screening_threshold_t_ha": 4.0,
+      "extreme_limit_t_ha": 8.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Castor seed": {
+      "records_count": 3257,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "dry_clean_seed_6_pct_moisture",
+      "screening_threshold_t_ha": 8.0,
+      "extreme_limit_t_ha": 16.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Cauliflower": {
+      "records_count": 18,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Citrus Fruit": {
+      "records_count": 180,
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Combines mandarin, sweet orange, lime, and pomelo across diverse rootstocks and densities."
+    },
+    "Coffee": {
+      "records_count": 6,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "cured_clean_green_coffee_bean_11_pct_moisture",
+      "screening_threshold_t_ha": 4.0,
+      "extreme_limit_t_ha": 8.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Colocosia": {
+      "records_count": 11,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Cond-spcs other": {
+      "records_count": 18,
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Miscellaneous condiments and spices residual."
+    },
+    "Coriander": {
+      "records_count": 3313,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "dry_clean_seed_9_pct_moisture",
+      "screening_threshold_t_ha": 4.0,
+      "extreme_limit_t_ha": 8.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Cowpea(Lobia)": {
+      "records_count": 545,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Drum Stick": {
+      "records_count": 58,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "fresh_tender_pod_87_pct_moisture",
+      "screening_threshold_t_ha": 10.0,
+      "extreme_limit_t_ha": 20.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Dry chillies": {
+      "records_count": 6399,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "sun_dried_cured_red_pod_10_pct_moisture",
+      "screening_threshold_t_ha": 12.0,
+      "extreme_limit_t_ha": 24.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Dry ginger": {
+      "records_count": 2987,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "sun_dried_cured_rhizome_10_pct_moisture",
+      "screening_threshold_t_ha": 40.0,
+      "extreme_limit_t_ha": 80.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Garlic": {
+      "records_count": 3215,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "cured_dry_bulb_65_pct_moisture",
+      "screening_threshold_t_ha": 25.0,
+      "extreme_limit_t_ha": 50.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Ginger": {
+      "records_count": 241,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "fresh_green_rhizome_80_pct_moisture",
+      "screening_threshold_t_ha": 25.0,
+      "extreme_limit_t_ha": 50.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Gram": {
+      "records_count": 7185,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "air_dry_clean_pulse_seed_10_pct_moisture",
+      "screening_threshold_t_ha": 5.0,
+      "extreme_limit_t_ha": 10.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Grapes": {
+      "records_count": 110,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "fresh_table_grape_80_pct_moisture",
+      "screening_threshold_t_ha": 45.0,
+      "extreme_limit_t_ha": 90.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Groundnut": {
+      "records_count": 8730,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "dry_pod_in_shell_7_pct_moisture",
+      "screening_threshold_t_ha": 8.0,
+      "extreme_limit_t_ha": 16.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Guar seed": {
+      "records_count": 1244,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "dry_clean_seed_10_pct_moisture",
+      "screening_threshold_t_ha": 15.0,
+      "extreme_limit_t_ha": 30.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Horse-gram": {
+      "records_count": 3812,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "air_dry_clean_pulse_seed_10_pct_moisture",
+      "screening_threshold_t_ha": 4.0,
+      "extreme_limit_t_ha": 8.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Jack Fruit": {
+      "records_count": 71,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Jobster": {
+      "records_count": 9,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Jowar": {
+      "records_count": 6960,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "air_dry_sorghum_grain_12_pct_moisture",
+      "screening_threshold_t_ha": 8.0,
+      "extreme_limit_t_ha": 16.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Kapas": {
+      "records_count": 12,
+      "type": "ambiguous_product_basis",
+      "model_eligibility": "excluded",
+      "rationale": "Raw unginned seed cotton (contains ~65% heavy seed and ~35% lint). Standard commercial cotton reporting is ginned lint in bales of 170 kg. Non-comparable product basis."
+    },
+    "Khesari": {
+      "records_count": 1354,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Korra": {
+      "records_count": 126,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Lemon": {
+      "records_count": 39,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "fresh_citrus_fruit_89_pct_moisture",
+      "screening_threshold_t_ha": 20.0,
+      "extreme_limit_t_ha": 40.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Lentil": {
+      "records_count": 31,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "air_dry_clean_pulse_seed_10_pct_moisture",
+      "screening_threshold_t_ha": 4.0,
+      "extreme_limit_t_ha": 8.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Linseed": {
+      "records_count": 4339,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "dry_clean_seed_7_pct_moisture",
+      "screening_threshold_t_ha": 5.5,
+      "extreme_limit_t_ha": 11.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Maize": {
+      "records_count": 13715,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "air_dry_shelled_grain_14_pct_moisture",
+      "screening_threshold_t_ha": 16.0,
+      "extreme_limit_t_ha": 32.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Mango": {
+      "records_count": 335,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "fresh_fruit_83_pct_moisture",
+      "screening_threshold_t_ha": 25.0,
+      "extreme_limit_t_ha": 50.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Masoor": {
+      "records_count": 4124,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "air_dry_clean_pulse_seed_10_pct_moisture",
+      "screening_threshold_t_ha": 4.0,
+      "extreme_limit_t_ha": 8.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Moong(Green Gram)": {
+      "records_count": 10031,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "air_dry_clean_pulse_seed_10_pct_moisture",
+      "screening_threshold_t_ha": 3.5,
+      "extreme_limit_t_ha": 7.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Moth": {
+      "records_count": 751,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Niger seed": {
+      "records_count": 2000,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "dry_clean_seed_7_pct_moisture",
+      "screening_threshold_t_ha": 3.0,
+      "extreme_limit_t_ha": 6.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Oilseeds total": {
+      "records_count": 413,
+      "type": "macro_aggregate_total",
+      "model_eligibility": "excluded",
+      "rationale": "District-wide sum of 9 major oilseeds; double-counts individual oilseeds."
+    },
+    "Onion": {
+      "records_count": 6976,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "cured_dry_bulb_85_pct_moisture",
+      "screening_threshold_t_ha": 55.0,
+      "extreme_limit_t_ha": 110.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Orange": {
+      "records_count": 237,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "fresh_citrus_fruit_87_pct_moisture",
+      "screening_threshold_t_ha": 25.0,
+      "extreme_limit_t_ha": 50.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Other  Rabi pulses": {
+      "records_count": 3051,
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Heterogeneous multi-species mixture of minor rabi pulses (khesari, field pea, lathyrus residuals)."
+    },
+    "Other Cereals & Millets": {
+      "records_count": 608,
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Residual bin for minor millets and pseudo-cereals without individual yield characteristics."
+    },
+    "Other Fresh Fruits": {
+      "records_count": 153,
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Heterogeneous mixture of perennial tree fruits (custard apple, ber, fig, passion fruit, jamun) with wildly differing tree spacings and bearing cycles."
+    },
+    "Other Kharif pulses": {
+      "records_count": 3511,
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Heterogeneous multi-species mixture of minor kharif legumes (cowpea, kulthi, moth, lablab) without fixed botanical proportions."
+    },
+    "Other Vegetables": {
+      "records_count": 95,
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Heterogeneous mixture of leafy greens, gourds, and tubers with moisture content ranging 80-95%."
+    },
+    "Paddy": {
+      "records_count": 479,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "unmilled_rough_grain_with_husk_13_pct_moisture",
+      "screening_threshold_t_ha": 15.0,
+      "extreme_limit_t_ha": 30.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Papaya": {
+      "records_count": 412,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "fresh_fruit_88_pct_moisture",
+      "screening_threshold_t_ha": 140.0,
+      "extreme_limit_t_ha": 280.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Peas & beans (Pulses)": {
+      "records_count": 4415,
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Combines dry field peas (Pisum sativum) with diverse grain beans (Phaseolus, Vicia spp.) with differing growth habits."
+    },
+    "Perilla": {
+      "records_count": 9,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Pineapple": {
+      "records_count": 247,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "fresh_fruit_86_pct_moisture",
+      "screening_threshold_t_ha": 35.0,
+      "extreme_limit_t_ha": 70.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Pome Fruit": {
+      "records_count": 169,
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Combines apple, pear, and quince across temperate hill tracts; distinct chilling and yield curves."
+    },
+    "Pome Granet": {
+      "records_count": 21,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "fresh_fruit_78_pct_moisture",
+      "screening_threshold_t_ha": 20.0,
+      "extreme_limit_t_ha": 40.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Potato": {
+      "records_count": 6909,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "fresh_unpeeled_tuber_78_pct_moisture",
+      "screening_threshold_t_ha": 60.0,
+      "extreme_limit_t_ha": 120.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Pulses total": {
+      "records_count": 264,
+      "type": "macro_aggregate_total",
+      "model_eligibility": "excluded",
+      "rationale": "District-wide sum of all pulse crops; double-counts individual pulses."
+    },
+    "Ragi": {
+      "records_count": 4112,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "air_dry_finger_millet_grain_12_pct_moisture",
+      "screening_threshold_t_ha": 10.0,
+      "extreme_limit_t_ha": 20.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Rajmash Kholar": {
+      "records_count": 18,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Rapeseed &Mustard": {
+      "records_count": 7509,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "dry_clean_seed_6_pct_moisture",
+      "screening_threshold_t_ha": 5.5,
+      "extreme_limit_t_ha": 11.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Redish": {
+      "records_count": 19,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Rice": {
+      "records_count": 15075,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "milled_or_clean_grain_12_pct_moisture",
+      "screening_threshold_t_ha": 15.0,
+      "extreme_limit_t_ha": 30.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Ricebean (nagadal)": {
+      "records_count": 10,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Rubber": {
+      "records_count": 29,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "dry_rubber_content_drc",
+      "screening_threshold_t_ha": 4.0,
+      "extreme_limit_t_ha": 8.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Safflower": {
+      "records_count": 1296,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "dry_clean_seed_6_pct_moisture",
+      "screening_threshold_t_ha": 4.0,
+      "extreme_limit_t_ha": 8.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Samai": {
+      "records_count": 87,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Sannhamp": {
+      "records_count": 2139,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "air_dry_retted_fiber_12_pct_moisture",
+      "screening_threshold_t_ha": 10.0,
+      "extreme_limit_t_ha": 20.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Sapota": {
+      "records_count": 39,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "fresh_fruit_72_pct_moisture",
+      "screening_threshold_t_ha": 20.0,
+      "extreme_limit_t_ha": 40.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Sesamum": {
+      "records_count": 8710,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "dry_clean_seed_6_pct_moisture",
+      "screening_threshold_t_ha": 3.0,
+      "extreme_limit_t_ha": 6.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Small millets": {
+      "records_count": 4557,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "air_dry_grain_12_pct_moisture",
+      "screening_threshold_t_ha": 6.0,
+      "extreme_limit_t_ha": 12.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Soyabean": {
+      "records_count": 3175,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "dry_clean_seed_8_pct_moisture",
+      "screening_threshold_t_ha": 6.0,
+      "extreme_limit_t_ha": 12.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Sugarcane": {
+      "records_count": 7801,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "fresh_vegetative_stalk",
+      "screening_threshold_t_ha": 180.0,
+      "extreme_limit_t_ha": 360.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Sunflower": {
+      "records_count": 5464,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "dry_clean_seed_7_pct_moisture",
+      "screening_threshold_t_ha": 5.0,
+      "extreme_limit_t_ha": 10.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Sweet potato": {
+      "records_count": 4111,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "fresh_storage_tuber_72_pct_moisture",
+      "screening_threshold_t_ha": 45.0,
+      "extreme_limit_t_ha": 90.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Tapioca": {
+      "records_count": 1583,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "fresh_storage_root_65_pct_moisture",
+      "screening_threshold_t_ha": 75.0,
+      "extreme_limit_t_ha": 150.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Tea": {
+      "records_count": 60,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "made_tea_processed_dry_leaf_3_pct_moisture",
+      "screening_threshold_t_ha": 9.0,
+      "extreme_limit_t_ha": 18.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Tobacco": {
+      "records_count": 2636,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "farm_cured_dry_leaf_12_pct_moisture",
+      "screening_threshold_t_ha": 8.0,
+      "extreme_limit_t_ha": 16.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Tomato": {
+      "records_count": 275,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "fresh_fruit_94_pct_moisture",
+      "screening_threshold_t_ha": 80.0,
+      "extreme_limit_t_ha": 160.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Total foodgrain": {
+      "records_count": 188,
+      "type": "macro_aggregate_total",
+      "model_eligibility": "excluded",
+      "rationale": "District-wide sum of all cereals and pulses; causes double-counting and has no single biological crop identity."
+    },
+    "Turmeric": {
+      "records_count": 4160,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_provisional",
+      "provenance_status": "provisional_agronomic_estimate",
+      "product_basis": "cured_dry_rhizome_10_pct_moisture",
+      "screening_threshold_t_ha": 20.0,
+      "extreme_limit_t_ha": 40.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Turnip": {
+      "records_count": 6,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Urad": {
+      "records_count": 9662,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "air_dry_clean_pulse_seed_10_pct_moisture",
+      "screening_threshold_t_ha": 3.5,
+      "extreme_limit_t_ha": 7.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "Varagu": {
+      "records_count": 58,
+      "type": "individual_crop_minor",
+      "model_eligibility": "conditional_minor_unmapped",
+      "provenance_status": "unmapped",
+      "product_basis": "unmapped_individual",
+      "rationale": "Individual minor or regional crop retained in historical database; requires species-specific ICAR agronomic baseline before single-crop modeling."
+    },
+    "Wheat": {
+      "records_count": 7875,
+      "type": "individual_crop",
+      "model_eligibility": "eligible_prime",
+      "provenance_status": "verified_source_passage",
+      "product_basis": "air_dry_clean_grain_12_pct_moisture",
+      "screening_threshold_t_ha": 12.0,
+      "extreme_limit_t_ha": 24.0,
+      "rationale": "Documented individual crop with established institutional screening threshold."
+    },
+    "other misc. pulses": {
+      "records_count": 49,
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Miscellaneous pulse residual."
+    },
+    "other oilseeds": {
+      "records_count": 572,
+      "type": "composite_residual_category",
+      "model_eligibility": "excluded",
+      "rationale": "Residual bin for minor or wild oilseeds with undefined species composition."
+    }
+  }
+}

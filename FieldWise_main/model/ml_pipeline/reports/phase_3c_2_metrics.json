@@ -1,0 +1,115 @@
+{
+  "metadata": {
+    "phase": "Phase 3C.2: Seven-Class Crop Recommendation ML Benchmark",
+    "timestamp": "2026-11-19T13:02:00Z",
+    "dataset_input_sha256": "54a5a6e5408668e668667efc50de2fc867c1b875e0431b4f54dd331b0a109a4e",
+    "manifest_sha256": "9b360952f666f3be6b4901562ca4c33c84a1188721786e2c48f55cdbdc1ea7bb",
+    "target_classes": [
+      "banana",
+      "chickpea",
+      "cotton",
+      "lentil",
+      "maize",
+      "mango",
+      "rice"
+    ],
+    "features": [
+      "N",
+      "P",
+      "K",
+      "temperature",
+      "humidity",
+      "ph",
+      "rainfall"
+    ],
+    "split_distribution": {
+      "train": 490,
+      "validation": 105,
+      "test": 105,
+      "total": 700
+    }
+  },
+  "validation_model_comparison": {
+    "DummyClassifier": {
+      "accuracy": 0.14285714285714285,
+      "macro_precision": 0.02040816326530612,
+      "macro_recall": 0.14285714285714285,
+      "macro_f1": 0.03571428571428571,
+      "weighted_f1": 0.03571428571428571,
+      "multiclass_log_loss": 1.9459101490553141,
+      "multiclass_brier_score": 0.8571428571428575,
+      "expected_calibration_error_10bin": 5.551115123125783e-17,
+      "confusion_matrix_csv": "/Users/shivamkumar/farmingFinal/FieldWise_main/model/ml_pipeline/reports/phase_3c_2_confusion_matrices/val_DummyClassifier_confusion_matrix.csv",
+      "calibration_csv": "/Users/shivamkumar/farmingFinal/FieldWise_main/model/ml_pipeline/reports/phase_3c_2_calibration/val_DummyClassifier_calibration.csv"
+    },
+    "LogisticRegression": {
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "macro_recall": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "multiclass_log_loss": 0.04800754330626084,
+      "multiclass_brier_score": 0.010502541096677477,
+      "expected_calibration_error_10bin": 0.044340113291337815,
+      "confusion_matrix_csv": "/Users/shivamkumar/farmingFinal/FieldWise_main/model/ml_pipeline/reports/phase_3c_2_confusion_matrices/val_LogisticRegression_confusion_matrix.csv",
+      "calibration_csv": "/Users/shivamkumar/farmingFinal/FieldWise_main/model/ml_pipeline/reports/phase_3c_2_calibration/val_LogisticRegression_calibration.csv"
+    },
+    "RandomForest": {
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "macro_recall": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "multiclass_log_loss": 0.007633395550259586,
+      "multiclass_brier_score": 0.0003571428571428574,
+      "expected_calibration_error_10bin": 0.007523809523809599,
+      "confusion_matrix_csv": "/Users/shivamkumar/farmingFinal/FieldWise_main/model/ml_pipeline/reports/phase_3c_2_confusion_matrices/val_RandomForest_confusion_matrix.csv",
+      "calibration_csv": "/Users/shivamkumar/farmingFinal/FieldWise_main/model/ml_pipeline/reports/phase_3c_2_calibration/val_RandomForest_calibration.csv"
+    },
+    "ExtraTrees": {
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "macro_recall": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "multiclass_log_loss": 0.05719998112892058,
+      "multiclass_brier_score": 0.010951207115973765,
+      "expected_calibration_error_10bin": 0.05336340929504885,
+      "confusion_matrix_csv": "/Users/shivamkumar/farmingFinal/FieldWise_main/model/ml_pipeline/reports/phase_3c_2_confusion_matrices/val_ExtraTrees_confusion_matrix.csv",
+      "calibration_csv": "/Users/shivamkumar/farmingFinal/FieldWise_main/model/ml_pipeline/reports/phase_3c_2_calibration/val_ExtraTrees_calibration.csv"
+    },
+    "GradientBoosting": {
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "macro_recall": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0,
+      "multiclass_log_loss": 4.405303715267246e-08,
+      "multiclass_brier_score": 2.274247230323654e-15,
+      "expected_calibration_error_10bin": 4.4053036218905106e-08,
+      "confusion_matrix_csv": "/Users/shivamkumar/farmingFinal/FieldWise_main/model/ml_pipeline/reports/phase_3c_2_confusion_matrices/val_GradientBoosting_confusion_matrix.csv",
+      "calibration_csv": "/Users/shivamkumar/farmingFinal/FieldWise_main/model/ml_pipeline/reports/phase_3c_2_calibration/val_GradientBoosting_calibration.csv"
+    }
+  },
+  "selected_model_frozen": {
+    "key": "GradientBoosting",
+    "display_name": "Gradient Boosting Classifier",
+    "artifact_path": "/Users/shivamkumar/farmingFinal/FieldWise_main/model/ml_pipeline/models/benchmark/GradientBoosting.joblib",
+    "selection_criteria": "Highest Macro-F1, tie-broken by lowest Log Loss and Brier Score."
+  },
+  "one_time_test_evaluation": {
+    "selected_model_key": "GradientBoosting",
+    "test_rows": 105,
+    "accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "weighted_f1": 1.0,
+    "multiclass_log_loss": 4.596009273114204e-08,
+    "multiclass_brier_score": 2.6997410504798426e-15,
+    "expected_calibration_error_10bin": 4.5960091510366397e-08,
+    "confusion_matrix_csv": "/Users/shivamkumar/farmingFinal/FieldWise_main/model/ml_pipeline/reports/phase_3c_2_confusion_matrices/test_selected_GradientBoosting_confusion_matrix.csv",
+    "calibration_csv": "/Users/shivamkumar/farmingFinal/FieldWise_main/model/ml_pipeline/reports/phase_3c_2_calibration/test_selected_GradientBoosting_calibration.csv"
+  },
+  "scientific_disclaimer": "This experiment reflects benchmark accuracy within a synthetically generated 7-crop subset and does NOT establish real-world agricultural suitability, farm-level accuracy, or production readiness."
+}

@@ -1,0 +1,2026 @@
+{
+  "metadata": {
+    "project": "FieldWise Agricultural Intelligence",
+    "audit_phase": "Phase 3C.1: Crop Recommendation Dataset Audit",
+    "timestamp": "2026-11-19T12:45:00Z",
+    "dataset_name": "kaggle_crop_recommendation_benchmark.csv",
+    "source": "Kaggle (Atharva Ingle)",
+    "source_url": "https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset",
+    "license": "Apache 2.0",
+    "provenance_classification": "Category_C_Augmented_Benchmark",
+    "data_nature": "Synthetically sampled uniform hyper-rectangles within agronomic bounds"
+  },
+  "dataset_dimensions": {
+    "total_rows": 2200,
+    "total_columns": 8,
+    "feature_columns": [
+      "N",
+      "P",
+      "K",
+      "temperature",
+      "humidity",
+      "ph",
+      "rainfall"
+    ],
+    "label_column": "label",
+    "total_classes": 22
+  },
+  "data_integrity": {
+    "missing_values_by_feature": {
+      "N": 0,
+      "P": 0,
+      "K": 0,
+      "temperature": 0,
+      "humidity": 0,
+      "ph": 0,
+      "rainfall": 0,
+      "label": 0
+    },
+    "missing_percentage_by_feature": {
+      "N": 0.0,
+      "P": 0.0,
+      "K": 0.0,
+      "temperature": 0.0,
+      "humidity": 0.0,
+      "ph": 0.0,
+      "rainfall": 0.0,
+      "label": 0.0
+    },
+    "infinite_values_by_feature": {
+      "N": 0,
+      "P": 0,
+      "K": 0,
+      "temperature": 0,
+      "humidity": 0,
+      "ph": 0,
+      "rainfall": 0
+    },
+    "exact_duplicate_rows": 0,
+    "feature_duplicate_rows": 0,
+    "conflicting_labels_count": 0
+  },
+  "feature_summary_statistics": {
+    "N": {
+      "dtype": "int64",
+      "min": 0.0,
+      "max": 140.0,
+      "mean": 50.551818181818184,
+      "median": 37.0,
+      "std": 36.9173338337566,
+      "p25": 21.0,
+      "p75": 84.25,
+      "iqr": 63.25,
+      "skewness": 0.5093737660143558,
+      "kurtosis": -1.0585623483258277
+    },
+    "P": {
+      "dtype": "int64",
+      "min": 5.0,
+      "max": 145.0,
+      "mean": 53.36272727272727,
+      "median": 51.0,
+      "std": 32.98588273858715,
+      "p25": 28.0,
+      "p75": 68.0,
+      "iqr": 40.0,
+      "skewness": 1.0100832494748144,
+      "kurtosis": 0.8555987862061758
+    },
+    "K": {
+      "dtype": "int64",
+      "min": 5.0,
+      "max": 205.0,
+      "mean": 48.14909090909091,
+      "median": 32.0,
+      "std": 50.64793054666013,
+      "p25": 20.0,
+      "p75": 49.0,
+      "iqr": 29.0,
+      "skewness": 2.373547499838119,
+      "kurtosis": 4.436522649134237
+    },
+    "temperature": {
+      "dtype": "float64",
+      "min": 8.825674745,
+      "max": 43.67549305,
+      "mean": 25.616243851779544,
+      "median": 25.5986932,
+      "std": 5.063748599958843,
+      "p25": 22.7693746325,
+      "p75": 28.5616539325,
+      "iqr": 5.792279300000001,
+      "skewness": 0.18480661982240237,
+      "kurtosis": 1.2270293391502678
+    },
+    "humidity": {
+      "dtype": "float64",
+      "min": 14.25803981,
+      "max": 99.98187601,
+      "mean": 71.48177921778637,
+      "median": 80.473145665,
+      "std": 22.263811589761083,
+      "p25": 60.2619528025,
+      "p75": 89.948770755,
+      "iqr": 29.6868179525,
+      "skewness": -1.090963432252511,
+      "kurtosis": 0.29872180495931655
+    },
+    "ph": {
+      "dtype": "float64",
+      "min": 3.504752314,
+      "max": 9.93509073,
+      "mean": 6.469480065256364,
+      "median": 6.42504527,
+      "std": 0.7739376880298733,
+      "p25": 5.97169279925,
+      "p75": 6.923642621250002,
+      "iqr": 0.9519498220000013,
+      "skewness": 0.2837358126439414,
+      "kurtosis": 1.6490951298476855
+    },
+    "rainfall": {
+      "dtype": "float64",
+      "min": 20.21126747,
+      "max": 298.5601175,
+      "mean": 103.46365541576817,
+      "median": 94.86762427,
+      "std": 54.95838852487813,
+      "p25": 64.55168599999999,
+      "p75": 124.2675078,
+      "iqr": 59.715821800000015,
+      "skewness": 0.9650977586362035,
+      "kurtosis": 0.6029744037684268
+    }
+  },
+  "class_balance": {
+    "records_per_class": {
+      "rice": 100,
+      "maize": 100,
+      "jute": 100,
+      "cotton": 100,
+      "coconut": 100,
+      "papaya": 100,
+      "orange": 100,
+      "apple": 100,
+      "muskmelon": 100,
+      "watermelon": 100,
+      "grapes": 100,
+      "mango": 100,
+      "banana": 100,
+      "pomegranate": 100,
+      "lentil": 100,
+      "blackgram": 100,
+      "mungbean": 100,
+      "mothbeans": 100,
+      "pigeonpeas": 100,
+      "kidneybeans": 100,
+      "chickpea": 100,
+      "coffee": 100
+    },
+    "proportions_per_class": {
+      "rice": 0.045454545454545456,
+      "maize": 0.045454545454545456,
+      "jute": 0.045454545454545456,
+      "cotton": 0.045454545454545456,
+      "coconut": 0.045454545454545456,
+      "papaya": 0.045454545454545456,
+      "orange": 0.045454545454545456,
+      "apple": 0.045454545454545456,
+      "muskmelon": 0.045454545454545456,
+      "watermelon": 0.045454545454545456,
+      "grapes": 0.045454545454545456,
+      "mango": 0.045454545454545456,
+      "banana": 0.045454545454545456,
+      "pomegranate": 0.045454545454545456,
+      "lentil": 0.045454545454545456,
+      "blackgram": 0.045454545454545456,
+      "mungbean": 0.045454545454545456,
+      "mothbeans": 0.045454545454545456,
+      "pigeonpeas": 0.045454545454545456,
+      "kidneybeans": 0.045454545454545456,
+      "chickpea": 0.045454545454545456,
+      "coffee": 0.045454545454545456
+    },
+    "is_perfectly_balanced": true
+  },
+  "synthetic_generation_evidence": {
+    "mean_intra_crop_feature_correlation": 0.0754623176094616,
+    "total_pairwise_combinations": 231,
+    "separable_by_1d_threshold_count": 227,
+    "separability_percentage": 98.26839826839827,
+    "overlapping_7d_pairs_count": 4,
+    "overlapping_7d_pairs": [
+      {
+        "crop_1": "blackgram",
+        "crop_2": "maize",
+        "overlapping_dimensions": [
+          "N",
+          "P",
+          "K",
+          "temperature",
+          "humidity",
+          "ph",
+          "rainfall"
+        ]
+      },
+      {
+        "crop_1": "blackgram",
+        "crop_2": "mothbeans",
+        "overlapping_dimensions": [
+          "N",
+          "P",
+          "K",
+          "temperature",
+          "humidity",
+          "ph",
+          "rainfall"
+        ]
+      },
+      {
+        "crop_1": "jute",
+        "crop_2": "rice",
+        "overlapping_dimensions": [
+          "N",
+          "P",
+          "K",
+          "temperature",
+          "humidity",
+          "ph",
+          "rainfall"
+        ]
+      },
+      {
+        "crop_1": "lentil",
+        "crop_2": "mothbeans",
+        "overlapping_dimensions": [
+          "N",
+          "P",
+          "K",
+          "temperature",
+          "humidity",
+          "ph",
+          "rainfall"
+        ]
+      }
+    ],
+    "fixed_window_widths": {
+      "N_window_width": 40,
+      "P_window_width": 25,
+      "K_window_width": 10
+    }
+  },
+  "crop_taxonomy_audit": {
+    "total_canonical_fieldwise_crops": 19,
+    "overlap_count": 7,
+    "overlapping_crops": [
+      "banana",
+      "chickpea",
+      "cotton",
+      "lentil",
+      "maize",
+      "mango",
+      "rice"
+    ],
+    "missing_fieldwise_crops_count": 12,
+    "missing_fieldwise_crops": [
+      "barley",
+      "groundnut",
+      "jowar",
+      "millets",
+      "mustard",
+      "onion",
+      "potato",
+      "soybean",
+      "sugarcane",
+      "sunflower",
+      "tomato",
+      "wheat"
+    ],
+    "unsupported_dataset_crops_count": 15,
+    "unsupported_dataset_crops": [
+      "apple",
+      "blackgram",
+      "coconut",
+      "coffee",
+      "grapes",
+      "jute",
+      "kidneybeans",
+      "mothbeans",
+      "mungbean",
+      "muskmelon",
+      "orange",
+      "papaya",
+      "pigeonpeas",
+      "pomegranate",
+      "watermelon"
+    ]
+  },
+  "per_crop_statistics": {
+    "apple": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 0.0,
+          "max": 40.0,
+          "range": 40.0,
+          "mean": 20.8,
+          "median": 24.0,
+          "std": 11.863704090522265,
+          "ks_unif_pvalue": 0.1312154656416521,
+          "shapiro_norm_pvalue": 9.139673041047637e-05
+        },
+        "P": {
+          "min": 120.0,
+          "max": 145.0,
+          "range": 25.0,
+          "mean": 134.22,
+          "median": 136.5,
+          "std": 8.139664699122527,
+          "ks_unif_pvalue": 0.0012339926382721744,
+          "shapiro_norm_pvalue": 3.0039132665744016e-06
+        },
+        "K": {
+          "min": 195.0,
+          "max": 205.0,
+          "range": 10.0,
+          "mean": 199.89,
+          "median": 200.0,
+          "std": 3.32087064159112,
+          "ks_unif_pvalue": 0.06209234069876268,
+          "shapiro_norm_pvalue": 6.6236818041124464e-06
+        },
+        "temperature": {
+          "min": 21.0365275,
+          "max": 23.99686172,
+          "range": 2.96033422,
+          "mean": 22.6309424132,
+          "median": 22.628290274999998,
+          "std": 0.8274035169796882,
+          "ks_unif_pvalue": 0.022100879456147582,
+          "shapiro_norm_pvalue": 0.0012029234459692809
+        },
+        "humidity": {
+          "min": 90.02575116,
+          "max": 94.92048112,
+          "range": 4.8947299600000065,
+          "mean": 92.33338287560002,
+          "median": 92.41654112,
+          "std": 1.4585509882538163,
+          "ks_unif_pvalue": 0.5613052587017983,
+          "shapiro_norm_pvalue": 0.0005168149683425897
+        },
+        "ph": {
+          "min": 5.514253142,
+          "max": 6.4992268210000015,
+          "range": 0.9849736790000012,
+          "mean": 5.929662931809999,
+          "median": 5.8858183335,
+          "std": 0.26893158295169534,
+          "ks_unif_pvalue": 0.015212525458567328,
+          "shapiro_norm_pvalue": 0.002326045802028799
+        },
+        "rainfall": {
+          "min": 100.1173443,
+          "max": 124.9831618,
+          "range": 24.865817500000006,
+          "mean": 112.65477927500002,
+          "median": 112.97923025,
+          "std": 7.1029853907180645,
+          "ks_unif_pvalue": 0.9803455358841049,
+          "shapiro_norm_pvalue": 0.0012667524843671825
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.07459922257966492,
+      "max_abs_intra_crop_correlation": 0.1807049092333772
+    },
+    "banana": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 80.0,
+          "max": 120.0,
+          "range": 40.0,
+          "mean": 100.23,
+          "median": 100.5,
+          "std": 11.107241245278148,
+          "ks_unif_pvalue": 0.6003501239527769,
+          "shapiro_norm_pvalue": 0.00888538418503491
+        },
+        "P": {
+          "min": 70.0,
+          "max": 95.0,
+          "range": 25.0,
+          "mean": 82.01,
+          "median": 81.0,
+          "std": 7.6903389477521165,
+          "ks_unif_pvalue": 0.5182193645480672,
+          "shapiro_norm_pvalue": 0.0002646380706644135
+        },
+        "K": {
+          "min": 45.0,
+          "max": 55.0,
+          "range": 10.0,
+          "mean": 50.05,
+          "median": 50.0,
+          "std": 3.3825906036526487,
+          "ks_unif_pvalue": 0.06209234069876268,
+          "shapiro_norm_pvalue": 1.1849195084845245e-05
+        },
+        "temperature": {
+          "min": 25.01018457,
+          "max": 29.90888522,
+          "range": 4.8987006499999985,
+          "mean": 27.3767983057,
+          "median": 27.44333292,
+          "std": 1.4283590211848067,
+          "ks_unif_pvalue": 0.854324581976533,
+          "shapiro_norm_pvalue": 0.00033401425249113503
+        },
+        "humidity": {
+          "min": 75.03193255,
+          "max": 84.97849241,
+          "range": 9.946559860000008,
+          "mean": 80.3581225811,
+          "median": 80.22359949000001,
+          "std": 2.805480833537502,
+          "ks_unif_pvalue": 0.7201761970219624,
+          "shapiro_norm_pvalue": 0.0016337005490844154
+        },
+        "ph": {
+          "min": 5.505393832999999,
+          "max": 6.490074429,
+          "range": 0.9846805960000005,
+          "mean": 5.98389318024,
+          "median": 5.9944619555,
+          "std": 0.2706498328196709,
+          "ks_unif_pvalue": 0.5032132719102019,
+          "shapiro_norm_pvalue": 0.005176266152787682
+        },
+        "rainfall": {
+          "min": 90.10978128,
+          "max": 119.84797,
+          "range": 29.738188719999997,
+          "mean": 104.62698040009998,
+          "median": 105.0077496,
+          "std": 9.398149573198246,
+          "ks_unif_pvalue": 0.45599649484352067,
+          "shapiro_norm_pvalue": 8.389512377724247e-05
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.07175344741294878,
+      "max_abs_intra_crop_correlation": 0.21066840211529297
+    },
+    "blackgram": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 20.0,
+          "max": 60.0,
+          "range": 40.0,
+          "mean": 40.02,
+          "median": 41.0,
+          "std": 12.664258144219675,
+          "ks_unif_pvalue": 0.6003501239527769,
+          "shapiro_norm_pvalue": 7.555939846785307e-05
+        },
+        "P": {
+          "min": 55.0,
+          "max": 80.0,
+          "range": 25.0,
+          "mean": 67.47,
+          "median": 67.0,
+          "std": 7.151258983598975,
+          "ks_unif_pvalue": 0.37063202558633024,
+          "shapiro_norm_pvalue": 0.0016517507139187286
+        },
+        "K": {
+          "min": 15.0,
+          "max": 25.0,
+          "range": 10.0,
+          "mean": 19.24,
+          "median": 19.0,
+          "std": 3.1881092208455475,
+          "ks_unif_pvalue": 0.0026300498454614463,
+          "shapiro_norm_pvalue": 3.237019324882883e-05
+        },
+        "temperature": {
+          "min": 25.09737391,
+          "max": 34.9466155,
+          "range": 9.849241589999998,
+          "mean": 29.9733396789,
+          "median": 29.655514865,
+          "std": 2.686357356937957,
+          "ks_unif_pvalue": 0.6845343506865669,
+          "shapiro_norm_pvalue": 0.011999446100939977
+        },
+        "humidity": {
+          "min": 60.06534859,
+          "max": 69.96100028,
+          "range": 9.895651689999994,
+          "mean": 65.1184255887,
+          "median": 65.02672305499999,
+          "std": 2.7983263355658283,
+          "ks_unif_pvalue": 0.7433093109663704,
+          "shapiro_norm_pvalue": 0.0025109282124250645
+        },
+        "ph": {
+          "min": 6.500144962,
+          "max": 7.775306272000001,
+          "range": 1.2751613100000005,
+          "mean": 7.133951629480002,
+          "median": 7.165239853,
+          "std": 0.37253325552504274,
+          "ks_unif_pvalue": 0.8430873722182377,
+          "shapiro_norm_pvalue": 0.0010067826124946313
+        },
+        "rainfall": {
+          "min": 60.41790253,
+          "max": 74.91559514,
+          "range": 14.497692609999994,
+          "mean": 67.88415118319999,
+          "median": 68.293539015,
+          "std": 4.1841856895481575,
+          "ks_unif_pvalue": 0.814319694361433,
+          "shapiro_norm_pvalue": 0.0010566078778656287
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.06958393667390277,
+      "max_abs_intra_crop_correlation": 0.17824794734311875
+    },
+    "chickpea": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 20.0,
+          "max": 60.0,
+          "range": 40.0,
+          "mean": 40.09,
+          "median": 39.0,
+          "std": 12.150649481747172,
+          "ks_unif_pvalue": 0.4410737228347541,
+          "shapiro_norm_pvalue": 0.00019621623718719808
+        },
+        "P": {
+          "min": 55.0,
+          "max": 80.0,
+          "range": 25.0,
+          "mean": 67.79,
+          "median": 68.0,
+          "std": 7.498545313471261,
+          "ks_unif_pvalue": 0.9532159710635721,
+          "shapiro_norm_pvalue": 0.0007146930560420076
+        },
+        "K": {
+          "min": 75.0,
+          "max": 85.0,
+          "range": 10.0,
+          "mean": 79.92,
+          "median": 79.0,
+          "std": 3.261901286060018,
+          "ks_unif_pvalue": 0.10330374901819872,
+          "shapiro_norm_pvalue": 2.0407711669675732e-05
+        },
+        "temperature": {
+          "min": 17.02498456,
+          "max": 20.99502153,
+          "range": 3.970036969999999,
+          "mean": 18.8728467519,
+          "median": 18.8782909,
+          "std": 1.1698377914373248,
+          "ks_unif_pvalue": 0.26140476923122946,
+          "shapiro_norm_pvalue": 0.0013577530061825377
+        },
+        "humidity": {
+          "min": 14.25803981,
+          "max": 19.96978871,
+          "range": 5.7117489,
+          "mean": 16.8604394237,
+          "median": 16.65863387,
+          "std": 1.7119785494336006,
+          "ks_unif_pvalue": 0.3804675822198351,
+          "shapiro_norm_pvalue": 0.0005148606339196588
+        },
+        "ph": {
+          "min": 5.988992796000002,
+          "max": 8.868741443,
+          "range": 2.8797486469999978,
+          "mean": 7.33695662374,
+          "median": 7.3565365365,
+          "std": 0.801126797598748,
+          "ks_unif_pvalue": 0.17089992440630142,
+          "shapiro_norm_pvalue": 0.00502063385433229
+        },
+        "rainfall": {
+          "min": 65.11365631,
+          "max": 94.78189594,
+          "range": 29.668239630000002,
+          "mean": 80.0589772605,
+          "median": 79.69228207,
+          "std": 7.944349989369927,
+          "ks_unif_pvalue": 0.707944651580163,
+          "shapiro_norm_pvalue": 0.03237392247763303
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.1100100838724281,
+      "max_abs_intra_crop_correlation": 0.2800499148949111
+    },
+    "coconut": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 0.0,
+          "max": 40.0,
+          "range": 40.0,
+          "mean": 21.98,
+          "median": 24.0,
+          "std": 11.761931401901233,
+          "ks_unif_pvalue": 0.10330374901820882,
+          "shapiro_norm_pvalue": 0.00060847258326923
+        },
+        "P": {
+          "min": 5.0,
+          "max": 30.0,
+          "range": 25.0,
+          "mean": 16.93,
+          "median": 15.5,
+          "std": 8.357244483293243,
+          "ks_unif_pvalue": 0.25269275700638894,
+          "shapiro_norm_pvalue": 1.2116394220908236e-05
+        },
+        "K": {
+          "min": 25.0,
+          "max": 35.0,
+          "range": 10.0,
+          "mean": 30.59,
+          "median": 31.0,
+          "std": 2.9986360535780565,
+          "ks_unif_pvalue": 0.00537640659637717,
+          "shapiro_norm_pvalue": 0.00028871495828078635
+        },
+        "temperature": {
+          "min": 25.00872392,
+          "max": 29.8690834,
+          "range": 4.86035948,
+          "mean": 27.409892172299998,
+          "median": 27.385317335,
+          "std": 1.385734451504842,
+          "ks_unif_pvalue": 0.9919721180422132,
+          "shapiro_norm_pvalue": 0.002832553264540327
+        },
+        "humidity": {
+          "min": 90.01734526,
+          "max": 99.98187601,
+          "range": 9.964530749999994,
+          "mean": 94.84427180609998,
+          "median": 94.96058145,
+          "std": 2.686329027465909,
+          "ks_unif_pvalue": 0.17361571844076928,
+          "shapiro_norm_pvalue": 0.009861655146069218
+        },
+        "ph": {
+          "min": 5.50158009,
+          "max": 6.470465614,
+          "range": 0.968885524,
+          "mean": 5.97656212619,
+          "median": 5.990709121,
+          "std": 0.2876324408982468,
+          "ks_unif_pvalue": 0.9409052544298534,
+          "shapiro_norm_pvalue": 0.0006350217323810956
+        },
+        "rainfall": {
+          "min": 131.09000759999998,
+          "max": 225.6323656,
+          "range": 94.54235800000004,
+          "mean": 175.68664580399997,
+          "median": 171.9999225,
+          "std": 29.472332604186622,
+          "ks_unif_pvalue": 0.2673205942615309,
+          "shapiro_norm_pvalue": 9.481693320633691e-05
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.07690235579206288,
+      "max_abs_intra_crop_correlation": 0.20558099057639245
+    },
+    "coffee": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 80.0,
+          "max": 120.0,
+          "range": 40.0,
+          "mean": 101.2,
+          "median": 103.0,
+          "std": 12.345203133364814,
+          "ks_unif_pvalue": 0.3077584315548981,
+          "shapiro_norm_pvalue": 0.00013823513485222062
+        },
+        "P": {
+          "min": 15.0,
+          "max": 40.0,
+          "range": 25.0,
+          "mean": 28.74,
+          "median": 29.0,
+          "std": 7.2761128483427315,
+          "ks_unif_pvalue": 0.16496264039322728,
+          "shapiro_norm_pvalue": 0.0038901760513060674
+        },
+        "K": {
+          "min": 25.0,
+          "max": 35.0,
+          "range": 10.0,
+          "mean": 29.94,
+          "median": 30.0,
+          "std": 3.2468166227580797,
+          "ks_unif_pvalue": 0.16496264039322728,
+          "shapiro_norm_pvalue": 4.065256571700423e-05
+        },
+        "temperature": {
+          "min": 23.05951896,
+          "max": 27.92374437,
+          "range": 4.864225410000003,
+          "mean": 25.5404768193,
+          "median": 25.656642925,
+          "std": 1.5026350758507527,
+          "ks_unif_pvalue": 0.43693329530448144,
+          "shapiro_norm_pvalue": 5.9504207180536675e-05
+        },
+        "humidity": {
+          "min": 50.04557009,
+          "max": 69.94807345,
+          "range": 19.902503359999997,
+          "mean": 58.86984630029999,
+          "median": 57.648082825,
+          "std": 5.838565891159534,
+          "ks_unif_pvalue": 0.0502559272034635,
+          "shapiro_norm_pvalue": 0.00013152357066303577
+        },
+        "ph": {
+          "min": 6.020947179,
+          "max": 7.493191968,
+          "range": 1.4722447889999994,
+          "mean": 6.790308274570001,
+          "median": 6.798626238000001,
+          "std": 0.4171324702056589,
+          "ks_unif_pvalue": 0.11378380592878279,
+          "shapiro_norm_pvalue": 0.004434159256865696
+        },
+        "rainfall": {
+          "min": 115.1564012,
+          "max": 199.4735636,
+          "range": 84.3171624,
+          "mean": 158.066294882,
+          "median": 157.77096304999998,
+          "std": 25.695085695484735,
+          "ks_unif_pvalue": 0.6770120846647234,
+          "shapiro_norm_pvalue": 0.0001273027684779076
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.08476244455750456,
+      "max_abs_intra_crop_correlation": 0.289790663654955
+    },
+    "cotton": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 100.0,
+          "max": 140.0,
+          "range": 40.0,
+          "mean": 117.77,
+          "median": 117.0,
+          "std": 11.628817392125217,
+          "ks_unif_pvalue": 0.2052477902218831,
+          "shapiro_norm_pvalue": 0.001014250887346293
+        },
+        "P": {
+          "min": 35.0,
+          "max": 60.0,
+          "range": 25.0,
+          "mean": 46.24,
+          "median": 46.0,
+          "std": 7.348634175302527,
+          "ks_unif_pvalue": 0.16496264039322728,
+          "shapiro_norm_pvalue": 0.0005945289151218988
+        },
+        "K": {
+          "min": 15.0,
+          "max": 25.0,
+          "range": 10.0,
+          "mean": 19.56,
+          "median": 19.0,
+          "std": 3.169679587413953,
+          "ks_unif_pvalue": 0.01983924212565369,
+          "shapiro_norm_pvalue": 6.520239859055763e-05
+        },
+        "temperature": {
+          "min": 22.00085141,
+          "max": 25.99237426,
+          "range": 3.991522849999999,
+          "mean": 23.988957895200006,
+          "median": 23.964997495,
+          "std": 1.1356814799123323,
+          "ks_unif_pvalue": 0.9884822090599683,
+          "shapiro_norm_pvalue": 0.003701458487020795
+        },
+        "humidity": {
+          "min": 75.00539324,
+          "max": 84.87668973,
+          "range": 9.871296489999992,
+          "mean": 79.8434742538,
+          "median": 80.01089273,
+          "std": 3.050955248540687,
+          "ks_unif_pvalue": 0.6126700442490299,
+          "shapiro_norm_pvalue": 6.644631366923133e-05
+        },
+        "ph": {
+          "min": 5.801047545,
+          "max": 7.994679507000001,
+          "range": 2.1936319620000004,
+          "mean": 6.912675495780002,
+          "median": 6.8409568125,
+          "std": 0.6271695156348295,
+          "ks_unif_pvalue": 0.8601975929948773,
+          "shapiro_norm_pvalue": 0.0011926440190291557
+        },
+        "rainfall": {
+          "min": 60.65381719,
+          "max": 99.93100821,
+          "range": 39.277191020000004,
+          "mean": 80.3980431193,
+          "median": 80.237095455,
+          "std": 11.231811519202921,
+          "ks_unif_pvalue": 0.7913540953027695,
+          "shapiro_norm_pvalue": 0.0014812475952498461
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.06245622793544427,
+      "max_abs_intra_crop_correlation": 0.26688768441459426
+    },
+    "grapes": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 0.0,
+          "max": 40.0,
+          "range": 40.0,
+          "mean": 23.18,
+          "median": 24.0,
+          "std": 12.466828713903876,
+          "ks_unif_pvalue": 0.005376406596379835,
+          "shapiro_norm_pvalue": 1.671403151705631e-05
+        },
+        "P": {
+          "min": 120.0,
+          "max": 145.0,
+          "range": 25.0,
+          "mean": 132.53,
+          "median": 133.0,
+          "std": 7.619028544348417,
+          "ks_unif_pvalue": 0.6846706791645845,
+          "shapiro_norm_pvalue": 0.0003474722879768902
+        },
+        "K": {
+          "min": 195.0,
+          "max": 205.0,
+          "range": 10.0,
+          "mean": 200.11,
+          "median": 201.0,
+          "std": 3.265661564606084,
+          "ks_unif_pvalue": 0.10330374901819872,
+          "shapiro_norm_pvalue": 1.5924817595098806e-05
+        },
+        "temperature": {
+          "min": 8.825674745,
+          "max": 41.94865736,
+          "range": 33.122982615,
+          "mean": 23.849575120049998,
+          "median": 23.018527669999997,
+          "std": 9.73864872199479,
+          "ks_unif_pvalue": 0.289152447670207,
+          "shapiro_norm_pvalue": 0.0008176541169901643
+        },
+        "humidity": {
+          "min": 80.01639435,
+          "max": 83.98351748,
+          "range": 3.9671231300000045,
+          "mean": 81.87522752119999,
+          "median": 81.72464731,
+          "std": 1.177111249739479,
+          "ks_unif_pvalue": 0.17906514373614602,
+          "shapiro_norm_pvalue": 0.0002151846282839267
+        },
+        "ph": {
+          "min": 5.5109248489999985,
+          "max": 6.499604931,
+          "range": 0.9886800820000019,
+          "mean": 6.025936681099999,
+          "median": 6.0017848975,
+          "std": 0.2982654359447702,
+          "ks_unif_pvalue": 0.6495355315657384,
+          "shapiro_norm_pvalue": 0.00026882163957424565
+        },
+        "rainfall": {
+          "min": 65.01095312,
+          "max": 74.91506217,
+          "range": 9.904109050000002,
+          "mean": 69.611828886,
+          "median": 69.53618599,
+          "std": 2.9517589946366787,
+          "ks_unif_pvalue": 0.23762096248518616,
+          "shapiro_norm_pvalue": 0.00019504339325952927
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.07659960249010665,
+      "max_abs_intra_crop_correlation": 0.16262168990283501
+    },
+    "jute": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 60.0,
+          "max": 100.0,
+          "range": 40.0,
+          "mean": 78.4,
+          "median": 78.0,
+          "std": 10.968273806895517,
+          "ks_unif_pvalue": 0.03582511969274871,
+          "shapiro_norm_pvalue": 0.010996607970381926
+        },
+        "P": {
+          "min": 35.0,
+          "max": 60.0,
+          "range": 25.0,
+          "mean": 46.86,
+          "median": 46.0,
+          "std": 7.195705790134962,
+          "ks_unif_pvalue": 0.25269275700638894,
+          "shapiro_norm_pvalue": 0.00018523956253261735
+        },
+        "K": {
+          "min": 35.0,
+          "max": 45.0,
+          "range": 10.0,
+          "mean": 39.99,
+          "median": 40.0,
+          "std": 3.313562579716425,
+          "ks_unif_pvalue": 0.06209234069876268,
+          "shapiro_norm_pvalue": 1.7631292140725732e-05
+        },
+        "temperature": {
+          "min": 23.09433785,
+          "max": 26.98582182,
+          "range": 3.891483970000003,
+          "mean": 24.958375826499996,
+          "median": 24.97110646,
+          "std": 1.185138311343944,
+          "ks_unif_pvalue": 0.6724810615015482,
+          "shapiro_norm_pvalue": 0.0005089907256013728
+        },
+        "humidity": {
+          "min": 70.88259632,
+          "max": 89.89106506,
+          "range": 19.008468739999998,
+          "mean": 79.6398642063,
+          "median": 79.46920523,
+          "std": 5.507797617052861,
+          "ks_unif_pvalue": 0.17937709393740353,
+          "shapiro_norm_pvalue": 0.0018065612835259416
+        },
+        "ph": {
+          "min": 6.002524871,
+          "max": 7.4880144039999985,
+          "range": 1.4854895329999982,
+          "mean": 6.7327775681699995,
+          "median": 6.711499514,
+          "std": 0.4463492309437702,
+          "ks_unif_pvalue": 0.7782299408237524,
+          "shapiro_norm_pvalue": 0.00020381939991776781
+        },
+        "rainfall": {
+          "min": 150.2355238,
+          "max": 199.83629130000003,
+          "range": 49.60076750000002,
+          "mean": 174.792797536,
+          "median": 175.59081384999996,
+          "std": 15.078367148443295,
+          "ks_unif_pvalue": 0.7316096816529836,
+          "shapiro_norm_pvalue": 0.00037051209223120627
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.07042682117548421,
+      "max_abs_intra_crop_correlation": 0.14960397843578233
+    },
+    "kidneybeans": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 0.0,
+          "max": 40.0,
+          "range": 40.0,
+          "mean": 20.75,
+          "median": 22.0,
+          "std": 10.83426569414435,
+          "ks_unif_pvalue": 0.5182193645480664,
+          "shapiro_norm_pvalue": 0.012375449591061332
+        },
+        "P": {
+          "min": 55.0,
+          "max": 80.0,
+          "range": 25.0,
+          "mean": 67.54,
+          "median": 67.0,
+          "std": 7.57110402528034,
+          "ks_unif_pvalue": 0.5182193645480672,
+          "shapiro_norm_pvalue": 0.0005744225799343395
+        },
+        "K": {
+          "min": 15.0,
+          "max": 25.0,
+          "range": 10.0,
+          "mean": 20.05,
+          "median": 20.0,
+          "std": 3.10221491417622,
+          "ks_unif_pvalue": 0.16496264039322728,
+          "shapiro_norm_pvalue": 0.00021012351995851862
+        },
+        "temperature": {
+          "min": 15.33042636,
+          "max": 24.92360104,
+          "range": 9.59317468,
+          "mean": 20.1150846851,
+          "median": 19.924036815,
+          "std": 2.599572540490128,
+          "ks_unif_pvalue": 0.7142553504007394,
+          "shapiro_norm_pvalue": 0.037612284247955916
+        },
+        "humidity": {
+          "min": 18.09224048,
+          "max": 24.96969858,
+          "range": 6.877458099999998,
+          "mean": 21.605356729499995,
+          "median": 21.348735025,
+          "std": 2.1673233613639016,
+          "ks_unif_pvalue": 0.6177107036975517,
+          "shapiro_norm_pvalue": 0.00017631987920248927
+        },
+        "ph": {
+          "min": 5.502999119,
+          "max": 5.99812453,
+          "range": 0.49512541100000007,
+          "mean": 5.749410585869999,
+          "median": 5.7452827165,
+          "std": 0.14521966486306637,
+          "ks_unif_pvalue": 0.9966246168776804,
+          "shapiro_norm_pvalue": 0.0009517678983436377
+        },
+        "rainfall": {
+          "min": 60.27552528,
+          "max": 149.7441028,
+          "range": 89.46857752000001,
+          "mean": 105.91977754210002,
+          "median": 107.39939195,
+          "std": 26.111384374071736,
+          "ks_unif_pvalue": 0.724830897730971,
+          "shapiro_norm_pvalue": 0.0010255078236459708
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.06460995973308141,
+      "max_abs_intra_crop_correlation": 0.2810312760720481
+    },
+    "lentil": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 0.0,
+          "max": 40.0,
+          "range": 40.0,
+          "mean": 18.77,
+          "median": 16.5,
+          "std": 12.196915490186338,
+          "ks_unif_pvalue": 0.10330374901819872,
+          "shapiro_norm_pvalue": 0.0001834611896732395
+        },
+        "P": {
+          "min": 55.0,
+          "max": 80.0,
+          "range": 25.0,
+          "mean": 68.36,
+          "median": 68.0,
+          "std": 7.335426698460345,
+          "ks_unif_pvalue": 0.37063202558633024,
+          "shapiro_norm_pvalue": 0.0005664904574254489
+        },
+        "K": {
+          "min": 15.0,
+          "max": 25.0,
+          "range": 10.0,
+          "mean": 19.41,
+          "median": 19.0,
+          "std": 2.9681644159311653,
+          "ks_unif_pvalue": 0.03582511969274871,
+          "shapiro_norm_pvalue": 0.000332465758366069
+        },
+        "temperature": {
+          "min": 18.06486101,
+          "max": 29.94413861,
+          "range": 11.879277599999998,
+          "mean": 24.509052402600002,
+          "median": 24.9468355,
+          "std": 3.3209846940816767,
+          "ks_unif_pvalue": 0.092425254325881,
+          "shapiro_norm_pvalue": 0.0041888169063395665
+        },
+        "humidity": {
+          "min": 60.09116626,
+          "max": 69.92375891,
+          "range": 9.832592650000002,
+          "mean": 64.80478467849998,
+          "median": 64.09462636,
+          "std": 2.93546107081744,
+          "ks_unif_pvalue": 0.24223880145656862,
+          "shapiro_norm_pvalue": 0.00034547964469361863
+        },
+        "ph": {
+          "min": 5.91645379,
+          "max": 7.841496029,
+          "range": 1.9250422389999997,
+          "mean": 6.9279315716099985,
+          "median": 6.9541777625000005,
+          "std": 0.5492655929922283,
+          "ks_unif_pvalue": 0.828626570337531,
+          "shapiro_norm_pvalue": 0.0035188725256334132
+        },
+        "rainfall": {
+          "min": 35.03484812,
+          "max": 54.93937710000001,
+          "range": 19.90452898000001,
+          "mean": 45.680454204,
+          "median": 46.553254515,
+          "std": 5.6329721745858174,
+          "ks_unif_pvalue": 0.135343691799774,
+          "shapiro_norm_pvalue": 0.0007697640843006399
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.08553539143013808,
+      "max_abs_intra_crop_correlation": 0.20714340473782414
+    },
+    "maize": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 60.0,
+          "max": 100.0,
+          "range": 40.0,
+          "mean": 77.76,
+          "median": 76.0,
+          "std": 11.94948965564233,
+          "ks_unif_pvalue": 0.04740628815218062,
+          "shapiro_norm_pvalue": 0.0006880041241355979
+        },
+        "P": {
+          "min": 35.0,
+          "max": 60.0,
+          "range": 25.0,
+          "mean": 48.44,
+          "median": 48.5,
+          "std": 8.010498162291832,
+          "ks_unif_pvalue": 0.16496264039322728,
+          "shapiro_norm_pvalue": 9.899124413901754e-05
+        },
+        "K": {
+          "min": 15.0,
+          "max": 25.0,
+          "range": 10.0,
+          "mean": 19.79,
+          "median": 20.0,
+          "std": 2.9415003386748473,
+          "ks_unif_pvalue": 0.3706320255863348,
+          "shapiro_norm_pvalue": 0.0005680133372682741
+        },
+        "temperature": {
+          "min": 18.04185513,
+          "max": 26.54986394,
+          "range": 8.508008810000003,
+          "mean": 22.389203910199996,
+          "median": 22.84445626,
+          "std": 2.6793596607331778,
+          "ks_unif_pvalue": 0.23820737656239854,
+          "shapiro_norm_pvalue": 1.0074871465427304e-05
+        },
+        "humidity": {
+          "min": 55.28220433,
+          "max": 74.82913698,
+          "range": 19.546932650000002,
+          "mean": 65.0922494467,
+          "median": 65.30384518,
+          "std": 5.448698597665185,
+          "ks_unif_pvalue": 0.6667543061086241,
+          "shapiro_norm_pvalue": 0.00437360620542673
+        },
+        "ph": {
+          "min": 5.513697923,
+          "max": 6.995843776,
+          "range": 1.4821458530000005,
+          "mean": 6.245189722399999,
+          "median": 6.259180943,
+          "std": 0.41268128727999803,
+          "ks_unif_pvalue": 0.6995676670485802,
+          "shapiro_norm_pvalue": 0.0013616090553148605
+        },
+        "rainfall": {
+          "min": 60.65171481,
+          "max": 109.7515385,
+          "range": 49.099823689999994,
+          "mean": 84.76698766300002,
+          "median": 83.471553265,
+          "std": 15.5473387178459,
+          "ks_unif_pvalue": 0.6191003238172339,
+          "shapiro_norm_pvalue": 3.9416755280225586e-05
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.077917719653352,
+      "max_abs_intra_crop_correlation": 0.2331140661410972
+    },
+    "mango": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 0.0,
+          "max": 40.0,
+          "range": 40.0,
+          "mean": 20.07,
+          "median": 21.0,
+          "std": 12.329036925695029,
+          "ks_unif_pvalue": 0.8428847956274115,
+          "shapiro_norm_pvalue": 0.00044886307467479795
+        },
+        "P": {
+          "min": 15.0,
+          "max": 40.0,
+          "range": 25.0,
+          "mean": 27.18,
+          "median": 27.5,
+          "std": 7.6638730087958455,
+          "ks_unif_pvalue": 0.3706320255863348,
+          "shapiro_norm_pvalue": 2.7431492117855227e-05
+        },
+        "K": {
+          "min": 25.0,
+          "max": 35.0,
+          "range": 10.0,
+          "mean": 29.92,
+          "median": 30.0,
+          "std": 3.0966909677097183,
+          "ks_unif_pvalue": 0.16496264039322728,
+          "shapiro_norm_pvalue": 8.142233965436488e-05
+        },
+        "temperature": {
+          "min": 27.00315545,
+          "max": 35.99009679,
+          "range": 8.986941340000001,
+          "mean": 31.2087701513,
+          "median": 31.300223404999997,
+          "std": 2.6538577400873624,
+          "ks_unif_pvalue": 0.3270555080652877,
+          "shapiro_norm_pvalue": 0.0010026489727671607
+        },
+        "humidity": {
+          "min": 45.02236377,
+          "max": 54.9640534,
+          "range": 9.941689629999999,
+          "mean": 50.1565726953,
+          "median": 50.281614645000005,
+          "std": 2.7562849325094296,
+          "ks_unif_pvalue": 0.5233459277644862,
+          "shapiro_norm_pvalue": 0.007898190507014256
+        },
+        "ph": {
+          "min": 4.507523551,
+          "max": 6.9674177660000005,
+          "range": 2.4598942150000003,
+          "mean": 5.766372799659999,
+          "median": 5.7433847105,
+          "std": 0.703654566120494,
+          "ks_unif_pvalue": 0.9591544797544644,
+          "shapiro_norm_pvalue": 0.0026179384082403944
+        },
+        "rainfall": {
+          "min": 89.29147581,
+          "max": 100.8124659,
+          "range": 11.520990090000012,
+          "mean": 94.70451504479999,
+          "median": 94.905972905,
+          "std": 3.338577329025856,
+          "ks_unif_pvalue": 0.3371840916754305,
+          "shapiro_norm_pvalue": 0.00037776978466943524
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.05727852656443959,
+      "max_abs_intra_crop_correlation": 0.17620290798545318
+    },
+    "mothbeans": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 0.0,
+          "max": 40.0,
+          "range": 40.0,
+          "mean": 21.44,
+          "median": 22.0,
+          "std": 11.343417973130114,
+          "ks_unif_pvalue": 0.1649626403932185,
+          "shapiro_norm_pvalue": 0.002326518475387905
+        },
+        "P": {
+          "min": 35.0,
+          "max": 60.0,
+          "range": 25.0,
+          "mean": 48.01,
+          "median": 48.5,
+          "std": 7.547151446042072,
+          "ks_unif_pvalue": 0.3706320255863297,
+          "shapiro_norm_pvalue": 0.000229586292299653
+        },
+        "K": {
+          "min": 15.0,
+          "max": 25.0,
+          "range": 10.0,
+          "mean": 20.23,
+          "median": 20.0,
+          "std": 3.047950130825634,
+          "ks_unif_pvalue": 0.25269275700639626,
+          "shapiro_norm_pvalue": 0.00038423914404931277
+        },
+        "temperature": {
+          "min": 24.01825377,
+          "max": 31.99928579,
+          "range": 7.981032019999997,
+          "mean": 28.194920484199994,
+          "median": 28.370863175,
+          "std": 2.20966539672381,
+          "ks_unif_pvalue": 0.6663765446487817,
+          "shapiro_norm_pvalue": 0.003798911182882888
+        },
+        "humidity": {
+          "min": 40.00933429,
+          "max": 64.95585424,
+          "range": 24.946519949999995,
+          "mean": 53.16041802789999,
+          "median": 53.66819039,
+          "std": 6.994600415359221,
+          "ks_unif_pvalue": 0.7574663421690582,
+          "shapiro_norm_pvalue": 0.0010403534072358951
+        },
+        "ph": {
+          "min": 3.504752314,
+          "max": 9.93509073,
+          "range": 6.430338416000001,
+          "mean": 6.83117408269,
+          "median": 7.2191361315,
+          "std": 1.8621628667627972,
+          "ks_unif_pvalue": 0.388901523449954,
+          "shapiro_norm_pvalue": 0.0003536229552037183
+        },
+        "rainfall": {
+          "min": 30.92014047,
+          "max": 74.44330654,
+          "range": 43.523166069999995,
+          "mean": 51.198487045700006,
+          "median": 51.182737945,
+          "std": 13.750692670967247,
+          "ks_unif_pvalue": 0.13063121663373467,
+          "shapiro_norm_pvalue": 2.4443816284164075e-05
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.07343338022898924,
+      "max_abs_intra_crop_correlation": 0.20292706934712407
+    },
+    "mungbean": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 0.0,
+          "max": 40.0,
+          "range": 40.0,
+          "mean": 20.99,
+          "median": 22.0,
+          "std": 11.510640663527312,
+          "ks_unif_pvalue": 0.2052477902218831,
+          "shapiro_norm_pvalue": 0.0004140874821136674
+        },
+        "P": {
+          "min": 35.0,
+          "max": 60.0,
+          "range": 25.0,
+          "mean": 47.28,
+          "median": 47.0,
+          "std": 7.870261120255801,
+          "ks_unif_pvalue": 0.5182193645480672,
+          "shapiro_norm_pvalue": 0.00011042495923436475
+        },
+        "K": {
+          "min": 15.0,
+          "max": 25.0,
+          "range": 10.0,
+          "mean": 19.87,
+          "median": 20.0,
+          "std": 3.148368184031566,
+          "ks_unif_pvalue": 0.06209234069876268,
+          "shapiro_norm_pvalue": 0.00015732678528666968
+        },
+        "temperature": {
+          "min": 27.01470397,
+          "max": 29.914544300000006,
+          "range": 2.899840330000007,
+          "mean": 28.5257747353,
+          "median": 28.441673455,
+          "std": 0.8415457499666632,
+          "ks_unif_pvalue": 0.6869748299152005,
+          "shapiro_norm_pvalue": 0.003028952042643254
+        },
+        "humidity": {
+          "min": 80.03499648,
+          "max": 89.99615558,
+          "range": 9.961159100000003,
+          "mean": 85.49997454300001,
+          "median": 85.953766925,
+          "std": 2.8513562351210218,
+          "ks_unif_pvalue": 0.16015507610901036,
+          "shapiro_norm_pvalue": 0.002108543507524666
+        },
+        "ph": {
+          "min": 6.218923893,
+          "max": 7.199495367999999,
+          "range": 0.9805714749999987,
+          "mean": 6.72395694037,
+          "median": 6.703890484499999,
+          "std": 0.2865744216638046,
+          "ks_unif_pvalue": 0.9606437921363151,
+          "shapiro_norm_pvalue": 0.0021143725874343405
+        },
+        "rainfall": {
+          "min": 36.12042927,
+          "max": 59.87232071,
+          "range": 23.751891439999994,
+          "mean": 48.403600902899996,
+          "median": 49.028170610000004,
+          "std": 7.11721416434977,
+          "ks_unif_pvalue": 0.8008904223078503,
+          "shapiro_norm_pvalue": 0.00037690197755487913
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.07757766059537682,
+      "max_abs_intra_crop_correlation": 0.22384713082037208
+    },
+    "muskmelon": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 80.0,
+          "max": 120.0,
+          "range": 40.0,
+          "mean": 100.32,
+          "median": 100.0,
+          "std": 12.17621460143513,
+          "ks_unif_pvalue": 0.8428847956274115,
+          "shapiro_norm_pvalue": 0.00037226082574193833
+        },
+        "P": {
+          "min": 5.0,
+          "max": 30.0,
+          "range": 25.0,
+          "mean": 17.72,
+          "median": 18.0,
+          "std": 7.187362646908936,
+          "ks_unif_pvalue": 0.5182193645480664,
+          "shapiro_norm_pvalue": 0.0011796546316255416
+        },
+        "K": {
+          "min": 45.0,
+          "max": 55.0,
+          "range": 10.0,
+          "mean": 50.08,
+          "median": 50.0,
+          "std": 3.2182560055364955,
+          "ks_unif_pvalue": 0.06209234069876268,
+          "shapiro_norm_pvalue": 3.459812523201128e-05
+        },
+        "temperature": {
+          "min": 27.02415146,
+          "max": 29.94349168,
+          "range": 2.9193402200000023,
+          "mean": 28.663065755999995,
+          "median": 28.85177528,
+          "std": 0.8612952828347413,
+          "ks_unif_pvalue": 0.04592478389401755,
+          "shapiro_norm_pvalue": 0.00044441802166061614
+        },
+        "humidity": {
+          "min": 90.01506395,
+          "max": 94.96218673,
+          "range": 4.947122780000001,
+          "mean": 92.34280196090002,
+          "median": 92.11111584,
+          "std": 1.5051167915529051,
+          "ks_unif_pvalue": 0.2974525337945194,
+          "shapiro_norm_pvalue": 8.582968382427304e-05
+        },
+        "ph": {
+          "min": 6.002927293,
+          "max": 6.781050372999999,
+          "range": 0.7781230799999994,
+          "mean": 6.358805451789998,
+          "median": 6.3530331845,
+          "std": 0.2315230186978067,
+          "ks_unif_pvalue": 0.13357486041085975,
+          "shapiro_norm_pvalue": 0.0001457621577578907
+        },
+        "rainfall": {
+          "min": 20.21126747,
+          "max": 29.86681385,
+          "range": 9.65554638,
+          "mean": 24.689952066,
+          "median": 24.721512304999997,
+          "std": 2.773999240744889,
+          "ks_unif_pvalue": 0.6026057950166093,
+          "shapiro_norm_pvalue": 0.0007507705870838448
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.08163636991719392,
+      "max_abs_intra_crop_correlation": 0.2176710741227246
+    },
+    "orange": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 0.0,
+          "max": 40.0,
+          "range": 40.0,
+          "mean": 19.58,
+          "median": 19.0,
+          "std": 11.941930202848154,
+          "ks_unif_pvalue": 0.6846706791645856,
+          "shapiro_norm_pvalue": 0.0010541267182446305
+        },
+        "P": {
+          "min": 5.0,
+          "max": 30.0,
+          "range": 25.0,
+          "mean": 16.55,
+          "median": 16.0,
+          "std": 7.691494712283881,
+          "ks_unif_pvalue": 0.16496264039322728,
+          "shapiro_norm_pvalue": 0.00016535861230042051
+        },
+        "K": {
+          "min": 5.0,
+          "max": 15.0,
+          "range": 10.0,
+          "mean": 10.01,
+          "median": 10.0,
+          "std": 3.0566866593312003,
+          "ks_unif_pvalue": 0.37063202558633024,
+          "shapiro_norm_pvalue": 0.0005835584760400115
+        },
+        "temperature": {
+          "min": 10.01081312,
+          "max": 34.90665289,
+          "range": 24.895839769999995,
+          "mean": 22.7657254967,
+          "median": 22.901055265,
+          "std": 7.342534865875135,
+          "ks_unif_pvalue": 0.9197290056627645,
+          "shapiro_norm_pvalue": 0.0018304395471657497
+        },
+        "humidity": {
+          "min": 90.00621688,
+          "max": 94.96419851,
+          "range": 4.957981630000006,
+          "mean": 92.17020876340001,
+          "median": 91.963246365,
+          "std": 1.430342527132013,
+          "ks_unif_pvalue": 0.009205455002007423,
+          "shapiro_norm_pvalue": 0.0003943689989669395
+        },
+        "ph": {
+          "min": 6.010391864,
+          "max": 7.995848977,
+          "range": 1.9854571129999998,
+          "mean": 7.01695745276,
+          "median": 7.022614352000001,
+          "std": 0.576320979011226,
+          "ks_unif_pvalue": 0.9266199517265736,
+          "shapiro_norm_pvalue": 0.0009875526203305205
+        },
+        "rainfall": {
+          "min": 100.1737964,
+          "max": 119.6946577,
+          "range": 19.520861299999993,
+          "mean": 110.47496871999999,
+          "median": 110.68407250000001,
+          "std": 5.71712523046041,
+          "ks_unif_pvalue": 0.5594413708235357,
+          "shapiro_norm_pvalue": 0.001475791323701033
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.08571602031873506,
+      "max_abs_intra_crop_correlation": 0.18392664162806074
+    },
+    "papaya": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 31.0,
+          "max": 70.0,
+          "range": 39.0,
+          "mean": 49.88,
+          "median": 49.0,
+          "std": 12.219606699022185,
+          "ks_unif_pvalue": 0.5019173957496204,
+          "shapiro_norm_pvalue": 0.00016210166206365997
+        },
+        "P": {
+          "min": 46.0,
+          "max": 70.0,
+          "range": 24.0,
+          "mean": 59.05,
+          "median": 60.0,
+          "std": 7.057305119913376,
+          "ks_unif_pvalue": 0.1120041325449157,
+          "shapiro_norm_pvalue": 0.00030954007624288686
+        },
+        "K": {
+          "min": 45.0,
+          "max": 55.0,
+          "range": 10.0,
+          "mean": 50.04,
+          "median": 50.0,
+          "std": 3.097473718103744,
+          "ks_unif_pvalue": 0.10330374901819872,
+          "shapiro_norm_pvalue": 8.063586342828706e-05
+        },
+        "temperature": {
+          "min": 23.012401800000006,
+          "max": 43.67549305,
+          "range": 20.663091249999994,
+          "mean": 33.7238587388,
+          "median": 33.26287046,
+          "std": 6.263022161747567,
+          "ks_unif_pvalue": 0.7657120849235179,
+          "shapiro_norm_pvalue": 0.0005918340081031234
+        },
+        "humidity": {
+          "min": 90.03863107,
+          "max": 94.94482086,
+          "range": 4.906189789999999,
+          "mean": 92.40338768259998,
+          "median": 92.681085965,
+          "std": 1.4204458059328464,
+          "ks_unif_pvalue": 0.7470399590182748,
+          "shapiro_norm_pvalue": 0.0010614461974673202
+        },
+        "ph": {
+          "min": 6.501521192,
+          "max": 6.993473247000001,
+          "range": 0.4919520550000005,
+          "mean": 6.74144237274,
+          "median": 6.740830036,
+          "std": 0.14735058833009018,
+          "ks_unif_pvalue": 0.5832940400442626,
+          "shapiro_norm_pvalue": 0.0012980868031800988
+        },
+        "rainfall": {
+          "min": 40.35153141,
+          "max": 248.8592986,
+          "range": 208.50776718999998,
+          "mean": 142.6278388629,
+          "median": 139.00069835,
+          "std": 64.39657725138787,
+          "ks_unif_pvalue": 0.793378130053775,
+          "shapiro_norm_pvalue": 7.099301725333453e-05
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.07841196060604763,
+      "max_abs_intra_crop_correlation": 0.22233093091813505
+    },
+    "pigeonpeas": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 0.0,
+          "max": 40.0,
+          "range": 40.0,
+          "mean": 20.73,
+          "median": 20.0,
+          "std": 11.849949921046633,
+          "ks_unif_pvalue": 0.5182193645480672,
+          "shapiro_norm_pvalue": 0.000904836092827946
+        },
+        "P": {
+          "min": 55.0,
+          "max": 80.0,
+          "range": 25.0,
+          "mean": 67.73,
+          "median": 69.5,
+          "std": 7.294463100132314,
+          "ks_unif_pvalue": 0.25269275700639626,
+          "shapiro_norm_pvalue": 0.00022170985401093584
+        },
+        "K": {
+          "min": 15.0,
+          "max": 25.0,
+          "range": 10.0,
+          "mean": 20.29,
+          "median": 20.0,
+          "std": 2.815164562712367,
+          "ks_unif_pvalue": 0.10330374901819872,
+          "shapiro_norm_pvalue": 0.002140967118514793
+        },
+        "temperature": {
+          "min": 18.31910448,
+          "max": 36.97794384,
+          "range": 18.65883936,
+          "mean": 27.741762225899997,
+          "median": 28.931707494999998,
+          "std": 5.715681957316528,
+          "ks_unif_pvalue": 0.2971160691815068,
+          "shapiro_norm_pvalue": 0.000124288648857439
+        },
+        "humidity": {
+          "min": 30.40046769,
+          "max": 69.69141302,
+          "range": 39.29094533,
+          "mean": 48.0616330847,
+          "median": 47.19517981,
+          "std": 10.963658698382257,
+          "ks_unif_pvalue": 0.11787777555314694,
+          "shapiro_norm_pvalue": 0.0010589236616962059
+        },
+        "ph": {
+          "min": 4.548202098,
+          "max": 7.445444882999999,
+          "range": 2.8972427849999987,
+          "mean": 5.794174879789999,
+          "median": 5.690465661999999,
+          "std": 0.8302739883761486,
+          "ks_unif_pvalue": 0.06899390882627954,
+          "shapiro_norm_pvalue": 0.000638580468959104
+        },
+        "rainfall": {
+          "min": 90.05422663,
+          "max": 198.8298806,
+          "range": 108.77565397,
+          "mean": 149.4575638135,
+          "median": 154.3105065,
+          "std": 32.98632092744225,
+          "ks_unif_pvalue": 0.12359794682063452,
+          "shapiro_norm_pvalue": 0.00017493196064237798
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.0757466883183362,
+      "max_abs_intra_crop_correlation": 0.2426656230658357
+    },
+    "pomegranate": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 0.0,
+          "max": 40.0,
+          "range": 40.0,
+          "mean": 18.87,
+          "median": 18.0,
+          "std": 12.6176523773304,
+          "ks_unif_pvalue": 0.20524779022188222,
+          "shapiro_norm_pvalue": 4.640933429454445e-05
+        },
+        "P": {
+          "min": 5.0,
+          "max": 30.0,
+          "range": 25.0,
+          "mean": 18.75,
+          "median": 20.0,
+          "std": 7.387369783842712,
+          "ks_unif_pvalue": 0.03582511969274016,
+          "shapiro_norm_pvalue": 0.00030109076386785943
+        },
+        "K": {
+          "min": 35.0,
+          "max": 45.0,
+          "range": 10.0,
+          "mean": 40.21,
+          "median": 40.0,
+          "std": 3.0328004859994975,
+          "ks_unif_pvalue": 0.3706320255863348,
+          "shapiro_norm_pvalue": 0.0003936280946512096
+        },
+        "temperature": {
+          "min": 18.07132963,
+          "max": 24.96273236,
+          "range": 6.891402729999999,
+          "mean": 21.837841721999997,
+          "median": 22.354425454999998,
+          "std": 2.206355498555086,
+          "ks_unif_pvalue": 0.06220806157577263,
+          "shapiro_norm_pvalue": 1.3517674103760963e-05
+        },
+        "humidity": {
+          "min": 85.12912161,
+          "max": 94.99897537,
+          "range": 9.869853759999998,
+          "mean": 90.12550378950002,
+          "median": 89.911979285,
+          "std": 2.8257064867979835,
+          "ks_unif_pvalue": 0.5878729264514823,
+          "shapiro_norm_pvalue": 0.007124224670511596
+        },
+        "ph": {
+          "min": 5.561851831,
+          "max": 7.199504273,
+          "range": 1.6376524419999994,
+          "mean": 6.4291718411700005,
+          "median": 6.430714609000001,
+          "std": 0.4915086744468756,
+          "ks_unif_pvalue": 0.6107098252560412,
+          "shapiro_norm_pvalue": 0.00023547530485122683
+        },
+        "rainfall": {
+          "min": 102.5184759,
+          "max": 112.4750941,
+          "range": 9.956618200000008,
+          "mean": 107.52844239699999,
+          "median": 107.58820075,
+          "std": 2.8953392029071656,
+          "ks_unif_pvalue": 0.9758572433504477,
+          "shapiro_norm_pvalue": 0.0027703883829592853
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.07295066458997079,
+      "max_abs_intra_crop_correlation": 0.17821260768538752
+    },
+    "rice": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 60.0,
+          "max": 99.0,
+          "range": 39.0,
+          "mean": 79.89,
+          "median": 80.0,
+          "std": 11.917981491355103,
+          "ks_unif_pvalue": 0.6846706791645845,
+          "shapiro_norm_pvalue": 0.0006658534107021725
+        },
+        "P": {
+          "min": 35.0,
+          "max": 60.0,
+          "range": 25.0,
+          "mean": 47.58,
+          "median": 47.0,
+          "std": 7.904965834744946,
+          "ks_unif_pvalue": 0.37063202558633024,
+          "shapiro_norm_pvalue": 0.0001131122329745932
+        },
+        "K": {
+          "min": 35.0,
+          "max": 45.0,
+          "range": 10.0,
+          "mean": 39.87,
+          "median": 40.0,
+          "std": 2.9461668299502306,
+          "ks_unif_pvalue": 0.25269275700638894,
+          "shapiro_norm_pvalue": 0.0006892420395192019
+        },
+        "temperature": {
+          "min": 20.0454142,
+          "max": 26.92995077,
+          "range": 6.884536570000002,
+          "mean": 23.6893322105,
+          "median": 23.73483675,
+          "std": 2.031271954371667,
+          "ks_unif_pvalue": 0.6431655781296488,
+          "shapiro_norm_pvalue": 0.0014551794201437035
+        },
+        "humidity": {
+          "min": 80.12267476,
+          "max": 84.96907151,
+          "range": 4.846396750000011,
+          "mean": 82.27282153889999,
+          "median": 82.18935719499999,
+          "std": 1.4183811592213087,
+          "ks_unif_pvalue": 0.13170980937178367,
+          "shapiro_norm_pvalue": 0.0006065931913687373
+        },
+        "ph": {
+          "min": 5.005306977,
+          "max": 7.868474653,
+          "range": 2.8631676759999998,
+          "mean": 6.425470922139999,
+          "median": 6.363803588,
+          "std": 0.7686920011810565,
+          "ks_unif_pvalue": 0.4025252576564198,
+          "shapiro_norm_pvalue": 0.034381627412774465
+        },
+        "rainfall": {
+          "min": 182.5616319,
+          "max": 298.5601175,
+          "range": 115.99848559999998,
+          "mean": 236.18111359399998,
+          "median": 233.1198594,
+          "std": 34.29182459221108,
+          "ks_unif_pvalue": 0.5324404983972326,
+          "shapiro_norm_pvalue": 0.0011962360545772223
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.07228299178672518,
+      "max_abs_intra_crop_correlation": 0.23630631247190556
+    },
+    "watermelon": {
+      "n_records": 100,
+      "features": {
+        "N": {
+          "min": 80.0,
+          "max": 120.0,
+          "range": 40.0,
+          "mean": 99.42,
+          "median": 99.0,
+          "std": 12.565127307052018,
+          "ks_unif_pvalue": 0.6003501239527769,
+          "shapiro_norm_pvalue": 0.00019110981148375903
+        },
+        "P": {
+          "min": 5.0,
+          "max": 30.0,
+          "range": 25.0,
+          "mean": 17.0,
+          "median": 17.5,
+          "std": 7.535773270731995,
+          "ks_unif_pvalue": 0.3706320255863348,
+          "shapiro_norm_pvalue": 0.0004902301386752564
+        },
+        "K": {
+          "min": 45.0,
+          "max": 55.0,
+          "range": 10.0,
+          "mean": 50.22,
+          "median": 50.5,
+          "std": 3.2646870934565566,
+          "ks_unif_pvalue": 0.06209234069876268,
+          "shapiro_norm_pvalue": 4.065952666813348e-05
+        },
+        "temperature": {
+          "min": 24.04355803,
+          "max": 26.98603693,
+          "range": 2.942478900000001,
+          "mean": 25.591767237499997,
+          "median": 25.603964945,
+          "std": 0.850124476033495,
+          "ks_unif_pvalue": 0.7719713723525357,
+          "shapiro_norm_pvalue": 0.001338953686842141
+        },
+        "humidity": {
+          "min": 80.02621335,
+          "max": 89.98405233,
+          "range": 9.957838979999991,
+          "mean": 85.1603752936,
+          "median": 85.03060460500001,
+          "std": 2.95660309777889,
+          "ks_unif_pvalue": 0.7824564399576207,
+          "shapiro_norm_pvalue": 0.0007694107568941102
+        },
+        "ph": {
+          "min": 6.000975617000001,
+          "max": 6.956508826,
+          "range": 0.9555332089999995,
+          "mean": 6.495778301569998,
+          "median": 6.4699260525,
+          "std": 0.2814196545897993,
+          "ks_unif_pvalue": 0.8233634350502446,
+          "shapiro_norm_pvalue": 0.0005353799205387543
+        },
+        "rainfall": {
+          "min": 40.12650421,
+          "max": 59.75980023,
+          "range": 19.633296020000003,
+          "mean": 50.7862189449,
+          "median": 50.671902705,
+          "std": 5.867006297410035,
+          "ks_unif_pvalue": 0.17864230079527954,
+          "shapiro_norm_pvalue": 0.00024113934860126035
+        }
+      },
+      "mean_abs_intra_crop_correlation": 0.059979511176222126,
+      "max_abs_intra_crop_correlation": 0.15509873692429665
+    }
+  },
+  "suitability_assessment": {
+    "overall_verdict": "Verdict_A_and_Verdict_C_Dichotomy",
+    "benchmark_modeling_suitability": "SUITABLE_FOR_CONTROLLED_BENCHMARK_ONLY (Verdict A)",
+    "production_farm_suitability": "INSUFFICIENT_PROVENANCE_AND_AGRONOMIC_FIDELITY_FOR_FARM_PRODUCTION (Verdict C)",
+    "primary_blocking_limitations": [
+      "Dataset was synthetically generated by uniform sampling within hyper-rectangular bounding boxes, creating 98.3% artificial linear separability.",
+      "High CV classification accuracy (99%+) is an artifact of synthetic cluster separation, not empirical predictive power.",
+      "Missing 12 major Indian staple crops, including Wheat (#2 staple), Sugarcane, Potato, Mustard, Onion, Tomato, Soybean, Jowar, and Bajra.",
+      "Lacks critical agronomic features: Soil Type (clay/alluvial/black), State/District geography, Cultivation Season (Kharif/Rabi), and Irrigation availability.",
+      "Absurd agronomic bounds for certain crops (e.g. apple in 90-95% humidity, chickpea strictly in 14-20% humidity)."
+    ]
+  }
+}

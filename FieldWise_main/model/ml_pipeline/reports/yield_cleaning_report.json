@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "pipeline_stage": "Phase 3A.4: Final Validator and Yield Feature Audit",
+    "timestamp": "2026-11-17T09:32:57.983134",
+    "target_unit": "Metric Tonnes per Hectare (Pure Mass Basis)",
+    "feature_specification": {
+      "baseline_features": [
+        "State",
+        "District",
+        "Crop_Year",
+        "Season",
+        "Crop",
+        "district_normal_annual_rainfall_mm",
+        "district_normal_monsoon_rainfall_mm"
+      ],
+      "target": "Yield_Tonnes_Per_Ha",
+      "auxiliary_experimental_features": [
+        "Cultivated_Area_Ha"
+      ],
+      "excluded_leakage_features": [
+        "Production"
+      ]
+    }
+  },
+  "sequential_filtering_pipeline": {
+    "R0_raw_initial_records": 246091,
+    "R1_after_null_production_drop": {
+      "remaining_records": 242361,
+      "dropped_records": 3730,
+      "notes": "Dropped missing production observations directly computed from raw mask"
+    },
+    "R2_after_invalid_area_drop": {
+      "remaining_records": 242361,
+      "dropped_records": 0,
+      "notes": "Dropped non-positive cultivated area records (Area <= 0)"
+    },
+    "R3_after_zero_production_drop": {
+      "remaining_records": 238838,
+      "dropped_records": 3523,
+      "notes": "Dropped zero production observations directly computed from raw mask"
+    },
+    "R4_after_negligible_yield_drop": {
+      "remaining_records": 238714,
+      "dropped_records": 124,
+      "notes": "Dropped yields < 0.005 t/ha (5 kg/ha, indicative of abandoned/unharvested plots or reporting artifacts)"
+    },
+    "unit_segregated_datasets_from_R4": {
+      "segregated_coconut_nuts_records": 1957,
+      "segregated_cotton_bales_records": 4327,
+      "segregated_jute_mesta_bales_records": 3196,
+      "segregated_arecanut_records": 1578,
+      "segregated_unverified_unit_records": 35,
+      "dropped_extreme_fiber_outliers": 1,
+      "notes": "Segregated non-metric-tonne crops into dedicated datasets with true declared units"
+    },
+    "R6_final_cleaned_records": {
+      "remaining_records": 227573,
+      "unit_corrected_records": 42,
+      "dropped_extreme_tonne_outliers": 47,
+      "unverified_ceiling_retained_records": 17070,
+      "notes": "Applied source-evidence unit conversions, segregated unverified unit anomalies, and dropped extreme biological impossibilities (> 2x documented screening threshold). Zero records dropped under default ceilings."
+    }
+  },
+  "set_partition_reconciliation": {
+    "raw_universe_total": 246091,
+    "partition_sum": 246091,
+    "mathematical_reconciliation": "PERFECT (Exact 0 discrepancy)",
+    "pairwise_disjointness": "VERIFIED (All subsets are strictly mutually exclusive)"
+  },
+  "unit_normalization_summary": {
+    "sugarcane_conversions_total": 42,
+    "punjab_2011_kg_to_tonnes_divided_by_1000": 15,
+    "tamil_nadu_1997_quintals_to_tonnes_divided_by_10": 27,
+    "segregated_unverified_unit_records": 35,
+    "segregated_coconut_nuts_records": 1957,
+    "segregated_cotton_bales_records": 4327,
+    "segregated_jute_mesta_bales_records": 3196,
+    "segregated_arecanut_records": 1578
+  },
+  "final_cleaned_dataset_metrics": {
+    "final_cleaned_rows": 227573,
+    "retention_rate_pct": 92.48,
+    "unique_crops_count": 97,
+    "unique_states_count": 33,
+    "target_unit": "Metric Tonnes per Hectare",
+    "district_rainfall_matched_records": 174363,
+    "district_rainfall_unmatched_records": 53210,
+    "rainfall_match_rate_pct": 76.62,
+    "yield_stats_tonnes_per_ha": {
+      "min": 0.005,
+      "median": 1.0,
+      "mean": 4.522234337992645,
+      "max": 179.867,
+      "std": 12.42012773192353
+    }
+  }
+}

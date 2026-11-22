@@ -1,0 +1,183 @@
+/* ============================================================
+   FOOTER — KisanAI
+   Extends global .footer* classes from index.css
+   ============================================================ */
+
+.kf-footer {
+  background: var(--color-green-950);
+  color: rgba(255, 255, 255, 0.85);
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-5);
+}
+
+/* ── Four-column grid ───────────────────────────────────────── */
+
+.kf-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.kf-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Brand column ───────────────────────────────────────────── */
+
+.kf-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+  text-decoration: none;
+  width: fit-content;
+}
+
+.kf-logo__text {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+
+.kf-logo__accent {
+  color: var(--color-green-400);
+}
+
+.kf-desc {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.45);
+  line-height: var(--leading-normal);
+  max-width: 200px;
+  margin-bottom: var(--space-4);
+}
+
+/* ── Social icons ───────────────────────────────────────────── */
+
+.kf-social {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.footer-social__btn {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.45);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+              transform 0.2s var(--ease-out);
+}
+
+.footer-social__btn:hover {
+  background: rgba(82, 184, 118, 0.15);
+  border-color: rgba(82, 184, 118, 0.35);
+  color: var(--color-green-300);
+  transform: translateY(-2px);
+}
+
+.footer-social__icon {
+  width: 13px;
+  height: 13px;
+  display: block;
+}
+
+/* ── Company address block ──────────────────────────────────── */
+
+.kf-address {
+  margin-top: var(--space-2);
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kf-address__line {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.kf-address__link {
+  transition: color 0.15s ease;
+}
+
+.kf-address__link:hover {
+  color: var(--color-green-300);
+}
+
+.kf-address__icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Bottom bar ─────────────────────────────────────────────── */
+
+.kf-bottom__right {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+/* ══════════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .kf-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10) var(--space-8);
+  }
+
+  .kf-col--brand {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--space-8);
+  }
+
+  .kf-desc {
+    margin-bottom: 0;
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .kf-footer {
+    padding-top: var(--space-12);
+  }
+
+  .kf-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8) var(--space-6);
+  }
+
+  .kf-col--brand {
+    grid-column: 1 / -1;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+}
+
+@media (max-width: 420px) {
+  .kf-grid {
+    grid-template-columns: 1fr;
+  }
+}

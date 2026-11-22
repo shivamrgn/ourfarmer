@@ -1,0 +1,13 @@
+Experiment,Model,Total_Records,Residual_Mean,Residual_Std,AbsErr_P50,AbsErr_P75,AbsErr_P90,AbsErr_P95,AbsErr_P99,Max_Abs_Error
+experiment_a,historical_district_mean,13422,0.5618,5.0096,0.2985,0.7907,3.062,7.263,21.365,106.6024
+experiment_a,historical_state_mean,13422,0.5623,5.3741,0.3208,0.8688,3.4681,8.2226,24.3203,106.6024
+experiment_a,random_forest,13422,0.4089,5.9697,0.2455,0.669,2.5364,6.3008,24.6338,118.2142
+experiment_a,extra_trees,13422,0.5087,6.1899,0.2674,0.7088,2.7149,6.9321,25.5913,117.0304
+experiment_a,hist_gradient_boosting,13422,0.4196,5.992,0.4975,1.0284,3.3633,7.2779,24.4174,108.5896
+experiment_a,xgboost,13422,0.3126,5.6414,0.3611,0.8281,2.6813,6.3116,22.512,106.0139
+experiment_b,historical_district_mean,17254,0.5044,4.5223,0.2606,0.7279,2.6364,6.4077,18.4034,106.6024
+experiment_b,historical_state_mean,17254,0.5069,4.8341,0.2833,0.795,2.822,6.8739,20.5159,106.6024
+experiment_b,random_forest,17254,0.4789,5.4589,0.2315,0.6625,2.3167,5.9492,22.3397,117.9254
+experiment_b,extra_trees,17254,0.5441,5.7472,0.2612,0.7083,2.3803,6.4138,23.8597,117.7301
+experiment_b,hist_gradient_boosting,17254,0.4273,5.3111,0.5028,1.05,3.01,6.2333,21.705,106.1104
+experiment_b,xgboost,17254,0.3394,4.9792,0.3868,0.9053,2.5949,5.6959,20.2103,107.2607

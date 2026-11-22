@@ -1,0 +1,337 @@
+{
+  "experiment_a_prime": {
+    "base_challenger_cv_mae": 1.0862070463738005,
+    "candidate_2_stage1_diagnostics": {
+      "Cereals & Millets": {
+        "active_eval_count": 15260,
+        "lambda_grid_scores": {
+          "0.0001": 0.41016494615511406,
+          "0.001": 0.4101643652790431,
+          "0.01": 0.4101488281688674,
+          "0.1": 0.41000400946255366,
+          "1.0": 0.40882249071155347,
+          "10.0": 0.4035522680729667,
+          "100.0": 0.39344646067652145
+        },
+        "min_mae": 0.39344646067652145,
+        "optimal_lambda": 100.0,
+        "status_note": "EMPIRICALLY_TUNED (Active Eval MAE: 0.393446 t/ha, N=15260)"
+      },
+      "Commercial & Horticultural": {
+        "active_eval_count": 8387,
+        "lambda_grid_scores": {
+          "0.0001": 5.288776470173305,
+          "0.001": 5.288803773857772,
+          "0.01": 5.288221888342882,
+          "0.1": 5.282275429133472,
+          "1.0": 5.2386784319120645,
+          "10.0": 5.081149622455802,
+          "100.0": 4.910331303550362
+        },
+        "min_mae": 4.910331303550362,
+        "optimal_lambda": 100.0,
+        "status_note": "EMPIRICALLY_TUNED (Active Eval MAE: 4.910331 t/ha, N=8387)"
+      },
+      "Oilseeds": {
+        "active_eval_count": 9802,
+        "lambda_grid_scores": {
+          "0.0001": 0.21874061226975683,
+          "0.001": 0.2187382376161263,
+          "0.01": 0.21872149102479227,
+          "0.1": 0.21856144555114376,
+          "1.0": 0.21737421619807315,
+          "10.0": 0.21285054574073972,
+          "100.0": 0.20701072976523752
+        },
+        "min_mae": 0.20701072976523752,
+        "optimal_lambda": 100.0,
+        "status_note": "EMPIRICALLY_TUNED (Active Eval MAE: 0.207011 t/ha, N=9802)"
+      },
+      "Pulses & Legumes": {
+        "active_eval_count": 11069,
+        "lambda_grid_scores": {
+          "0.0001": 0.16019212320087342,
+          "0.001": 0.16019090002296116,
+          "0.01": 0.16017998802489064,
+          "0.1": 0.16007136117615636,
+          "1.0": 0.15923377631225313,
+          "10.0": 0.156402488143744,
+          "100.0": 0.1539665597765624
+        },
+        "min_mae": 0.1539665597765624,
+        "optimal_lambda": 100.0,
+        "status_note": "EMPIRICALLY_TUNED (Active Eval MAE: 0.153967 t/ha, N=11069)"
+      }
+    },
+    "candidate_cv_scores": {
+      "Candidate 0A": {
+        "best_param": {
+          "q": 0.5
+        },
+        "cv_mae": 1.0797918773373467
+      },
+      "Candidate 0B": {
+        "best_param": {
+          "q": 0.25
+        },
+        "cv_mae": 1.0813993062517948
+      },
+      "Candidate 1 Equal-Crop": {
+        "best_param": {
+          "alpha": 0.0,
+          "lambda": 100.0
+        },
+        "cv_mae": 1.0862070463738005
+      },
+      "Candidate 1 Unweighted": {
+        "best_param": {
+          "alpha": 0.0,
+          "lambda": 100.0
+        },
+        "cv_mae": 1.0862070463738005
+      },
+      "Candidate 2": {
+        "best_param": {
+          "alpha": 0.25,
+          "stratum_lambdas": {
+            "Cereals & Millets": 100.0,
+            "Commercial & Horticultural": 100.0,
+            "Oilseeds": 100.0,
+            "Pulses & Legumes": 100.0
+          }
+        },
+        "cv_mae": 1.0776322388991637
+      }
+    },
+    "expected_eval_rows": 44711,
+    "prediction_file": "experiments/phase_3b_2/residual_cv_predictions_exp_a.csv",
+    "reconciliation": {
+      "expected_total_rows": 44711,
+      "splits": [
+        {
+          "c2_active_rows": 15295,
+          "c2_fallback_ridge_rows": 0,
+          "c2_invalid_feat_rows": 0,
+          "c2_unmapped_rows": 0,
+          "c2_unseen_rows": 68,
+          "c2_zero_correction_rows": 68,
+          "expected_rows": 15363,
+          "reconciliation_passed": true,
+          "split_id": 1
+        },
+        {
+          "c2_active_rows": 14851,
+          "c2_fallback_ridge_rows": 0,
+          "c2_invalid_feat_rows": 0,
+          "c2_unmapped_rows": 0,
+          "c2_unseen_rows": 50,
+          "c2_zero_correction_rows": 50,
+          "expected_rows": 14901,
+          "reconciliation_passed": true,
+          "split_id": 2
+        },
+        {
+          "c2_active_rows": 14372,
+          "c2_fallback_ridge_rows": 0,
+          "c2_invalid_feat_rows": 0,
+          "c2_unmapped_rows": 0,
+          "c2_unseen_rows": 75,
+          "c2_zero_correction_rows": 75,
+          "expected_rows": 14447,
+          "reconciliation_passed": true,
+          "split_id": 3
+        }
+      ]
+    },
+    "sha256": "61e9af5ff80a4912e0bfc9840a036075e0aba4401f00bb5faf2266432468736c",
+    "total_eval_rows": 44711,
+    "winning_cv_mae": 1.0776322388991637,
+    "winning_sole_primary_candidate": "Candidate 2"
+  },
+  "experiment_b_provisional": {
+    "base_challenger_cv_mae": 0.9587855966755415,
+    "candidate_2_stage1_diagnostics": {
+      "Cereals & Millets": {
+        "active_eval_count": 16330,
+        "lambda_grid_scores": {
+          "0.0001": 0.39359072887720087,
+          "0.001": 0.39358786728250883,
+          "0.01": 0.39357614145666475,
+          "0.1": 0.3934555324125336,
+          "1.0": 0.3924502321726804,
+          "10.0": 0.38774206359092794,
+          "100.0": 0.3793032827034052
+        },
+        "min_mae": 0.3793032827034052,
+        "optimal_lambda": 100.0,
+        "status_note": "EMPIRICALLY_TUNED (Active Eval MAE: 0.379303 t/ha, N=16330)"
+      },
+      "Commercial & Horticultural": {
+        "active_eval_count": 16279,
+        "lambda_grid_scores": {
+          "0.0001": 3.3069024525863946,
+          "0.001": 3.306897023308593,
+          "0.01": 3.306682902325148,
+          "0.1": 3.304679107344028,
+          "1.0": 3.2874559569020962,
+          "10.0": 3.1984526332373973,
+          "100.0": 3.0315073994269683
+        },
+        "min_mae": 3.0315073994269683,
+        "optimal_lambda": 100.0,
+        "status_note": "EMPIRICALLY_TUNED (Active Eval MAE: 3.031507 t/ha, N=16279)"
+      },
+      "Oilseeds": {
+        "active_eval_count": 11836,
+        "lambda_grid_scores": {
+          "0.0001": 0.20106268515349404,
+          "0.001": 0.20106225911031525,
+          "0.01": 0.201048197154173,
+          "0.1": 0.20092797350127664,
+          "1.0": 0.20000428683318688,
+          "10.0": 0.1963839631026299,
+          "100.0": 0.19108140987963224
+        },
+        "min_mae": 0.19108140987963224,
+        "optimal_lambda": 100.0,
+        "status_note": "EMPIRICALLY_TUNED (Active Eval MAE: 0.191081 t/ha, N=11836)"
+      },
+      "Pulses & Legumes": {
+        "active_eval_count": 11994,
+        "lambda_grid_scores": {
+          "0.0001": 0.15656651401789895,
+          "0.001": 0.15656727084293093,
+          "0.01": 0.15655687574463373,
+          "0.1": 0.1564681873339382,
+          "1.0": 0.15572082871610712,
+          "10.0": 0.15305374368829935,
+          "100.0": 0.150596812807972
+        },
+        "min_mae": 0.150596812807972,
+        "optimal_lambda": 100.0,
+        "status_note": "EMPIRICALLY_TUNED (Active Eval MAE: 0.150597 t/ha, N=11994)"
+      }
+    },
+    "candidate_cv_scores": {
+      "Candidate 0A": {
+        "best_param": {
+          "q": 0.25
+        },
+        "cv_mae": 0.9539513203194023
+      },
+      "Candidate 0B": {
+        "best_param": {
+          "q": 0.25
+        },
+        "cv_mae": 0.955427204015043
+      },
+      "Candidate 1 Equal-Crop": {
+        "best_param": {
+          "alpha": 0.0,
+          "lambda": 100.0
+        },
+        "cv_mae": 0.9587855966755415
+      },
+      "Candidate 1 Unweighted": {
+        "best_param": {
+          "alpha": 0.0,
+          "lambda": 100.0
+        },
+        "cv_mae": 0.9587855966755415
+      },
+      "Candidate 2": {
+        "best_param": {
+          "alpha": 0.0,
+          "stratum_lambdas": {
+            "Cereals & Millets": 100.0,
+            "Commercial & Horticultural": 100.0,
+            "Oilseeds": 100.0,
+            "Pulses & Legumes": 100.0
+          }
+        },
+        "cv_mae": 0.9587855966755415
+      }
+    },
+    "expected_eval_rows": 56776,
+    "prediction_file": "experiments/phase_3b_2/residual_cv_predictions_exp_b.csv",
+    "reconciliation": {
+      "expected_total_rows": 56776,
+      "splits": [
+        {
+          "c2_active_rows": 19423,
+          "c2_fallback_ridge_rows": 0,
+          "c2_invalid_feat_rows": 0,
+          "c2_unmapped_rows": 0,
+          "c2_unseen_rows": 124,
+          "c2_zero_correction_rows": 124,
+          "expected_rows": 19547,
+          "reconciliation_passed": true,
+          "split_id": 1
+        },
+        {
+          "c2_active_rows": 18992,
+          "c2_fallback_ridge_rows": 0,
+          "c2_invalid_feat_rows": 0,
+          "c2_unmapped_rows": 0,
+          "c2_unseen_rows": 72,
+          "c2_zero_correction_rows": 72,
+          "expected_rows": 19064,
+          "reconciliation_passed": true,
+          "split_id": 2
+        },
+        {
+          "c2_active_rows": 18024,
+          "c2_fallback_ridge_rows": 0,
+          "c2_invalid_feat_rows": 0,
+          "c2_unmapped_rows": 0,
+          "c2_unseen_rows": 141,
+          "c2_zero_correction_rows": 141,
+          "expected_rows": 18165,
+          "reconciliation_passed": true,
+          "split_id": 3
+        }
+      ]
+    },
+    "sha256": "ed7dc88f52e9ebd4cae1272b1ed1dfbfe1438e98d205c73e35e0b3db6bde6dd6",
+    "total_eval_rows": 56776,
+    "winning_cv_mae": 0.9539513203194023,
+    "winning_sole_primary_candidate": "Candidate 0A"
+  },
+  "metadata": {
+    "architecture_revision": "3.5",
+    "artifact_name": "residual_cv_manifest.json",
+    "generated_by": "train_eval_residual_stacking.py",
+    "hyperparameter_grids": {
+      "alphas": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "lambdas": [
+        0.0001,
+        0.001,
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        100.0
+      ],
+      "q_vals": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ]
+    },
+    "objective_consistency": {
+      "derivation_documented": true,
+      "loss_form": "sum_i w_i * (r_i - x_i @ beta)^2 + lambda_math * ||beta||^2",
+      "sample_weight_mean": 1.0,
+      "sklearn_alpha_conversion": "alpha_sklearn = lambda_math"
+    },
+    "pipeline_phase": "3B.2"
+  }
+}

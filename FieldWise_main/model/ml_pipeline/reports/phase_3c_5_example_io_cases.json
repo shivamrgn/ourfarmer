@@ -1,0 +1,2611 @@
+[
+  {
+    "scenario_id": "SCENARIO-01-PB-WHEAT",
+    "title": "Commercial Irrigated Wheat (Ludhiana, Punjab)",
+    "description": "Full Soil Health Card test, measured tubewell flood irrigation (280 mm), timely sown Rabi.",
+    "query": {
+      "location": {
+        "state": "Punjab",
+        "district": "Ludhiana",
+        "agro_climatic_zone": "Trans-Gangetic Plains"
+      },
+      "temporal": {
+        "sowing_month": 11,
+        "sowing_date": "2026-11-10",
+        "cultivation_season": "Rabi",
+        "planting_system": "Timely_Sown"
+      },
+      "climate_and_water": {
+        "seasonal_rainfall_amount": 50.0,
+        "rainfall_period_type": "Crop_Season_Measured",
+        "rainfall_source": null,
+        "monthly_rainfall": null,
+        "irrigation_access": "Tubewell_Borewell",
+        "irrigation_water_quantity_mm": 280.0,
+        "irrigation_quantity_basis": null,
+        "irrigation_type": "Surface_Furrow",
+        "irrigation_period_days": null,
+        "rainfall_period_days": null,
+        "temperature_mean": 18.0,
+        "temperature_min_night": 8.5,
+        "temperature_max_day": 24.0,
+        "relative_humidity": 60.0,
+        "soil_moisture_tier": "UNKNOWN",
+        "soil_moisture_mm": null,
+        "awc_mm_m": null,
+        "rooting_depth_m": null
+      },
+      "edaphic": {
+        "soil_texture": "Loamy",
+        "soil_ph": 7.4,
+        "has_soil_test": true,
+        "nutrient_basis": "SHC_Available_kg_ha",
+        "soil_nitrogen": 310.0,
+        "soil_phosphorus": 32.0,
+        "soil_potassium": 220.0,
+        "organic_carbon_pct": null
+      }
+    },
+    "result": {
+      "status": "SUCCESS",
+      "engine_version": "2.2.0-CLOSURE",
+      "execution_timestamp": "2026-11-20T07:15:49.214257+00:00",
+      "query_summary": {
+        "location": "Ludhiana, Punjab (Trans-Gangetic Plains)",
+        "season": "Rabi",
+        "planting_system_evaluated": "Timely_Sown (Nov 1 - Nov 15)",
+        "water_regime_evaluated": "Tubewell_Borewell (280.0 mm + Rain 50.0 mm)",
+        "data_completeness_index": 1.0,
+        "evidence_confidence_tier": "HIGH_CONFIDENCE"
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "crop_id": "wheat",
+          "canonical_name": "Wheat",
+          "crop_life_cycle": "Annual_Seasonal",
+          "suitability_score": 66.9,
+          "evidence_confidence_tier": "PROVISIONAL_EVALUATION",
+          "tier1_status": "CONDITIONALLY_ELIGIBLE",
+          "tier2_components": {
+            "climate_score": 97.94,
+            "water_score": 48.72,
+            "soil_score": 100.0,
+            "nutrient_score": 100.0,
+            "ph_score": 100.0,
+            "core_suitability": 80.09,
+            "liebig_penalty_factor": 0.835
+          },
+          "active_planting_window": {
+            "window_id": "WIN-WHEAT-NWPZ-TIMELY",
+            "planting_system": "Timely_Sown",
+            "broad_season": "Rabi",
+            "region_or_zone": "North_Western_Plains_Zone",
+            "sowing_month_start": 11,
+            "sowing_month_end": 11,
+            "sowing_date_range": "Nov 1 - Nov 15",
+            "harvest_month_range": "Apr 1 - Apr 20",
+            "crop_duration_days": 140,
+            "window_evidence_status": "VERIFIED",
+            "source_reference": "ICAR-IIWBR Bull. 55/2022"
+          },
+          "water_assessment": {
+            "water_gating_status": "CONDITIONALLY_ELIGIBLE_WITH_HIGH_WATER_RISK",
+            "effective_rainfall_mm": 46.0,
+            "net_irrigation_delivered_mm": 196.0,
+            "gross_irrigation_applied_mm": 280.0,
+            "total_net_water_mm": 242.0,
+            "deficit_against_optimal_mm": 158.0,
+            "deficit_against_min_mm": 8.0,
+            "runoff_and_drainage_loss_mm": 4.0,
+            "irrigation_efficiency": 0.7,
+            "soil_moisture_accounted_mm": 0.0,
+            "soil_moisture_tier": "UNKNOWN",
+            "provisional_water_score": 48.72,
+            "warnings": [
+              "Total net root-zone water (242.0 mm) is below crop minimum ETc (250.0 mm)."
+            ]
+          },
+          "expected_yield_range_t_ha": [
+            4.2,
+            5.5
+          ],
+          "agronomic_advisory": [
+            "Optimal Timely_Sown sowing window (Nov 1 - Nov 15) active in North_Western_Plains_Zone.",
+            "Liebig Limiting Factor: Water adequacy (sub-score 48.72/100) is the primary constraint depressing overall yield potential.",
+            "Acute water deficit flagged. Recommend protective supplemental irrigation or drought-tolerant cultivar selection.",
+            "Loamy soil provides optimal drainage and aeration for root proliferation."
+          ],
+          "risk_warnings": [
+            "Total net root-zone water (242.0 mm) is below crop minimum ETc (250.0 mm)."
+          ],
+          "fertilizer_prescription": {
+            "status": "VERIFIED_STCR_GENERATED",
+            "rdf_n_p2o5_k2o_kg_ha": [
+              120.0,
+              60.0,
+              40.0
+            ],
+            "adjusted_dose_kg_ha": [
+              120.0,
+              60.0,
+              40.0
+            ],
+            "commercial_products": {
+              "dap_kg_ha": 130.4,
+              "dap_nitrogen_credit_kg_ha": 23.5,
+              "urea_supplementary_kg_ha": 209.8,
+              "mop_kg_ha": 66.7
+            },
+            "stoichiometric_notes": "Supplementary Urea quantity (209.8 kg/ha) reflects net elemental nitrogen required after deducting 23.5 kg/ha N supplied by 130.4 kg/ha DAP. Avoids 51.1 kg/ha physical Urea over-application.",
+            "disclaimers": [
+              "Stoichiometrically balanced for DAP basal application.",
+              "Split Urea into 2-3 top dressings according to crop physiological stages (e.g. CRI and tillering)."
+            ]
+          }
+        }
+      ],
+      "excluded_candidates": [
+        {
+          "crop_id": "rice",
+          "canonical_name": "Rice (Paddy)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-RICE-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Rice (Paddy) (Annual_Seasonal): Month 11 in Punjab is outside verified planting windows: Aman_Lowland (Jun 15 - Jul 15, months 6-7); Boro_Deepwater_Receding (Nov 15 - Dec 15, months 11-12); Aus_Direct_Seeded (Mar 15 - Apr 30, months 3-4)."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (242.0 mm) is below crop minimum ETc (800.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "maize",
+          "canonical_name": "Maize (Corn)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MAIZE-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Maize (Corn) (Annual_Seasonal): Month 11 in Punjab is outside verified planting windows: Monsoon_Kharif (Jun 15 - Jul 15, months 6-7); Spring_Maize (Jan 20 - Feb 15, months 1-2)."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (242.0 mm) is below crop minimum ETc (400.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "cotton",
+          "canonical_name": "Cotton",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-COTTON-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Cotton (Annual_Seasonal): Month 11 in Punjab is outside verified planting windows: Monsoon_Kharif_Central (Jun 15 - Jul 10, months 6-7); Northern_Irrigated_Early (Apr 15 - May 15, months 4-5)."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (242.0 mm) is below crop minimum ETc (500.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "sugarcane",
+          "canonical_name": "Sugarcane",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-SUGARCANE-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Sugarcane (Long_Duration_Annual): Month 11 in Punjab is outside verified planting windows: Adsali_Maharashtra (Jul 15 - Aug 31, months 7-8); Spring_Plains (Feb 15 - Mar 25, months 2-3)."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (242.0 mm) is below crop minimum ETc (1200.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "soybean",
+          "canonical_name": "Soybean",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-SOYBEAN-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Soybean (Annual_Seasonal): Month 11 in Punjab is outside verified planting windows: Monsoon_Kharif_Central (Jun 20 - Jul 10, months 6-7)."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (242.0 mm) is below crop minimum ETc (450.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "groundnut",
+          "canonical_name": "Groundnut",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-GROUNDNUT-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Groundnut (Annual_Seasonal): Month 11 in Punjab is outside verified planting windows: Monsoon_Kharif_Gujarat (Jun 15 - Jul 15, months 6-7); Summer_Irrigated (Jan 15 - Feb 15, months 1-2)."
+            },
+            {
+              "rule_id": "RULE-GROUNDNUT-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Groundnut: Mean temperature (18.0\u00b0C) is below minimum lethal germination threshold (20.0\u00b0C). Severe chilling/frost emergence failure."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (242.0 mm) is below crop minimum ETc (400.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "potato",
+          "canonical_name": "Potato",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-POTATO-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Potato (Annual_Seasonal): Month 11 in Punjab is outside verified planting windows: Main_Crop_IGP (Oct 15 - Nov 5, months 10-11)."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (242.0 mm) is below crop minimum ETc (300.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "chickpea",
+          "canonical_name": "Chickpea",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-CHICKPEA-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Chickpea (Annual_Seasonal): Month 11 in Punjab is outside verified planting windows: Standard_Rabi_Pulses (Oct 15 - Nov 15, months 10-11)."
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "crop_id": "lentil",
+          "canonical_name": "Lentil",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-LENTIL-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Lentil (Annual_Seasonal): Month 11 in Punjab is outside verified planting windows: Standard_Rabi_Pulses (Oct 25 - Nov 20, months 10-11)."
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "crop_id": "mustard",
+          "canonical_name": "Mustard",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MUSTARD-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Mustard (Annual_Seasonal): Month 11 in Punjab is outside verified planting windows: Standard_Rabi_Oilseed (Oct 1 - Oct 25, months 10-10)."
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "crop_id": "tomato",
+          "canonical_name": "Tomato",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-TOMATO-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Tomato (Multi_Season_Arable): Month 11 in Punjab is outside verified planting windows: Autumn_Winter (Sep 15 - Oct 15, months 9-10); Spring_Summer (Jan 15 - Feb 15, months 1-2)."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (242.0 mm) is below crop minimum ETc (400.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "onion",
+          "canonical_name": "Onion",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-ONION-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Onion (Annual_Seasonal): Month 11 in Punjab is outside verified planting windows: Rabi_Main_Crop (Nov 15 - Dec 15, months 11-12)."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (242.0 mm) is below crop minimum ETc (350.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "banana",
+          "canonical_name": "Banana",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-BANANA-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Banana (Long_Duration_Annual): Month 11 in Punjab is outside verified planting windows: Monsoon_Planting (Jun 15 - Jul 31, months 6-7)."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (242.0 mm) is below crop minimum ETc (1400.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "mango",
+          "canonical_name": "Mango",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MANGO-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Mango (Perennial_Orchard): Month 11 in Punjab is outside verified planting windows: Orchard_Monsoon_Grafting (Jul 15 - Aug 31, months 7-8)."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (242.0 mm) is below crop minimum ETc (300.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "jowar",
+          "canonical_name": "Jowar (Sorghum)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-JOWAR-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Jowar (Sorghum) (Annual_Seasonal): Month 11 in Punjab is outside verified planting windows: Monsoon_Kharif_Grain (Jun 15 - Jul 10, months 6-7); Rabi_Maldandi_Grain (Sep 15 - Oct 15, months 9-10)."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (242.0 mm) is below crop minimum ETc (350.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "sunflower",
+          "canonical_name": "Sunflower",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-SUNFLOWER-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Sunflower (Multi_Season_Arable): Month 11 in Punjab is outside verified planting windows: Monsoon_Kharif (Jun 20 - Jul 15, months 6-7); Spring_Sunflower (Jan 20 - Feb 15, months 1-2)."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (242.0 mm) is below crop minimum ETc (350.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "barley",
+          "canonical_name": "Barley",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-BARLEY-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Barley (Annual_Seasonal): Month 11 in Punjab is outside verified planting windows: Standard_Rabi_Cereal (Oct 25 - Nov 20, months 10-11)."
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "crop_id": "millets",
+          "canonical_name": "Millets (Pearl Millet / Bajra)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MILLETS-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Millets (Pearl Millet / Bajra) (Annual_Seasonal): Month 11 in Punjab is outside verified planting windows: Monsoon_Kharif_Arid (Jun 25 - Jul 15, months 6-7); Summer_Bajra_Irrigated (Feb 15 - Mar 10, months 2-3)."
+            }
+          ],
+          "warnings": []
+        }
+      ],
+      "diagnostics": {
+        "dci_details": {
+          "temporal": 1.0,
+          "climate": 1.0,
+          "water": 1.0,
+          "soil": 1.0,
+          "ph": 1.0,
+          "nutrients": 1.0
+        },
+        "validation_warnings": [],
+        "total_candidates_evaluated": 19,
+        "eligible_count": 1,
+        "excluded_count": 18
+      },
+      "land_reclamation_advisory": null
+    }
+  },
+  {
+    "scenario_id": "SCENARIO-02-WB-RICE",
+    "title": "Rainfed Aman Rice with Monthly Breakdown (Burdwan, West Bengal)",
+    "description": "Transplanted Aman rice, 1150 mm gross rainfall distributed across July-Oct, USDA-SCS effective rain.",
+    "query": {
+      "location": {
+        "state": "West Bengal",
+        "district": "Burdwan",
+        "agro_climatic_zone": "Lower Gangetic Plain"
+      },
+      "temporal": {
+        "sowing_month": 7,
+        "sowing_date": "2026-07-05",
+        "cultivation_season": "Kharif",
+        "planting_system": "Aman_Lowland"
+      },
+      "climate_and_water": {
+        "seasonal_rainfall_amount": 1150.0,
+        "rainfall_period_type": null,
+        "rainfall_source": null,
+        "monthly_rainfall": [
+          350.0,
+          350.0,
+          300.0,
+          150.0
+        ],
+        "irrigation_access": "None_Rainfed",
+        "irrigation_water_quantity_mm": null,
+        "irrigation_quantity_basis": null,
+        "irrigation_type": null,
+        "irrigation_period_days": null,
+        "rainfall_period_days": null,
+        "temperature_mean": 28.5,
+        "temperature_min_night": 24.0,
+        "temperature_max_day": 33.0,
+        "relative_humidity": 84.0,
+        "soil_moisture_tier": "UNKNOWN",
+        "soil_moisture_mm": null,
+        "awc_mm_m": null,
+        "rooting_depth_m": null
+      },
+      "edaphic": {
+        "soil_texture": "Clay Loam",
+        "soil_ph": 6.4,
+        "has_soil_test": false,
+        "nutrient_basis": null,
+        "soil_nitrogen": null,
+        "soil_phosphorus": null,
+        "soil_potassium": null,
+        "organic_carbon_pct": null
+      }
+    },
+    "result": {
+      "status": "SUCCESS",
+      "engine_version": "2.2.0-CLOSURE",
+      "execution_timestamp": "2026-11-20T07:15:49.215261+00:00",
+      "query_summary": {
+        "location": "Burdwan, West Bengal (Lower Gangetic Plain)",
+        "season": "Kharif",
+        "planting_system_evaluated": "Aman_Lowland (Jun 15 - Jul 15)",
+        "water_regime_evaluated": "None_Rainfed (0 mm + Rain 1150.0 mm)",
+        "data_completeness_index": 0.85,
+        "evidence_confidence_tier": "HIGH_CONFIDENCE_ESTIMATED_FERTILITY"
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "crop_id": "rice",
+          "canonical_name": "Rice (Paddy)",
+          "crop_life_cycle": "Annual_Seasonal",
+          "suitability_score": 83.0,
+          "evidence_confidence_tier": "PROVISIONAL_EVALUATION",
+          "tier1_status": "CONDITIONALLY_ELIGIBLE",
+          "tier2_components": {
+            "climate_score": 91.16,
+            "water_score": 80.0,
+            "soil_score": 100.0,
+            "nutrient_score": 70.0,
+            "ph_score": 100.0,
+            "core_suitability": 87.78,
+            "liebig_penalty_factor": 0.946
+          },
+          "active_planting_window": {
+            "window_id": "WIN-RICE-AMAN",
+            "planting_system": "Aman_Lowland",
+            "broad_season": "Kharif",
+            "region_or_zone": "All_Rice_Ecosystems",
+            "sowing_month_start": 6,
+            "sowing_month_end": 7,
+            "sowing_date_range": "Jun 15 - Jul 15",
+            "harvest_month_range": "Nov - Dec",
+            "crop_duration_days": 135,
+            "window_evidence_status": "VERIFIED",
+            "source_reference": "ICAR-IIRR Tech. Bull. 92/2021"
+          },
+          "water_assessment": {
+            "water_gating_status": "CONDITIONALLY_ELIGIBLE_WITH_PROVISIONAL_WATER_BALANCE",
+            "effective_rainfall_mm": 589.0,
+            "net_irrigation_delivered_mm": 0.0,
+            "gross_irrigation_applied_mm": 0.0,
+            "total_net_water_mm": 1150.0,
+            "deficit_against_optimal_mm": 100.0,
+            "deficit_against_min_mm": 0.0,
+            "runoff_and_drainage_loss_mm": 561.0,
+            "irrigation_efficiency": 0.0,
+            "soil_moisture_accounted_mm": 0.0,
+            "soil_moisture_tier": "UNKNOWN",
+            "provisional_water_score": 80.0,
+            "warnings": [
+              "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+            ]
+          },
+          "expected_yield_range_t_ha": [
+            3.5,
+            5.5
+          ],
+          "agronomic_advisory": [
+            "Optimal Aman_Lowland sowing window (Jun 15 - Jul 15) active in All_Rice_Ecosystems.",
+            "Clay Loam soil provides optimal drainage and aeration for root proliferation."
+          ],
+          "risk_warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ],
+          "fertilizer_prescription": {
+            "status": "WITHHELD_MISSING_SOIL_TEST",
+            "rdf_n_p2o5_k2o_kg_ha": [
+              120.0,
+              60.0,
+              40.0
+            ],
+            "adjusted_dose_kg_ha": null,
+            "commercial_products": {},
+            "stoichiometric_notes": "Commercial fertilizer product quantities are withheld because verified laboratory Soil Health Card readings are unavailable. Prescribing physical fertilizer bags without soil testing risks severe vegetative lodging, blast disease, and nitrate pollution.",
+            "disclaimers": [
+              "Advisory Only: Baseline state Package of Practices (POP) RDF shown in kg/ha.",
+              "Obtain a certified laboratory soil test or consult your local Krishi Vigyan Kendra (KVK) for customized dosing."
+            ]
+          }
+        }
+      ],
+      "excluded_candidates": [
+        {
+          "crop_id": "wheat",
+          "canonical_name": "Wheat",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-WHEAT-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Wheat (Annual_Seasonal): Month 7 in West Bengal is outside verified planting windows: Timely_Sown (Nov 1 - Nov 15, months 11-11); Late_Sown (Nov 20 - Dec 15, months 11-12); Central_Zone_Early (Oct 25 - Nov 15, months 10-11)."
+            },
+            {
+              "rule_id": "RULE-WHEAT-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Wheat: Mean temperature (28.5\u00b0C) exceeds maximum lethal emergence threshold (28.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ]
+        },
+        {
+          "crop_id": "maize",
+          "canonical_name": "Maize (Corn)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MAIZE-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Maize (Corn) (Annual_Seasonal): Month 7 in West Bengal is outside verified planting windows: Monsoon_Kharif (Jun 15 - Jul 15, months 6-7); Spring_Maize (Jan 20 - Feb 15, months 1-2)."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ]
+        },
+        {
+          "crop_id": "cotton",
+          "canonical_name": "Cotton",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-COTTON-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Cotton (Annual_Seasonal): Month 7 in West Bengal is outside verified planting windows: Monsoon_Kharif_Central (Jun 15 - Jul 10, months 6-7); Northern_Irrigated_Early (Apr 15 - May 15, months 4-5)."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ]
+        },
+        {
+          "crop_id": "sugarcane",
+          "canonical_name": "Sugarcane",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-SUGARCANE-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Sugarcane (Long_Duration_Annual): Month 7 in West Bengal is outside verified planting windows: Adsali_Maharashtra (Jul 15 - Aug 31, months 7-8); Spring_Plains (Feb 15 - Mar 25, months 2-3)."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model.",
+            "Rainfed seasonal moisture (1150.0 mm) is below screening threshold (1200.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "soybean",
+          "canonical_name": "Soybean",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-SOYBEAN-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Soybean (Annual_Seasonal): Month 7 in West Bengal is outside verified planting windows: Monsoon_Kharif_Central (Jun 20 - Jul 10, months 6-7)."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ]
+        },
+        {
+          "crop_id": "groundnut",
+          "canonical_name": "Groundnut",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-GROUNDNUT-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Groundnut (Annual_Seasonal): Month 7 in West Bengal is outside verified planting windows: Monsoon_Kharif_Gujarat (Jun 15 - Jul 15, months 6-7); Summer_Irrigated (Jan 15 - Feb 15, months 1-2)."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ]
+        },
+        {
+          "crop_id": "potato",
+          "canonical_name": "Potato",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-POTATO-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Potato (Annual_Seasonal): Month 7 in West Bengal is outside verified planting windows: Main_Crop_IGP (Oct 15 - Nov 5, months 10-11)."
+            },
+            {
+              "rule_id": "RULE-POTATO-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Potato: Mean temperature (28.5\u00b0C) exceeds maximum lethal emergence threshold (26.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ]
+        },
+        {
+          "crop_id": "chickpea",
+          "canonical_name": "Chickpea",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-CHICKPEA-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Chickpea (Annual_Seasonal): Month 7 in West Bengal is outside verified planting windows: Standard_Rabi_Pulses (Oct 15 - Nov 15, months 10-11)."
+            },
+            {
+              "rule_id": "RULE-CHICKPEA-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Chickpea: Mean temperature (28.5\u00b0C) exceeds maximum lethal emergence threshold (28.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ]
+        },
+        {
+          "crop_id": "lentil",
+          "canonical_name": "Lentil",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-LENTIL-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Lentil (Annual_Seasonal): Month 7 in West Bengal is outside verified planting windows: Standard_Rabi_Pulses (Oct 25 - Nov 20, months 10-11)."
+            },
+            {
+              "rule_id": "RULE-LENTIL-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Lentil: Mean temperature (28.5\u00b0C) exceeds maximum lethal emergence threshold (26.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ]
+        },
+        {
+          "crop_id": "mustard",
+          "canonical_name": "Mustard",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MUSTARD-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Mustard (Annual_Seasonal): Month 7 in West Bengal is outside verified planting windows: Standard_Rabi_Oilseed (Oct 1 - Oct 25, months 10-10)."
+            },
+            {
+              "rule_id": "RULE-MUSTARD-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Mustard: Mean temperature (28.5\u00b0C) exceeds maximum lethal emergence threshold (28.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ]
+        },
+        {
+          "crop_id": "tomato",
+          "canonical_name": "Tomato",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-TOMATO-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Tomato (Multi_Season_Arable): Month 7 in West Bengal is outside verified planting windows: Autumn_Winter (Sep 15 - Oct 15, months 9-10); Spring_Summer (Jan 15 - Feb 15, months 1-2)."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ]
+        },
+        {
+          "crop_id": "onion",
+          "canonical_name": "Onion",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-ONION-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Onion (Annual_Seasonal): Month 7 in West Bengal is outside verified planting windows: Rabi_Main_Crop (Nov 15 - Dec 15, months 11-12)."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ]
+        },
+        {
+          "crop_id": "banana",
+          "canonical_name": "Banana",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-BANANA-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Banana (Long_Duration_Annual): Month 7 in West Bengal is outside verified planting windows: Monsoon_Planting (Jun 15 - Jul 31, months 6-7)."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model.",
+            "Rainfed seasonal moisture (1150.0 mm) is below screening threshold (1400.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "mango",
+          "canonical_name": "Mango",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MANGO-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Mango (Perennial_Orchard): Month 7 in West Bengal is outside verified planting windows: Orchard_Monsoon_Grafting (Jul 15 - Aug 31, months 7-8)."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ]
+        },
+        {
+          "crop_id": "jowar",
+          "canonical_name": "Jowar (Sorghum)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-JOWAR-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Jowar (Sorghum) (Annual_Seasonal): Month 7 in West Bengal is outside verified planting windows: Monsoon_Kharif_Grain (Jun 15 - Jul 10, months 6-7); Rabi_Maldandi_Grain (Sep 15 - Oct 15, months 9-10)."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ]
+        },
+        {
+          "crop_id": "sunflower",
+          "canonical_name": "Sunflower",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-SUNFLOWER-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Sunflower (Multi_Season_Arable): Month 7 in West Bengal is outside verified planting windows: Monsoon_Kharif (Jun 20 - Jul 15, months 6-7); Spring_Sunflower (Jan 20 - Feb 15, months 1-2)."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ]
+        },
+        {
+          "crop_id": "barley",
+          "canonical_name": "Barley",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-BARLEY-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Barley (Annual_Seasonal): Month 7 in West Bengal is outside verified planting windows: Standard_Rabi_Cereal (Oct 25 - Nov 20, months 10-11)."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ]
+        },
+        {
+          "crop_id": "millets",
+          "canonical_name": "Millets (Pearl Millet / Bajra)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MILLETS-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Millets (Pearl Millet / Bajra) (Annual_Seasonal): Month 7 in West Bengal is outside verified planting windows: Monsoon_Kharif_Arid (Jun 25 - Jul 15, months 6-7); Summer_Bajra_Irrigated (Feb 15 - Mar 10, months 2-3)."
+            }
+          ],
+          "warnings": [
+            "Hydrological loss partitioning: 561.0 mm (48.8%) lost to surface runoff and deep drainage under USDA-SCS model."
+          ]
+        }
+      ],
+      "diagnostics": {
+        "dci_details": {
+          "temporal": 1.0,
+          "climate": 1.0,
+          "water": 1.0,
+          "soil": 1.0,
+          "ph": 1.0,
+          "nutrients": 0.0
+        },
+        "validation_warnings": [],
+        "total_candidates_evaluated": 19,
+        "eligible_count": 1,
+        "excluded_count": 18
+      },
+      "land_reclamation_advisory": null
+    }
+  },
+  {
+    "scenario_id": "SCENARIO-03-MH-CHICKPEA",
+    "title": "Rainfed Post-Monsoon Chickpea on Vertisol (Ahmednagar, Maharashtra)",
+    "description": "Scarcity zone Vertisol, 45 mm in-season rain, unmeasured profile moisture flags HIGH_WATER_RISK without Tier 1 hard exclusion.",
+    "query": {
+      "location": {
+        "state": "Maharashtra",
+        "district": "Ahmednagar",
+        "agro_climatic_zone": "Western Maharashtra Scarcity Zone"
+      },
+      "temporal": {
+        "sowing_month": 10,
+        "sowing_date": "2026-10-20",
+        "cultivation_season": "Rabi",
+        "planting_system": null
+      },
+      "climate_and_water": {
+        "seasonal_rainfall_amount": 45.0,
+        "rainfall_period_type": null,
+        "rainfall_source": null,
+        "monthly_rainfall": null,
+        "irrigation_access": "None_Rainfed",
+        "irrigation_water_quantity_mm": null,
+        "irrigation_quantity_basis": null,
+        "irrigation_type": null,
+        "irrigation_period_days": null,
+        "rainfall_period_days": null,
+        "temperature_mean": 21.0,
+        "temperature_min_night": null,
+        "temperature_max_day": null,
+        "relative_humidity": 48.0,
+        "soil_moisture_tier": "UNKNOWN",
+        "soil_moisture_mm": null,
+        "awc_mm_m": 200.0,
+        "rooting_depth_m": 1.2
+      },
+      "edaphic": {
+        "soil_texture": "Black Vertisol",
+        "soil_ph": 7.8,
+        "has_soil_test": false,
+        "nutrient_basis": null,
+        "soil_nitrogen": null,
+        "soil_phosphorus": null,
+        "soil_potassium": null,
+        "organic_carbon_pct": null
+      }
+    },
+    "result": {
+      "status": "NO_RECOMMENDATION_SUITABLE",
+      "engine_version": "2.2.0-CLOSURE",
+      "execution_timestamp": "2026-11-20T07:15:49.215883+00:00",
+      "query_summary": {
+        "location": "Ahmednagar, Maharashtra (Western Maharashtra Scarcity Zone)",
+        "season": "Rabi",
+        "planting_system_evaluated": "Central_Zone_Early (Oct 25 - Nov 15)",
+        "water_regime_evaluated": "None_Rainfed (0 mm + Rain 45.0 mm)",
+        "data_completeness_index": 0.85,
+        "evidence_confidence_tier": "HIGH_CONFIDENCE_ESTIMATED_FERTILITY"
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "crop_id": "chickpea",
+          "canonical_name": "Chickpea",
+          "crop_life_cycle": "Annual_Seasonal",
+          "suitability_score": 36.5,
+          "evidence_confidence_tier": "PROVISIONAL_EVALUATION",
+          "tier1_status": "CONDITIONALLY_ELIGIBLE",
+          "tier2_components": {
+            "climate_score": 98.97,
+            "water_score": 17.2,
+            "soil_score": 100.0,
+            "nutrient_score": 70.0,
+            "ph_score": 100.0,
+            "core_suitability": 56.73,
+            "liebig_penalty_factor": 0.644
+          },
+          "active_planting_window": {
+            "window_id": "WIN-CHK-MAIN",
+            "planting_system": "Standard_Rabi_Pulses",
+            "broad_season": "Rabi",
+            "region_or_zone": "Central_and_Northern_India",
+            "sowing_month_start": 10,
+            "sowing_month_end": 11,
+            "sowing_date_range": "Oct 15 - Nov 15",
+            "harvest_month_range": "Feb - Mar",
+            "crop_duration_days": 115,
+            "window_evidence_status": "VERIFIED",
+            "source_reference": "ICAR-IIPR Tech. Bull. 44/2021"
+          },
+          "water_assessment": {
+            "water_gating_status": "CONDITIONALLY_ELIGIBLE_WITH_HIGH_WATER_RISK",
+            "effective_rainfall_mm": null,
+            "net_irrigation_delivered_mm": 0.0,
+            "gross_irrigation_applied_mm": 0.0,
+            "total_net_water_mm": 45.0,
+            "deficit_against_optimal_mm": 305.0,
+            "deficit_against_min_mm": 205.0,
+            "runoff_and_drainage_loss_mm": null,
+            "irrigation_efficiency": 0.0,
+            "soil_moisture_accounted_mm": 0.0,
+            "soil_moisture_tier": "UNKNOWN",
+            "provisional_water_score": 17.2,
+            "warnings": [
+              "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+              "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+              "Rainfed seasonal moisture (45.0 mm) is below screening threshold (250.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+            ]
+          },
+          "expected_yield_range_t_ha": [
+            1.5,
+            2.2
+          ],
+          "agronomic_advisory": [
+            "Optimal Standard_Rabi_Pulses sowing window (Oct 15 - Nov 15) active in Central_and_Northern_India.",
+            "Liebig Limiting Factor: Water adequacy (sub-score 17.2/100) is the primary constraint depressing overall yield potential.",
+            "Acute water deficit flagged. Recommend protective supplemental irrigation or drought-tolerant cultivar selection.",
+            "Black Vertisol soil provides optimal drainage and aeration for root proliferation."
+          ],
+          "risk_warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (250.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ],
+          "fertilizer_prescription": {
+            "status": "WITHHELD_MISSING_SOIL_TEST",
+            "rdf_n_p2o5_k2o_kg_ha": [
+              20.0,
+              50.0,
+              20.0
+            ],
+            "adjusted_dose_kg_ha": null,
+            "commercial_products": {},
+            "stoichiometric_notes": "Commercial fertilizer product quantities are withheld because verified laboratory Soil Health Card readings are unavailable. Prescribing physical fertilizer bags without soil testing risks severe vegetative lodging, blast disease, and nitrate pollution.",
+            "disclaimers": [
+              "Advisory Only: Baseline state Package of Practices (POP) RDF shown in kg/ha.",
+              "Obtain a certified laboratory soil test or consult your local Krishi Vigyan Kendra (KVK) for customized dosing."
+            ]
+          }
+        },
+        {
+          "rank": 2,
+          "crop_id": "wheat",
+          "canonical_name": "Wheat",
+          "crop_life_cycle": "Annual_Seasonal",
+          "suitability_score": 34.0,
+          "evidence_confidence_tier": "PROVISIONAL_EVALUATION",
+          "tier1_status": "CONDITIONALLY_ELIGIBLE",
+          "tier2_components": {
+            "climate_score": 94.38,
+            "water_score": 17.2,
+            "soil_score": 75.0,
+            "nutrient_score": 70.0,
+            "ph_score": 100.0,
+            "core_suitability": 52.8,
+            "liebig_penalty_factor": 0.644
+          },
+          "active_planting_window": {
+            "window_id": "WIN-WHEAT-CZ-EARLY",
+            "planting_system": "Central_Zone_Early",
+            "broad_season": "Rabi",
+            "region_or_zone": "Central_Zone_MP_Gujarat",
+            "sowing_month_start": 10,
+            "sowing_month_end": 11,
+            "sowing_date_range": "Oct 25 - Nov 15",
+            "harvest_month_range": "Mar 15 - Apr 5",
+            "crop_duration_days": 115,
+            "window_evidence_status": "VERIFIED",
+            "source_reference": "ICAR-IIWBR Bull. 55/2022"
+          },
+          "water_assessment": {
+            "water_gating_status": "CONDITIONALLY_ELIGIBLE_WITH_HIGH_WATER_RISK",
+            "effective_rainfall_mm": null,
+            "net_irrigation_delivered_mm": 0.0,
+            "gross_irrigation_applied_mm": 0.0,
+            "total_net_water_mm": 45.0,
+            "deficit_against_optimal_mm": 355.0,
+            "deficit_against_min_mm": 205.0,
+            "runoff_and_drainage_loss_mm": null,
+            "irrigation_efficiency": 0.0,
+            "soil_moisture_accounted_mm": 0.0,
+            "soil_moisture_tier": "UNKNOWN",
+            "provisional_water_score": 17.2,
+            "warnings": [
+              "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+              "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+              "Rainfed seasonal moisture (45.0 mm) is below screening threshold (250.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+            ]
+          },
+          "expected_yield_range_t_ha": [
+            4.2,
+            5.5
+          ],
+          "agronomic_advisory": [
+            "Optimal Central_Zone_Early sowing window (Oct 25 - Nov 15) active in Central_Zone_MP_Gujarat.",
+            "Liebig Limiting Factor: Water adequacy (sub-score 17.2/100) is the primary constraint depressing overall yield potential.",
+            "Acute water deficit flagged. Recommend protective supplemental irrigation or drought-tolerant cultivar selection."
+          ],
+          "risk_warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (250.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ],
+          "fertilizer_prescription": {
+            "status": "WITHHELD_MISSING_SOIL_TEST",
+            "rdf_n_p2o5_k2o_kg_ha": [
+              120.0,
+              60.0,
+              40.0
+            ],
+            "adjusted_dose_kg_ha": null,
+            "commercial_products": {},
+            "stoichiometric_notes": "Commercial fertilizer product quantities are withheld because verified laboratory Soil Health Card readings are unavailable. Prescribing physical fertilizer bags without soil testing risks severe vegetative lodging, blast disease, and nitrate pollution.",
+            "disclaimers": [
+              "Advisory Only: Baseline state Package of Practices (POP) RDF shown in kg/ha.",
+              "Obtain a certified laboratory soil test or consult your local Krishi Vigyan Kendra (KVK) for customized dosing."
+            ]
+          }
+        },
+        {
+          "rank": 3,
+          "crop_id": "jowar",
+          "canonical_name": "Jowar (Sorghum)",
+          "crop_life_cycle": "Annual_Seasonal",
+          "suitability_score": 31.2,
+          "evidence_confidence_tier": "PROVISIONAL_EVALUATION",
+          "tier1_status": "CONDITIONALLY_ELIGIBLE",
+          "tier2_components": {
+            "climate_score": 74.02,
+            "water_score": 15.14,
+            "soil_score": 100.0,
+            "nutrient_score": 70.0,
+            "ph_score": 100.0,
+            "core_suitability": 50.04,
+            "liebig_penalty_factor": 0.624
+          },
+          "active_planting_window": {
+            "window_id": "WIN-JOW-RABI",
+            "planting_system": "Rabi_Maldandi_Grain",
+            "broad_season": "Rabi",
+            "region_or_zone": "Maharashtra_Karnataka_Vertisols",
+            "sowing_month_start": 9,
+            "sowing_month_end": 10,
+            "sowing_date_range": "Sep 15 - Oct 15",
+            "harvest_month_range": "Feb - Mar",
+            "crop_duration_days": 120,
+            "window_evidence_status": "VERIFIED",
+            "source_reference": "ICAR-IIMR Tech. Bull. 31/2021"
+          },
+          "water_assessment": {
+            "water_gating_status": "CONDITIONALLY_ELIGIBLE_WITH_HIGH_WATER_RISK",
+            "effective_rainfall_mm": null,
+            "net_irrigation_delivered_mm": 0.0,
+            "gross_irrigation_applied_mm": 0.0,
+            "total_net_water_mm": 45.0,
+            "deficit_against_optimal_mm": 455.0,
+            "deficit_against_min_mm": 305.0,
+            "runoff_and_drainage_loss_mm": null,
+            "irrigation_efficiency": 0.0,
+            "soil_moisture_accounted_mm": 0.0,
+            "soil_moisture_tier": "UNKNOWN",
+            "provisional_water_score": 15.14,
+            "warnings": [
+              "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+              "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+              "Rainfed seasonal moisture (45.0 mm) is below screening threshold (350.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+            ]
+          },
+          "expected_yield_range_t_ha": [
+            2.2,
+            3.2
+          ],
+          "agronomic_advisory": [
+            "Optimal Rabi_Maldandi_Grain sowing window (Sep 15 - Oct 15) active in Maharashtra_Karnataka_Vertisols.",
+            "Liebig Limiting Factor: Water adequacy (sub-score 15.14/100) is the primary constraint depressing overall yield potential.",
+            "Acute water deficit flagged. Recommend protective supplemental irrigation or drought-tolerant cultivar selection.",
+            "Black Vertisol soil provides optimal drainage and aeration for root proliferation."
+          ],
+          "risk_warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (350.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ],
+          "fertilizer_prescription": {
+            "status": "WITHHELD_MISSING_SOIL_TEST",
+            "rdf_n_p2o5_k2o_kg_ha": [
+              80.0,
+              40.0,
+              40.0
+            ],
+            "adjusted_dose_kg_ha": null,
+            "commercial_products": {},
+            "stoichiometric_notes": "Commercial fertilizer product quantities are withheld because verified laboratory Soil Health Card readings are unavailable. Prescribing physical fertilizer bags without soil testing risks severe vegetative lodging, blast disease, and nitrate pollution.",
+            "disclaimers": [
+              "Advisory Only: Baseline state Package of Practices (POP) RDF shown in kg/ha.",
+              "Obtain a certified laboratory soil test or consult your local Krishi Vigyan Kendra (KVK) for customized dosing."
+            ]
+          }
+        },
+        {
+          "rank": 4,
+          "crop_id": "tomato",
+          "canonical_name": "Tomato",
+          "crop_life_cycle": "Multi_Season_Arable",
+          "suitability_score": 27.6,
+          "evidence_confidence_tier": "PROVISIONAL_EVALUATION",
+          "tier1_status": "CONDITIONALLY_ELIGIBLE",
+          "tier2_components": {
+            "climate_score": 84.63,
+            "water_score": 14.5,
+            "soil_score": 50.0,
+            "nutrient_score": 70.0,
+            "ph_score": 100.0,
+            "core_suitability": 44.77,
+            "liebig_penalty_factor": 0.617
+          },
+          "active_planting_window": {
+            "window_id": "WIN-TOM-AUTUMN",
+            "planting_system": "Autumn_Winter",
+            "broad_season": "Rabi",
+            "region_or_zone": "Plains_Zone",
+            "sowing_month_start": 9,
+            "sowing_month_end": 10,
+            "sowing_date_range": "Sep 15 - Oct 15",
+            "harvest_month_range": "Dec - Feb",
+            "crop_duration_days": 120,
+            "window_evidence_status": "VERIFIED",
+            "source_reference": "ICAR-IIHR Tech. Bull. 58/2020"
+          },
+          "water_assessment": {
+            "water_gating_status": "CONDITIONALLY_ELIGIBLE_WITH_HIGH_WATER_RISK",
+            "effective_rainfall_mm": null,
+            "net_irrigation_delivered_mm": 0.0,
+            "gross_irrigation_applied_mm": 0.0,
+            "total_net_water_mm": 45.0,
+            "deficit_against_optimal_mm": 555.0,
+            "deficit_against_min_mm": 355.0,
+            "runoff_and_drainage_loss_mm": null,
+            "irrigation_efficiency": 0.0,
+            "soil_moisture_accounted_mm": 0.0,
+            "soil_moisture_tier": "UNKNOWN",
+            "provisional_water_score": 14.5,
+            "warnings": [
+              "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+              "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+              "Rainfed seasonal moisture (45.0 mm) is below screening threshold (400.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+            ]
+          },
+          "expected_yield_range_t_ha": [
+            30.0,
+            45.0
+          ],
+          "agronomic_advisory": [
+            "Optimal Autumn_Winter sowing window (Sep 15 - Oct 15) active in Plains_Zone.",
+            "Liebig Limiting Factor: Water adequacy (sub-score 14.5/100) is the primary constraint depressing overall yield potential.",
+            "Acute water deficit flagged. Recommend protective supplemental irrigation or drought-tolerant cultivar selection."
+          ],
+          "risk_warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (400.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ],
+          "fertilizer_prescription": {
+            "status": "WITHHELD_MISSING_SOIL_TEST",
+            "rdf_n_p2o5_k2o_kg_ha": [
+              120.0,
+              80.0,
+              80.0
+            ],
+            "adjusted_dose_kg_ha": null,
+            "commercial_products": {},
+            "stoichiometric_notes": "Commercial fertilizer product quantities are withheld because verified laboratory Soil Health Card readings are unavailable. Prescribing physical fertilizer bags without soil testing risks severe vegetative lodging, blast disease, and nitrate pollution.",
+            "disclaimers": [
+              "Advisory Only: Baseline state Package of Practices (POP) RDF shown in kg/ha.",
+              "Obtain a certified laboratory soil test or consult your local Krishi Vigyan Kendra (KVK) for customized dosing."
+            ]
+          }
+        }
+      ],
+      "excluded_candidates": [
+        {
+          "crop_id": "rice",
+          "canonical_name": "Rice (Paddy)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-RICE-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Rice (Paddy) (Annual_Seasonal): Month 10 in Maharashtra is outside verified planting windows: Aman_Lowland (Jun 15 - Jul 15, months 6-7); Boro_Deepwater_Receding (Nov 15 - Dec 15, months 11-12); Aus_Direct_Seeded (Mar 15 - Apr 30, months 3-4)."
+            }
+          ],
+          "warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (800.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "maize",
+          "canonical_name": "Maize (Corn)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MAIZE-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Maize (Corn) (Annual_Seasonal): Month 10 in Maharashtra is outside verified planting windows: Monsoon_Kharif (Jun 15 - Jul 15, months 6-7); Spring_Maize (Jan 20 - Feb 15, months 1-2)."
+            }
+          ],
+          "warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (400.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "cotton",
+          "canonical_name": "Cotton",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-COTTON-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Cotton (Annual_Seasonal): Month 10 in Maharashtra is outside verified planting windows: Monsoon_Kharif_Central (Jun 15 - Jul 10, months 6-7); Northern_Irrigated_Early (Apr 15 - May 15, months 4-5)."
+            }
+          ],
+          "warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (500.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "sugarcane",
+          "canonical_name": "Sugarcane",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-SUGARCANE-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Sugarcane (Long_Duration_Annual): Month 10 in Maharashtra is outside verified planting windows: Adsali_Maharashtra (Jul 15 - Aug 31, months 7-8); Spring_Plains (Feb 15 - Mar 25, months 2-3)."
+            }
+          ],
+          "warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (1200.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "soybean",
+          "canonical_name": "Soybean",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-SOYBEAN-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Soybean (Annual_Seasonal): Month 10 in Maharashtra is outside verified planting windows: Monsoon_Kharif_Central (Jun 20 - Jul 10, months 6-7)."
+            }
+          ],
+          "warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (450.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "groundnut",
+          "canonical_name": "Groundnut",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-GROUNDNUT-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Groundnut (Annual_Seasonal): Month 10 in Maharashtra is outside verified planting windows: Monsoon_Kharif_Gujarat (Jun 15 - Jul 15, months 6-7); Summer_Irrigated (Jan 15 - Feb 15, months 1-2)."
+            }
+          ],
+          "warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (400.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "potato",
+          "canonical_name": "Potato",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-POTATO-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Potato (Annual_Seasonal): Month 10 in Maharashtra is outside verified planting windows: Main_Crop_IGP (Oct 15 - Nov 5, months 10-11)."
+            }
+          ],
+          "warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (300.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "lentil",
+          "canonical_name": "Lentil",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-LENTIL-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Lentil (Annual_Seasonal): Month 10 in Maharashtra is outside verified planting windows: Standard_Rabi_Pulses (Oct 25 - Nov 20, months 10-11)."
+            }
+          ],
+          "warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (200.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "mustard",
+          "canonical_name": "Mustard",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MUSTARD-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Mustard (Annual_Seasonal): Month 10 in Maharashtra is outside verified planting windows: Standard_Rabi_Oilseed (Oct 1 - Oct 25, months 10-10)."
+            }
+          ],
+          "warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (200.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "onion",
+          "canonical_name": "Onion",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-ONION-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Onion (Annual_Seasonal): Month 10 in Maharashtra is outside verified planting windows: Rabi_Main_Crop (Nov 15 - Dec 15, months 11-12)."
+            }
+          ],
+          "warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (350.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "banana",
+          "canonical_name": "Banana",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-BANANA-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Banana (Long_Duration_Annual): Month 10 in Maharashtra is outside verified planting windows: Monsoon_Planting (Jun 15 - Jul 31, months 6-7)."
+            }
+          ],
+          "warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (1400.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "mango",
+          "canonical_name": "Mango",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MANGO-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Mango (Perennial_Orchard): Month 10 in Maharashtra is outside verified planting windows: Orchard_Monsoon_Grafting (Jul 15 - Aug 31, months 7-8)."
+            }
+          ],
+          "warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (300.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "sunflower",
+          "canonical_name": "Sunflower",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-SUNFLOWER-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Sunflower (Multi_Season_Arable): Month 10 in Maharashtra is outside verified planting windows: Monsoon_Kharif (Jun 20 - Jul 15, months 6-7); Spring_Sunflower (Jan 20 - Feb 15, months 1-2)."
+            }
+          ],
+          "warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (350.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "barley",
+          "canonical_name": "Barley",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-BARLEY-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Barley (Annual_Seasonal): Month 10 in Maharashtra is outside verified planting windows: Standard_Rabi_Cereal (Oct 25 - Nov 20, months 10-11)."
+            }
+          ],
+          "warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (200.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "millets",
+          "canonical_name": "Millets (Pearl Millet / Bajra)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MILLETS-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Millets (Pearl Millet / Bajra) (Annual_Seasonal): Month 10 in Maharashtra is outside verified planting windows: Monsoon_Kharif_Arid (Jun 25 - Jul 15, months 6-7); Summer_Bajra_Irrigated (Feb 15 - Mar 10, months 2-3)."
+            }
+          ],
+          "warnings": [
+            "Deep Vertisol profile capacity is 240.0 mm (AWC 200.0 mm/m * 1.2 m). Unmeasured profile soil moisture is not fabricated.",
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (45.0 mm) is below screening threshold (200.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        }
+      ],
+      "diagnostics": {
+        "dci_details": {
+          "temporal": 1.0,
+          "climate": 1.0,
+          "water": 1.0,
+          "soil": 1.0,
+          "ph": 1.0,
+          "nutrients": 0.0
+        },
+        "validation_warnings": [],
+        "total_candidates_evaluated": 19,
+        "eligible_count": 4,
+        "excluded_count": 15
+      },
+      "land_reclamation_advisory": "Hyper-arid drought conditions (rainfall 45.0 mm with no irrigation). Arable field crops cannot complete their life cycle without supplemental water. Dryland agroforestry, rainwater harvesting (bunding/farm ponds), or drought-hardy desert pulses/grasses recommended."
+    }
+  },
+  {
+    "scenario_id": "SCENARIO-04-RJ-MILLETS",
+    "title": "Arid Dryland Summer Bajra / Millets (Jaisalmer, Rajasthan)",
+    "description": "Hyper-arid Thar desert, 110 mm monsoon rain, 38\u00b0C peak heat, coarse sandy soil.",
+    "query": {
+      "location": {
+        "state": "Rajasthan",
+        "district": "Jaisalmer",
+        "agro_climatic_zone": "Western Dry Region"
+      },
+      "temporal": {
+        "sowing_month": 7,
+        "sowing_date": "2026-07-10",
+        "cultivation_season": "Kharif",
+        "planting_system": null
+      },
+      "climate_and_water": {
+        "seasonal_rainfall_amount": 110.0,
+        "rainfall_period_type": null,
+        "rainfall_source": null,
+        "monthly_rainfall": null,
+        "irrigation_access": "None_Rainfed",
+        "irrigation_water_quantity_mm": null,
+        "irrigation_quantity_basis": null,
+        "irrigation_type": null,
+        "irrigation_period_days": null,
+        "rainfall_period_days": null,
+        "temperature_mean": 38.0,
+        "temperature_min_night": null,
+        "temperature_max_day": null,
+        "relative_humidity": 25.0,
+        "soil_moisture_tier": "UNKNOWN",
+        "soil_moisture_mm": null,
+        "awc_mm_m": null,
+        "rooting_depth_m": null
+      },
+      "edaphic": {
+        "soil_texture": "Sandy",
+        "soil_ph": 8.4,
+        "has_soil_test": false,
+        "nutrient_basis": null,
+        "soil_nitrogen": null,
+        "soil_phosphorus": null,
+        "soil_potassium": null,
+        "organic_carbon_pct": null
+      }
+    },
+    "result": {
+      "status": "NO_RECOMMENDATION_SUITABLE",
+      "engine_version": "2.2.0-CLOSURE",
+      "execution_timestamp": "2026-11-20T07:15:49.216372+00:00",
+      "query_summary": {
+        "location": "Jaisalmer, Rajasthan (Western Dry Region)",
+        "season": "Kharif",
+        "planting_system_evaluated": "Aman_Lowland (Jun 15 - Jul 15)",
+        "water_regime_evaluated": "None_Rainfed (0 mm + Rain 110.0 mm)",
+        "data_completeness_index": 0.85,
+        "evidence_confidence_tier": "HIGH_CONFIDENCE_ESTIMATED_FERTILITY"
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "crop_id": "millets",
+          "canonical_name": "Millets (Pearl Millet / Bajra)",
+          "crop_life_cycle": "Annual_Seasonal",
+          "suitability_score": 37.7,
+          "evidence_confidence_tier": "PROVISIONAL_EVALUATION",
+          "tier1_status": "CONDITIONALLY_ELIGIBLE",
+          "tier2_components": {
+            "climate_score": 37.79,
+            "water_score": 32.0,
+            "soil_score": 100.0,
+            "nutrient_score": 70.0,
+            "ph_score": 80.0,
+            "core_suitability": 50.07,
+            "liebig_penalty_factor": 0.752
+          },
+          "active_planting_window": {
+            "window_id": "WIN-MIL-KHARIF",
+            "planting_system": "Monsoon_Kharif_Arid",
+            "broad_season": "Kharif",
+            "region_or_zone": "Arid_and_Semi_Arid_Plains",
+            "sowing_month_start": 6,
+            "sowing_month_end": 7,
+            "sowing_date_range": "Jun 25 - Jul 15",
+            "harvest_month_range": "Sep - Oct",
+            "crop_duration_days": 85,
+            "window_evidence_status": "VERIFIED",
+            "source_reference": "ICAR-AICRP-PM Tech. Bull. 24/2021"
+          },
+          "water_assessment": {
+            "water_gating_status": "CONDITIONALLY_ELIGIBLE_WITH_HIGH_WATER_RISK",
+            "effective_rainfall_mm": null,
+            "net_irrigation_delivered_mm": 0.0,
+            "gross_irrigation_applied_mm": 0.0,
+            "total_net_water_mm": 110.0,
+            "deficit_against_optimal_mm": 240.0,
+            "deficit_against_min_mm": 90.0,
+            "runoff_and_drainage_loss_mm": null,
+            "irrigation_efficiency": 0.0,
+            "soil_moisture_accounted_mm": 0.0,
+            "soil_moisture_tier": "UNKNOWN",
+            "provisional_water_score": 32.0,
+            "warnings": [
+              "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+              "Rainfed seasonal moisture (110.0 mm) is below screening threshold (200.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+            ]
+          },
+          "expected_yield_range_t_ha": [
+            1.8,
+            2.8
+          ],
+          "agronomic_advisory": [
+            "Optimal Monsoon_Kharif_Arid sowing window (Jun 25 - Jul 15) active in Arid_and_Semi_Arid_Plains.",
+            "Liebig Limiting Factor: Water adequacy (sub-score 32.0/100) is the primary constraint depressing overall yield potential.",
+            "Acute water deficit flagged. Recommend protective supplemental irrigation or drought-tolerant cultivar selection.",
+            "Sandy soil provides optimal drainage and aeration for root proliferation."
+          ],
+          "risk_warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (200.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty.",
+            "Thermal Stress Notice: Mean temperature (38.0\u00b0C) approaches upper heat threshold. Risk of flower shedding, anthesis desiccation, and reduced grain fill.",
+            "Alkalinity/Sodicity Warning: Soil pH (8.4) exceeds preferred maximum (8.2). Zinc, iron, and phosphorus availability may be restricted."
+          ],
+          "fertilizer_prescription": {
+            "status": "WITHHELD_MISSING_SOIL_TEST",
+            "rdf_n_p2o5_k2o_kg_ha": [
+              60.0,
+              30.0,
+              0.0
+            ],
+            "adjusted_dose_kg_ha": null,
+            "commercial_products": {},
+            "stoichiometric_notes": "Commercial fertilizer product quantities are withheld because verified laboratory Soil Health Card readings are unavailable. Prescribing physical fertilizer bags without soil testing risks severe vegetative lodging, blast disease, and nitrate pollution.",
+            "disclaimers": [
+              "Advisory Only: Baseline state Package of Practices (POP) RDF shown in kg/ha.",
+              "Obtain a certified laboratory soil test or consult your local Krishi Vigyan Kendra (KVK) for customized dosing."
+            ]
+          }
+        },
+        {
+          "rank": 2,
+          "crop_id": "mango",
+          "canonical_name": "Mango",
+          "crop_life_cycle": "Perennial_Orchard",
+          "suitability_score": 22.2,
+          "evidence_confidence_tier": "PROVISIONAL_EVALUATION",
+          "tier1_status": "CONDITIONALLY_ELIGIBLE",
+          "tier2_components": {
+            "climate_score": 19.83,
+            "water_score": 24.67,
+            "soil_score": 50.0,
+            "nutrient_score": 70.0,
+            "ph_score": 80.0,
+            "core_suitability": 33.22,
+            "liebig_penalty_factor": 0.667
+          },
+          "active_planting_window": {
+            "window_id": "WIN-MNG-GRAFT",
+            "planting_system": "Orchard_Monsoon_Grafting",
+            "broad_season": "Perennial_Orchard",
+            "region_or_zone": "All_India_Orchard_Tracts",
+            "sowing_month_start": 7,
+            "sowing_month_end": 8,
+            "sowing_date_range": "Jul 15 - Aug 31",
+            "harvest_month_range": "May - Jul (Bearing 4-7 yrs)",
+            "crop_duration_days": 1825,
+            "window_evidence_status": "PROVISIONAL",
+            "source_reference": "ICAR-CISH Tech. Bull. 51/2020"
+          },
+          "water_assessment": {
+            "water_gating_status": "CONDITIONALLY_ELIGIBLE_WITH_HIGH_WATER_RISK",
+            "effective_rainfall_mm": null,
+            "net_irrigation_delivered_mm": 0.0,
+            "gross_irrigation_applied_mm": 0.0,
+            "total_net_water_mm": 110.0,
+            "deficit_against_optimal_mm": 790.0,
+            "deficit_against_min_mm": 190.0,
+            "runoff_and_drainage_loss_mm": null,
+            "irrigation_efficiency": 0.0,
+            "soil_moisture_accounted_mm": 0.0,
+            "soil_moisture_tier": "UNKNOWN",
+            "provisional_water_score": 24.67,
+            "warnings": [
+              "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+              "Rainfed seasonal moisture (110.0 mm) is below screening threshold (300.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+            ]
+          },
+          "expected_yield_range_t_ha": [
+            8.0,
+            15.0
+          ],
+          "agronomic_advisory": [
+            "Optimal Orchard_Monsoon_Grafting sowing window (Jul 15 - Aug 31) active in All_India_Orchard_Tracts.",
+            "Liebig Limiting Factor: Climate / temperature (sub-score 19.83/100) is the primary constraint depressing overall yield potential.",
+            "Acute water deficit flagged. Recommend protective supplemental irrigation or drought-tolerant cultivar selection."
+          ],
+          "risk_warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (300.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty.",
+            "Thermal Stress Notice: Mean temperature (38.0\u00b0C) approaches upper heat threshold. Risk of flower shedding, anthesis desiccation, and reduced grain fill.",
+            "Alkalinity/Sodicity Warning: Soil pH (8.4) exceeds preferred maximum (8.2). Zinc, iron, and phosphorus availability may be restricted."
+          ],
+          "fertilizer_prescription": {
+            "status": "WITHHELD_MISSING_SOIL_TEST",
+            "rdf_n_p2o5_k2o_kg_ha": [
+              100.0,
+              50.0,
+              100.0
+            ],
+            "adjusted_dose_kg_ha": null,
+            "commercial_products": {},
+            "stoichiometric_notes": "Commercial fertilizer product quantities are withheld because verified laboratory Soil Health Card readings are unavailable. Prescribing physical fertilizer bags without soil testing risks severe vegetative lodging, blast disease, and nitrate pollution.",
+            "disclaimers": [
+              "Advisory Only: Baseline state Package of Practices (POP) RDF shown in kg/ha.",
+              "Obtain a certified laboratory soil test or consult your local Krishi Vigyan Kendra (KVK) for customized dosing."
+            ]
+          }
+        }
+      ],
+      "excluded_candidates": [
+        {
+          "crop_id": "rice",
+          "canonical_name": "Rice (Paddy)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-RICE-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Rice (Paddy): Mean temperature (38.0\u00b0C) exceeds maximum lethal emergence threshold (35.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            },
+            {
+              "rule_id": "RULE-RICE-SOIL-01",
+              "dimension": "soil_texture",
+              "reason": "Rice (Paddy): Soil texture 'Sandy' is in restricted class (Sandy). Incompatible physical aeration/drainage."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (800.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "wheat",
+          "canonical_name": "Wheat",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-WHEAT-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Wheat (Annual_Seasonal): Month 7 in Rajasthan is outside verified planting windows: Timely_Sown (Nov 1 - Nov 15, months 11-11); Late_Sown (Nov 20 - Dec 15, months 11-12); Central_Zone_Early (Oct 25 - Nov 15, months 10-11)."
+            },
+            {
+              "rule_id": "RULE-WHEAT-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Wheat: Mean temperature (38.0\u00b0C) exceeds maximum lethal emergence threshold (28.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            },
+            {
+              "rule_id": "RULE-WHEAT-SOIL-01",
+              "dimension": "soil_texture",
+              "reason": "Wheat: Soil texture 'Sandy' is in restricted class (Sandy). Incompatible physical aeration/drainage."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (250.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "maize",
+          "canonical_name": "Maize (Corn)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MAIZE-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Maize (Corn): Mean temperature (38.0\u00b0C) exceeds maximum lethal emergence threshold (35.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            },
+            {
+              "rule_id": "RULE-MAIZE-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Maize (Corn): Soil pH (8.4) exceeds lethal survival limit (8.3). Severe micronutrient fixation and sodicity."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (400.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "cotton",
+          "canonical_name": "Cotton",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-COTTON-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Cotton (Annual_Seasonal): Month 7 in Rajasthan is outside verified planting windows: Monsoon_Kharif_Central (Jun 15 - Jul 10, months 6-7); Northern_Irrigated_Early (Apr 15 - May 15, months 4-5)."
+            },
+            {
+              "rule_id": "RULE-COTTON-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Cotton: Mean temperature (38.0\u00b0C) exceeds maximum lethal emergence threshold (36.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            },
+            {
+              "rule_id": "RULE-COTTON-SOIL-01",
+              "dimension": "soil_texture",
+              "reason": "Cotton: Soil texture 'Sandy' is in restricted class (Sandy). Incompatible physical aeration/drainage."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (500.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "sugarcane",
+          "canonical_name": "Sugarcane",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-SUGARCANE-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Sugarcane (Long_Duration_Annual): Month 7 in Rajasthan is outside verified planting windows: Adsali_Maharashtra (Jul 15 - Aug 31, months 7-8); Spring_Plains (Feb 15 - Mar 25, months 2-3)."
+            },
+            {
+              "rule_id": "RULE-SUGARCANE-SOIL-01",
+              "dimension": "soil_texture",
+              "reason": "Sugarcane: Soil texture 'Sandy' is in restricted class (Sandy). Incompatible physical aeration/drainage."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (1200.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "soybean",
+          "canonical_name": "Soybean",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-SOYBEAN-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Soybean (Annual_Seasonal): Month 7 in Rajasthan is outside verified planting windows: Monsoon_Kharif_Central (Jun 20 - Jul 10, months 6-7)."
+            },
+            {
+              "rule_id": "RULE-SOYBEAN-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Soybean: Mean temperature (38.0\u00b0C) exceeds maximum lethal emergence threshold (36.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            },
+            {
+              "rule_id": "RULE-SOYBEAN-SOIL-01",
+              "dimension": "soil_texture",
+              "reason": "Soybean: Soil texture 'Sandy' is in restricted class (Sandy). Incompatible physical aeration/drainage."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (450.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "groundnut",
+          "canonical_name": "Groundnut",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-GROUNDNUT-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Groundnut: Mean temperature (38.0\u00b0C) exceeds maximum lethal emergence threshold (35.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (400.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "potato",
+          "canonical_name": "Potato",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-POTATO-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Potato (Annual_Seasonal): Month 7 in Rajasthan is outside verified planting windows: Main_Crop_IGP (Oct 15 - Nov 5, months 10-11)."
+            },
+            {
+              "rule_id": "RULE-POTATO-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Potato: Mean temperature (38.0\u00b0C) exceeds maximum lethal emergence threshold (26.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            },
+            {
+              "rule_id": "RULE-POTATO-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Potato: Soil pH (8.4) exceeds lethal survival limit (8.0). Severe micronutrient fixation and sodicity."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (300.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "chickpea",
+          "canonical_name": "Chickpea",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-CHICKPEA-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Chickpea (Annual_Seasonal): Month 7 in Rajasthan is outside verified planting windows: Standard_Rabi_Pulses (Oct 15 - Nov 15, months 10-11)."
+            },
+            {
+              "rule_id": "RULE-CHICKPEA-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Chickpea: Mean temperature (38.0\u00b0C) exceeds maximum lethal emergence threshold (28.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            },
+            {
+              "rule_id": "RULE-CHICKPEA-SOIL-01",
+              "dimension": "soil_texture",
+              "reason": "Chickpea: Soil texture 'Sandy' is in restricted class (Sandy). Incompatible physical aeration/drainage."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (250.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "lentil",
+          "canonical_name": "Lentil",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-LENTIL-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Lentil (Annual_Seasonal): Month 7 in Rajasthan is outside verified planting windows: Standard_Rabi_Pulses (Oct 25 - Nov 20, months 10-11)."
+            },
+            {
+              "rule_id": "RULE-LENTIL-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Lentil: Mean temperature (38.0\u00b0C) exceeds maximum lethal emergence threshold (26.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            },
+            {
+              "rule_id": "RULE-LENTIL-SOIL-01",
+              "dimension": "soil_texture",
+              "reason": "Lentil: Soil texture 'Sandy' is in restricted class (Sandy). Incompatible physical aeration/drainage."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (200.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "mustard",
+          "canonical_name": "Mustard",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MUSTARD-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Mustard (Annual_Seasonal): Month 7 in Rajasthan is outside verified planting windows: Standard_Rabi_Oilseed (Oct 1 - Oct 25, months 10-10)."
+            },
+            {
+              "rule_id": "RULE-MUSTARD-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Mustard: Mean temperature (38.0\u00b0C) exceeds maximum lethal emergence threshold (28.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (200.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "tomato",
+          "canonical_name": "Tomato",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-TOMATO-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Tomato (Multi_Season_Arable): Month 7 in Rajasthan is outside verified planting windows: Autumn_Winter (Sep 15 - Oct 15, months 9-10); Spring_Summer (Jan 15 - Feb 15, months 1-2)."
+            },
+            {
+              "rule_id": "RULE-TOMATO-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Tomato: Mean temperature (38.0\u00b0C) exceeds maximum lethal emergence threshold (34.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            },
+            {
+              "rule_id": "RULE-TOMATO-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Tomato: Soil pH (8.4) exceeds lethal survival limit (8.3). Severe micronutrient fixation and sodicity."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (400.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "onion",
+          "canonical_name": "Onion",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-ONION-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Onion (Annual_Seasonal): Month 7 in Rajasthan is outside verified planting windows: Rabi_Main_Crop (Nov 15 - Dec 15, months 11-12)."
+            },
+            {
+              "rule_id": "RULE-ONION-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Onion: Mean temperature (38.0\u00b0C) exceeds maximum lethal emergence threshold (30.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            },
+            {
+              "rule_id": "RULE-ONION-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Onion: Soil pH (8.4) exceeds lethal survival limit (8.3). Severe micronutrient fixation and sodicity."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (350.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "banana",
+          "canonical_name": "Banana",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-BANANA-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Banana (Long_Duration_Annual): Month 7 in Rajasthan is outside verified planting windows: Monsoon_Planting (Jun 15 - Jul 31, months 6-7)."
+            },
+            {
+              "rule_id": "RULE-BANANA-SOIL-01",
+              "dimension": "soil_texture",
+              "reason": "Banana: Soil texture 'Sandy' is in restricted class (Sandy). Incompatible physical aeration/drainage."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (1400.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "jowar",
+          "canonical_name": "Jowar (Sorghum)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-JOWAR-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Jowar (Sorghum) (Annual_Seasonal): Month 7 in Rajasthan is outside verified planting windows: Monsoon_Kharif_Grain (Jun 15 - Jul 10, months 6-7); Rabi_Maldandi_Grain (Sep 15 - Oct 15, months 9-10)."
+            },
+            {
+              "rule_id": "RULE-JOWAR-SOIL-01",
+              "dimension": "soil_texture",
+              "reason": "Jowar (Sorghum): Soil texture 'Sandy' is in restricted class (Sandy). Incompatible physical aeration/drainage."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (350.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "sunflower",
+          "canonical_name": "Sunflower",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-SUNFLOWER-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Sunflower (Multi_Season_Arable): Month 7 in Rajasthan is outside verified planting windows: Monsoon_Kharif (Jun 20 - Jul 15, months 6-7); Spring_Sunflower (Jan 20 - Feb 15, months 1-2)."
+            },
+            {
+              "rule_id": "RULE-SUNFLOWER-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Sunflower: Mean temperature (38.0\u00b0C) exceeds maximum lethal emergence threshold (35.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            },
+            {
+              "rule_id": "RULE-SUNFLOWER-SOIL-01",
+              "dimension": "soil_texture",
+              "reason": "Sunflower: Soil texture 'Sandy' is in restricted class (Sandy). Incompatible physical aeration/drainage."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (350.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        },
+        {
+          "crop_id": "barley",
+          "canonical_name": "Barley",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-BARLEY-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Barley (Annual_Seasonal): Month 7 in Rajasthan is outside verified planting windows: Standard_Rabi_Cereal (Oct 25 - Nov 20, months 10-11)."
+            },
+            {
+              "rule_id": "RULE-BARLEY-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Barley: Mean temperature (38.0\u00b0C) exceeds maximum lethal emergence threshold (30.0\u00b0C). Extreme seedling heat scorch and desiccation."
+            }
+          ],
+          "warnings": [
+            "Monthly rainfall breakdown unavailable; effective root-zone rainfall designated as unmeasured.",
+            "Rainfed seasonal moisture (110.0 mm) is below screening threshold (200.0 mm). Assigned WATER_DEFICIT_WARNING with Tier 2 soft penalty."
+          ]
+        }
+      ],
+      "diagnostics": {
+        "dci_details": {
+          "temporal": 1.0,
+          "climate": 1.0,
+          "water": 1.0,
+          "soil": 1.0,
+          "ph": 1.0,
+          "nutrients": 0.0
+        },
+        "validation_warnings": [],
+        "total_candidates_evaluated": 19,
+        "eligible_count": 2,
+        "excluded_count": 17
+      },
+      "land_reclamation_advisory": "Hyper-arid drought conditions (rainfall 110.0 mm with no irrigation). Arable field crops cannot complete their life cycle without supplemental water. Dryland agroforestry, rainwater harvesting (bunding/farm ponds), or drought-hardy desert pulses/grasses recommended."
+    }
+  },
+  {
+    "scenario_id": "SCENARIO-05-HR-SODICITY",
+    "title": "Severe Soil Sodicity / Alkalinity Disaster (Karnal, Haryana)",
+    "description": "Severe alkali soil (pH 9.2). Universal arable crop mortality triggers NO_RECOMMENDATION_SUITABLE with gypsum reclamation advisory.",
+    "query": {
+      "location": {
+        "state": "Haryana",
+        "district": "Karnal",
+        "agro_climatic_zone": "Trans-Gangetic Plains"
+      },
+      "temporal": {
+        "sowing_month": 11,
+        "sowing_date": "2026-11-15",
+        "cultivation_season": "Rabi",
+        "planting_system": null
+      },
+      "climate_and_water": {
+        "seasonal_rainfall_amount": 40.0,
+        "rainfall_period_type": null,
+        "rainfall_source": null,
+        "monthly_rainfall": null,
+        "irrigation_access": "Tubewell_Borewell",
+        "irrigation_water_quantity_mm": 250.0,
+        "irrigation_quantity_basis": null,
+        "irrigation_type": null,
+        "irrigation_period_days": null,
+        "rainfall_period_days": null,
+        "temperature_mean": 19.0,
+        "temperature_min_night": null,
+        "temperature_max_day": null,
+        "relative_humidity": 50.0,
+        "soil_moisture_tier": "UNKNOWN",
+        "soil_moisture_mm": null,
+        "awc_mm_m": null,
+        "rooting_depth_m": null
+      },
+      "edaphic": {
+        "soil_texture": "Clay Loam",
+        "soil_ph": 9.2,
+        "has_soil_test": true,
+        "nutrient_basis": null,
+        "soil_nitrogen": 280.0,
+        "soil_phosphorus": null,
+        "soil_potassium": null,
+        "organic_carbon_pct": null
+      }
+    },
+    "result": {
+      "status": "NO_RECOMMENDATION_SUITABLE",
+      "engine_version": "2.2.0-CLOSURE",
+      "execution_timestamp": "2026-11-20T07:15:49.216803+00:00",
+      "query_summary": {
+        "location": "Karnal, Haryana (Trans-Gangetic Plains)",
+        "season": "Rabi",
+        "planting_system_evaluated": "Timely_Sown (Nov 1 - Nov 15)",
+        "water_regime_evaluated": "Tubewell_Borewell (250.0 mm + Rain 40.0 mm)",
+        "data_completeness_index": 1.0,
+        "evidence_confidence_tier": "HIGH_CONFIDENCE"
+      },
+      "recommendations": [],
+      "excluded_candidates": [
+        {
+          "crop_id": "rice",
+          "canonical_name": "Rice (Paddy)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-RICE-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Rice (Paddy) (Annual_Seasonal): Month 11 in Haryana is outside verified planting windows: Aman_Lowland (Jun 15 - Jul 15, months 6-7); Boro_Deepwater_Receding (Nov 15 - Dec 15, months 11-12); Aus_Direct_Seeded (Mar 15 - Apr 30, months 3-4)."
+            },
+            {
+              "rule_id": "RULE-RICE-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Rice (Paddy): Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (212.44 mm) is below crop minimum ETc (800.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "wheat",
+          "canonical_name": "Wheat",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-WHEAT-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Wheat: Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (212.44 mm) is below crop minimum ETc (250.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "maize",
+          "canonical_name": "Maize (Corn)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MAIZE-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Maize (Corn) (Annual_Seasonal): Month 11 in Haryana is outside verified planting windows: Monsoon_Kharif (Jun 15 - Jul 15, months 6-7); Spring_Maize (Jan 20 - Feb 15, months 1-2)."
+            },
+            {
+              "rule_id": "RULE-MAIZE-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Maize (Corn): Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (212.44 mm) is below crop minimum ETc (400.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "cotton",
+          "canonical_name": "Cotton",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-COTTON-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Cotton (Annual_Seasonal): Month 11 in Haryana is outside verified planting windows: Monsoon_Kharif_Central (Jun 15 - Jul 10, months 6-7); Northern_Irrigated_Early (Apr 15 - May 15, months 4-5)."
+            },
+            {
+              "rule_id": "RULE-COTTON-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Cotton: Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (212.44 mm) is below crop minimum ETc (500.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "sugarcane",
+          "canonical_name": "Sugarcane",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-SUGARCANE-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Sugarcane (Long_Duration_Annual): Month 11 in Haryana is outside verified planting windows: Adsali_Maharashtra (Jul 15 - Aug 31, months 7-8); Spring_Plains (Feb 15 - Mar 25, months 2-3)."
+            },
+            {
+              "rule_id": "RULE-SUGARCANE-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Sugarcane: Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (212.44 mm) is below crop minimum ETc (1200.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "soybean",
+          "canonical_name": "Soybean",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-SOYBEAN-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Soybean (Annual_Seasonal): Month 11 in Haryana is outside verified planting windows: Monsoon_Kharif_Central (Jun 20 - Jul 10, months 6-7)."
+            },
+            {
+              "rule_id": "RULE-SOYBEAN-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Soybean: Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (212.44 mm) is below crop minimum ETc (450.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "groundnut",
+          "canonical_name": "Groundnut",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-GROUNDNUT-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Groundnut (Annual_Seasonal): Month 11 in Haryana is outside verified planting windows: Monsoon_Kharif_Gujarat (Jun 15 - Jul 15, months 6-7); Summer_Irrigated (Jan 15 - Feb 15, months 1-2)."
+            },
+            {
+              "rule_id": "RULE-GROUNDNUT-TEMP-01",
+              "dimension": "thermal_emergence",
+              "reason": "Groundnut: Mean temperature (19.0\u00b0C) is below minimum lethal germination threshold (20.0\u00b0C). Severe chilling/frost emergence failure."
+            },
+            {
+              "rule_id": "RULE-GROUNDNUT-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Groundnut: Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (212.44 mm) is below crop minimum ETc (400.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "potato",
+          "canonical_name": "Potato",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-POTATO-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Potato: Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (212.44 mm) is below crop minimum ETc (300.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "chickpea",
+          "canonical_name": "Chickpea",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-CHICKPEA-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Chickpea: Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "crop_id": "lentil",
+          "canonical_name": "Lentil",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-LENTIL-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Lentil (Annual_Seasonal): Month 11 in Haryana is outside verified planting windows: Standard_Rabi_Pulses (Oct 25 - Nov 20, months 10-11)."
+            },
+            {
+              "rule_id": "RULE-LENTIL-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Lentil: Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "crop_id": "mustard",
+          "canonical_name": "Mustard",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MUSTARD-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Mustard (Annual_Seasonal): Month 11 in Haryana is outside verified planting windows: Standard_Rabi_Oilseed (Oct 1 - Oct 25, months 10-10)."
+            },
+            {
+              "rule_id": "RULE-MUSTARD-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Mustard: Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "crop_id": "tomato",
+          "canonical_name": "Tomato",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-TOMATO-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Tomato (Multi_Season_Arable): Month 11 in Haryana is outside verified planting windows: Autumn_Winter (Sep 15 - Oct 15, months 9-10); Spring_Summer (Jan 15 - Feb 15, months 1-2)."
+            },
+            {
+              "rule_id": "RULE-TOMATO-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Tomato: Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (212.44 mm) is below crop minimum ETc (400.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "onion",
+          "canonical_name": "Onion",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-ONION-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Onion (Annual_Seasonal): Month 11 in Haryana is outside verified planting windows: Rabi_Main_Crop (Nov 15 - Dec 15, months 11-12)."
+            },
+            {
+              "rule_id": "RULE-ONION-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Onion: Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (212.44 mm) is below crop minimum ETc (350.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "banana",
+          "canonical_name": "Banana",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-BANANA-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Banana (Long_Duration_Annual): Month 11 in Haryana is outside verified planting windows: Monsoon_Planting (Jun 15 - Jul 31, months 6-7)."
+            },
+            {
+              "rule_id": "RULE-BANANA-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Banana: Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (212.44 mm) is below crop minimum ETc (1400.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "mango",
+          "canonical_name": "Mango",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MANGO-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Mango (Perennial_Orchard): Month 11 in Haryana is outside verified planting windows: Orchard_Monsoon_Grafting (Jul 15 - Aug 31, months 7-8)."
+            },
+            {
+              "rule_id": "RULE-MANGO-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Mango: Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (212.44 mm) is below crop minimum ETc (300.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "jowar",
+          "canonical_name": "Jowar (Sorghum)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-JOWAR-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Jowar (Sorghum) (Annual_Seasonal): Month 11 in Haryana is outside verified planting windows: Monsoon_Kharif_Grain (Jun 15 - Jul 10, months 6-7); Rabi_Maldandi_Grain (Sep 15 - Oct 15, months 9-10)."
+            },
+            {
+              "rule_id": "RULE-JOWAR-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Jowar (Sorghum): Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (212.44 mm) is below crop minimum ETc (350.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "sunflower",
+          "canonical_name": "Sunflower",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-SUNFLOWER-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Sunflower (Multi_Season_Arable): Month 11 in Haryana is outside verified planting windows: Monsoon_Kharif (Jun 20 - Jul 15, months 6-7); Spring_Sunflower (Jan 20 - Feb 15, months 1-2)."
+            },
+            {
+              "rule_id": "RULE-SUNFLOWER-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Sunflower: Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": [
+            "Total net root-zone water (212.44 mm) is below crop minimum ETc (350.0 mm)."
+          ]
+        },
+        {
+          "crop_id": "barley",
+          "canonical_name": "Barley",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-BARLEY-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Barley: Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": []
+        },
+        {
+          "crop_id": "millets",
+          "canonical_name": "Millets (Pearl Millet / Bajra)",
+          "tier1_status": "DISQUALIFIED",
+          "failing_rules": [
+            {
+              "rule_id": "RULE-MILLETS-SEAS-01",
+              "dimension": "planting_window",
+              "reason": "Millets (Pearl Millet / Bajra) (Annual_Seasonal): Month 11 in Haryana is outside verified planting windows: Monsoon_Kharif_Arid (Jun 25 - Jul 15, months 6-7); Summer_Bajra_Irrigated (Feb 15 - Mar 10, months 2-3)."
+            },
+            {
+              "rule_id": "RULE-MILLETS-PH-01",
+              "dimension": "soil_ph",
+              "reason": "Millets (Pearl Millet / Bajra): Soil pH (9.2) indicates severe alkali/sodic toxicity (pH >= 9.0). Biological survival failed."
+            }
+          ],
+          "warnings": []
+        }
+      ],
+      "diagnostics": {
+        "dci_details": {
+          "temporal": 1.0,
+          "climate": 1.0,
+          "water": 1.0,
+          "soil": 1.0,
+          "ph": 1.0,
+          "nutrients": 1.0
+        },
+        "validation_warnings": [],
+        "total_candidates_evaluated": 19,
+        "eligible_count": 0,
+        "excluded_count": 19
+      },
+      "land_reclamation_advisory": "Severe soil sodicity/alkalinity detected (pH 9.2 >= 9.0). Biological survival failed for all standard arable crops. Mandatory Gypsum application (based on Gypsum Requirement test), incorporation of organic matter/pressmud, and green manuring with Sesbania (dhaincha) required before attempting commercial crop cultivation."
+    }
+  }
+]

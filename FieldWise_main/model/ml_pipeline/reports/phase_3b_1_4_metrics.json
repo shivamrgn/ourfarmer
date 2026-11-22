@@ -1,0 +1,324 @@
+{
+  "phase": "Phase 3B.1.4.3",
+  "timestamp": "2026-11-18T10:31:19.054761",
+  "audit_isolation_notice": {
+    "cleaned_dataset_audit": "Reads strictly non-target columns ['State', 'District', 'Crop', 'Season', 'Crop_Year']. Explicit assertions verify target columns are completely absent.",
+    "validation_predictions_audit": "Reads validation target values (Yield_Tonnes_Per_Ha) and model predictions exclusively from saved 2012-2013 validation prediction files.",
+    "sealed_test_partition": "No 2014-2015 test target values are loaded, inspected, or evaluated. Zero test predictions and zero test metrics generated."
+  },
+  "source_code_ast_audit": {
+    "source_file": "model/ml_pipeline/scripts/train_yield_phase_3b_1_2.py",
+    "class_name": "SeasonalHierarchicalChallenger",
+    "method_name": "_get_group_means",
+    "class_located": true,
+    "method_located": true,
+    "method_parameters": [
+      "self",
+      "df",
+      "group_cols",
+      "y_col"
+    ],
+    "groupby_uses_group_cols": true,
+    "aggregation_functions": [
+      "mean",
+      "count"
+    ],
+    "aggregation_includes_count": true,
+    "aggregation_includes_mean": true,
+    "threshold_condition_operator": ">=",
+    "threshold_filters_on_count": true,
+    "uses_nunique_in_method": false,
+    "counts_distinct_years_in_method": false,
+    "fit_hierarchical_keys": [
+      [
+        "District",
+        "Crop",
+        "Season"
+      ],
+      [
+        "District",
+        "Crop"
+      ],
+      [
+        "State",
+        "Crop",
+        "Season"
+      ],
+      [
+        "State",
+        "Crop"
+      ],
+      [
+        "Crop",
+        "Season"
+      ],
+      [
+        "Crop"
+      ]
+    ],
+    "fit_hierarchical_keys_exact_match": true,
+    "source_code_audit_status": "PASSED"
+  },
+  "empirical_district_homonym_verification": {
+    "dataset_read_columns": [
+      "State",
+      "District",
+      "Crop",
+      "Season",
+      "Crop_Year"
+    ],
+    "target_columns_loaded": false,
+    "training_period": "1997-2011",
+    "total_district_crop_season_year_cells": 190541,
+    "single_record_cells_count": 189812,
+    "single_record_cells_pct": 99.62,
+    "multi_record_cells_count": 729,
+    "multi_record_cells_pct": 0.38,
+    "multi_record_groups_spanning_multiple_states": 729,
+    "multi_record_groups_spanning_multiple_states_pct": 100.0,
+    "multi_record_groups_within_single_state": 0,
+    "multi_record_groups_within_single_state_pct": 0.0,
+    "homonym_district_pairs_breakdown": {
+      "AURANGABAD (BIHAR, MAHARASHTRA)": 162,
+      "BALRAMPUR (CHHATTISGARH, UTTAR PRADESH)": 17,
+      "BILASPUR (CHHATTISGARH, HIMACHAL PRADESH)": 134,
+      "HAMIRPUR (HIMACHAL PRADESH, UTTAR PRADESH)": 115,
+      "KHERI (ASSAM, UTTAR PRADESH)": 173,
+      "PRATAPGARH (RAJASTHAN, UTTAR PRADESH)": 45,
+      "VIJAYAPURA (CHHATTISGARH, KARNATAKA)": 83
+    },
+    "empirical_attribution_finding": "Empirical data verification confirms that exactly 729 of 729 (100.0%) multi-record cells in the 1997-2011 training partition span multiple states across 7 specific district pairs (Aurangabad, Balrampur, Bilaspur, Hamirpur, Kheri, Pratapgarh, Vijayapura). Exactly 0 multi-record cells occur within a single state. Therefore, the empirical evidence demonstrates that all multi-record cells in the training partition are attributable to inter-state district homonyms."
+  },
+  "validation_prediction_invariants": {
+    "row_count_exp_a": 13422,
+    "row_count_exp_b_prime": 13422,
+    "unique_non_null_raw_row_ids": true,
+    "finite_targets_and_predictions": true,
+    "required_columns_present": true,
+    "raw_row_id_array_equal": true,
+    "crop_label_array_equal": true,
+    "target_value_allclose": true,
+    "all_9_models_reconciled": true,
+    "status": "PASSED"
+  },
+  "test_manifest_invariants": {
+    "experiment_a_count": 5433,
+    "experiment_b_count": 6852,
+    "duplicates_in_manifest_a": 0,
+    "duplicates_in_manifest_b": 0,
+    "intersection_count": 5433,
+    "union_count": 6852,
+    "difference_b_minus_a": 1419,
+    "difference_a_minus_b": 0,
+    "is_subset": true,
+    "is_strict_subset": true,
+    "verification_status": "Independently verified from split_manifest.json raw_row_id arrays with 0 duplicates asserted",
+    "inherited_dataset_total_test_count": 10905,
+    "derived_conditional_excluded_count": 4053,
+    "derivation_explanation": "Derived strictly by subtraction: 10,905 (inherited total) - 6,852 (verified baseline union).",
+    "inherited_breakdown_note": "The breakdown into 3,391 unmatched-rainfall and 662 excluded records is inherited from Phase 3A.6 summary documentation, not an independently reconciled raw row ID list in this audit.",
+    "invariants_passed": true
+  },
+  "stability_arithmetic_reconciliation": {
+    "total_common_prime_rows": 13422,
+    "models": {
+      "pred_rf_one_hot": {
+        "label": "One-Hot Random Forest",
+        "direct_pooled_delta": -0.006292595761907549,
+        "total_weighted_error_units": -84.45922031632355,
+        "weighted_aggregate_delta": -0.006292595761907581,
+        "absolute_discrepancy": 3.209238430557093e-17,
+        "match_verified": true
+      },
+      "pred_et_one_hot": {
+        "label": "One-Hot Extra Trees",
+        "direct_pooled_delta": 0.005565045219029674,
+        "total_weighted_error_units": 74.69403692981334,
+        "weighted_aggregate_delta": 0.0055650452190294545,
+        "absolute_discrepancy": 2.194425197110661e-16,
+        "match_verified": true
+      },
+      "pred_xgb_native_categorical": {
+        "label": "Native Categorical XGBoost",
+        "direct_pooled_delta": 0.00906345782819229,
+        "total_weighted_error_units": 121.64973096999971,
+        "weighted_aggregate_delta": 0.009063457828192498,
+        "absolute_discrepancy": 2.0816681711721685e-16,
+        "match_verified": true
+      },
+      "pred_challenger_min_obs_1": {
+        "label": "Seasonal Challenger (N_min=1)",
+        "direct_pooled_delta": -0.0005640430620332815,
+        "total_weighted_error_units": -7.570585978610195,
+        "weighted_aggregate_delta": -0.0005640430620332435,
+        "absolute_discrepancy": 3.7947076036992655e-17,
+        "match_verified": true
+      },
+      "pred_challenger_min_obs_3": {
+        "label": "Seasonal Challenger (N_min=3)",
+        "direct_pooled_delta": -0.0005640430620330594,
+        "total_weighted_error_units": -7.570585978610195,
+        "weighted_aggregate_delta": -0.0005640430620332435,
+        "absolute_discrepancy": 1.8409752888803865e-16,
+        "match_verified": true
+      },
+      "pred_challenger_min_obs_5": {
+        "label": "Seasonal Challenger (N_min=5)",
+        "direct_pooled_delta": -0.0005640430620332815,
+        "total_weighted_error_units": -7.570585978610195,
+        "weighted_aggregate_delta": -0.0005640430620332435,
+        "absolute_discrepancy": 3.7947076036992655e-17,
+        "match_verified": true
+      },
+      "pred_rf_target_encoded": {
+        "label": "Target-Encoded Random Forest",
+        "direct_pooled_delta": 0.04746734356155646,
+        "total_weighted_error_units": 637.1066852832114,
+        "weighted_aggregate_delta": 0.047467343561556505,
+        "absolute_discrepancy": 4.163336342344337e-17,
+        "match_verified": true
+      },
+      "pred_existing_district_mean": {
+        "label": "Existing District Mean",
+        "direct_pooled_delta": -0.0005640430620330594,
+        "total_weighted_error_units": -7.570585978610195,
+        "weighted_aggregate_delta": -0.0005640430620332435,
+        "absolute_discrepancy": 1.8409752888803865e-16,
+        "match_verified": true
+      },
+      "pred_existing_random_forest": {
+        "label": "Existing Random Forest (Ordinal)",
+        "direct_pooled_delta": 0.023423240340649798,
+        "total_weighted_error_units": 314.38673185220625,
+        "weighted_aggregate_delta": 0.023423240340650145,
+        "absolute_discrepancy": 3.469446951953614e-16,
+        "match_verified": true
+      }
+    }
+  },
+  "min_obs_implementation_audit": {
+    "ast_source_audit": {
+      "source_file": "model/ml_pipeline/scripts/train_yield_phase_3b_1_2.py",
+      "class_name": "SeasonalHierarchicalChallenger",
+      "method_name": "_get_group_means",
+      "class_located": true,
+      "method_located": true,
+      "method_parameters": [
+        "self",
+        "df",
+        "group_cols",
+        "y_col"
+      ],
+      "groupby_uses_group_cols": true,
+      "aggregation_functions": [
+        "mean",
+        "count"
+      ],
+      "aggregation_includes_count": true,
+      "aggregation_includes_mean": true,
+      "threshold_condition_operator": ">=",
+      "threshold_filters_on_count": true,
+      "uses_nunique_in_method": false,
+      "counts_distinct_years_in_method": false,
+      "fit_hierarchical_keys": [
+        [
+          "District",
+          "Crop",
+          "Season"
+        ],
+        [
+          "District",
+          "Crop"
+        ],
+        [
+          "State",
+          "Crop",
+          "Season"
+        ],
+        [
+          "State",
+          "Crop"
+        ],
+        [
+          "Crop",
+          "Season"
+        ],
+        [
+          "Crop"
+        ]
+      ],
+      "fit_hierarchical_keys_exact_match": true,
+      "source_code_audit_status": "PASSED"
+    },
+    "empirical_district_homonym_verification": {
+      "dataset_read_columns": [
+        "State",
+        "District",
+        "Crop",
+        "Season",
+        "Crop_Year"
+      ],
+      "target_columns_loaded": false,
+      "training_period": "1997-2011",
+      "total_district_crop_season_year_cells": 190541,
+      "single_record_cells_count": 189812,
+      "single_record_cells_pct": 99.62,
+      "multi_record_cells_count": 729,
+      "multi_record_cells_pct": 0.38,
+      "multi_record_groups_spanning_multiple_states": 729,
+      "multi_record_groups_spanning_multiple_states_pct": 100.0,
+      "multi_record_groups_within_single_state": 0,
+      "multi_record_groups_within_single_state_pct": 0.0,
+      "homonym_district_pairs_breakdown": {
+        "AURANGABAD (BIHAR, MAHARASHTRA)": 162,
+        "BALRAMPUR (CHHATTISGARH, UTTAR PRADESH)": 17,
+        "BILASPUR (CHHATTISGARH, HIMACHAL PRADESH)": 134,
+        "HAMIRPUR (HIMACHAL PRADESH, UTTAR PRADESH)": 115,
+        "KHERI (ASSAM, UTTAR PRADESH)": 173,
+        "PRATAPGARH (RAJASTHAN, UTTAR PRADESH)": 45,
+        "VIJAYAPURA (CHHATTISGARH, KARNATAKA)": 83
+      },
+      "empirical_attribution_finding": "Empirical data verification confirms that exactly 729 of 729 (100.0%) multi-record cells in the 1997-2011 training partition span multiple states across 7 specific district pairs (Aurangabad, Balrampur, Bilaspur, Hamirpur, Kheri, Pratapgarh, Vijayapura). Exactly 0 multi-record cells occur within a single state. Therefore, the empirical evidence demonstrates that all multi-record cells in the training partition are attributable to inter-state district homonyms."
+    },
+    "agronomic_limitation": "Because agg['count'] counts individual historical records rather than distinct crop years, a district-crop-season combination with 3 records can satisfy min_obs=3 even if those records span only 2 distinct calendar years (e.g. due to homonym blending across states). The existing model does not guarantee N_min distinct growing seasons.",
+    "proposed_phase_3c_experiment": {
+      "experiment_name": "SeasonalHierarchicalDistinctYearChallenger",
+      "proposed_code": "agg = df.groupby(['State', 'District', 'Crop', 'Season']).agg(mean=(TARGET_COL, 'mean'), distinct_years=('Crop_Year', 'nunique'), record_count=(TARGET_COL, 'count'))\\nvalid = agg[agg['distinct_years'] >= min_distinct_years]",
+      "enhancement": "Adds State into Level 1/2 keys to prevent homonym blending and enforces nunique('Crop_Year') >= min_years."
+    }
+  },
+  "xgboost_feature_set_audit": {
+    "model_architecture": "Native Categorical XGBoost (XGBRegressor)",
+    "hyperparameters": {
+      "n_estimators": 150,
+      "max_depth": 8,
+      "learning_rate": 0.08,
+      "enable_categorical": true,
+      "random_state": 42
+    },
+    "features_present": {
+      "categorical": [
+        "State",
+        "District",
+        "Season",
+        "Crop"
+      ],
+      "numerical": [
+        "Crop_Year",
+        "district_normal_annual_rainfall_mm",
+        "district_normal_monsoon_rainfall_mm"
+      ],
+      "total_feature_count": 7
+    },
+    "rainfall_data_nature": "Static 30-year climatological normals (1901-2000) from the IMD dataset. These features represent static geographic normals for each district, identical across all years. They do NOT capture annual weather shocks, in-season rainfall anomalies, or current drought/flood events.",
+    "variables_strictly_absent": [
+      "Actual in-season rainfall",
+      "Rainfall deviation from normal / precipitation anomalies",
+      "Temperature (max, min, mean, growing degree days)",
+      "Vapor pressure deficit / relative humidity",
+      "Soil chemistry (Nitrogen, Phosphorus, Potassium, pH, Electrical Conductivity, Organic Carbon)",
+      "Farm-level management (sowing date, seed variety, irrigation type/volume, fertilizer dosage, pest control)"
+    ],
+    "accurate_characterization": "Native Categorical XGBoost is a historical district-level machine learning benchmark. It learns non-linear interactions between nominal geographic/taxonomic identifiers, secular time trends (Crop_Year), and 30-year regional climatological normals. It is NOT a dynamic weather-shock or farm-level advisory model."
+  }
+}

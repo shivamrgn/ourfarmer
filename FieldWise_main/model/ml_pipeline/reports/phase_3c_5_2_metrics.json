@@ -1,0 +1,37 @@
+{
+  "phase": "Phase 3C.5.2: Evidence Confidence and Agronomic Gate Safety",
+  "version": "2.2.2-CLOSURE",
+  "timestamp": "2026-11-20T13:58:00Z",
+  "architecture": "Two-Tier Biological Gating + Liebig Non-Compensatory Geometric Ranking",
+  "catalogue_crops": 19,
+  "catalogue_planting_windows": 31,
+  "life_cycle_distribution": {
+    "Annual_Seasonal": 14,
+    "Long_Duration_Annual": 2,
+    "Multi_Season_Arable": 2,
+    "Perennial_Orchard": 1
+  },
+  "total_tests_run": 38,
+  "acceptance_tests_passed": 18,
+  "acceptance_tests_failed": 0,
+  "edge_case_suites_passed": 9,
+  "edge_case_suites_failed": 0,
+  "phase_3c_5_1_regression_tests_passed": 7,
+  "phase_3c_5_1_regression_tests_failed": 0,
+  "phase_3c_5_2_regression_tests_passed": 4,
+  "phase_3c_5_2_regression_tests_failed": 0,
+  "total_pass_rate_pct": 100.0,
+  "historical_checksum_manifests_preserved": 5,
+  "production_files_modified": 0,
+  "ml_models_trained": 0,
+  "live_deployment_status": "ISOLATED_INDEPENDENT_TESTING_ONLY",
+  "adapter_activation_status": "DESIGN_ONLY_INACTIVE",
+  "execution_speed_sec": 0.035,
+  "dual_directory_portability_verified": true,
+  "audit_findings_resolved": {
+    "defect_1_dci_evidence_provenance": "RESOLVED_MISSING_METADATA_NEVER_IMPLIES_LAB_PROVISIONAL_CONFIDENCE",
+    "defect_2_fertilizer_prescription_claims": "RESOLVED_BASELINE_RDF_ARITHMETIC_DESIGNATION_WITHHOLD_UNVERIFIED_BASIS",
+    "defect_3_agronomic_gate_safety": "RESOLVED_BLANKET_GATES_REMOVED_CROP_SPECIFIC_LETHAL_LIMITS_ENFORCED",
+    "defect_4_missing_audit_artifact_and_test_11": "RESOLVED_AUDIT_CSV_AND_RULES_CSV_VALIDATED_IN_PACKAGE"
+  }
+}

@@ -1,0 +1,1099 @@
+[
+  {
+    "crop_id": "rice",
+    "canonical_name": "Rice (Paddy)",
+    "botanical_name": "Oryza sativa",
+    "family": "Poaceae",
+    "category": "Cereal",
+    "season": "Kharif",
+    "icon": "\ud83c\udf3e",
+    "in_backend_db": true,
+    "in_frontend_engine": true,
+    "in_fertilizer_db": true,
+    "in_kaggle_benchmark": true,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Rice"
+    ],
+    "n_range_kg_ha": [
+      80,
+      120
+    ],
+    "p_range_kg_ha": [
+      40,
+      60
+    ],
+    "k_range_kg_ha": [
+      40,
+      60
+    ],
+    "ph_range": [
+      5.5,
+      7.0
+    ],
+    "temp_range_c": [
+      20,
+      35
+    ],
+    "humidity_range_pct": [
+      70,
+      95
+    ],
+    "rainfall_range_mm": [
+      150,
+      300
+    ],
+    "soil_types": [
+      "Clay",
+      "Alluvial",
+      "Loamy",
+      "Clay Loam"
+    ],
+    "major_states": [
+      "West Bengal",
+      "Uttar Pradesh",
+      "Punjab",
+      "Andhra Pradesh",
+      "Tamil Nadu",
+      "Bihar"
+    ]
+  },
+  {
+    "crop_id": "wheat",
+    "canonical_name": "Wheat",
+    "botanical_name": "Triticum aestivum",
+    "family": "Poaceae",
+    "category": "Cereal",
+    "season": "Rabi",
+    "icon": "\ud83c\udf3f",
+    "in_backend_db": true,
+    "in_frontend_engine": true,
+    "in_fertilizer_db": true,
+    "in_kaggle_benchmark": false,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Wheat"
+    ],
+    "n_range_kg_ha": [
+      100,
+      150
+    ],
+    "p_range_kg_ha": [
+      50,
+      80
+    ],
+    "k_range_kg_ha": [
+      40,
+      60
+    ],
+    "ph_range": [
+      6.0,
+      7.5
+    ],
+    "temp_range_c": [
+      10,
+      25
+    ],
+    "humidity_range_pct": [
+      40,
+      70
+    ],
+    "rainfall_range_mm": [
+      50,
+      100
+    ],
+    "soil_types": [
+      "Loamy",
+      "Clay Loam",
+      "Sandy Loam",
+      "Alluvial"
+    ],
+    "major_states": [
+      "Uttar Pradesh",
+      "Punjab",
+      "Haryana",
+      "Madhya Pradesh",
+      "Rajasthan",
+      "Bihar"
+    ]
+  },
+  {
+    "crop_id": "maize",
+    "canonical_name": "Maize (Corn)",
+    "botanical_name": "Zea mays",
+    "family": "Poaceae",
+    "category": "Cereal",
+    "season": "Kharif",
+    "icon": "\ud83c\udf3d",
+    "in_backend_db": true,
+    "in_frontend_engine": true,
+    "in_fertilizer_db": true,
+    "in_kaggle_benchmark": true,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Maize"
+    ],
+    "n_range_kg_ha": [
+      120,
+      180
+    ],
+    "p_range_kg_ha": [
+      60,
+      80
+    ],
+    "k_range_kg_ha": [
+      40,
+      60
+    ],
+    "ph_range": [
+      5.5,
+      7.5
+    ],
+    "temp_range_c": [
+      18,
+      32
+    ],
+    "humidity_range_pct": [
+      50,
+      80
+    ],
+    "rainfall_range_mm": [
+      80,
+      150
+    ],
+    "soil_types": [
+      "Sandy Loam",
+      "Loamy",
+      "Alluvial"
+    ],
+    "major_states": [
+      "Karnataka",
+      "Madhya Pradesh",
+      "Bihar",
+      "Tamil Nadu",
+      "Telangana",
+      "Rajasthan"
+    ]
+  },
+  {
+    "crop_id": "cotton",
+    "canonical_name": "Cotton",
+    "botanical_name": "Gossypium hirsutum",
+    "family": "Malvaceae",
+    "category": "Commercial Fiber",
+    "season": "Kharif",
+    "icon": "\u2601\ufe0f",
+    "in_backend_db": true,
+    "in_frontend_engine": true,
+    "in_fertilizer_db": true,
+    "in_kaggle_benchmark": true,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Cotton(lint)"
+    ],
+    "n_range_kg_ha": [
+      60,
+      100
+    ],
+    "p_range_kg_ha": [
+      30,
+      50
+    ],
+    "k_range_kg_ha": [
+      30,
+      50
+    ],
+    "ph_range": [
+      6.0,
+      8.0
+    ],
+    "temp_range_c": [
+      21,
+      35
+    ],
+    "humidity_range_pct": [
+      40,
+      70
+    ],
+    "rainfall_range_mm": [
+      60,
+      110
+    ],
+    "soil_types": [
+      "Black",
+      "Alluvial",
+      "Red",
+      "Clay"
+    ],
+    "major_states": [
+      "Gujarat",
+      "Maharashtra",
+      "Telangana",
+      "Andhra Pradesh",
+      "Rajasthan",
+      "Haryana"
+    ]
+  },
+  {
+    "crop_id": "sugarcane",
+    "canonical_name": "Sugarcane",
+    "botanical_name": "Saccharum officinarum",
+    "family": "Poaceae",
+    "category": "Commercial Sugar",
+    "season": "Annual",
+    "icon": "\ud83c\udf8b",
+    "in_backend_db": true,
+    "in_frontend_engine": true,
+    "in_fertilizer_db": true,
+    "in_kaggle_benchmark": false,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Sugarcane"
+    ],
+    "n_range_kg_ha": [
+      150,
+      250
+    ],
+    "p_range_kg_ha": [
+      60,
+      90
+    ],
+    "k_range_kg_ha": [
+      60,
+      120
+    ],
+    "ph_range": [
+      6.5,
+      7.5
+    ],
+    "temp_range_c": [
+      20,
+      35
+    ],
+    "humidity_range_pct": [
+      60,
+      85
+    ],
+    "rainfall_range_mm": [
+      120,
+      250
+    ],
+    "soil_types": [
+      "Loamy",
+      "Clay Loam",
+      "Alluvial",
+      "Black"
+    ],
+    "major_states": [
+      "Uttar Pradesh",
+      "Maharashtra",
+      "Karnataka",
+      "Tamil Nadu",
+      "Bihar"
+    ]
+  },
+  {
+    "crop_id": "soybean",
+    "canonical_name": "Soybean",
+    "botanical_name": "Glycine max",
+    "family": "Fabaceae",
+    "category": "Oilseed / Legume",
+    "season": "Kharif",
+    "icon": "\ud83e\uded8",
+    "in_backend_db": true,
+    "in_frontend_engine": true,
+    "in_fertilizer_db": true,
+    "in_kaggle_benchmark": false,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Soyabean"
+    ],
+    "n_range_kg_ha": [
+      20,
+      40
+    ],
+    "p_range_kg_ha": [
+      60,
+      80
+    ],
+    "k_range_kg_ha": [
+      40,
+      60
+    ],
+    "ph_range": [
+      6.0,
+      7.5
+    ],
+    "temp_range_c": [
+      20,
+      30
+    ],
+    "humidity_range_pct": [
+      55,
+      80
+    ],
+    "rainfall_range_mm": [
+      65,
+      100
+    ],
+    "soil_types": [
+      "Black",
+      "Loamy",
+      "Clay Loam"
+    ],
+    "major_states": [
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Rajasthan",
+      "Karnataka",
+      "Telangana"
+    ]
+  },
+  {
+    "crop_id": "groundnut",
+    "canonical_name": "Groundnut (Peanut)",
+    "botanical_name": "Arachis hypogaea",
+    "family": "Fabaceae",
+    "category": "Oilseed / Legume",
+    "season": "Kharif",
+    "icon": "\ud83e\udd5c",
+    "in_backend_db": true,
+    "in_frontend_engine": true,
+    "in_fertilizer_db": true,
+    "in_kaggle_benchmark": false,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Groundnut"
+    ],
+    "n_range_kg_ha": [
+      15,
+      25
+    ],
+    "p_range_kg_ha": [
+      40,
+      60
+    ],
+    "k_range_kg_ha": [
+      30,
+      50
+    ],
+    "ph_range": [
+      5.5,
+      7.0
+    ],
+    "temp_range_c": [
+      22,
+      32
+    ],
+    "humidity_range_pct": [
+      50,
+      75
+    ],
+    "rainfall_range_mm": [
+      50,
+      100
+    ],
+    "soil_types": [
+      "Sandy Loam",
+      "Red",
+      "Alluvial",
+      "Loamy"
+    ],
+    "major_states": [
+      "Gujarat",
+      "Rajasthan",
+      "Tamil Nadu",
+      "Andhra Pradesh",
+      "Karnataka"
+    ]
+  },
+  {
+    "crop_id": "potato",
+    "canonical_name": "Potato",
+    "botanical_name": "Solanum tuberosum",
+    "family": "Solanaceae",
+    "category": "Tuber Vegetable",
+    "season": "Rabi",
+    "icon": "\ud83e\udd54",
+    "in_backend_db": true,
+    "in_frontend_engine": true,
+    "in_fertilizer_db": true,
+    "in_kaggle_benchmark": false,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Potato"
+    ],
+    "n_range_kg_ha": [
+      120,
+      180
+    ],
+    "p_range_kg_ha": [
+      80,
+      100
+    ],
+    "k_range_kg_ha": [
+      80,
+      120
+    ],
+    "ph_range": [
+      5.0,
+      6.5
+    ],
+    "temp_range_c": [
+      15,
+      25
+    ],
+    "humidity_range_pct": [
+      60,
+      85
+    ],
+    "rainfall_range_mm": [
+      40,
+      80
+    ],
+    "soil_types": [
+      "Sandy Loam",
+      "Loamy",
+      "Alluvial"
+    ],
+    "major_states": [
+      "Uttar Pradesh",
+      "West Bengal",
+      "Bihar",
+      "Gujarat",
+      "Punjab"
+    ]
+  },
+  {
+    "crop_id": "chickpea",
+    "canonical_name": "Chickpea (Gram)",
+    "botanical_name": "Cicer arietinum",
+    "family": "Fabaceae",
+    "category": "Pulse",
+    "season": "Rabi",
+    "icon": "\ud83c\udf72",
+    "in_backend_db": true,
+    "in_frontend_engine": true,
+    "in_fertilizer_db": true,
+    "in_kaggle_benchmark": true,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Gram"
+    ],
+    "n_range_kg_ha": [
+      20,
+      30
+    ],
+    "p_range_kg_ha": [
+      40,
+      60
+    ],
+    "k_range_kg_ha": [
+      20,
+      30
+    ],
+    "ph_range": [
+      6.0,
+      7.5
+    ],
+    "temp_range_c": [
+      15,
+      28
+    ],
+    "humidity_range_pct": [
+      40,
+      65
+    ],
+    "rainfall_range_mm": [
+      40,
+      70
+    ],
+    "soil_types": [
+      "Loamy",
+      "Clay Loam",
+      "Black",
+      "Sandy Loam"
+    ],
+    "major_states": [
+      "Madhya Pradesh",
+      "Rajasthan",
+      "Maharashtra",
+      "Uttar Pradesh",
+      "Karnataka"
+    ]
+  },
+  {
+    "crop_id": "lentil",
+    "canonical_name": "Lentil (Masoor)",
+    "botanical_name": "Lens culinaris",
+    "family": "Fabaceae",
+    "category": "Pulse",
+    "season": "Rabi",
+    "icon": "\ud83e\udd63",
+    "in_backend_db": true,
+    "in_frontend_engine": true,
+    "in_fertilizer_db": true,
+    "in_kaggle_benchmark": true,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Lentil"
+    ],
+    "n_range_kg_ha": [
+      15,
+      25
+    ],
+    "p_range_kg_ha": [
+      35,
+      50
+    ],
+    "k_range_kg_ha": [
+      15,
+      25
+    ],
+    "ph_range": [
+      6.0,
+      7.5
+    ],
+    "temp_range_c": [
+      12,
+      25
+    ],
+    "humidity_range_pct": [
+      45,
+      70
+    ],
+    "rainfall_range_mm": [
+      35,
+      65
+    ],
+    "soil_types": [
+      "Loamy",
+      "Alluvial",
+      "Clay Loam"
+    ],
+    "major_states": [
+      "Madhya Pradesh",
+      "Uttar Pradesh",
+      "Bihar",
+      "West Bengal",
+      "Rajasthan"
+    ]
+  },
+  {
+    "crop_id": "mustard",
+    "canonical_name": "Mustard (Rapeseed)",
+    "botanical_name": "Brassica juncea",
+    "family": "Brassicaceae",
+    "category": "Oilseed",
+    "season": "Rabi",
+    "icon": "\ud83c\udf3c",
+    "in_backend_db": true,
+    "in_frontend_engine": true,
+    "in_fertilizer_db": true,
+    "in_kaggle_benchmark": false,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Rapeseed &Mustard"
+    ],
+    "n_range_kg_ha": [
+      60,
+      90
+    ],
+    "p_range_kg_ha": [
+      30,
+      45
+    ],
+    "k_range_kg_ha": [
+      20,
+      40
+    ],
+    "ph_range": [
+      6.0,
+      7.5
+    ],
+    "temp_range_c": [
+      10,
+      25
+    ],
+    "humidity_range_pct": [
+      40,
+      70
+    ],
+    "rainfall_range_mm": [
+      30,
+      60
+    ],
+    "soil_types": [
+      "Loamy",
+      "Sandy Loam",
+      "Alluvial"
+    ],
+    "major_states": [
+      "Rajasthan",
+      "Haryana",
+      "Madhya Pradesh",
+      "Uttar Pradesh",
+      "West Bengal"
+    ]
+  },
+  {
+    "crop_id": "tomato",
+    "canonical_name": "Tomato",
+    "botanical_name": "Solanum lycopersicum",
+    "family": "Solanaceae",
+    "category": "Vegetable",
+    "season": "Rabi",
+    "icon": "\ud83c\udf45",
+    "in_backend_db": true,
+    "in_frontend_engine": true,
+    "in_fertilizer_db": true,
+    "in_kaggle_benchmark": false,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Tomato"
+    ],
+    "n_range_kg_ha": [
+      100,
+      150
+    ],
+    "p_range_kg_ha": [
+      60,
+      80
+    ],
+    "k_range_kg_ha": [
+      60,
+      100
+    ],
+    "ph_range": [
+      6.0,
+      7.0
+    ],
+    "temp_range_c": [
+      18,
+      30
+    ],
+    "humidity_range_pct": [
+      50,
+      75
+    ],
+    "rainfall_range_mm": [
+      50,
+      90
+    ],
+    "soil_types": [
+      "Sandy Loam",
+      "Loamy",
+      "Red",
+      "Alluvial"
+    ],
+    "major_states": [
+      "Andhra Pradesh",
+      "Madhya Pradesh",
+      "Karnataka",
+      "Gujarat",
+      "Odisha"
+    ]
+  },
+  {
+    "crop_id": "onion",
+    "canonical_name": "Onion",
+    "botanical_name": "Allium cepa",
+    "family": "Amaryllidaceae",
+    "category": "Bulb Vegetable",
+    "season": "Rabi",
+    "icon": "\ud83e\uddc5",
+    "in_backend_db": true,
+    "in_frontend_engine": true,
+    "in_fertilizer_db": true,
+    "in_kaggle_benchmark": false,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Onion"
+    ],
+    "n_range_kg_ha": [
+      80,
+      120
+    ],
+    "p_range_kg_ha": [
+      40,
+      60
+    ],
+    "k_range_kg_ha": [
+      60,
+      80
+    ],
+    "ph_range": [
+      6.0,
+      7.2
+    ],
+    "temp_range_c": [
+      15,
+      30
+    ],
+    "humidity_range_pct": [
+      50,
+      70
+    ],
+    "rainfall_range_mm": [
+      40,
+      75
+    ],
+    "soil_types": [
+      "Sandy Loam",
+      "Loamy",
+      "Alluvial",
+      "Clay Loam"
+    ],
+    "major_states": [
+      "Maharashtra",
+      "Madhya Pradesh",
+      "Karnataka",
+      "Gujarat",
+      "Rajasthan"
+    ]
+  },
+  {
+    "crop_id": "banana",
+    "canonical_name": "Banana",
+    "botanical_name": "Musa acuminata",
+    "family": "Musaceae",
+    "category": "Fruit / Perennial",
+    "season": "Annual",
+    "icon": "\ud83c\udf4c",
+    "in_backend_db": true,
+    "in_frontend_engine": false,
+    "in_fertilizer_db": true,
+    "in_kaggle_benchmark": true,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Banana"
+    ],
+    "n_range_kg_ha": [
+      150,
+      200
+    ],
+    "p_range_kg_ha": [
+      50,
+      80
+    ],
+    "k_range_kg_ha": [
+      180,
+      250
+    ],
+    "ph_range": [
+      6.0,
+      7.5
+    ],
+    "temp_range_c": [
+      24,
+      34
+    ],
+    "humidity_range_pct": [
+      70,
+      90
+    ],
+    "rainfall_range_mm": [
+      120,
+      220
+    ],
+    "soil_types": [
+      "Clay Loam",
+      "Alluvial",
+      "Loamy"
+    ],
+    "major_states": [
+      "Andhra Pradesh",
+      "Gujarat",
+      "Maharashtra",
+      "Tamil Nadu",
+      "Kerala"
+    ]
+  },
+  {
+    "crop_id": "mango",
+    "canonical_name": "Mango",
+    "botanical_name": "Mangifera indica",
+    "family": "Anacardiaceae",
+    "category": "Orchard Fruit",
+    "season": "Summer",
+    "icon": "\ud83e\udd6d",
+    "in_backend_db": true,
+    "in_frontend_engine": false,
+    "in_fertilizer_db": true,
+    "in_kaggle_benchmark": true,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Mango"
+    ],
+    "n_range_kg_ha": [
+      80,
+      120
+    ],
+    "p_range_kg_ha": [
+      40,
+      60
+    ],
+    "k_range_kg_ha": [
+      80,
+      120
+    ],
+    "ph_range": [
+      5.5,
+      7.5
+    ],
+    "temp_range_c": [
+      25,
+      38
+    ],
+    "humidity_range_pct": [
+      45,
+      65
+    ],
+    "rainfall_range_mm": [
+      70,
+      150
+    ],
+    "soil_types": [
+      "Alluvial",
+      "Red",
+      "Loamy"
+    ],
+    "major_states": [
+      "Uttar Pradesh",
+      "Andhra Pradesh",
+      "Karnataka",
+      "Bihar",
+      "Gujarat"
+    ]
+  },
+  {
+    "crop_id": "jowar",
+    "canonical_name": "Jowar (Sorghum)",
+    "botanical_name": "Sorghum bicolor",
+    "family": "Poaceae",
+    "category": "Millet / Cereal",
+    "season": "Kharif",
+    "icon": "\ud83c\udf3e",
+    "in_backend_db": true,
+    "in_frontend_engine": false,
+    "in_fertilizer_db": true,
+    "in_kaggle_benchmark": false,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Jowar"
+    ],
+    "n_range_kg_ha": [
+      60,
+      80
+    ],
+    "p_range_kg_ha": [
+      30,
+      40
+    ],
+    "k_range_kg_ha": [
+      30,
+      40
+    ],
+    "ph_range": [
+      6.0,
+      7.8
+    ],
+    "temp_range_c": [
+      20,
+      34
+    ],
+    "humidity_range_pct": [
+      40,
+      65
+    ],
+    "rainfall_range_mm": [
+      40,
+      75
+    ],
+    "soil_types": [
+      "Black",
+      "Clay Loam",
+      "Loamy",
+      "Alluvial"
+    ],
+    "major_states": [
+      "Maharashtra",
+      "Karnataka",
+      "Rajasthan",
+      "Tamil Nadu",
+      "Madhya Pradesh"
+    ]
+  },
+  {
+    "crop_id": "sunflower",
+    "canonical_name": "Sunflower",
+    "botanical_name": "Helianthus annuus",
+    "family": "Asteraceae",
+    "category": "Oilseed",
+    "season": "Zaid",
+    "icon": "\ud83c\udf3b",
+    "in_backend_db": false,
+    "in_frontend_engine": true,
+    "in_fertilizer_db": false,
+    "in_kaggle_benchmark": false,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Sunflower"
+    ],
+    "n_range_kg_ha": [
+      50,
+      70
+    ],
+    "p_range_kg_ha": [
+      40,
+      60
+    ],
+    "k_range_kg_ha": [
+      30,
+      40
+    ],
+    "ph_range": [
+      6.5,
+      7.5
+    ],
+    "temp_range_c": [
+      20,
+      30
+    ],
+    "humidity_range_pct": [
+      40,
+      65
+    ],
+    "rainfall_range_mm": [
+      40,
+      70
+    ],
+    "soil_types": [
+      "Loamy",
+      "Black",
+      "Sandy Loam"
+    ],
+    "major_states": [
+      "Karnataka",
+      "Odisha",
+      "Maharashtra",
+      "Bihar",
+      "Haryana"
+    ]
+  },
+  {
+    "crop_id": "barley",
+    "canonical_name": "Barley",
+    "botanical_name": "Hordeum vulgare",
+    "family": "Poaceae",
+    "category": "Cereal",
+    "season": "Rabi",
+    "icon": "\ud83c\udf3e",
+    "in_backend_db": false,
+    "in_frontend_engine": true,
+    "in_fertilizer_db": false,
+    "in_kaggle_benchmark": false,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Barley"
+    ],
+    "n_range_kg_ha": [
+      50,
+      70
+    ],
+    "p_range_kg_ha": [
+      30,
+      40
+    ],
+    "k_range_kg_ha": [
+      20,
+      30
+    ],
+    "ph_range": [
+      6.5,
+      8.0
+    ],
+    "temp_range_c": [
+      12,
+      24
+    ],
+    "humidity_range_pct": [
+      40,
+      65
+    ],
+    "rainfall_range_mm": [
+      35,
+      60
+    ],
+    "soil_types": [
+      "Sandy Loam",
+      "Loamy",
+      "Alluvial"
+    ],
+    "major_states": [
+      "Rajasthan",
+      "Uttar Pradesh",
+      "Madhya Pradesh",
+      "Haryana",
+      "Punjab"
+    ]
+  },
+  {
+    "crop_id": "millets",
+    "canonical_name": "Bajra / Pearl Millet",
+    "botanical_name": "Pennisetum glaucum",
+    "family": "Poaceae",
+    "category": "Nutri-Cereal",
+    "season": "Kharif",
+    "icon": "\ud83c\udf3e",
+    "in_backend_db": false,
+    "in_frontend_engine": true,
+    "in_fertilizer_db": false,
+    "in_kaggle_benchmark": false,
+    "in_historical_ministry": true,
+    "ministry_crop_aliases": [
+      "Bajra",
+      "Small millets"
+    ],
+    "n_range_kg_ha": [
+      60,
+      80
+    ],
+    "p_range_kg_ha": [
+      30,
+      40
+    ],
+    "k_range_kg_ha": [
+      20,
+      30
+    ],
+    "ph_range": [
+      6.0,
+      7.5
+    ],
+    "temp_range_c": [
+      22,
+      35
+    ],
+    "humidity_range_pct": [
+      30,
+      60
+    ],
+    "rainfall_range_mm": [
+      35,
+      65
+    ],
+    "soil_types": [
+      "Sandy Loam",
+      "Sandy",
+      "Red"
+    ],
+    "major_states": [
+      "Rajasthan",
+      "Uttar Pradesh",
+      "Gujarat",
+      "Haryana",
+      "Maharashtra"
+    ]
+  }
+]

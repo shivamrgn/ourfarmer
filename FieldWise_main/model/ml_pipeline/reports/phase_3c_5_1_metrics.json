@@ -1,0 +1,38 @@
+{
+  "phase": "Phase 3C.5.1: Engine Safety and Evidence Integrity Corrections",
+  "version": "2.2.1-CLOSURE",
+  "timestamp": "2026-11-20T13:25:00Z",
+  "architecture": "Two-Tier Biological Gating + Liebig Non-Compensatory Geometric Ranking",
+  "catalogue_crops": 19,
+  "catalogue_planting_windows": 31,
+  "life_cycle_distribution": {
+    "Annual_Seasonal": 14,
+    "Long_Duration_Annual": 2,
+    "Multi_Season_Arable": 2,
+    "Perennial_Orchard": 1
+  },
+  "total_tests_run": 34,
+  "acceptance_tests_passed": 18,
+  "acceptance_tests_failed": 0,
+  "edge_case_suites_passed": 9,
+  "edge_case_suites_failed": 0,
+  "regression_tests_passed": 7,
+  "regression_tests_failed": 0,
+  "total_pass_rate_pct": 100.0,
+  "historical_checksum_manifests_preserved": 5,
+  "production_files_modified": 0,
+  "ml_models_trained": 0,
+  "live_deployment_status": "ISOLATED_INDEPENDENT_TESTING_ONLY",
+  "adapter_activation_status": "DESIGN_ONLY_INACTIVE",
+  "execution_speed_sec": 0.035,
+  "dual_directory_portability_verified": true,
+  "audit_findings_resolved": {
+    "finding_1_effective_rainfall_safety": "RESOLVED_USDA_SCS_MONTHLY_AGGREGATION_ENFORCED",
+    "finding_2_missing_nutrient_inputs": "RESOLVED_PROVISIONAL_BASELINE_NO_UNEARNED_POINTS",
+    "finding_3_fertilizer_prescription_safety": "RESOLVED_WITHHELD_INCOMPLETE_SOIL_TEST_DAP_DEDUCTION",
+    "finding_4_dci_evidence_provenance": "RESOLVED_PROVENANCE_DIFFERENTIATION_ENFORCED",
+    "finding_5_catalogue_fallback": "RESOLVED_EMBEDDED_19_CROPS_31_WINDOWS_LOAD_ERROR",
+    "finding_6_thermal_gate": "RESOLVED_DIURNAL_EXTREMES_EVALUATED_NO_IMPUTATION",
+    "finding_7_adapter_safety": "RESOLVED_PROHIBITED_UNVERIFIED_INFERENCES"
+  }
+}

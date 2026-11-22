@@ -1,0 +1,10 @@
+Model_Label,Prediction_Column,Encoding_Type,ExpA_MAE,ExpA_RMSE,ExpA_R2,ExpA_MedAE,ExpA_MAPE_Pct,ExpA_Within_1_tha_Pct,ExpA_Within_10_Pct,ExpA_Within_20_Pct,ExpB_MAE,ExpB_RMSE,ExpB_R2,ExpB_MedAE,ExpB_MAPE_Pct,ExpB_Within_1_tha_Pct,ExpB_Within_10_Pct,ExpB_Within_20_Pct
+Existing District Mean (Phase 3B.1),pred_existing_district_mean,Flat Historical Group Mean,1.5013,5.041,0.8882,0.2985,37.49,78.87,24.03,47.67,1.329,4.5503,0.8867,0.2606,36.38,80.32,25.6,48.99
+Existing Random Forest (Phase 3B.1),pred_existing_random_forest,Ordinal Integer Encoding,1.4774,5.9836,0.8425,0.2455,43.49,82.11,32.0,55.62,1.3704,5.4799,0.8357,0.2315,41.89,82.55,30.8,53.78
+Challenger (min_obs=1),pred_challenger_min_obs_1,7-Level Hierarchical Mean (N_min=1),1.4209,4.9604,0.8918,0.2842,37.08,80.51,25.89,49.02,1.2611,4.4721,0.8905,0.2446,36.07,81.7,27.34,50.19
+Challenger (min_obs=3),pred_challenger_min_obs_3,7-Level Hierarchical Mean (N_min=3),1.4334,4.9548,0.892,0.2882,37.27,79.8,25.23,48.68,1.2675,4.4583,0.8912,0.2493,36.19,81.04,26.73,49.84
+Challenger (min_obs=5),pred_challenger_min_obs_5,7-Level Hierarchical Mean (N_min=5),1.4349,4.9535,0.8921,0.2887,37.22,79.96,25.08,48.65,1.266,4.4568,0.8913,0.2507,35.63,81.41,26.58,49.88
+Random Forest (One-Hot Encoded),pred_rf_one_hot,Sparse Binary One-Hot Encoding,1.642,5.9252,0.8456,0.385,52.26,77.51,19.64,39.37,1.5914,4.6729,0.8805,0.5334,81.52,73.9,17.65,31.83
+Extra Trees (One-Hot Encoded),pred_et_one_hot,Sparse Binary One-Hot Encoding,1.7098,6.0174,0.8408,0.3911,51.53,76.7,18.52,37.94,1.6614,4.8581,0.8708,0.5234,80.58,74.15,16.71,31.4
+Native Categorical XGBoost,pred_xgb_native_categorical,Native Histogram Category Split,1.4464,5.8524,0.8494,0.2528,43.01,82.15,31.97,54.42,1.5201,6.8505,0.7432,0.2422,46.08,82.72,30.89,52.42
+Target-Encoded Random Forest,pred_rf_target_encoded,5-Fold Out-of-Fold Target Encoding,1.532,5.9842,0.8425,0.2581,41.8,81.39,30.93,53.07,1.4191,5.4467,0.8376,0.2631,44.52,79.96,27.84,50.34

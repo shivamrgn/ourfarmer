@@ -1,0 +1,76 @@
+{
+  "phase": "Phase 3C.4.2",
+  "document_title": "FieldWise Recommendation Engine Final Specification Closure Metrics",
+  "specification_version": "1.2.0-FINAL-CLOSURE",
+  "timestamp": "2026-11-19T14:45:00Z",
+  "crop_catalogue_metrics": {
+    "total_canonical_crops": 19,
+    "life_cycle_distribution": {
+      "Annual_Seasonal": 17,
+      "Long_Duration_Annual": 1,
+      "Perennial_Orchard": 1
+    },
+    "recommendation_readiness": {
+      "PRODUCTION_READY": 9,
+      "CONDITIONALLY_RECOMMENDABLE": 9,
+      "RESTRICTED_ORCHARD_PROVISIONAL": 1
+    },
+    "total_distinct_planting_windows_modeled": 25,
+    "planting_window_evidence_status": {
+      "VERIFIED": 23,
+      "PROVISIONAL": 2,
+      "UNKNOWN": 0
+    }
+  },
+  "hard_exclusion_evidence_audit": {
+    "total_rules_audited": 61,
+    "retained_as_hard_exclusion": 45,
+    "downgraded_to_soft_penalty": 16,
+    "marked_as_unknown": 0,
+    "downgrade_reasons": {
+      "schema_texture_incompatibility_or_drainage_defect": 8,
+      "broad_season_tautology_or_multiseason_flexibility": 8
+    },
+    "evidence_class_of_retained": {
+      "Class A (ICAR/CSSRI/FAO primary verified lethality)": 45
+    }
+  },
+  "harmonized_eligibility_rules_breakdown": {
+    "total_rules": 100,
+    "HARD_EXCLUSION": 45,
+    "SOFT_PENALTY": 42,
+    "WARNING_ONLY": 8,
+    "UNKNOWN": 4,
+    "NOT_APPLICABLE": 1
+  },
+  "water_semantics_audit": {
+    "total_crops_audited": 19,
+    "measurement_definitions": {
+      "TOTAL_CROP_EVAPOTRANSPIRATION_ETC": 13,
+      "RAINFED_PRODUCTION_SCREENING_THRESHOLD": 5,
+      "PROVISIONAL_METADATA": 1,
+      "UNKNOWN": 0
+    },
+    "safe_for_hard_exclusion_gate": {
+      "No_Advisory_Only": 19
+    },
+    "comparable_directly_with_raw_rainfall": {
+      "No": 14,
+      "Yes_Rainfed_Only": 5
+    }
+  },
+  "acceptance_test_matrix": {
+    "total_tests": 15,
+    "phase_3c_3_regressions": 5,
+    "phase_3c_4_2_closure_tests": 10,
+    "all_tests_have_explicit_outcomes": true
+  },
+  "architectural_invariants": {
+    "application_code_modified": false,
+    "models_trained": false,
+    "ssot_parity_enforced": true,
+    "calibrated_probability_claims_prohibited": true,
+    "dap_nitrogen_credit_enforced": true,
+    "flat_water_multipliers_eliminated": true
+  }
+}

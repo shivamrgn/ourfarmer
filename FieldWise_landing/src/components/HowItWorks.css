@@ -1,0 +1,564 @@
+/* ============================================================
+   HOW IT WORKS — Crops Wild User Journey
+   Connected 4-step visual timeline:
+   Step 01: Create Your Farm Profile (One-time setup)
+   Step 02: Connect Real-World Data (Weather, satellite, mandi)
+   Step 03: AI Analysis (Agronomic models)
+   Step 04: Get Actionable Insights (Decisions & support)
+   ============================================================ */
+
+/* ── Section ── */
+.hiw-section {
+  background: linear-gradient(180deg, var(--color-green-50, #f0faf4) 0%, var(--color-cream, #faf8f3) 100%);
+  padding-block: 0 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative large circle */
+.hiw-section::after {
+  content: '';
+  position: absolute;
+  bottom: -180px;
+  left: -180px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 1.5px dashed var(--color-green-200, #b3e4c5);
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Top wave separator */
+.hiw-wave-top {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin-bottom: 4rem;
+}
+
+.hiw-wave-top svg {
+  width: 100%;
+  height: 60px;
+  display: block;
+}
+
+/* ── Scroll reveal ── */
+.hiw-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 550ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 550ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hiw-reveal--in    { opacity: 1; transform: translateY(0); }
+.hiw-reveal--delay-0 { transition-delay:   0ms; }
+.hiw-reveal--delay-1 { transition-delay: 120ms; }
+.hiw-reveal--delay-2 { transition-delay: 240ms; }
+.hiw-reveal--delay-3 { transition-delay: 360ms; }
+
+/* ── Section header ── */
+.hiw-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem;
+}
+
+.hiw-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--font-ui, 'DM Sans', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-green-600, #2d7a4a);
+  margin-bottom: 1rem;
+}
+
+.hiw-eyebrow__line {
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-green-400, #52b876);
+  border-radius: 9999px;
+}
+
+.hiw-heading {
+  font-family: var(--font-display, 'Playfair Display', serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: var(--color-green-900, #0f2d18);
+  margin-bottom: 1.25rem;
+}
+
+.hiw-subtext {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-slate, #6b6358);
+}
+
+/* ── Persistence Value Highlight Banner ── */
+.hiw-persistence-banner {
+  background: #ffffff;
+  border: 1px solid rgba(45, 122, 74, 0.25);
+  border-radius: 14px;
+  padding: 1rem 1.5rem;
+  max-width: 820px;
+  margin: 0 auto 4rem auto;
+  box-shadow: 0 4px 16px rgba(26, 74, 46, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.hiw-persistence-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f0faf4;
+  color: var(--color-green-800, #1a4a2e);
+  border: 1px solid rgba(45, 122, 74, 0.2);
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-family: var(--font-ui, 'DM Sans', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.hiw-persistence-badge svg {
+  color: #16a34a;
+}
+
+.hiw-persistence-text {
+  font-size: 0.845rem;
+  line-height: 1.55;
+  color: var(--color-charcoal, #3d3830);
+  margin: 0;
+  text-align: left;
+}
+
+.hiw-persistence-text strong {
+  color: var(--color-green-900, #0f2d18);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   DESKTOP TIMELINE
+   ══════════════════════════════════════════════════════════════ */
+.hiw-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  gap: 0;
+  margin-bottom: 4rem;
+}
+
+/* ── Connecting track (horizontal line behind badges) ── */
+.hiw-track-wrap {
+  position: absolute;
+  top: 23px; /* vertically aligns with center of badge */
+  left: calc(12.5% + 1px); /* starts at center of first badge */
+  right: calc(12.5% + 1px);
+  height: 2px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hiw-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--color-green-200, #b3e4c5);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.hiw-track__fill {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 0;
+  background: linear-gradient(90deg, #1a4a2e 0%, #2563eb 35%, #c47c2b 70%, #15803d 100%);
+  border-radius: 9999px;
+  transition: width 1.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+}
+
+.hiw-track--animate .hiw-track__fill {
+  width: 100%;
+}
+
+/* Traveling pulse dot on track */
+.hiw-track__dot {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-green-500, #3a9c5f);
+  box-shadow: 0 0 0 4px rgba(82,184,118,0.25);
+  opacity: 0;
+  transition: opacity 300ms ease 0.3s;
+}
+
+.hiw-track--animate .hiw-track__dot {
+  opacity: 1;
+  animation: travel-dot 3s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards,
+             pulse-travel 1.5s ease-in-out 0.3s infinite;
+}
+
+@keyframes travel-dot {
+  from { left: 0; }
+  to   { left: calc(100% - 10px); }
+}
+
+@keyframes pulse-travel {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(82,184,118,0.25); }
+  50%       { box-shadow: 0 0 0 8px rgba(82,184,118,0.08); }
+}
+
+/* ── Each step column ── */
+.hiw-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  z-index: 1;
+  padding-inline: 0.75rem;
+}
+
+/* Badge (numbered circle) */
+.hiw-step__badge-wrap {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.hiw-step__badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 300ms ease;
+}
+
+.hiw-step__badge--green {
+  background: var(--color-green-800, #1a4a2e);
+  box-shadow: 0 4px 16px rgba(26,74,46,0.25);
+}
+
+.hiw-step__badge--blue {
+  background: #1d4ed8;
+  box-shadow: 0 4px 16px rgba(29,78,216,0.25);
+}
+
+.hiw-step__badge--amber {
+  background: var(--color-amber, #c47c2b);
+  box-shadow: 0 4px 16px rgba(196,124,43,0.25);
+}
+
+.hiw-step__badge--sage {
+  background: #15803d;
+  box-shadow: 0 4px 16px rgba(21,128,61,0.25);
+}
+
+.hiw-step:hover .hiw-step__badge {
+  transform: scale(1.12);
+  box-shadow: 0 8px 24px rgba(26,74,46,0.3);
+}
+
+.hiw-step__num {
+  font-family: var(--font-display, 'Playfair Display', serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+/* Step card */
+.hiw-step__card {
+  background: white;
+  border-radius: 1.25rem;
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 2px 12px rgba(15,45,24,0.06);
+  border: 1.5px solid transparent;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition:
+    box-shadow 300ms ease,
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 250ms ease;
+}
+
+.hiw-step__card--green {
+  border-color: var(--color-green-100, #d9f2e5);
+}
+
+.hiw-step__card--blue {
+  border-color: #dbeafe;
+}
+
+.hiw-step__card--amber {
+  border-color: var(--color-amber-pale, #f5e4c8);
+}
+
+.hiw-step__card--sage {
+  border-color: #dcfce7;
+}
+
+.hiw-step:hover .hiw-step__card {
+  box-shadow: 0 12px 36px rgba(15,45,24,0.12);
+  transform: translateY(-4px);
+}
+
+.hiw-step:hover .hiw-step__card--green {
+  border-color: var(--color-green-300, #7dcf98);
+}
+
+.hiw-step:hover .hiw-step__card--blue {
+  border-color: #93c5fd;
+}
+
+.hiw-step:hover .hiw-step__card--amber {
+  border-color: rgba(196,124,43,0.4);
+}
+
+.hiw-step:hover .hiw-step__card--sage {
+  border-color: #86efac;
+}
+
+/* Illustration */
+.hiw-step__icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hiw-step__icon svg {
+  width: 58px;
+  height: 58px;
+}
+
+.hiw-step:hover .hiw-step__icon {
+  transform: scale(1.08) translateY(-2px);
+}
+
+.hiw-step__note-badge {
+  display: inline-block;
+  font-family: var(--font-ui, 'DM Sans', sans-serif);
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  margin-bottom: 0.5rem;
+  align-self: center;
+}
+
+.hiw-step__note-badge--green { background: #f0faf4; color: #166534; }
+.hiw-step__note-badge--blue { background: #eff6ff; color: #1e40af; }
+.hiw-step__note-badge--amber { background: #fffbeb; color: #92400e; }
+.hiw-step__note-badge--sage { background: #f0fdf4; color: #15803d; }
+
+.hiw-step__title {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-green-900, #0f2d18);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.hiw-step__desc {
+  font-size: 0.825rem;
+  line-height: 1.65;
+  color: var(--color-slate, #6b6358);
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+/* Tags */
+.hiw-step__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.hiw-tag {
+  font-family: var(--font-ui, 'DM Sans', sans-serif);
+  font-size: 0.62rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+}
+
+.hiw-tag--green {
+  background: var(--color-green-50, #f0faf4);
+  color: var(--color-green-700, #235e3a);
+  border: 1px solid var(--color-green-200, #b3e4c5);
+}
+
+.hiw-tag--blue {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.hiw-tag--amber {
+  background: var(--color-earth-50, #fdf6ec);
+  color: var(--color-earth-700, #6b4319);
+  border: 1px solid var(--color-amber-pale, #f5e4c8);
+}
+
+.hiw-tag--sage {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+/* Inter-step arrow (absolute positioned overlay) */
+.hiw-step__arrow {
+  position: absolute;
+  top: 20px; /* aligns with track */
+  right: -14px;
+  z-index: 2;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ── CTA below timeline ── */
+.hiw-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.hiw-cta .btn {
+  gap: 0.5rem;
+  box-shadow: 0 4px 20px rgba(26,74,46,0.22);
+}
+
+.hiw-cta .btn svg {
+  transition: transform 250ms cubic-bezier(0.34,1.56,0.64,1);
+}
+
+.hiw-cta .btn:hover svg {
+  transform: translateX(4px);
+}
+
+.hiw-cta__note {
+  font-size: 0.8rem;
+  color: var(--color-stone, #9e9480);
+  font-family: var(--font-ui, 'DM Sans', sans-serif);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   VERTICAL TIMELINE — Mobile
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .hiw-persistence-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .hiw-persistence-text {
+    text-align: center;
+  }
+
+  .hiw-timeline {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-left: 2.5rem;
+  }
+
+  /* Hide horizontal track */
+  .hiw-track-wrap { display: none; }
+
+  /* Hide horizontal arrow overlay */
+  .hiw-step__arrow { display: none; }
+
+  /* Vertical layout per step */
+  .hiw-step {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding-inline: 0;
+    padding-bottom: 2rem;
+    position: relative;
+  }
+
+  /* Vertical connecting line down from badge */
+  .hiw-step:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 23px;    /* center of 48px badge */
+    top: 52px;     /* below the badge */
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #1a4a2e 0%, #2563eb 35%, #c47c2b 70%, #15803d 100%);
+    border-radius: 9999px;
+  }
+
+  .hiw-step__badge-wrap {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    padding-top: 0;
+  }
+
+  .hiw-step__card {
+    text-align: left;
+    flex: 1;
+    padding: 1.25rem;
+  }
+
+  .hiw-step__note-badge {
+    align-self: flex-start;
+  }
+
+  .hiw-step__icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 0 0.875rem 0;
+  }
+
+  .hiw-step__icon svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .hiw-step__tags {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .hiw-section { padding-bottom: 4rem; }
+  .hiw-wave-top { margin-bottom: 2.5rem; }
+  .hiw-timeline { padding-left: 1.75rem; }
+  .hiw-step { gap: 1rem; }
+  .hiw-step__badge { width: 40px; height: 40px; }
+  .hiw-step__num { font-size: 0.85rem; }
+  .hiw-step:not(:last-child)::before { left: 19px; }
+}

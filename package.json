@@ -1,0 +1,13 @@
+{
+  "name": "fieldwise-suite",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "FieldWise Agricultural Intelligence Platform - Unified Suite",
+  "scripts": {
+    "dev": "node dev.js",
+    "dev:landing": "npm --prefix FieldWise_landing run dev",
+    "dev:main": "npm --prefix FieldWise_main run dev",
+    "build": "npm --prefix FieldWise_landing run build && npm --prefix FieldWise_main run build"
+  }
+}

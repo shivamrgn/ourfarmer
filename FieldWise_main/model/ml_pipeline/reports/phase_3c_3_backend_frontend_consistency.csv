@@ -1,0 +1,103 @@
+crop_id,canonical_name,entity_type,parameter_name,backend_value,frontend_value,canonical_value,status,severity,impact_description
+rice,Rice (Paddy),Crop Catalog,presence_in_database,Present,Present,Present,Consistent,Low,Present in both backend and frontend catalogs.
+rice,Rice (Paddy),Crop Metadata,name,Rice,Rice (Paddy),Rice (Paddy),Mismatch,Low,Display label difference: 'Rice' vs 'Rice (Paddy)'.
+rice,Rice (Paddy),Soil Compatibility,soilTypes,Alluvial; Clay; Loamy,Alluvial; Clay; Clay Loam; Loamy,Alluvial; Clay; Clay Loam; Loamy,Mismatch,Medium,"Soil whitelist differs: backend has 3 types, frontend has 4 types."
+wheat,Wheat,Crop Catalog,presence_in_database,Present,Present,Present,Consistent,Low,Present in both backend and frontend catalogs.
+wheat,Wheat,Soil Compatibility,soilTypes,Clay Loam; Loamy; Sandy Loam,Alluvial; Clay Loam; Loamy; Sandy Loam,Alluvial; Clay Loam; Loamy; Sandy Loam,Mismatch,Medium,"Soil whitelist differs: backend has 3 types, frontend has 4 types."
+maize,Maize (Corn),Crop Catalog,presence_in_database,Present,Present,Present,Consistent,Low,Present in both backend and frontend catalogs.
+maize,Maize (Corn),Crop Metadata,name,Maize,Maize (Corn),Maize (Corn),Mismatch,Low,Display label difference: 'Maize' vs 'Maize (Corn)'.
+cotton,Cotton,Crop Catalog,presence_in_database,Present,Present,Present,Consistent,Low,Present in both backend and frontend catalogs.
+cotton,Cotton,Agronomic Requirement,yieldPerHectare,2 t/ha,2.2 t/ha,N/A,Mismatch,High,Scoring threshold delta between backend (2) and frontend (2.2).
+cotton,Cotton,Soil Compatibility,soilTypes,Alluvial; Black; Red,Alluvial; Black; Clay; Red,Alluvial; Black; Clay; Red,Mismatch,Medium,"Soil whitelist differs: backend has 3 types, frontend has 4 types."
+sugarcane,Sugarcane,Crop Catalog,presence_in_database,Present,Present,Present,Consistent,Low,Present in both backend and frontend catalogs.
+sugarcane,Sugarcane,Agronomic Constraint,season,Kharif,Annual,Annual,Conflict,High,"Conflicting cultivation season: backend says Kharif, frontend says Annual."
+sugarcane,Sugarcane,Agronomic Requirement,minRainfall,150 mm,120 mm,N/A,Mismatch,Medium,Scoring threshold delta between backend (150) and frontend (120).
+sugarcane,Sugarcane,Agronomic Requirement,maxHumidity,90 %,85 %,N/A,Mismatch,Medium,Scoring threshold delta between backend (90) and frontend (85).
+sugarcane,Sugarcane,Agronomic Requirement,yieldPerHectare,80 t/ha,70 t/ha,N/A,Mismatch,High,Scoring threshold delta between backend (80) and frontend (70).
+sugarcane,Sugarcane,Soil & Nutrient Range,phosphorusRange,"[60, 100] kg/ha","[60, 90] kg/ha","[60, 90] kg/ha",Mismatch,Medium,"Tolerance boundary divergence: backend=[60, 100] vs frontend=[60, 90]."
+sugarcane,Sugarcane,Soil & Nutrient Range,potassiumRange,"[80, 120] kg/ha","[60, 120] kg/ha","[60, 120] kg/ha",Mismatch,Medium,"Tolerance boundary divergence: backend=[80, 120] vs frontend=[60, 120]."
+sugarcane,Sugarcane,Soil & Nutrient Range,phRange,"[6, 7.5] pH","[6.5, 7.5] pH","[6.5, 7.5] pH",Mismatch,Medium,"Tolerance boundary divergence: backend=[6, 7.5] vs frontend=[6.5, 7.5]."
+sugarcane,Sugarcane,Soil Compatibility,soilTypes,Alluvial; Clay Loam; Loamy,Alluvial; Black; Clay Loam; Loamy,Alluvial; Black; Clay Loam; Loamy,Mismatch,Medium,"Soil whitelist differs: backend has 3 types, frontend has 4 types."
+soybean,Soybean,Crop Catalog,presence_in_database,Present,Present,Present,Consistent,Low,Present in both backend and frontend catalogs.
+soybean,Soybean,Agronomic Requirement,minRainfall,60 mm,65 mm,N/A,Mismatch,Medium,Scoring threshold delta between backend (60) and frontend (65).
+soybean,Soybean,Agronomic Requirement,minHumidity,50 %,55 %,N/A,Mismatch,Medium,Scoring threshold delta between backend (50) and frontend (55).
+soybean,Soybean,Agronomic Requirement,maxHumidity,75 %,80 %,N/A,Mismatch,Medium,Scoring threshold delta between backend (75) and frontend (80).
+soybean,Soybean,Agronomic Requirement,yieldPerHectare,2.5 t/ha,2 t/ha,N/A,Mismatch,High,Scoring threshold delta between backend (2.5) and frontend (2).
+soybean,Soybean,Soil & Nutrient Range,phRange,"[6, 7] pH","[6, 7.5] pH","[6.0, 7.5] pH",Mismatch,Medium,"Tolerance boundary divergence: backend=[6, 7] vs frontend=[6, 7.5]."
+groundnut,Groundnut (Peanut),Crop Catalog,presence_in_database,Present,Present,Present,Consistent,Low,Present in both backend and frontend catalogs.
+groundnut,Groundnut (Peanut),Crop Metadata,name,Groundnut,Groundnut (Peanut),Groundnut (Peanut),Mismatch,Low,Display label difference: 'Groundnut' vs 'Groundnut (Peanut)'.
+groundnut,Groundnut (Peanut),Agronomic Requirement,maxRainfall,100 mm,90 mm,N/A,Mismatch,Medium,Scoring threshold delta between backend (100) and frontend (90).
+groundnut,Groundnut (Peanut),Agronomic Requirement,minTemperature,20 °C,22 °C,N/A,Mismatch,Medium,Scoring threshold delta between backend (20) and frontend (22).
+groundnut,Groundnut (Peanut),Agronomic Requirement,maxTemperature,30 °C,32 °C,N/A,Mismatch,Medium,Scoring threshold delta between backend (30) and frontend (32).
+groundnut,Groundnut (Peanut),Agronomic Requirement,minHumidity,45 %,50 %,N/A,Mismatch,Medium,Scoring threshold delta between backend (45) and frontend (50).
+groundnut,Groundnut (Peanut),Agronomic Requirement,maxHumidity,70 %,75 %,N/A,Mismatch,Medium,Scoring threshold delta between backend (70) and frontend (75).
+groundnut,Groundnut (Peanut),Agronomic Requirement,yieldPerHectare,2 t/ha,2.5 t/ha,N/A,Mismatch,High,Scoring threshold delta between backend (2) and frontend (2.5).
+groundnut,Groundnut (Peanut),Soil & Nutrient Range,nitrogenRange,"[15, 25] kg/ha","[20, 40] kg/ha","[15, 25] kg/ha",Mismatch,Medium,"Tolerance boundary divergence: backend=[15, 25] vs frontend=[20, 40]."
+groundnut,Groundnut (Peanut),Soil & Nutrient Range,phRange,"[5.5, 7] pH","[6, 7] pH","[5.5, 7.0] pH",Mismatch,Medium,"Tolerance boundary divergence: backend=[5.5, 7] vs frontend=[6, 7]."
+groundnut,Groundnut (Peanut),Soil Compatibility,soilTypes,Alluvial; Red; Sandy Loam,Loamy; Red; Sandy Loam,Alluvial; Loamy; Red; Sandy Loam,Mismatch,Medium,"Soil whitelist differs: backend has 3 types, frontend has 3 types."
+potato,Potato,Crop Catalog,presence_in_database,Present,Present,Present,Consistent,Low,Present in both backend and frontend catalogs.
+potato,Potato,Agronomic Requirement,maxRainfall,80 mm,70 mm,N/A,Mismatch,Medium,Scoring threshold delta between backend (80) and frontend (70).
+potato,Potato,Agronomic Requirement,maxTemperature,25 °C,24 °C,N/A,Mismatch,Medium,Scoring threshold delta between backend (25) and frontend (24).
+potato,Potato,Agronomic Requirement,minHumidity,55 %,60 %,N/A,Mismatch,Medium,Scoring threshold delta between backend (55) and frontend (60).
+potato,Potato,Soil & Nutrient Range,nitrogenRange,"[150, 200] kg/ha","[120, 180] kg/ha","[120, 180] kg/ha",Mismatch,Medium,"Tolerance boundary divergence: backend=[150, 200] vs frontend=[120, 180]."
+potato,Potato,Soil & Nutrient Range,phosphorusRange,"[80, 120] kg/ha","[80, 100] kg/ha","[80, 100] kg/ha",Mismatch,Medium,"Tolerance boundary divergence: backend=[80, 120] vs frontend=[80, 100]."
+potato,Potato,Soil & Nutrient Range,phRange,"[5, 6.5] pH","[5.2, 6.5] pH","[5.0, 6.5] pH",Mismatch,Medium,"Tolerance boundary divergence: backend=[5, 6.5] vs frontend=[5.2, 6.5]."
+chickpea,Chickpea (Gram),Crop Catalog,presence_in_database,Present,Present,Present,Consistent,Low,Present in both backend and frontend catalogs.
+chickpea,Chickpea (Gram),Crop Metadata,name,Chickpea,Chickpea (Gram),Chickpea (Gram),Mismatch,Low,Display label difference: 'Chickpea' vs 'Chickpea (Gram)'.
+chickpea,Chickpea (Gram),Agronomic Requirement,maxRainfall,80 mm,60 mm,N/A,Mismatch,Medium,Scoring threshold delta between backend (80) and frontend (60).
+chickpea,Chickpea (Gram),Agronomic Requirement,minTemperature,10 °C,15 °C,N/A,Mismatch,Medium,Scoring threshold delta between backend (10) and frontend (15).
+chickpea,Chickpea (Gram),Agronomic Requirement,yieldPerHectare,1.5 t/ha,1.8 t/ha,N/A,Mismatch,High,Scoring threshold delta between backend (1.5) and frontend (1.8).
+chickpea,Chickpea (Gram),Soil & Nutrient Range,nitrogenRange,"[15, 30] kg/ha","[20, 30] kg/ha","[20, 30] kg/ha",Mismatch,Medium,"Tolerance boundary divergence: backend=[15, 30] vs frontend=[20, 30]."
+chickpea,Chickpea (Gram),Soil & Nutrient Range,potassiumRange,"[20, 40] kg/ha","[20, 30] kg/ha","[20, 30] kg/ha",Mismatch,Medium,"Tolerance boundary divergence: backend=[20, 40] vs frontend=[20, 30]."
+chickpea,Chickpea (Gram),Soil Compatibility,soilTypes,Black; Loamy; Sandy Loam,Black; Clay Loam; Loamy; Sandy Loam,Black; Clay Loam; Loamy; Sandy Loam,Mismatch,Medium,"Soil whitelist differs: backend has 3 types, frontend has 4 types."
+lentil,Lentil (Masoor),Crop Catalog,presence_in_database,Present,Present,Present,Consistent,Low,Present in both backend and frontend catalogs.
+lentil,Lentil (Masoor),Crop Metadata,name,Lentil,Lentil (Masoor),Lentil (Masoor),Mismatch,Low,Display label difference: 'Lentil' vs 'Lentil (Masoor)'.
+lentil,Lentil (Masoor),Agronomic Requirement,minRainfall,25 mm,30 mm,N/A,Mismatch,Medium,Scoring threshold delta between backend (25) and frontend (30).
+lentil,Lentil (Masoor),Agronomic Requirement,maxRainfall,70 mm,50 mm,N/A,Mismatch,Medium,Scoring threshold delta between backend (70) and frontend (50).
+lentil,Lentil (Masoor),Agronomic Requirement,minTemperature,5 °C,12 °C,N/A,Mismatch,Medium,Scoring threshold delta between backend (5) and frontend (12).
+lentil,Lentil (Masoor),Agronomic Requirement,maxTemperature,25 °C,22 °C,N/A,Mismatch,Medium,Scoring threshold delta between backend (25) and frontend (22).
+lentil,Lentil (Masoor),Agronomic Requirement,minHumidity,25 %,40 %,N/A,Mismatch,Medium,Scoring threshold delta between backend (25) and frontend (40).
+lentil,Lentil (Masoor),Agronomic Requirement,maxHumidity,55 %,65 %,N/A,Mismatch,Medium,Scoring threshold delta between backend (55) and frontend (65).
+lentil,Lentil (Masoor),Soil & Nutrient Range,nitrogenRange,"[10, 25] kg/ha","[20, 30] kg/ha","[15, 25] kg/ha",Mismatch,Medium,"Tolerance boundary divergence: backend=[10, 25] vs frontend=[20, 30]."
+lentil,Lentil (Masoor),Soil & Nutrient Range,phosphorusRange,"[30, 55] kg/ha","[30, 50] kg/ha","[35, 50] kg/ha",Mismatch,Medium,"Tolerance boundary divergence: backend=[30, 55] vs frontend=[30, 50]."
+lentil,Lentil (Masoor),Soil & Nutrient Range,potassiumRange,"[20, 35] kg/ha","[20, 30] kg/ha","[15, 25] kg/ha",Mismatch,Medium,"Tolerance boundary divergence: backend=[20, 35] vs frontend=[20, 30]."
+lentil,Lentil (Masoor),Soil & Nutrient Range,phRange,"[6, 8] pH","[6, 7.5] pH","[6.0, 7.5] pH",Mismatch,Medium,"Tolerance boundary divergence: backend=[6, 8] vs frontend=[6, 7.5]."
+lentil,Lentil (Masoor),Soil Compatibility,soilTypes,Clay Loam; Loamy; Sandy Loam,Alluvial; Clay Loam; Loamy,Alluvial; Clay Loam; Loamy,Mismatch,Medium,"Soil whitelist differs: backend has 3 types, frontend has 3 types."
+mustard,Mustard (Rapeseed),Crop Catalog,presence_in_database,Present,Present,Present,Consistent,Low,Present in both backend and frontend catalogs.
+mustard,Mustard (Rapeseed),Crop Metadata,name,Mustard,Mustard (Rapeseed),Mustard (Rapeseed),Mismatch,Low,Display label difference: 'Mustard' vs 'Mustard (Rapeseed)'.
+mustard,Mustard (Rapeseed),Agronomic Requirement,maxRainfall,60 mm,50 mm,N/A,Mismatch,Medium,Scoring threshold delta between backend (60) and frontend (50).
+mustard,Mustard (Rapeseed),Agronomic Requirement,maxTemperature,25 °C,22 °C,N/A,Mismatch,Medium,Scoring threshold delta between backend (25) and frontend (22).
+mustard,Mustard (Rapeseed),Agronomic Requirement,minHumidity,30 %,40 %,N/A,Mismatch,Medium,Scoring threshold delta between backend (30) and frontend (40).
+mustard,Mustard (Rapeseed),Agronomic Requirement,maxHumidity,60 %,65 %,N/A,Mismatch,Medium,Scoring threshold delta between backend (60) and frontend (65).
+mustard,Mustard (Rapeseed),Agronomic Requirement,yieldPerHectare,1.8 t/ha,1.6 t/ha,N/A,Mismatch,High,Scoring threshold delta between backend (1.8) and frontend (1.6).
+mustard,Mustard (Rapeseed),Soil & Nutrient Range,nitrogenRange,"[60, 100] kg/ha","[60, 90] kg/ha","[60, 90] kg/ha",Mismatch,Medium,"Tolerance boundary divergence: backend=[60, 100] vs frontend=[60, 90]."
+mustard,Mustard (Rapeseed),Soil & Nutrient Range,potassiumRange,"[30, 50] kg/ha","[20, 40] kg/ha","[20, 40] kg/ha",Mismatch,Medium,"Tolerance boundary divergence: backend=[30, 50] vs frontend=[20, 40]."
+mustard,Mustard (Rapeseed),Fertilizer Recommendation,fertilizer_recipes,Urea (80–100 kg/ha); SSP (50 kg/ha); MOP (30 kg/ha); Boron (1.5 kg/ha),Urea (80–100 kg/ha); SSP (50 kg/ha); Gypsum / Elemental Sulphur (20–25 kg/ha); MOP (30 kg/ha),Unified Prescription Required,Formulation Divergence,Medium,Discrepant dosages or formulations for mustard between backend and fallback.
+tomato,Tomato,Crop Catalog,presence_in_database,Present,Present,Present,Consistent,Low,Present in both backend and frontend catalogs.
+tomato,Tomato,Agronomic Constraint,season,Rabi,Annual,Rabi,Conflict,High,"Conflicting cultivation season: backend says Rabi, frontend says Annual."
+tomato,Tomato,Agronomic Requirement,maxRainfall,100 mm,80 mm,N/A,Mismatch,Medium,Scoring threshold delta between backend (100) and frontend (80).
+tomato,Tomato,Agronomic Requirement,minTemperature,15 °C,18 °C,N/A,Mismatch,Medium,Scoring threshold delta between backend (15) and frontend (18).
+tomato,Tomato,Agronomic Requirement,maxTemperature,30 °C,28 °C,N/A,Mismatch,Medium,Scoring threshold delta between backend (30) and frontend (28).
+tomato,Tomato,Agronomic Requirement,yieldPerHectare,20 t/ha,35 t/ha,N/A,Mismatch,High,Scoring threshold delta between backend (20) and frontend (35).
+tomato,Tomato,Soil & Nutrient Range,potassiumRange,"[80, 120] kg/ha","[60, 100] kg/ha","[60, 100] kg/ha",Mismatch,Medium,"Tolerance boundary divergence: backend=[80, 120] vs frontend=[60, 100]."
+tomato,Tomato,Soil & Nutrient Range,phRange,"[5.5, 7] pH","[6, 7] pH","[6.0, 7.0] pH",Mismatch,Medium,"Tolerance boundary divergence: backend=[5.5, 7] vs frontend=[6, 7]."
+tomato,Tomato,Soil Compatibility,soilTypes,Loamy; Red; Sandy Loam,Alluvial; Loamy; Red; Sandy Loam,Alluvial; Loamy; Red; Sandy Loam,Mismatch,Medium,"Soil whitelist differs: backend has 3 types, frontend has 4 types."
+tomato,Tomato,Fertilizer Recommendation,fertilizer_recipes,Urea (200–250 kg/ha); SSP (125 kg/ha); MOP (100 kg/ha); Calcium Nitrate (5 g/L),Urea (120–150 kg/ha); SSP (90 kg/ha); MOP (60 kg/ha); Calcium Nitrate (15 kg/ha),Unified Prescription Required,Formulation Divergence,Medium,Discrepant dosages or formulations for tomato between backend and fallback.
+onion,Onion,Crop Catalog,presence_in_database,Present,Present,Present,Consistent,Low,Present in both backend and frontend catalogs.
+onion,Onion,Agronomic Requirement,maxTemperature,28 °C,25 °C,N/A,Mismatch,Medium,Scoring threshold delta between backend (28) and frontend (25).
+onion,Onion,Agronomic Requirement,minHumidity,40 %,45 %,N/A,Mismatch,Medium,Scoring threshold delta between backend (40) and frontend (45).
+onion,Onion,Agronomic Requirement,yieldPerHectare,22 t/ha,20 t/ha,N/A,Mismatch,High,Scoring threshold delta between backend (22) and frontend (20).
+onion,Onion,Soil & Nutrient Range,potassiumRange,"[50, 80] kg/ha","[80, 100] kg/ha","[60, 80] kg/ha",Mismatch,Medium,"Tolerance boundary divergence: backend=[50, 80] vs frontend=[80, 100]."
+onion,Onion,Fertilizer Recommendation,fertilizer_recipes,Urea (120–130 kg/ha); SSP (75 kg/ha); MOP (80 kg/ha),Urea (100–120 kg/ha); SSP (60 kg/ha); MOP (80 kg/ha),Unified Prescription Required,Formulation Divergence,Medium,Discrepant dosages or formulations for onion between backend and fallback.
+banana,Banana,Crop Catalog,presence_in_database,Present,ABSENT,Present,Asymmetric (Backend Only),High,Crop banana cannot be recommended when client falls back to offline engine.
+banana,Banana,Fertilizer Recommendation,fertilizer_presence,3 entries,ABSENT,Present,Asymmetric,High,Fertilizer prescription missing in one engine.
+mango,Mango,Crop Catalog,presence_in_database,Present,ABSENT,Present,Asymmetric (Backend Only),High,Crop mango cannot be recommended when client falls back to offline engine.
+mango,Mango,Fertilizer Recommendation,fertilizer_presence,3 entries,ABSENT,Present,Asymmetric,High,Fertilizer prescription missing in one engine.
+jowar,Jowar (Sorghum),Crop Catalog,presence_in_database,Present,ABSENT,Present,Asymmetric (Backend Only),High,Crop jowar cannot be recommended when client falls back to offline engine.
+jowar,Jowar (Sorghum),Fertilizer Recommendation,fertilizer_presence,3 entries,ABSENT,Present,Asymmetric,High,Fertilizer prescription missing in one engine.
+sunflower,Sunflower,Crop Catalog,presence_in_database,ABSENT,Present,Present,Asymmetric (Frontend Only),High,Crop sunflower cannot be recommended when online backend API is queried.
+sunflower,Sunflower,Fertilizer Recommendation,fertilizer_presence,ABSENT,4 entries,Present,Asymmetric,High,Fertilizer prescription missing in one engine.
+barley,Barley,Crop Catalog,presence_in_database,ABSENT,Present,Present,Asymmetric (Frontend Only),High,Crop barley cannot be recommended when online backend API is queried.
+barley,Barley,Fertilizer Recommendation,fertilizer_presence,ABSENT,3 entries,Present,Asymmetric,High,Fertilizer prescription missing in one engine.
+millets,Bajra / Pearl Millet,Crop Catalog,presence_in_database,ABSENT,Present,Present,Asymmetric (Frontend Only),High,Crop millets cannot be recommended when online backend API is queried.
+millets,Bajra / Pearl Millet,Fertilizer Recommendation,fertilizer_presence,ABSENT,3 entries,Present,Asymmetric,High,Fertilizer prescription missing in one engine.

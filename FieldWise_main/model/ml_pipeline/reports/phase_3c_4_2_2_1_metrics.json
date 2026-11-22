@@ -1,0 +1,84 @@
+{
+  "specification_version": "1.5.0-FINAL-WATER-RECONCILIATION",
+  "phase": "Phase 3C.4.2.2.1",
+  "timestamp_generated": "2026-11-20T12:00:00Z",
+  "status": "DESIGN_ONLY_SPECIFICATION_VERIFIED",
+  "canonical_catalogue": {
+    "total_crops": 19,
+    "life_cycle_distribution": {
+      "Annual_Seasonal": 14,
+      "Long_Duration_Annual": 2,
+      "Multi_Season_Arable": 2,
+      "Perennial_Orchard": 1
+    },
+    "total_planting_windows": 31,
+    "water_evidence_distribution": {
+      "VERIFIED": 18,
+      "PROVISIONAL": 1
+    }
+  },
+  "hard_exclusion_evidence_audit": {
+    "total_audited_candidate_rules": 61,
+    "retained_hard_exclusions": 0,
+    "downgraded_to_soft_penalty": 61,
+    "marked_unknown": 0
+  },
+  "eligibility_rules_breakdown": {
+    "SOFT_PENALTY": 87,
+    "WARNING_ONLY": 8,
+    "UNKNOWN": 4,
+    "NOT_APPLICABLE": 1
+  },
+  "source_registry_breakdown": {
+    "VERIFIED_PUBLIC_BENCHMARK": 4,
+    "UNVERIFIED_INDEPENDENT_ACCESS": 17
+  },
+  "water_semantics": {
+    "total_crops_audited": 19,
+    "direct_raw_rain_vs_etc_prohibited_all_crops": true,
+    "universal_hard_water_exclusions_prohibited": true,
+    "unmeasured_irrigation_defaults_to_unknown": true,
+    "rainfed_screening_threshold_never_fails_tier_1": true,
+    "monthly_usda_scs_aggregation_required": true,
+    "arithmetic_assertions": {
+      "example_a_peff_monthly": 589.0,
+      "example_a_runoff_loss": 561.0,
+      "example_a_erroneous_seasonal": 240.0,
+      "example_a_discrepancy": 349.0,
+      "example_b_wnet": 282.24,
+      "example_b_deficit": 37.75999999999999,
+      "example_d_vertisol_capacity": 240.0,
+      "test_06_wnet": 242.0,
+      "test_15_runoff_loss": 731.0
+    }
+  },
+  "data_completeness_index": {
+    "domain_weights": {
+      "temporal": 0.15,
+      "climate": 0.2,
+      "water": 0.25,
+      "soil": 0.15,
+      "ph": 0.1,
+      "nutrients": 0.15
+    },
+    "sum_of_weights": 1.0,
+    "benchmark_scenarios_tested": 4
+  },
+  "specification_integrity_checks": {
+    "total_checks": 10,
+    "passed": 10,
+    "failed": 0
+  },
+  "functional_acceptance_tests": {
+    "total_defined": 18,
+    "status": "NOT RUN \u2014 ENGINE NOT IMPLEMENTED (DESIGN-ONLY PHASE)",
+    "execution_phase": "Phase 3C.5 Implementation"
+  },
+  "historical_manifest_preservation": {
+    "phase_3c_4_checksums_preserved": true,
+    "phase_3c_4_1_checksums_preserved": true,
+    "phase_3c_4_2_checksums_preserved": true,
+    "phase_3c_4_2_1_checksums_preserved": true,
+    "phase_3c_4_2_2_checksums_preserved": true
+  }
+}

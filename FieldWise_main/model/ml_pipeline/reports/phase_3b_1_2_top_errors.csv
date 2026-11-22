@@ -1,0 +1,361 @@
+Experiment,Model,Rank,Crop,State,District,Crop_Year,Season,Actual_Yield,Predicted_Yield,Absolute_Error,Residual_y_minus_pred
+experiment_a,existing_district_mean,1,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,31.8186,106.6024,106.6024
+experiment_a,existing_district_mean,2,Sugarcane,KERALA,THRISSUR,2012,Whole Year,2.0,95.7143,93.7143,-93.7143
+experiment_a,existing_district_mean,3,Sugarcane,KERALA,THRISSUR,2013,Whole Year,10.345,95.7143,85.3693,-85.3693
+experiment_a,existing_district_mean,4,Papaya,ANDHRA PRADESH,CHITTOOR,2013,Kharif,26.321,110.63,84.309,-84.309
+experiment_a,existing_district_mean,5,Sugarcane,BIHAR,SHEOHAR,2012,Whole Year,116.526,38.7111,77.8149,77.8149
+experiment_a,existing_district_mean,6,Sugarcane,KERALA,PALAKKAD,2012,Whole Year,5.326,81.8734,76.5474,-76.5474
+experiment_a,existing_district_mean,7,Sugarcane,GUJARAT,JUNAGADH,2012,Whole Year,7.429,83.6181,76.1891,-76.1891
+experiment_a,existing_district_mean,8,Sugarcane,KERALA,PALAKKAD,2013,Whole Year,8.362,81.8734,73.5114,-73.5114
+experiment_a,existing_district_mean,9,Sugarcane,WEST BENGAL,HOOGHLY,2013,Whole Year,152.253,78.8131,73.4399,73.4399
+experiment_a,existing_district_mean,10,Sugarcane,KERALA,IDUKKI,2012,Whole Year,10.446,82.3371,71.8911,-71.8911
+experiment_a,existing_district_mean,11,Sugarcane,KERALA,IDUKKI,2013,Whole Year,10.578,82.3371,71.7591,-71.7591
+experiment_a,existing_district_mean,12,Banana,MADHYA PRADESH,BALAGHAT,2013,Whole Year,108.875,37.6202,71.2548,71.2548
+experiment_a,existing_district_mean,13,Sugarcane,GUJARAT,SURAT,2012,Whole Year,7.243,74.0044,66.7614,-66.7614
+experiment_a,existing_district_mean,14,Banana,MADHYA PRADESH,SIDHI,2013,Whole Year,80.0,14.9764,65.0236,65.0236
+experiment_a,existing_district_mean,15,Sugarcane,HARYANA,FARIDABAD,2012,Whole Year,110.778,45.9013,64.8767,64.8767
+experiment_a,existing_district_mean,16,Sugarcane,GUJARAT,BHAVNAGAR,2012,Whole Year,7.0,70.2083,63.2083,-63.2083
+experiment_a,existing_district_mean,17,Sugarcane,GUJARAT,KHEDA,2012,Whole Year,7.333,70.1428,62.8098,-62.8098
+experiment_a,existing_district_mean,18,Sugarcane,WEST BENGAL,HOOGHLY,2012,Whole Year,141.0,78.8131,62.1869,62.1869
+experiment_a,existing_district_mean,19,Sugarcane,GUJARAT,BHARUCH,2012,Whole Year,6.451,67.6833,61.2323,-61.2323
+experiment_a,existing_district_mean,20,Sugarcane,WEST BENGAL,BANKURA,2012,Whole Year,141.0,82.5192,58.4808,58.4808
+experiment_a,existing_random_forest,1,Papaya,ANDHRA PRADESH,PRAKASAM,2012,Kharif,134.143,15.9288,118.2142,118.2142
+experiment_a,existing_random_forest,2,Papaya,ANDHRA PRADESH,PRAKASAM,2013,Kharif,131.301,15.9288,115.3722,115.3722
+experiment_a,existing_random_forest,3,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,34.1683,104.2527,104.2527
+experiment_a,existing_random_forest,4,Papaya,ANDHRA PRADESH,GUNTUR,2012,Kharif,108.932,15.7706,93.1614,93.1614
+experiment_a,existing_random_forest,5,Papaya,ANDHRA PRADESH,CHITTOOR,2012,Kharif,108.934,15.8074,93.1266,93.1266
+experiment_a,existing_random_forest,6,Papaya,ANDHRA PRADESH,EAST GODAVARI,2012,Kharif,108.935,15.8956,93.0394,93.0394
+experiment_a,existing_random_forest,7,Papaya,ANDHRA PRADESH,KRISHNA,2012,Kharif,108.938,15.9583,92.9797,92.9797
+experiment_a,existing_random_forest,8,Papaya,ANDHRA PRADESH,VIZIANAGARAM,2012,Kharif,108.931,16.1665,92.7645,92.7645
+experiment_a,existing_random_forest,9,Papaya,ANDHRA PRADESH,SRIKAKULAM,2012,Kharif,108.933,16.1715,92.7615,92.7615
+experiment_a,existing_random_forest,10,Papaya,ANDHRA PRADESH,KURNOOL,2012,Kharif,108.935,16.2066,92.7284,92.7284
+experiment_a,existing_random_forest,11,Papaya,ANDHRA PRADESH,WEST GODAVARI,2012,Kharif,108.932,16.2082,92.7238,92.7238
+experiment_a,existing_random_forest,12,Sugarcane,HARYANA,KAITHAL,2012,Whole Year,99.402,16.407,82.995,82.995
+experiment_a,existing_random_forest,13,Papaya,ANDHRA PRADESH,GUNTUR,2013,Kharif,97.897,15.7706,82.1264,82.1264
+experiment_a,existing_random_forest,14,Papaya,ANDHRA PRADESH,EAST GODAVARI,2013,Kharif,97.897,15.8956,82.0014,82.0014
+experiment_a,existing_random_forest,15,Papaya,ANDHRA PRADESH,KRISHNA,2013,Kharif,97.9,15.9583,81.9417,81.9417
+experiment_a,existing_random_forest,16,Papaya,ANDHRA PRADESH,ANANTAPUR,2013,Kharif,97.47,15.6308,81.8392,81.8392
+experiment_a,existing_random_forest,17,Papaya,ANDHRA PRADESH,VIZIANAGARAM,2013,Kharif,97.896,16.1665,81.7295,81.7295
+experiment_a,existing_random_forest,18,Papaya,ANDHRA PRADESH,SRIKAKULAM,2013,Kharif,97.889,16.1715,81.7175,81.7175
+experiment_a,existing_random_forest,19,Papaya,ANDHRA PRADESH,KURNOOL,2013,Kharif,97.896,16.2066,81.6894,81.6894
+experiment_a,existing_random_forest,20,Papaya,ANDHRA PRADESH,WEST GODAVARI,2013,Kharif,97.896,16.2082,81.6878,81.6878
+experiment_a,challenger_min_obs_1,1,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,31.8186,106.6024,106.6024
+experiment_a,challenger_min_obs_1,2,Sugarcane,KERALA,THRISSUR,2012,Whole Year,2.0,95.7143,93.7143,-93.7143
+experiment_a,challenger_min_obs_1,3,Sugarcane,KERALA,THRISSUR,2013,Whole Year,10.345,95.7143,85.3693,-85.3693
+experiment_a,challenger_min_obs_1,4,Papaya,ANDHRA PRADESH,CHITTOOR,2013,Kharif,26.321,110.63,84.309,-84.309
+experiment_a,challenger_min_obs_1,5,Sugarcane,BIHAR,SHEOHAR,2012,Whole Year,116.526,38.7111,77.8149,77.8149
+experiment_a,challenger_min_obs_1,6,Sugarcane,KERALA,PALAKKAD,2012,Whole Year,5.326,81.8734,76.5474,-76.5474
+experiment_a,challenger_min_obs_1,7,Sugarcane,GUJARAT,JUNAGADH,2012,Whole Year,7.429,83.6181,76.1891,-76.1891
+experiment_a,challenger_min_obs_1,8,Sugarcane,KERALA,PALAKKAD,2013,Whole Year,8.362,81.8734,73.5114,-73.5114
+experiment_a,challenger_min_obs_1,9,Sugarcane,WEST BENGAL,HOOGHLY,2013,Whole Year,152.253,78.8131,73.4399,73.4399
+experiment_a,challenger_min_obs_1,10,Sugarcane,KERALA,IDUKKI,2012,Whole Year,10.446,82.3371,71.8911,-71.8911
+experiment_a,challenger_min_obs_1,11,Sugarcane,KERALA,IDUKKI,2013,Whole Year,10.578,82.3371,71.7591,-71.7591
+experiment_a,challenger_min_obs_1,12,Banana,MADHYA PRADESH,BALAGHAT,2013,Whole Year,108.875,37.6202,71.2548,71.2548
+experiment_a,challenger_min_obs_1,13,Sugarcane,GUJARAT,SURAT,2012,Whole Year,7.243,74.0044,66.7614,-66.7614
+experiment_a,challenger_min_obs_1,14,Banana,MADHYA PRADESH,SIDHI,2013,Whole Year,80.0,14.9764,65.0236,65.0236
+experiment_a,challenger_min_obs_1,15,Sugarcane,HARYANA,FARIDABAD,2012,Whole Year,110.778,45.9013,64.8767,64.8767
+experiment_a,challenger_min_obs_1,16,Sugarcane,GUJARAT,BHAVNAGAR,2012,Whole Year,7.0,70.2083,63.2083,-63.2083
+experiment_a,challenger_min_obs_1,17,Sugarcane,GUJARAT,KHEDA,2012,Whole Year,7.333,70.1428,62.8098,-62.8098
+experiment_a,challenger_min_obs_1,18,Sugarcane,WEST BENGAL,HOOGHLY,2012,Whole Year,141.0,78.8131,62.1869,62.1869
+experiment_a,challenger_min_obs_1,19,Sugarcane,GUJARAT,BHARUCH,2012,Whole Year,6.451,67.6833,61.2323,-61.2323
+experiment_a,challenger_min_obs_1,20,Sugarcane,WEST BENGAL,BANKURA,2012,Whole Year,141.0,82.5192,58.4808,58.4808
+experiment_a,challenger_min_obs_3,1,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,31.8186,106.6024,106.6024
+experiment_a,challenger_min_obs_3,2,Sugarcane,KERALA,THRISSUR,2012,Whole Year,2.0,95.7143,93.7143,-93.7143
+experiment_a,challenger_min_obs_3,3,Sugarcane,KERALA,THRISSUR,2013,Whole Year,10.345,95.7143,85.3693,-85.3693
+experiment_a,challenger_min_obs_3,4,Papaya,ANDHRA PRADESH,CHITTOOR,2013,Kharif,26.321,108.0149,81.6939,-81.6939
+experiment_a,challenger_min_obs_3,5,Sugarcane,BIHAR,SHEOHAR,2012,Whole Year,116.526,38.7111,77.8149,77.8149
+experiment_a,challenger_min_obs_3,6,Sugarcane,KERALA,PALAKKAD,2012,Whole Year,5.326,81.8734,76.5474,-76.5474
+experiment_a,challenger_min_obs_3,7,Sugarcane,GUJARAT,JUNAGADH,2012,Whole Year,7.429,83.6181,76.1891,-76.1891
+experiment_a,challenger_min_obs_3,8,Sugarcane,KERALA,PALAKKAD,2013,Whole Year,8.362,81.8734,73.5114,-73.5114
+experiment_a,challenger_min_obs_3,9,Sugarcane,WEST BENGAL,HOOGHLY,2013,Whole Year,152.253,78.8131,73.4399,73.4399
+experiment_a,challenger_min_obs_3,10,Sugarcane,KERALA,IDUKKI,2012,Whole Year,10.446,82.3371,71.8911,-71.8911
+experiment_a,challenger_min_obs_3,11,Sugarcane,KERALA,IDUKKI,2013,Whole Year,10.578,82.3371,71.7591,-71.7591
+experiment_a,challenger_min_obs_3,12,Banana,MADHYA PRADESH,BALAGHAT,2013,Whole Year,108.875,37.6202,71.2548,71.2548
+experiment_a,challenger_min_obs_3,13,Papaya,ANDHRA PRADESH,ANANTAPUR,2012,Kharif,38.472,108.0149,69.5429,-69.5429
+experiment_a,challenger_min_obs_3,14,Sugarcane,GUJARAT,SURAT,2012,Whole Year,7.243,74.0044,66.7614,-66.7614
+experiment_a,challenger_min_obs_3,15,Banana,MADHYA PRADESH,SIDHI,2013,Whole Year,80.0,14.9764,65.0236,65.0236
+experiment_a,challenger_min_obs_3,16,Sugarcane,HARYANA,FARIDABAD,2012,Whole Year,110.778,45.9013,64.8767,64.8767
+experiment_a,challenger_min_obs_3,17,Sugarcane,GUJARAT,BHAVNAGAR,2012,Whole Year,7.0,70.2083,63.2083,-63.2083
+experiment_a,challenger_min_obs_3,18,Sugarcane,GUJARAT,KHEDA,2012,Whole Year,7.333,70.1428,62.8098,-62.8098
+experiment_a,challenger_min_obs_3,19,Sugarcane,WEST BENGAL,HOOGHLY,2012,Whole Year,141.0,78.8131,62.1869,62.1869
+experiment_a,challenger_min_obs_3,20,Sugarcane,GUJARAT,BHARUCH,2012,Whole Year,6.451,67.6833,61.2323,-61.2323
+experiment_a,challenger_min_obs_5,1,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,31.8186,106.6024,106.6024
+experiment_a,challenger_min_obs_5,2,Sugarcane,KERALA,THRISSUR,2012,Whole Year,2.0,95.7143,93.7143,-93.7143
+experiment_a,challenger_min_obs_5,3,Sugarcane,KERALA,THRISSUR,2013,Whole Year,10.345,95.7143,85.3693,-85.3693
+experiment_a,challenger_min_obs_5,4,Papaya,ANDHRA PRADESH,CHITTOOR,2013,Kharif,26.321,108.0149,81.6939,-81.6939
+experiment_a,challenger_min_obs_5,5,Sugarcane,BIHAR,SHEOHAR,2012,Whole Year,116.526,38.7111,77.8149,77.8149
+experiment_a,challenger_min_obs_5,6,Sugarcane,KERALA,PALAKKAD,2012,Whole Year,5.326,81.8734,76.5474,-76.5474
+experiment_a,challenger_min_obs_5,7,Sugarcane,GUJARAT,JUNAGADH,2012,Whole Year,7.429,83.6181,76.1891,-76.1891
+experiment_a,challenger_min_obs_5,8,Sugarcane,KERALA,PALAKKAD,2013,Whole Year,8.362,81.8734,73.5114,-73.5114
+experiment_a,challenger_min_obs_5,9,Sugarcane,WEST BENGAL,HOOGHLY,2013,Whole Year,152.253,78.8131,73.4399,73.4399
+experiment_a,challenger_min_obs_5,10,Sugarcane,KERALA,IDUKKI,2012,Whole Year,10.446,82.3371,71.8911,-71.8911
+experiment_a,challenger_min_obs_5,11,Sugarcane,KERALA,IDUKKI,2013,Whole Year,10.578,82.3371,71.7591,-71.7591
+experiment_a,challenger_min_obs_5,12,Banana,MADHYA PRADESH,BALAGHAT,2013,Whole Year,108.875,37.6202,71.2548,71.2548
+experiment_a,challenger_min_obs_5,13,Papaya,ANDHRA PRADESH,ANANTAPUR,2012,Kharif,38.472,108.0149,69.5429,-69.5429
+experiment_a,challenger_min_obs_5,14,Sugarcane,GUJARAT,SURAT,2012,Whole Year,7.243,74.0044,66.7614,-66.7614
+experiment_a,challenger_min_obs_5,15,Banana,MADHYA PRADESH,SIDHI,2013,Whole Year,80.0,14.9764,65.0236,65.0236
+experiment_a,challenger_min_obs_5,16,Sugarcane,HARYANA,FARIDABAD,2012,Whole Year,110.778,45.9013,64.8767,64.8767
+experiment_a,challenger_min_obs_5,17,Sugarcane,GUJARAT,BHAVNAGAR,2012,Whole Year,7.0,70.2083,63.2083,-63.2083
+experiment_a,challenger_min_obs_5,18,Sugarcane,GUJARAT,KHEDA,2012,Whole Year,7.333,70.1428,62.8098,-62.8098
+experiment_a,challenger_min_obs_5,19,Sugarcane,WEST BENGAL,HOOGHLY,2012,Whole Year,141.0,78.8131,62.1869,62.1869
+experiment_a,challenger_min_obs_5,20,Sugarcane,GUJARAT,BHARUCH,2012,Whole Year,6.451,67.6833,61.2323,-61.2323
+experiment_a,rf_one_hot,1,Papaya,ANDHRA PRADESH,PRAKASAM,2012,Kharif,134.143,20.019,114.124,114.124
+experiment_a,rf_one_hot,2,Papaya,ANDHRA PRADESH,PRAKASAM,2013,Kharif,131.301,20.019,111.282,111.282
+experiment_a,rf_one_hot,3,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,30.622,107.799,107.799
+experiment_a,rf_one_hot,4,Papaya,ANDHRA PRADESH,KRISHNA,2012,Kharif,108.938,20.019,88.919,88.919
+experiment_a,rf_one_hot,5,Papaya,ANDHRA PRADESH,KURNOOL,2012,Kharif,108.935,20.019,88.916,88.916
+experiment_a,rf_one_hot,6,Papaya,ANDHRA PRADESH,EAST GODAVARI,2012,Kharif,108.935,20.019,88.916,88.916
+experiment_a,rf_one_hot,7,Papaya,ANDHRA PRADESH,CHITTOOR,2012,Kharif,108.934,20.019,88.915,88.915
+experiment_a,rf_one_hot,8,Papaya,ANDHRA PRADESH,SRIKAKULAM,2012,Kharif,108.933,20.019,88.914,88.914
+experiment_a,rf_one_hot,9,Papaya,ANDHRA PRADESH,WEST GODAVARI,2012,Kharif,108.932,20.019,88.913,88.913
+experiment_a,rf_one_hot,10,Papaya,ANDHRA PRADESH,GUNTUR,2012,Kharif,108.932,20.019,88.913,88.913
+experiment_a,rf_one_hot,11,Papaya,ANDHRA PRADESH,VIZIANAGARAM,2012,Kharif,108.931,20.019,88.912,88.912
+experiment_a,rf_one_hot,12,Sugarcane,HARYANA,KAITHAL,2012,Whole Year,99.402,15.0393,84.3627,84.3627
+experiment_a,rf_one_hot,13,Sugarcane,KERALA,THRISSUR,2012,Whole Year,2.0,80.9911,78.9911,-78.9911
+experiment_a,rf_one_hot,14,Papaya,ANDHRA PRADESH,KRISHNA,2013,Kharif,97.9,20.019,77.881,77.881
+experiment_a,rf_one_hot,15,Papaya,ANDHRA PRADESH,EAST GODAVARI,2013,Kharif,97.897,20.019,77.878,77.878
+experiment_a,rf_one_hot,16,Papaya,ANDHRA PRADESH,GUNTUR,2013,Kharif,97.897,20.019,77.878,77.878
+experiment_a,rf_one_hot,17,Papaya,ANDHRA PRADESH,WEST GODAVARI,2013,Kharif,97.896,20.019,77.877,77.877
+experiment_a,rf_one_hot,18,Papaya,ANDHRA PRADESH,KURNOOL,2013,Kharif,97.896,20.019,77.877,77.877
+experiment_a,rf_one_hot,19,Papaya,ANDHRA PRADESH,VIZIANAGARAM,2013,Kharif,97.896,20.019,77.877,77.877
+experiment_a,rf_one_hot,20,Papaya,ANDHRA PRADESH,SRIKAKULAM,2013,Kharif,97.889,20.019,77.87,77.87
+experiment_a,et_one_hot,1,Papaya,ANDHRA PRADESH,PRAKASAM,2012,Kharif,134.143,20.6041,113.5389,113.5389
+experiment_a,et_one_hot,2,Papaya,ANDHRA PRADESH,PRAKASAM,2013,Kharif,131.301,20.6041,110.6969,110.6969
+experiment_a,et_one_hot,3,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,29.3981,109.0229,109.0229
+experiment_a,et_one_hot,4,Papaya,ANDHRA PRADESH,KRISHNA,2012,Kharif,108.938,20.6041,88.3339,88.3339
+experiment_a,et_one_hot,5,Papaya,ANDHRA PRADESH,KURNOOL,2012,Kharif,108.935,20.6041,88.3309,88.3309
+experiment_a,et_one_hot,6,Papaya,ANDHRA PRADESH,EAST GODAVARI,2012,Kharif,108.935,20.6041,88.3309,88.3309
+experiment_a,et_one_hot,7,Papaya,ANDHRA PRADESH,CHITTOOR,2012,Kharif,108.934,20.6041,88.3299,88.3299
+experiment_a,et_one_hot,8,Papaya,ANDHRA PRADESH,SRIKAKULAM,2012,Kharif,108.933,20.6041,88.3289,88.3289
+experiment_a,et_one_hot,9,Papaya,ANDHRA PRADESH,GUNTUR,2012,Kharif,108.932,20.6041,88.3279,88.3279
+experiment_a,et_one_hot,10,Papaya,ANDHRA PRADESH,WEST GODAVARI,2012,Kharif,108.932,20.6041,88.3279,88.3279
+experiment_a,et_one_hot,11,Papaya,ANDHRA PRADESH,VIZIANAGARAM,2012,Kharif,108.931,20.6041,88.3269,88.3269
+experiment_a,et_one_hot,12,Papaya,ANDHRA PRADESH,KRISHNA,2013,Kharif,97.9,20.6041,77.2959,77.2959
+experiment_a,et_one_hot,13,Papaya,ANDHRA PRADESH,EAST GODAVARI,2013,Kharif,97.897,20.6041,77.2929,77.2929
+experiment_a,et_one_hot,14,Papaya,ANDHRA PRADESH,GUNTUR,2013,Kharif,97.897,20.6041,77.2929,77.2929
+experiment_a,et_one_hot,15,Papaya,ANDHRA PRADESH,WEST GODAVARI,2013,Kharif,97.896,20.6041,77.2919,77.2919
+experiment_a,et_one_hot,16,Papaya,ANDHRA PRADESH,VIZIANAGARAM,2013,Kharif,97.896,20.6041,77.2919,77.2919
+experiment_a,et_one_hot,17,Papaya,ANDHRA PRADESH,KURNOOL,2013,Kharif,97.896,20.6041,77.2919,77.2919
+experiment_a,et_one_hot,18,Papaya,ANDHRA PRADESH,SRIKAKULAM,2013,Kharif,97.889,20.6041,77.2849,77.2849
+experiment_a,et_one_hot,19,Papaya,ANDHRA PRADESH,ANANTAPUR,2013,Kharif,97.47,20.6041,76.8659,76.8659
+experiment_a,et_one_hot,20,Sugarcane,KERALA,THRISSUR,2012,Whole Year,2.0,77.7204,75.7204,-75.7204
+experiment_a,xgb_native_categorical,1,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,24.5344,113.8866,113.8866
+experiment_a,xgb_native_categorical,2,Sugarcane,HARYANA,FARIDABAD,2012,Whole Year,110.778,14.3576,96.4204,96.4204
+experiment_a,xgb_native_categorical,3,Sugarcane,KERALA,IDUKKI,2012,Whole Year,10.446,104.5463,94.1003,-94.1003
+experiment_a,xgb_native_categorical,4,Sugarcane,KERALA,IDUKKI,2013,Whole Year,10.578,104.5463,93.9683,-93.9683
+experiment_a,xgb_native_categorical,5,Sugarcane,HARYANA,KAITHAL,2012,Whole Year,99.402,10.0707,89.3313,89.3313
+experiment_a,xgb_native_categorical,6,Sugarcane,KERALA,KOTTAYAM,2013,Whole Year,7.714,91.7629,84.0489,-84.0489
+experiment_a,xgb_native_categorical,7,Sugarcane,KERALA,KOTTAYAM,2012,Whole Year,8.385,91.7629,83.3779,-83.3779
+experiment_a,xgb_native_categorical,8,Sugarcane,HARYANA,PANIPAT,2012,Whole Year,91.552,9.9054,81.6466,81.6466
+experiment_a,xgb_native_categorical,9,Sugarcane,KERALA,ALAPPUZHA,2012,Whole Year,8.753,88.4209,79.6679,-79.6679
+experiment_a,xgb_native_categorical,10,Sugarcane,BIHAR,SHEOHAR,2012,Whole Year,116.526,36.9433,79.5827,79.5827
+experiment_a,xgb_native_categorical,11,Sugarcane,KERALA,ALAPPUZHA,2013,Whole Year,8.956,88.4209,79.4649,-79.4649
+experiment_a,xgb_native_categorical,12,Sugarcane,TAMIL NADU,DINDIGUL,2012,Whole Year,55.454,130.0935,74.6395,-74.6395
+experiment_a,xgb_native_categorical,13,Sugarcane,HARYANA,MEWAT,2012,Whole Year,86.124,11.9793,74.1447,74.1447
+experiment_a,xgb_native_categorical,14,Sugarcane,HARYANA,KURUKSHETRA,2012,Whole Year,80.636,8.4431,72.1929,72.1929
+experiment_a,xgb_native_categorical,15,Sugarcane,KERALA,PALAKKAD,2012,Whole Year,5.326,77.1836,71.8576,-71.8576
+experiment_a,xgb_native_categorical,16,Papaya,ANDHRA PRADESH,SRIKAKULAM,2012,Kharif,108.933,37.2999,71.6331,71.6331
+experiment_a,xgb_native_categorical,17,Sugarcane,HARYANA,AMBALA,2012,Whole Year,78.833,7.377,71.456,71.456
+experiment_a,xgb_native_categorical,18,Cabbage,ANDHRA PRADESH,GUNTUR,2013,Kharif,18.778,89.4256,70.6476,-70.6476
+experiment_a,xgb_native_categorical,19,Sugarcane,HARYANA,KARNAL,2012,Whole Year,81.252,10.6096,70.6424,70.6424
+experiment_a,xgb_native_categorical,20,Cabbage,ANDHRA PRADESH,GUNTUR,2013,Rabi,18.781,89.1053,70.3243,-70.3243
+experiment_a,rf_target_encoded,1,Papaya,ANDHRA PRADESH,PRAKASAM,2012,Kharif,134.143,27.5082,106.6348,106.6348
+experiment_a,rf_target_encoded,2,Papaya,ANDHRA PRADESH,PRAKASAM,2013,Kharif,131.301,27.5082,103.7928,103.7928
+experiment_a,rf_target_encoded,3,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,35.4565,102.9645,102.9645
+experiment_a,rf_target_encoded,4,Sugarcane,HARYANA,FARIDABAD,2012,Whole Year,110.778,17.6889,93.0891,93.0891
+experiment_a,rf_target_encoded,5,Sugarcane,HARYANA,PANCHKULA,2012,Whole Year,113.68,26.4721,87.2079,87.2079
+experiment_a,rf_target_encoded,6,Sugarcane,HARYANA,KAITHAL,2012,Whole Year,99.402,13.7732,85.6288,85.6288
+experiment_a,rf_target_encoded,7,Papaya,ANDHRA PRADESH,SRIKAKULAM,2012,Kharif,108.933,23.6277,85.3053,85.3053
+experiment_a,rf_target_encoded,8,Papaya,ANDHRA PRADESH,VIZIANAGARAM,2012,Kharif,108.931,24.4434,84.4876,84.4876
+experiment_a,rf_target_encoded,9,Papaya,ANDHRA PRADESH,EAST GODAVARI,2012,Kharif,108.935,24.4689,84.4661,84.4661
+experiment_a,rf_target_encoded,10,Papaya,ANDHRA PRADESH,KRISHNA,2012,Kharif,108.938,24.6414,84.2966,84.2966
+experiment_a,rf_target_encoded,11,Papaya,ANDHRA PRADESH,WEST GODAVARI,2012,Kharif,108.932,25.4077,83.5243,83.5243
+experiment_a,rf_target_encoded,12,Papaya,ANDHRA PRADESH,GUNTUR,2012,Kharif,108.932,31.0626,77.8694,77.8694
+experiment_a,rf_target_encoded,13,Papaya,ANDHRA PRADESH,KURNOOL,2012,Kharif,108.935,31.5412,77.3938,77.3938
+experiment_a,rf_target_encoded,14,Sugarcane,HARYANA,PANIPAT,2012,Whole Year,91.552,16.7723,74.7797,74.7797
+experiment_a,rf_target_encoded,15,Papaya,ANDHRA PRADESH,SRIKAKULAM,2013,Kharif,97.889,23.6277,74.2613,74.2613
+experiment_a,rf_target_encoded,16,Papaya,ANDHRA PRADESH,VIZIANAGARAM,2013,Kharif,97.896,24.4434,73.4526,73.4526
+experiment_a,rf_target_encoded,17,Papaya,ANDHRA PRADESH,EAST GODAVARI,2013,Kharif,97.897,24.4689,73.4281,73.4281
+experiment_a,rf_target_encoded,18,Papaya,ANDHRA PRADESH,KRISHNA,2013,Kharif,97.9,24.6414,73.2586,73.2586
+experiment_a,rf_target_encoded,19,Papaya,ANDHRA PRADESH,WEST GODAVARI,2013,Kharif,97.896,25.4077,72.4883,72.4883
+experiment_a,rf_target_encoded,20,Sugarcane,BIHAR,SHEOHAR,2012,Whole Year,116.526,45.9575,70.5685,70.5685
+experiment_b,existing_district_mean,1,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,31.8186,106.6024,106.6024
+experiment_b,existing_district_mean,2,Sugarcane,KERALA,THRISSUR,2012,Whole Year,2.0,95.7143,93.7143,-93.7143
+experiment_b,existing_district_mean,3,Sugarcane,KERALA,THRISSUR,2013,Whole Year,10.345,95.7143,85.3693,-85.3693
+experiment_b,existing_district_mean,4,Papaya,ANDHRA PRADESH,CHITTOOR,2013,Kharif,26.321,110.63,84.309,-84.309
+experiment_b,existing_district_mean,5,Sugarcane,BIHAR,SHEOHAR,2012,Whole Year,116.526,38.7111,77.8149,77.8149
+experiment_b,existing_district_mean,6,Sugarcane,KERALA,PALAKKAD,2012,Whole Year,5.326,81.8734,76.5474,-76.5474
+experiment_b,existing_district_mean,7,Sugarcane,GUJARAT,JUNAGADH,2012,Whole Year,7.429,83.6181,76.1891,-76.1891
+experiment_b,existing_district_mean,8,Sugarcane,KERALA,PALAKKAD,2013,Whole Year,8.362,81.8734,73.5114,-73.5114
+experiment_b,existing_district_mean,9,Sugarcane,WEST BENGAL,HOOGHLY,2013,Whole Year,152.253,78.8131,73.4399,73.4399
+experiment_b,existing_district_mean,10,Sugarcane,KERALA,IDUKKI,2012,Whole Year,10.446,82.3371,71.8911,-71.8911
+experiment_b,existing_district_mean,11,Sugarcane,KERALA,IDUKKI,2013,Whole Year,10.578,82.3371,71.7591,-71.7591
+experiment_b,existing_district_mean,12,Banana,MADHYA PRADESH,BALAGHAT,2013,Whole Year,108.875,37.6202,71.2548,71.2548
+experiment_b,existing_district_mean,13,Sugarcane,GUJARAT,SURAT,2012,Whole Year,7.243,74.0044,66.7614,-66.7614
+experiment_b,existing_district_mean,14,Banana,MADHYA PRADESH,SIDHI,2013,Whole Year,80.0,14.9764,65.0236,65.0236
+experiment_b,existing_district_mean,15,Sugarcane,HARYANA,FARIDABAD,2012,Whole Year,110.778,45.9013,64.8767,64.8767
+experiment_b,existing_district_mean,16,Sugarcane,GUJARAT,BHAVNAGAR,2012,Whole Year,7.0,70.2083,63.2083,-63.2083
+experiment_b,existing_district_mean,17,Sugarcane,GUJARAT,KHEDA,2012,Whole Year,7.333,70.1428,62.8098,-62.8098
+experiment_b,existing_district_mean,18,Sugarcane,WEST BENGAL,HOOGHLY,2012,Whole Year,141.0,78.8131,62.1869,62.1869
+experiment_b,existing_district_mean,19,Sugarcane,GUJARAT,BHARUCH,2012,Whole Year,6.451,67.6833,61.2323,-61.2323
+experiment_b,existing_district_mean,20,Sugarcane,WEST BENGAL,BANKURA,2012,Whole Year,141.0,82.5192,58.4808,58.4808
+experiment_b,existing_random_forest,1,Papaya,ANDHRA PRADESH,PRAKASAM,2012,Kharif,134.143,16.2176,117.9254,117.9254
+experiment_b,existing_random_forest,2,Papaya,ANDHRA PRADESH,PRAKASAM,2013,Kharif,131.301,16.2176,115.0834,115.0834
+experiment_b,existing_random_forest,3,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,33.8396,104.5814,104.5814
+experiment_b,existing_random_forest,4,Papaya,ANDHRA PRADESH,GUNTUR,2012,Kharif,108.932,15.9833,92.9487,92.9487
+experiment_b,existing_random_forest,5,Papaya,ANDHRA PRADESH,KRISHNA,2012,Kharif,108.938,16.1255,92.8125,92.8125
+experiment_b,existing_random_forest,6,Papaya,ANDHRA PRADESH,EAST GODAVARI,2012,Kharif,108.935,16.186,92.749,92.749
+experiment_b,existing_random_forest,7,Papaya,ANDHRA PRADESH,CHITTOOR,2012,Kharif,108.934,16.2876,92.6464,92.6464
+experiment_b,existing_random_forest,8,Papaya,ANDHRA PRADESH,VIZIANAGARAM,2012,Kharif,108.931,16.4047,92.5263,92.5263
+experiment_b,existing_random_forest,9,Papaya,ANDHRA PRADESH,SRIKAKULAM,2012,Kharif,108.933,16.4381,92.4949,92.4949
+experiment_b,existing_random_forest,10,Papaya,ANDHRA PRADESH,WEST GODAVARI,2012,Kharif,108.932,16.445,92.487,92.487
+experiment_b,existing_random_forest,11,Papaya,ANDHRA PRADESH,KURNOOL,2012,Kharif,108.935,16.7161,92.2189,92.2189
+experiment_b,existing_random_forest,12,Papaya,ANDHRA PRADESH,GUNTUR,2013,Kharif,97.897,15.9833,81.9137,81.9137
+experiment_b,existing_random_forest,13,Papaya,ANDHRA PRADESH,KRISHNA,2013,Kharif,97.9,16.1255,81.7745,81.7745
+experiment_b,existing_random_forest,14,Papaya,ANDHRA PRADESH,EAST GODAVARI,2013,Kharif,97.897,16.186,81.711,81.711
+experiment_b,existing_random_forest,15,Papaya,ANDHRA PRADESH,VIZIANAGARAM,2013,Kharif,97.896,16.4047,81.4913,81.4913
+experiment_b,existing_random_forest,16,Papaya,ANDHRA PRADESH,WEST GODAVARI,2013,Kharif,97.896,16.445,81.451,81.451
+experiment_b,existing_random_forest,17,Papaya,ANDHRA PRADESH,SRIKAKULAM,2013,Kharif,97.889,16.4381,81.4509,81.4509
+experiment_b,existing_random_forest,18,Papaya,ANDHRA PRADESH,ANANTAPUR,2013,Kharif,97.47,16.0809,81.3891,81.3891
+experiment_b,existing_random_forest,19,Sugarcane,HARYANA,KAITHAL,2012,Whole Year,99.402,18.0774,81.3246,81.3246
+experiment_b,existing_random_forest,20,Papaya,ANDHRA PRADESH,KURNOOL,2013,Kharif,97.896,16.7161,81.1799,81.1799
+experiment_b,challenger_min_obs_1,1,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,31.8186,106.6024,106.6024
+experiment_b,challenger_min_obs_1,2,Sugarcane,KERALA,THRISSUR,2012,Whole Year,2.0,95.7143,93.7143,-93.7143
+experiment_b,challenger_min_obs_1,3,Sugarcane,KERALA,THRISSUR,2013,Whole Year,10.345,95.7143,85.3693,-85.3693
+experiment_b,challenger_min_obs_1,4,Papaya,ANDHRA PRADESH,CHITTOOR,2013,Kharif,26.321,110.63,84.309,-84.309
+experiment_b,challenger_min_obs_1,5,Sugarcane,BIHAR,SHEOHAR,2012,Whole Year,116.526,38.7111,77.8149,77.8149
+experiment_b,challenger_min_obs_1,6,Sugarcane,KERALA,PALAKKAD,2012,Whole Year,5.326,81.8734,76.5474,-76.5474
+experiment_b,challenger_min_obs_1,7,Sugarcane,GUJARAT,JUNAGADH,2012,Whole Year,7.429,83.6181,76.1891,-76.1891
+experiment_b,challenger_min_obs_1,8,Sugarcane,KERALA,PALAKKAD,2013,Whole Year,8.362,81.8734,73.5114,-73.5114
+experiment_b,challenger_min_obs_1,9,Sugarcane,WEST BENGAL,HOOGHLY,2013,Whole Year,152.253,78.8131,73.4399,73.4399
+experiment_b,challenger_min_obs_1,10,Sugarcane,KERALA,IDUKKI,2012,Whole Year,10.446,82.3371,71.8911,-71.8911
+experiment_b,challenger_min_obs_1,11,Sugarcane,KERALA,IDUKKI,2013,Whole Year,10.578,82.3371,71.7591,-71.7591
+experiment_b,challenger_min_obs_1,12,Banana,MADHYA PRADESH,BALAGHAT,2013,Whole Year,108.875,37.6202,71.2548,71.2548
+experiment_b,challenger_min_obs_1,13,Sugarcane,GUJARAT,SURAT,2012,Whole Year,7.243,74.0044,66.7614,-66.7614
+experiment_b,challenger_min_obs_1,14,Banana,MADHYA PRADESH,SIDHI,2013,Whole Year,80.0,14.9764,65.0236,65.0236
+experiment_b,challenger_min_obs_1,15,Sugarcane,HARYANA,FARIDABAD,2012,Whole Year,110.778,45.9013,64.8767,64.8767
+experiment_b,challenger_min_obs_1,16,Sugarcane,GUJARAT,BHAVNAGAR,2012,Whole Year,7.0,70.2083,63.2083,-63.2083
+experiment_b,challenger_min_obs_1,17,Sugarcane,GUJARAT,KHEDA,2012,Whole Year,7.333,70.1428,62.8098,-62.8098
+experiment_b,challenger_min_obs_1,18,Sugarcane,WEST BENGAL,HOOGHLY,2012,Whole Year,141.0,78.8131,62.1869,62.1869
+experiment_b,challenger_min_obs_1,19,Sugarcane,GUJARAT,BHARUCH,2012,Whole Year,6.451,67.6833,61.2323,-61.2323
+experiment_b,challenger_min_obs_1,20,Sugarcane,WEST BENGAL,BANKURA,2012,Whole Year,141.0,82.5192,58.4808,58.4808
+experiment_b,challenger_min_obs_3,1,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,31.8186,106.6024,106.6024
+experiment_b,challenger_min_obs_3,2,Sugarcane,KERALA,THRISSUR,2012,Whole Year,2.0,95.7143,93.7143,-93.7143
+experiment_b,challenger_min_obs_3,3,Sugarcane,KERALA,THRISSUR,2013,Whole Year,10.345,95.7143,85.3693,-85.3693
+experiment_b,challenger_min_obs_3,4,Papaya,ANDHRA PRADESH,CHITTOOR,2013,Kharif,26.321,108.0149,81.6939,-81.6939
+experiment_b,challenger_min_obs_3,5,Sugarcane,BIHAR,SHEOHAR,2012,Whole Year,116.526,38.7111,77.8149,77.8149
+experiment_b,challenger_min_obs_3,6,Sugarcane,KERALA,PALAKKAD,2012,Whole Year,5.326,81.8734,76.5474,-76.5474
+experiment_b,challenger_min_obs_3,7,Sugarcane,GUJARAT,JUNAGADH,2012,Whole Year,7.429,83.6181,76.1891,-76.1891
+experiment_b,challenger_min_obs_3,8,Sugarcane,KERALA,PALAKKAD,2013,Whole Year,8.362,81.8734,73.5114,-73.5114
+experiment_b,challenger_min_obs_3,9,Sugarcane,WEST BENGAL,HOOGHLY,2013,Whole Year,152.253,78.8131,73.4399,73.4399
+experiment_b,challenger_min_obs_3,10,Sugarcane,KERALA,IDUKKI,2012,Whole Year,10.446,82.3371,71.8911,-71.8911
+experiment_b,challenger_min_obs_3,11,Sugarcane,KERALA,IDUKKI,2013,Whole Year,10.578,82.3371,71.7591,-71.7591
+experiment_b,challenger_min_obs_3,12,Banana,MADHYA PRADESH,BALAGHAT,2013,Whole Year,108.875,37.6202,71.2548,71.2548
+experiment_b,challenger_min_obs_3,13,Papaya,ANDHRA PRADESH,ANANTAPUR,2012,Kharif,38.472,108.0149,69.5429,-69.5429
+experiment_b,challenger_min_obs_3,14,Sugarcane,GUJARAT,SURAT,2012,Whole Year,7.243,74.0044,66.7614,-66.7614
+experiment_b,challenger_min_obs_3,15,Banana,MADHYA PRADESH,SIDHI,2013,Whole Year,80.0,14.9764,65.0236,65.0236
+experiment_b,challenger_min_obs_3,16,Sugarcane,HARYANA,FARIDABAD,2012,Whole Year,110.778,45.9013,64.8767,64.8767
+experiment_b,challenger_min_obs_3,17,Sugarcane,GUJARAT,BHAVNAGAR,2012,Whole Year,7.0,70.2083,63.2083,-63.2083
+experiment_b,challenger_min_obs_3,18,Sugarcane,GUJARAT,KHEDA,2012,Whole Year,7.333,70.1428,62.8098,-62.8098
+experiment_b,challenger_min_obs_3,19,Sugarcane,WEST BENGAL,HOOGHLY,2012,Whole Year,141.0,78.8131,62.1869,62.1869
+experiment_b,challenger_min_obs_3,20,Sugarcane,GUJARAT,BHARUCH,2012,Whole Year,6.451,67.6833,61.2323,-61.2323
+experiment_b,challenger_min_obs_5,1,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,31.8186,106.6024,106.6024
+experiment_b,challenger_min_obs_5,2,Sugarcane,KERALA,THRISSUR,2012,Whole Year,2.0,95.7143,93.7143,-93.7143
+experiment_b,challenger_min_obs_5,3,Sugarcane,KERALA,THRISSUR,2013,Whole Year,10.345,95.7143,85.3693,-85.3693
+experiment_b,challenger_min_obs_5,4,Papaya,ANDHRA PRADESH,CHITTOOR,2013,Kharif,26.321,108.0149,81.6939,-81.6939
+experiment_b,challenger_min_obs_5,5,Sugarcane,BIHAR,SHEOHAR,2012,Whole Year,116.526,38.7111,77.8149,77.8149
+experiment_b,challenger_min_obs_5,6,Sugarcane,KERALA,PALAKKAD,2012,Whole Year,5.326,81.8734,76.5474,-76.5474
+experiment_b,challenger_min_obs_5,7,Sugarcane,GUJARAT,JUNAGADH,2012,Whole Year,7.429,83.6181,76.1891,-76.1891
+experiment_b,challenger_min_obs_5,8,Sugarcane,KERALA,PALAKKAD,2013,Whole Year,8.362,81.8734,73.5114,-73.5114
+experiment_b,challenger_min_obs_5,9,Sugarcane,WEST BENGAL,HOOGHLY,2013,Whole Year,152.253,78.8131,73.4399,73.4399
+experiment_b,challenger_min_obs_5,10,Sugarcane,KERALA,IDUKKI,2012,Whole Year,10.446,82.3371,71.8911,-71.8911
+experiment_b,challenger_min_obs_5,11,Sugarcane,KERALA,IDUKKI,2013,Whole Year,10.578,82.3371,71.7591,-71.7591
+experiment_b,challenger_min_obs_5,12,Banana,MADHYA PRADESH,BALAGHAT,2013,Whole Year,108.875,37.6202,71.2548,71.2548
+experiment_b,challenger_min_obs_5,13,Papaya,ANDHRA PRADESH,ANANTAPUR,2012,Kharif,38.472,108.0149,69.5429,-69.5429
+experiment_b,challenger_min_obs_5,14,Sugarcane,GUJARAT,SURAT,2012,Whole Year,7.243,74.0044,66.7614,-66.7614
+experiment_b,challenger_min_obs_5,15,Banana,MADHYA PRADESH,SIDHI,2013,Whole Year,80.0,14.9764,65.0236,65.0236
+experiment_b,challenger_min_obs_5,16,Sugarcane,HARYANA,FARIDABAD,2012,Whole Year,110.778,45.9013,64.8767,64.8767
+experiment_b,challenger_min_obs_5,17,Sugarcane,GUJARAT,BHAVNAGAR,2012,Whole Year,7.0,70.2083,63.2083,-63.2083
+experiment_b,challenger_min_obs_5,18,Sugarcane,GUJARAT,KHEDA,2012,Whole Year,7.333,70.1428,62.8098,-62.8098
+experiment_b,challenger_min_obs_5,19,Sugarcane,WEST BENGAL,HOOGHLY,2012,Whole Year,141.0,78.8131,62.1869,62.1869
+experiment_b,challenger_min_obs_5,20,Sugarcane,GUJARAT,BHARUCH,2012,Whole Year,6.451,67.6833,61.2323,-61.2323
+experiment_b,rf_one_hot,1,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,35.5811,102.8399,102.8399
+experiment_b,rf_one_hot,2,Sugarcane,HARYANA,KAITHAL,2012,Whole Year,99.402,15.3516,84.0504,84.0504
+experiment_b,rf_one_hot,3,Sugarcane,KERALA,THRISSUR,2012,Whole Year,2.0,83.5887,81.5887,-81.5887
+experiment_b,rf_one_hot,4,Sugarcane,WEST BENGAL,HOOGHLY,2013,Whole Year,152.253,76.9963,75.2567,75.2567
+experiment_b,rf_one_hot,5,Sugarcane,KERALA,THRISSUR,2013,Whole Year,10.345,83.5887,73.2437,-73.2437
+experiment_b,rf_one_hot,6,Sugarcane,KERALA,IDUKKI,2012,Whole Year,10.446,81.1244,70.6784,-70.6784
+experiment_b,rf_one_hot,7,Sugarcane,KERALA,IDUKKI,2013,Whole Year,10.578,81.1244,70.5464,-70.5464
+experiment_b,rf_one_hot,8,Banana,MADHYA PRADESH,BALAGHAT,2013,Whole Year,108.875,40.735,68.14,68.14
+experiment_b,rf_one_hot,9,Papaya,ANDHRA PRADESH,CHITTOOR,2013,Kharif,26.321,92.6546,66.3336,-66.3336
+experiment_b,rf_one_hot,10,Sugarcane,WEST BENGAL,BANKURA,2012,Whole Year,141.0,75.6677,65.3323,65.3323
+experiment_b,rf_one_hot,11,Sugarcane,TAMIL NADU,DINDIGUL,2012,Whole Year,55.454,120.0115,64.5575,-64.5575
+experiment_b,rf_one_hot,12,Sugarcane,WEST BENGAL,HOOGHLY,2012,Whole Year,141.0,76.9963,64.0037,64.0037
+experiment_b,rf_one_hot,13,Sugarcane,BIHAR,SHEOHAR,2012,Whole Year,116.526,52.5329,63.9931,63.9931
+experiment_b,rf_one_hot,14,Sugarcane,KERALA,PALAKKAD,2012,Whole Year,5.326,67.7397,62.4137,-62.4137
+experiment_b,rf_one_hot,15,Banana,MADHYA PRADESH,SIDHI,2013,Whole Year,80.0,19.1096,60.8904,60.8904
+experiment_b,rf_one_hot,16,Sugarcane,KERALA,PALAKKAD,2013,Whole Year,8.362,67.7397,59.3777,-59.3777
+experiment_b,rf_one_hot,17,Sugarcane,GUJARAT,JUNAGADH,2012,Whole Year,7.429,66.0026,58.5736,-58.5736
+experiment_b,rf_one_hot,18,Sugarcane,KERALA,ALAPPUZHA,2012,Whole Year,8.753,66.5751,57.8221,-57.8221
+experiment_b,rf_one_hot,19,Sugarcane,KERALA,PATHANAMTHITTA,2012,Whole Year,4.4,62.1183,57.7183,-57.7183
+experiment_b,rf_one_hot,20,Sugarcane,KERALA,ALAPPUZHA,2013,Whole Year,8.956,66.5751,57.6191,-57.6191
+experiment_b,et_one_hot,1,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,29.1229,109.2981,109.2981
+experiment_b,et_one_hot,2,Sugarcane,KERALA,THRISSUR,2012,Whole Year,2.0,78.7849,76.7849,-76.7849
+experiment_b,et_one_hot,3,Sugarcane,BIHAR,SHEOHAR,2012,Whole Year,116.526,40.835,75.691,75.691
+experiment_b,et_one_hot,4,Sugarcane,GUJARAT,JUNAGADH,2012,Whole Year,7.429,82.3242,74.8952,-74.8952
+experiment_b,et_one_hot,5,Sugarcane,KERALA,PALAKKAD,2012,Whole Year,5.326,75.6813,70.3553,-70.3553
+experiment_b,et_one_hot,6,Sugarcane,KERALA,THRISSUR,2013,Whole Year,10.345,78.7849,68.4399,-68.4399
+experiment_b,et_one_hot,7,Sugarcane,KERALA,IDUKKI,2012,Whole Year,10.446,77.8592,67.4132,-67.4132
+experiment_b,et_one_hot,8,Sugarcane,KERALA,PALAKKAD,2013,Whole Year,8.362,75.6813,67.3193,-67.3193
+experiment_b,et_one_hot,9,Sugarcane,KERALA,IDUKKI,2013,Whole Year,10.578,77.8592,67.2812,-67.2812
+experiment_b,et_one_hot,10,Banana,MADHYA PRADESH,BALAGHAT,2013,Whole Year,108.875,41.767,67.108,67.108
+experiment_b,et_one_hot,11,Sugarcane,GUJARAT,SURAT,2012,Whole Year,7.243,72.6523,65.4093,-65.4093
+experiment_b,et_one_hot,12,Sugarcane,HARYANA,PANCHKULA,2012,Whole Year,113.68,51.2032,62.4768,62.4768
+experiment_b,et_one_hot,13,Sugarcane,KERALA,ALAPPUZHA,2012,Whole Year,8.753,71.1541,62.4011,-62.4011
+experiment_b,et_one_hot,14,Sugarcane,KERALA,ALAPPUZHA,2013,Whole Year,8.956,71.1541,62.1981,-62.1981
+experiment_b,et_one_hot,15,Sugarcane,TAMIL NADU,DINDIGUL,2012,Whole Year,55.454,117.3708,61.9168,-61.9168
+experiment_b,et_one_hot,16,Banana,MADHYA PRADESH,SIDHI,2013,Whole Year,80.0,18.3786,61.6214,61.6214
+experiment_b,et_one_hot,17,Sugarcane,GUJARAT,BHARUCH,2012,Whole Year,6.451,67.5013,61.0503,-61.0503
+experiment_b,et_one_hot,18,Sugarcane,HARYANA,FARIDABAD,2012,Whole Year,110.778,50.1301,60.6479,60.6479
+experiment_b,et_one_hot,19,Sugarcane,GUJARAT,BHAVNAGAR,2012,Whole Year,7.0,67.3738,60.3738,-60.3738
+experiment_b,et_one_hot,20,Sugarcane,GUJARAT,KHEDA,2012,Whole Year,7.333,67.5198,60.1868,-60.1868
+experiment_b,xgb_native_categorical,1,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,28.9175,109.5035,109.5035
+experiment_b,xgb_native_categorical,2,Lemon,ANDHRA PRADESH,KURNOOL,2013,Kharif,5.116,107.6096,102.4936,-102.4936
+experiment_b,xgb_native_categorical,3,Lemon,ANDHRA PRADESH,KURNOOL,2012,Kharif,8.884,107.6096,98.7256,-98.7256
+experiment_b,xgb_native_categorical,4,Sapota,ANDHRA PRADESH,KURNOOL,2013,Kharif,9.407,107.6096,98.2026,-98.2026
+experiment_b,xgb_native_categorical,5,Sugarcane,HARYANA,FARIDABAD,2012,Whole Year,110.778,14.2195,96.5585,96.5585
+experiment_b,xgb_native_categorical,6,Lemon,ANDHRA PRADESH,KRISHNA,2012,Kharif,7.356,102.572,95.216,-95.216
+experiment_b,xgb_native_categorical,7,Lemon,ANDHRA PRADESH,KRISHNA,2013,Kharif,7.967,102.572,94.605,-94.605
+experiment_b,xgb_native_categorical,8,Sugarcane,KERALA,IDUKKI,2012,Whole Year,10.446,104.9363,94.4903,-94.4903
+experiment_b,xgb_native_categorical,9,Sapota,ANDHRA PRADESH,KURNOOL,2012,Kharif,13.2,107.6096,94.4096,-94.4096
+experiment_b,xgb_native_categorical,10,Sugarcane,KERALA,IDUKKI,2013,Whole Year,10.578,104.9363,94.3583,-94.3583
+experiment_b,xgb_native_categorical,11,Pome Granet,ANDHRA PRADESH,KURNOOL,2012,Kharif,13.404,107.6096,94.2056,-94.2056
+experiment_b,xgb_native_categorical,12,Sapota,ANDHRA PRADESH,GUNTUR,2013,Kharif,8.269,102.4727,94.2037,-94.2037
+experiment_b,xgb_native_categorical,13,Sapota,ANDHRA PRADESH,GUNTUR,2012,Kharif,8.792,102.4727,93.6807,-93.6807
+experiment_b,xgb_native_categorical,14,Pome Granet,ANDHRA PRADESH,KURNOOL,2013,Kharif,14.429,107.6096,93.1806,-93.1806
+experiment_b,xgb_native_categorical,15,Sapota,ANDHRA PRADESH,KRISHNA,2013,Kharif,9.407,102.572,93.165,-93.165
+experiment_b,xgb_native_categorical,16,Lemon,ANDHRA PRADESH,ANANTAPUR,2013,Kharif,5.123,97.0354,91.9124,-91.9124
+experiment_b,xgb_native_categorical,17,Lemon,ANDHRA PRADESH,WEST GODAVARI,2013,Kharif,7.683,97.4814,89.7984,-89.7984
+experiment_b,xgb_native_categorical,18,Sapota,ANDHRA PRADESH,KRISHNA,2012,Kharif,13.201,102.572,89.371,-89.371
+experiment_b,xgb_native_categorical,19,Lemon,ANDHRA PRADESH,WEST GODAVARI,2012,Kharif,8.442,97.4814,89.0394,-89.0394
+experiment_b,xgb_native_categorical,20,Lemon,ANDHRA PRADESH,EAST GODAVARI,2013,Kharif,5.44,93.7135,88.2735,-88.2735
+experiment_b,rf_target_encoded,1,Papaya,ANDHRA PRADESH,PRAKASAM,2012,Kharif,134.143,25.526,108.617,108.617
+experiment_b,rf_target_encoded,2,Papaya,ANDHRA PRADESH,PRAKASAM,2013,Kharif,131.301,25.526,105.775,105.775
+experiment_b,rf_target_encoded,3,Banana,MADHYA PRADESH,KATNI,2013,Whole Year,138.421,40.6436,97.7774,97.7774
+experiment_b,rf_target_encoded,4,Sugarcane,HARYANA,FARIDABAD,2012,Whole Year,110.778,19.4052,91.3728,91.3728
+experiment_b,rf_target_encoded,5,Papaya,ANDHRA PRADESH,SRIKAKULAM,2012,Kharif,108.933,21.6105,87.3225,87.3225
+experiment_b,rf_target_encoded,6,Sugarcane,HARYANA,KAITHAL,2012,Whole Year,99.402,12.1425,87.2595,87.2595
+experiment_b,rf_target_encoded,7,Papaya,ANDHRA PRADESH,EAST GODAVARI,2012,Kharif,108.935,22.7525,86.1825,86.1825
+experiment_b,rf_target_encoded,8,Papaya,ANDHRA PRADESH,KRISHNA,2012,Kharif,108.938,23.4565,85.4815,85.4815
+experiment_b,rf_target_encoded,9,Papaya,ANDHRA PRADESH,WEST GODAVARI,2012,Kharif,108.932,25.5521,83.3799,83.3799
+experiment_b,rf_target_encoded,10,Papaya,ANDHRA PRADESH,VIZIANAGARAM,2012,Kharif,108.931,25.7921,83.1389,83.1389
+experiment_b,rf_target_encoded,11,Sugarcane,HARYANA,PANIPAT,2012,Whole Year,91.552,13.5892,77.9628,77.9628
+experiment_b,rf_target_encoded,12,Sugarcane,HARYANA,PANCHKULA,2012,Whole Year,113.68,37.1755,76.5045,76.5045
+experiment_b,rf_target_encoded,13,Papaya,ANDHRA PRADESH,SRIKAKULAM,2013,Kharif,97.889,21.6105,76.2785,76.2785
+experiment_b,rf_target_encoded,14,Papaya,ANDHRA PRADESH,EAST GODAVARI,2013,Kharif,97.897,22.7525,75.1445,75.1445
+experiment_b,rf_target_encoded,15,Papaya,ANDHRA PRADESH,KRISHNA,2013,Kharif,97.9,23.4565,74.4435,74.4435
+experiment_b,rf_target_encoded,16,Sugarcane,MAHARASHTRA,SINDHUDURG,2013,Whole Year,87.909,14.1322,73.7768,73.7768
+experiment_b,rf_target_encoded,17,Papaya,ANDHRA PRADESH,GUNTUR,2012,Kharif,108.932,36.0953,72.8367,72.8367
+experiment_b,rf_target_encoded,18,Papaya,ANDHRA PRADESH,WEST GODAVARI,2013,Kharif,97.896,25.5521,72.3439,72.3439
+experiment_b,rf_target_encoded,19,Papaya,ANDHRA PRADESH,VIZIANAGARAM,2013,Kharif,97.896,25.7921,72.1039,72.1039
+experiment_b,rf_target_encoded,20,Sugarcane,KERALA,THRISSUR,2012,Whole Year,2.0,71.494,69.494,-69.494

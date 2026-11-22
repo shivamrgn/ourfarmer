@@ -1,0 +1,43 @@
+{
+  "phase": "Phase 3C.5.2.1",
+  "phase_name": "Agronomic Gate and Verification Provenance Closure",
+  "engine_version": "2.2.3-CLOSURE",
+  "status": "COMPLETED_VERIFIED",
+  "execution_timestamp": "2026-11-20T14:25:20Z",
+  "total_tests": 43,
+  "passed": 43,
+  "failures": 0,
+  "errors": 0,
+  "pass_rate_pct": 100.0,
+  "suites": {
+    "functional_acceptance_tests": 18,
+    "edge_case_and_boundary_tests": 9,
+    "phase_3c_5_1_regression_proofs": 7,
+    "phase_3c_5_2_regression_proofs": 4,
+    "phase_3c_5_2_1_regression_proofs": 5
+  },
+  "audit_findings_resolved": {
+    "finding_1_ph_hard_exclusion_contradiction": {
+      "status": "RESOLVED_VERIFIED",
+      "summary": "Reconciled all pH exclusions with Phase 3C.4 approved rules. At pH 8.6, Pulses fail Tier 1 due to biological nodulation arrest; Maize, Cotton, Sugarcane, Tomato, Onion, Banana, Mango, Sunflower, Potato, Rice, Barley PASS Tier 1 with WARNING_ONLY and receive Tier 2 soft penalties. At pH 9.0, Barley and Cotton pass Tier 1; all others fail. At pH 9.2, all 19 crops fail Tier 1 triggering NO_RECOMMENDATION_SUITABLE with Gypsum Advisory."
+    },
+    "finding_2_stcr_calibration_verification": {
+      "status": "RESOLVED_VERIFIED",
+      "summary": "Boolean flag alone rejected as fabricated claim. Implemented structured STCRCalibrationRecord with multi-field validation (crop, region, target yield range, coefficients, publication reference, VALIDATED status). Missing or mismatched calibrations fall back to BASELINE_RDF_ARITHMETIC. Valid calibration produces VERIFIED_STCR_GENERATED with polynomial doses and DAP credit."
+    },
+    "finding_3_provenance_verification_tiers": {
+      "status": "RESOLVED_VERIFIED",
+      "summary": "Formalized 6 epistemic provenance tiers (INDEPENDENTLY_VERIFIED, SOURCE_REFERENCED, USER_DECLARED, ESTIMATED, PROVISIONAL, UNKNOWN). Self-declared strings (Certified_Lab, IMD_Station_Gridded) alone yield USER_DECLARED. Physical instrument/station/sample IDs required for INDEPENDENTLY_VERIFIED. Zero silent upgrades."
+    }
+  },
+  "canonical_taxonomy": {
+    "total_canonical_crops": 19,
+    "total_planting_windows": 31,
+    "dci_measurement_domains": 6,
+    "dci_rejection_boundary": 0.500
+  },
+  "read_only_preservation": {
+    "production_files_modified": 0,
+    "historical_checksum_manifests_preserved": 6
+  }
+}

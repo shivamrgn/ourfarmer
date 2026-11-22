@@ -1,0 +1,766 @@
+Experiment,Model,Crop,Sample_Count,MAE,RMSE,Crop_SSE,Pct_Contribution_to_Total_SSE
+experiment_a,existing_district_mean,Arhar/Tur,614,0.2578,0.3863,91.6,0.0269
+experiment_a,existing_district_mean,Bajra,381,0.4179,0.5663,122.19,0.0358
+experiment_a,existing_district_mean,Castor seed,216,0.2115,0.34,24.96,0.0073
+experiment_a,existing_district_mean,Grapes,6,3.4583,6.0404,218.92,0.0642
+experiment_a,existing_district_mean,Groundnut,728,0.3975,0.5597,228.05,0.0669
+experiment_a,existing_district_mean,Jowar,537,0.4537,0.707,268.4,0.0787
+experiment_a,existing_district_mean,Maize,1204,0.9302,1.3384,2156.59,0.6323
+experiment_a,existing_district_mean,Moong(Green Gram),977,0.1634,0.2317,52.46,0.0154
+experiment_a,existing_district_mean,Onion,598,3.6305,5.0051,14980.29,4.392
+experiment_a,existing_district_mean,Papaya,69,6.4211,13.4308,12446.58,3.6492
+experiment_a,existing_district_mean,Ragi,326,0.3407,0.5505,98.81,0.029
+experiment_a,existing_district_mean,Rice,1164,0.569,0.7612,674.37,0.1977
+experiment_a,existing_district_mean,Soyabean,257,0.3473,0.4569,53.65,0.0157
+experiment_a,existing_district_mean,Sugarcane,628,12.785,19.3342,234754.21,68.8271
+experiment_a,existing_district_mean,Sunflower,423,0.2797,0.411,71.46,0.0209
+experiment_a,existing_district_mean,Tomato,40,8.8908,11.1047,4932.61,1.4462
+experiment_a,existing_district_mean,Urad,868,0.153,0.2052,36.54,0.0107
+experiment_a,existing_district_mean,Gram,550,0.2719,0.4166,95.47,0.028
+experiment_a,existing_district_mean,Potato,494,3.0259,4.2335,8853.65,2.5958
+experiment_a,existing_district_mean,Sweet potato,358,1.7465,3.1304,3508.08,1.0285
+experiment_a,existing_district_mean,Wheat,595,0.5167,0.6688,266.11,0.078
+experiment_a,existing_district_mean,Cabbage,36,13.9301,14.8415,7929.69,2.3249
+experiment_a,existing_district_mean,Banana,192,8.0757,14.9021,42637.71,12.5009
+experiment_a,existing_district_mean,Sesamum,661,0.1156,0.1695,18.99,0.0056
+experiment_a,existing_district_mean,Tapioca,122,5.2887,7.0141,6002.1,1.7597
+experiment_a,existing_district_mean,Rapeseed &Mustard,549,0.2203,0.3326,60.74,0.0178
+experiment_a,existing_district_mean,Paddy,103,0.6622,0.953,93.55,0.0274
+experiment_a,existing_district_mean,Masoor,392,0.2259,0.3321,43.24,0.0127
+experiment_a,existing_district_mean,Barley,325,0.5253,0.7115,164.51,0.0482
+experiment_a,existing_district_mean,Lentil,9,4.6289,4.6289,192.84,0.0565
+experiment_a,existing_random_forest,Arhar/Tur,614,0.2313,0.3394,70.73,0.0147
+experiment_a,existing_random_forest,Bajra,381,0.3785,0.5092,98.78,0.0206
+experiment_a,existing_random_forest,Castor seed,216,0.5616,1.8812,764.38,0.1591
+experiment_a,existing_random_forest,Grapes,6,20.2546,20.9258,2627.34,0.5467
+experiment_a,existing_random_forest,Groundnut,728,0.3935,0.9967,723.17,0.1505
+experiment_a,existing_random_forest,Jowar,537,0.5819,1.6609,1481.34,0.3083
+experiment_a,existing_random_forest,Maize,1204,0.7619,1.4302,2462.75,0.5125
+experiment_a,existing_random_forest,Moong(Green Gram),977,0.1379,0.1975,38.11,0.0079
+experiment_a,existing_random_forest,Onion,598,2.4994,4.2783,10945.7,2.2777
+experiment_a,existing_random_forest,Papaya,69,26.5856,46.8342,151347.53,31.4939
+experiment_a,existing_random_forest,Ragi,326,0.2728,0.3901,49.62,0.0103
+experiment_a,existing_random_forest,Rice,1164,0.4541,0.6314,464.08,0.0966
+experiment_a,existing_random_forest,Soyabean,257,0.3221,0.4373,49.14,0.0102
+experiment_a,existing_random_forest,Sugarcane,628,12.5304,19.446,237476.24,49.4164
+experiment_a,existing_random_forest,Sunflower,423,0.2482,0.4026,68.56,0.0143
+experiment_a,existing_random_forest,Tomato,40,7.094,9.5276,3631.03,0.7556
+experiment_a,existing_random_forest,Urad,868,0.1326,0.1823,28.84,0.006
+experiment_a,existing_random_forest,Gram,550,0.2656,0.4209,97.46,0.0203
+experiment_a,existing_random_forest,Potato,494,2.9049,4.2042,8731.62,1.817
+experiment_a,existing_random_forest,Sweet potato,358,1.3903,2.4687,2181.88,0.454
+experiment_a,existing_random_forest,Wheat,595,0.3582,0.6759,271.8,0.0566
+experiment_a,existing_random_forest,Cabbage,36,18.702,19.3822,13524.07,2.8142
+experiment_a,existing_random_forest,Banana,192,6.9607,14.2419,38943.67,8.1038
+experiment_a,existing_random_forest,Sesamum,661,0.1033,0.1515,15.17,0.0032
+experiment_a,existing_random_forest,Tapioca,122,3.8838,5.7752,4069.13,0.8467
+experiment_a,existing_random_forest,Rapeseed &Mustard,549,0.2146,0.3435,64.77,0.0135
+experiment_a,existing_random_forest,Paddy,103,0.7912,1.4177,207.01,0.0431
+experiment_a,existing_random_forest,Masoor,392,0.2091,0.3,35.29,0.0073
+experiment_a,existing_random_forest,Barley,325,0.3669,0.5278,90.54,0.0188
+experiment_a,existing_random_forest,Lentil,9,0.392,0.413,1.54,0.0003
+experiment_a,challenger_min_obs_1,Arhar/Tur,614,0.2591,0.3879,92.38,0.028
+experiment_a,challenger_min_obs_1,Bajra,381,0.4278,0.581,128.59,0.0389
+experiment_a,challenger_min_obs_1,Castor seed,216,0.2107,0.3338,24.06,0.0073
+experiment_a,challenger_min_obs_1,Grapes,6,3.4583,6.0404,218.92,0.0663
+experiment_a,challenger_min_obs_1,Groundnut,728,0.3453,0.4926,176.68,0.0535
+experiment_a,challenger_min_obs_1,Jowar,537,0.417,0.6436,222.45,0.0674
+experiment_a,challenger_min_obs_1,Maize,1204,0.8605,1.255,1896.31,0.5742
+experiment_a,challenger_min_obs_1,Moong(Green Gram),977,0.1545,0.2207,47.61,0.0144
+experiment_a,challenger_min_obs_1,Onion,598,3.2055,4.4083,11621.0,3.5188
+experiment_a,challenger_min_obs_1,Papaya,69,5.1222,13.1677,11963.79,3.6226
+experiment_a,challenger_min_obs_1,Ragi,326,0.2974,0.432,60.85,0.0184
+experiment_a,challenger_min_obs_1,Rice,1164,0.5295,0.7144,594.06,0.1799
+experiment_a,challenger_min_obs_1,Soyabean,257,0.3483,0.4581,53.92,0.0163
+experiment_a,challenger_min_obs_1,Sugarcane,628,12.5405,19.1444,230166.69,69.6943
+experiment_a,challenger_min_obs_1,Sunflower,423,0.2863,0.4325,79.12,0.024
+experiment_a,challenger_min_obs_1,Tomato,40,8.8908,11.1047,4932.61,1.4936
+experiment_a,challenger_min_obs_1,Urad,868,0.1464,0.1998,34.65,0.0105
+experiment_a,challenger_min_obs_1,Gram,550,0.272,0.4173,95.77,0.029
+experiment_a,challenger_min_obs_1,Potato,494,2.7342,4.099,8300.19,2.5133
+experiment_a,challenger_min_obs_1,Sweet potato,358,1.6553,3.0918,3422.3,1.0363
+experiment_a,challenger_min_obs_1,Wheat,595,0.5161,0.6683,265.73,0.0805
+experiment_a,challenger_min_obs_1,Cabbage,36,13.9301,14.8415,7929.69,2.4011
+experiment_a,challenger_min_obs_1,Banana,192,7.7673,14.7979,42043.78,12.7308
+experiment_a,challenger_min_obs_1,Sesamum,661,0.1092,0.16,16.92,0.0051
+experiment_a,challenger_min_obs_1,Tapioca,122,4.2788,6.6093,5329.35,1.6137
+experiment_a,challenger_min_obs_1,Rapeseed &Mustard,549,0.2208,0.3334,61.04,0.0185
+experiment_a,challenger_min_obs_1,Paddy,103,0.4899,0.823,69.76,0.0211
+experiment_a,challenger_min_obs_1,Masoor,392,0.2272,0.3335,43.6,0.0132
+experiment_a,challenger_min_obs_1,Barley,325,0.5496,0.7172,167.17,0.0506
+experiment_a,challenger_min_obs_1,Lentil,9,4.6289,4.6289,192.84,0.0584
+experiment_a,challenger_min_obs_3,Arhar/Tur,614,0.2592,0.388,92.43,0.028
+experiment_a,challenger_min_obs_3,Bajra,381,0.4024,0.5474,114.18,0.0347
+experiment_a,challenger_min_obs_3,Castor seed,216,0.2062,0.3269,23.09,0.007
+experiment_a,challenger_min_obs_3,Grapes,6,3.3554,6.1056,223.67,0.0679
+experiment_a,challenger_min_obs_3,Groundnut,728,0.3655,0.5244,200.22,0.0608
+experiment_a,challenger_min_obs_3,Jowar,537,0.4341,0.6669,238.8,0.0725
+experiment_a,challenger_min_obs_3,Maize,1204,0.8775,1.2807,1974.78,0.5993
+experiment_a,challenger_min_obs_3,Moong(Green Gram),977,0.1523,0.217,46.01,0.014
+experiment_a,challenger_min_obs_3,Onion,598,3.1769,4.3662,11400.23,3.4597
+experiment_a,challenger_min_obs_3,Papaya,69,6.3438,14.4193,14346.32,4.3537
+experiment_a,challenger_min_obs_3,Ragi,326,0.3377,0.5561,100.83,0.0306
+experiment_a,challenger_min_obs_3,Rice,1164,0.5314,0.7157,596.16,0.1809
+experiment_a,challenger_min_obs_3,Soyabean,257,0.3493,0.4593,54.21,0.0165
+experiment_a,challenger_min_obs_3,Sugarcane,628,12.3449,18.9869,226396.15,68.7055
+experiment_a,challenger_min_obs_3,Sunflower,423,0.2818,0.4263,76.87,0.0233
+experiment_a,challenger_min_obs_3,Tomato,40,8.8908,10.9697,4813.33,1.4607
+experiment_a,challenger_min_obs_3,Urad,868,0.1456,0.1959,33.32,0.0101
+experiment_a,challenger_min_obs_3,Gram,550,0.2727,0.4179,96.04,0.0291
+experiment_a,challenger_min_obs_3,Potato,494,2.6962,4.0109,7947.03,2.4117
+experiment_a,challenger_min_obs_3,Sweet potato,358,1.7372,3.1504,3553.18,1.0783
+experiment_a,challenger_min_obs_3,Wheat,595,0.5145,0.6669,264.65,0.0803
+experiment_a,challenger_min_obs_3,Cabbage,36,13.9301,14.8415,7929.69,2.4065
+experiment_a,challenger_min_obs_3,Banana,192,7.975,14.8697,42453.01,12.8834
+experiment_a,challenger_min_obs_3,Sesamum,661,0.1097,0.1607,17.08,0.0052
+experiment_a,challenger_min_obs_3,Tapioca,122,5.2709,6.9946,5968.8,1.8114
+experiment_a,challenger_min_obs_3,Rapeseed &Mustard,549,0.2201,0.3327,60.76,0.0184
+experiment_a,challenger_min_obs_3,Paddy,103,0.6641,0.9671,96.33,0.0292
+experiment_a,challenger_min_obs_3,Masoor,392,0.2247,0.3282,42.21,0.0128
+experiment_a,challenger_min_obs_3,Barley,325,0.526,0.7118,164.64,0.05
+experiment_a,challenger_min_obs_3,Lentil,9,4.6289,4.6289,192.84,0.0585
+experiment_a,challenger_min_obs_5,Arhar/Tur,614,0.2552,0.382,89.61,0.0272
+experiment_a,challenger_min_obs_5,Bajra,381,0.4074,0.5545,117.17,0.0356
+experiment_a,challenger_min_obs_5,Castor seed,216,0.2091,0.3268,23.07,0.007
+experiment_a,challenger_min_obs_5,Grapes,6,3.3554,6.1056,223.67,0.0679
+experiment_a,challenger_min_obs_5,Groundnut,728,0.3688,0.5276,202.64,0.0615
+experiment_a,challenger_min_obs_5,Jowar,537,0.4358,0.6678,239.47,0.0727
+experiment_a,challenger_min_obs_5,Maize,1204,0.8805,1.2819,1978.57,0.6008
+experiment_a,challenger_min_obs_5,Moong(Green Gram),977,0.1523,0.2168,45.93,0.0139
+experiment_a,challenger_min_obs_5,Onion,598,3.1888,4.392,11535.0,3.5025
+experiment_a,challenger_min_obs_5,Papaya,69,6.7956,14.4692,14445.63,4.3862
+experiment_a,challenger_min_obs_5,Ragi,326,0.3377,0.5541,100.1,0.0304
+experiment_a,challenger_min_obs_5,Rice,1164,0.5322,0.7157,596.31,0.1811
+experiment_a,challenger_min_obs_5,Soyabean,257,0.3512,0.4597,54.32,0.0165
+experiment_a,challenger_min_obs_5,Sugarcane,628,12.3452,18.9901,226471.64,68.7655
+experiment_a,challenger_min_obs_5,Sunflower,423,0.2817,0.4244,76.17,0.0231
+experiment_a,challenger_min_obs_5,Tomato,40,8.8908,10.9697,4813.33,1.4615
+experiment_a,challenger_min_obs_5,Urad,868,0.1462,0.1965,33.51,0.0102
+experiment_a,challenger_min_obs_5,Gram,550,0.2694,0.4122,93.43,0.0284
+experiment_a,challenger_min_obs_5,Potato,494,2.7125,3.9663,7771.29,2.3597
+experiment_a,challenger_min_obs_5,Sweet potato,358,1.6974,3.1073,3456.67,1.0496
+experiment_a,challenger_min_obs_5,Wheat,595,0.5123,0.6654,263.41,0.08
+experiment_a,challenger_min_obs_5,Cabbage,36,13.9301,14.8415,7929.69,2.4078
+experiment_a,challenger_min_obs_5,Banana,192,7.9544,14.8356,42258.46,12.8313
+experiment_a,challenger_min_obs_5,Sesamum,661,0.11,0.1607,17.08,0.0052
+experiment_a,challenger_min_obs_5,Tapioca,122,5.2849,6.9956,5970.53,1.8129
+experiment_a,challenger_min_obs_5,Rapeseed &Mustard,549,0.2201,0.3322,60.57,0.0184
+experiment_a,challenger_min_obs_5,Paddy,103,0.5099,0.8458,73.69,0.0224
+experiment_a,challenger_min_obs_5,Masoor,392,0.2246,0.3275,42.05,0.0128
+experiment_a,challenger_min_obs_5,Barley,325,0.5259,0.709,163.39,0.0496
+experiment_a,challenger_min_obs_5,Lentil,9,4.6289,4.6289,192.84,0.0586
+experiment_a,rf_one_hot,Arhar/Tur,614,0.3319,0.4847,144.27,0.0306
+experiment_a,rf_one_hot,Bajra,381,0.6365,0.8466,273.07,0.0579
+experiment_a,rf_one_hot,Castor seed,216,0.4369,0.5139,57.04,0.0121
+experiment_a,rf_one_hot,Grapes,6,20.323,20.9534,2634.27,0.559
+experiment_a,rf_one_hot,Groundnut,728,0.558,0.8329,505.03,0.1072
+experiment_a,rf_one_hot,Jowar,537,0.55,0.8895,424.92,0.0902
+experiment_a,rf_one_hot,Maize,1204,0.7635,1.0665,1369.48,0.2906
+experiment_a,rf_one_hot,Moong(Green Gram),977,0.1937,0.2557,63.89,0.0136
+experiment_a,rf_one_hot,Onion,598,3.1,4.9489,14645.96,3.1081
+experiment_a,rf_one_hot,Papaya,69,25.4387,44.7686,138291.93,29.3472
+experiment_a,rf_one_hot,Ragi,326,0.666,1.0039,328.55,0.0697
+experiment_a,rf_one_hot,Rice,1164,0.6291,0.7988,742.78,0.1576
+experiment_a,rf_one_hot,Soyabean,257,0.4661,0.5887,89.08,0.0189
+experiment_a,rf_one_hot,Sugarcane,628,12.8285,19.0492,227884.35,48.3599
+experiment_a,rf_one_hot,Sunflower,423,0.4432,0.5506,128.25,0.0272
+experiment_a,rf_one_hot,Tomato,40,16.1987,17.4266,12147.44,2.5778
+experiment_a,rf_one_hot,Urad,868,0.1931,0.2438,51.61,0.011
+experiment_a,rf_one_hot,Gram,550,0.3307,0.4618,117.29,0.0249
+experiment_a,rf_one_hot,Potato,494,3.0261,4.3433,9318.88,1.9776
+experiment_a,rf_one_hot,Sweet potato,358,1.7459,3.1531,3559.29,0.7553
+experiment_a,rf_one_hot,Wheat,595,0.6252,0.837,416.82,0.0885
+experiment_a,rf_one_hot,Cabbage,36,19.5137,20.1744,14652.18,3.1094
+experiment_a,rf_one_hot,Banana,192,6.7229,14.2184,38815.25,8.2371
+experiment_a,rf_one_hot,Sesamum,661,0.147,0.211,29.44,0.0062
+experiment_a,rf_one_hot,Tapioca,122,3.9175,5.7497,4033.23,0.8559
+experiment_a,rf_one_hot,Rapeseed &Mustard,549,0.392,0.4971,135.68,0.0288
+experiment_a,rf_one_hot,Paddy,103,1.0464,1.3423,185.6,0.0394
+experiment_a,rf_one_hot,Masoor,392,0.2885,0.3696,53.56,0.0114
+experiment_a,rf_one_hot,Barley,325,0.4612,0.6253,127.09,0.027
+experiment_a,rf_one_hot,Lentil,9,0.0874,0.0883,0.07,0.0
+experiment_a,et_one_hot,Arhar/Tur,614,0.3319,0.4847,144.26,0.0297
+experiment_a,et_one_hot,Bajra,381,0.6352,0.8457,272.5,0.0561
+experiment_a,et_one_hot,Castor seed,216,0.4368,0.5138,57.03,0.0117
+experiment_a,et_one_hot,Grapes,6,20.3232,20.9535,2634.31,0.542
+experiment_a,et_one_hot,Groundnut,728,0.5588,0.8331,505.32,0.104
+experiment_a,et_one_hot,Jowar,537,0.5501,0.8896,424.96,0.0874
+experiment_a,et_one_hot,Maize,1204,0.8144,1.1617,1624.84,0.3343
+experiment_a,et_one_hot,Moong(Green Gram),977,0.1951,0.2581,65.08,0.0134
+experiment_a,et_one_hot,Onion,598,2.768,4.4243,11705.29,2.4085
+experiment_a,et_one_hot,Papaya,69,25.3041,44.473,136471.54,28.0802
+experiment_a,et_one_hot,Ragi,326,0.6672,1.0048,329.17,0.0677
+experiment_a,et_one_hot,Rice,1164,0.6869,0.8613,863.41,0.1777
+experiment_a,et_one_hot,Soyabean,257,0.4661,0.5888,89.09,0.0183
+experiment_a,et_one_hot,Sugarcane,628,14.1195,19.7642,245310.49,50.4747
+experiment_a,et_one_hot,Sunflower,423,0.4433,0.5509,128.38,0.0264
+experiment_a,et_one_hot,Tomato,40,16.1989,17.4267,12147.61,2.4995
+experiment_a,et_one_hot,Urad,868,0.1931,0.2438,51.6,0.0106
+experiment_a,et_one_hot,Gram,550,0.3307,0.4618,117.3,0.0241
+experiment_a,et_one_hot,Potato,494,3.1134,4.3809,9480.87,1.9508
+experiment_a,et_one_hot,Sweet potato,358,1.8505,3.4265,4203.17,0.8648
+experiment_a,et_one_hot,Wheat,595,0.6553,0.8628,442.93,0.0911
+experiment_a,et_one_hot,Cabbage,36,19.5138,20.1745,14652.37,3.0149
+experiment_a,et_one_hot,Banana,192,6.7652,14.3392,39477.69,8.1229
+experiment_a,et_one_hot,Sesamum,661,0.1658,0.2354,36.62,0.0075
+experiment_a,et_one_hot,Tapioca,122,4.131,5.8787,4216.2,0.8675
+experiment_a,et_one_hot,Rapeseed &Mustard,549,0.392,0.4971,135.68,0.0279
+experiment_a,et_one_hot,Paddy,103,1.046,1.3419,185.47,0.0382
+experiment_a,et_one_hot,Masoor,392,0.2884,0.3696,53.55,0.011
+experiment_a,et_one_hot,Barley,325,0.5574,0.7433,179.55,0.0369
+experiment_a,et_one_hot,Lentil,9,0.0873,0.0882,0.07,0.0
+experiment_a,xgb_native_categorical,Arhar/Tur,614,0.2309,0.3436,72.48,0.0158
+experiment_a,xgb_native_categorical,Bajra,381,0.3667,0.4893,91.2,0.0198
+experiment_a,xgb_native_categorical,Castor seed,216,0.2284,0.3318,23.78,0.0052
+experiment_a,xgb_native_categorical,Grapes,6,4.0177,4.9678,148.07,0.0322
+experiment_a,xgb_native_categorical,Groundnut,728,0.3434,0.4723,162.42,0.0353
+experiment_a,xgb_native_categorical,Jowar,537,0.3946,0.5664,172.27,0.0375
+experiment_a,xgb_native_categorical,Maize,1204,0.6935,0.9966,1195.73,0.2601
+experiment_a,xgb_native_categorical,Moong(Green Gram),977,0.1499,0.2068,41.77,0.0091
+experiment_a,xgb_native_categorical,Onion,598,2.339,3.6647,8031.27,1.747
+experiment_a,xgb_native_categorical,Papaya,69,8.6453,17.4679,21053.88,4.5798
+experiment_a,xgb_native_categorical,Ragi,326,0.3052,0.4301,60.31,0.0131
+experiment_a,xgb_native_categorical,Rice,1164,0.416,0.5939,410.49,0.0893
+experiment_a,xgb_native_categorical,Soyabean,257,0.3346,0.4535,52.86,0.0115
+experiment_a,xgb_native_categorical,Sugarcane,628,12.2902,20.5846,266099.78,57.8835
+experiment_a,xgb_native_categorical,Sunflower,423,0.2897,0.4195,74.45,0.0162
+experiment_a,xgb_native_categorical,Tomato,40,7.5959,9.3492,3496.27,0.7605
+experiment_a,xgb_native_categorical,Urad,868,0.1338,0.1851,29.73,0.0065
+experiment_a,xgb_native_categorical,Gram,550,0.2664,0.41,92.47,0.0201
+experiment_a,xgb_native_categorical,Potato,494,2.7038,4.0426,8073.17,1.7561
+experiment_a,xgb_native_categorical,Sweet potato,358,1.819,3.3306,3971.35,0.8639
+experiment_a,xgb_native_categorical,Wheat,595,0.3455,0.4696,131.19,0.0285
+experiment_a,xgb_native_categorical,Cabbage,36,49.434,50.3867,91397.63,19.8813
+experiment_a,xgb_native_categorical,Banana,192,7.2688,15.0212,43322.01,9.4236
+experiment_a,xgb_native_categorical,Sesamum,661,0.1336,0.1752,20.29,0.0044
+experiment_a,xgb_native_categorical,Tapioca,122,3.9853,6.021,4422.74,0.9621
+experiment_a,xgb_native_categorical,Rapeseed &Mustard,549,0.2222,0.3138,54.05,0.0118
+experiment_a,xgb_native_categorical,Paddy,103,0.311,0.4028,16.71,0.0036
+experiment_a,xgb_native_categorical,Masoor,392,0.2006,0.2941,33.9,0.0074
+experiment_a,xgb_native_categorical,Barley,325,0.3902,0.5451,96.58,0.021
+experiment_a,xgb_native_categorical,Lentil,9,26.8999,27.6235,6867.52,1.4939
+experiment_a,rf_target_encoded,Arhar/Tur,614,0.2419,0.3509,75.62,0.0157
+experiment_a,rf_target_encoded,Bajra,381,0.4357,0.5789,127.69,0.0266
+experiment_a,rf_target_encoded,Castor seed,216,0.2096,0.3069,20.34,0.0042
+experiment_a,rf_target_encoded,Grapes,6,6.5679,8.3027,413.6,0.0861
+experiment_a,rf_target_encoded,Groundnut,728,0.3451,0.4897,174.55,0.0363
+experiment_a,rf_target_encoded,Jowar,537,0.3965,0.5728,176.21,0.0367
+experiment_a,rf_target_encoded,Maize,1204,0.7317,1.0564,1343.53,0.2795
+experiment_a,rf_target_encoded,Moong(Green Gram),977,0.1402,0.2008,39.41,0.0082
+experiment_a,rf_target_encoded,Onion,598,2.8799,4.65,12930.0,2.6901
+experiment_a,rf_target_encoded,Papaya,69,23.3261,40.5941,113703.87,23.6562
+experiment_a,rf_target_encoded,Ragi,326,0.2964,0.4194,57.35,0.0119
+experiment_a,rf_target_encoded,Rice,1164,0.4384,0.6245,454.0,0.0945
+experiment_a,rf_target_encoded,Soyabean,257,0.3914,0.5254,70.95,0.0148
+experiment_a,rf_target_encoded,Sugarcane,628,13.4709,20.5499,265204.41,55.176
+experiment_a,rf_target_encoded,Sunflower,423,0.3043,0.4509,85.98,0.0179
+experiment_a,rf_target_encoded,Tomato,40,6.7558,8.2876,2747.34,0.5716
+experiment_a,rf_target_encoded,Urad,868,0.1337,0.1861,30.06,0.0063
+experiment_a,rf_target_encoded,Gram,550,0.2701,0.4151,94.77,0.0197
+experiment_a,rf_target_encoded,Potato,494,2.8762,4.097,8292.1,1.7252
+experiment_a,rf_target_encoded,Sweet potato,358,1.602,2.7598,2726.67,0.5673
+experiment_a,rf_target_encoded,Wheat,595,0.3775,0.5151,157.89,0.0328
+experiment_a,rf_target_encoded,Cabbage,36,26.2586,27.8088,27839.85,5.7921
+experiment_a,rf_target_encoded,Banana,192,6.8791,14.2511,38993.96,8.1127
+experiment_a,rf_target_encoded,Sesamum,661,0.101,0.1506,14.98,0.0031
+experiment_a,rf_target_encoded,Tapioca,122,4.1192,5.9209,4276.92,0.8898
+experiment_a,rf_target_encoded,Rapeseed &Mustard,549,0.2577,0.3785,78.65,0.0164
+experiment_a,rf_target_encoded,Paddy,103,0.4233,0.6228,39.95,0.0083
+experiment_a,rf_target_encoded,Masoor,392,0.2298,0.3209,40.37,0.0084
+experiment_a,rf_target_encoded,Barley,325,0.4141,0.5832,110.55,0.023
+experiment_a,rf_target_encoded,Lentil,9,6.0184,6.0572,330.21,0.0687
+experiment_b,existing_district_mean,Arhar/Tur,614,0.2578,0.3863,91.6,0.0256
+experiment_b,existing_district_mean,Bajra,381,0.4179,0.5663,122.19,0.0342
+experiment_b,existing_district_mean,Brinjal,46,7.7209,8.3886,3236.98,0.9061
+experiment_b,existing_district_mean,Castor seed,216,0.2115,0.34,24.96,0.007
+experiment_b,existing_district_mean,Coriander,284,0.1084,0.2021,11.61,0.0032
+experiment_b,existing_district_mean,Dry chillies,476,0.7105,1.3827,910.03,0.2547
+experiment_b,existing_district_mean,Grapes,6,3.4583,6.0404,218.92,0.0613
+experiment_b,existing_district_mean,Groundnut,728,0.3975,0.5597,228.05,0.0638
+experiment_b,existing_district_mean,Horse-gram,325,0.132,0.1979,12.73,0.0036
+experiment_b,existing_district_mean,Jowar,537,0.4537,0.707,268.4,0.0751
+experiment_b,existing_district_mean,Lemon,20,3.8598,5.2396,549.07,0.1537
+experiment_b,existing_district_mean,Linseed,332,0.1312,0.2001,13.3,0.0037
+experiment_b,existing_district_mean,Maize,1204,0.9302,1.3384,2156.59,0.6037
+experiment_b,existing_district_mean,Mango,50,3.4209,4.4712,999.57,0.2798
+experiment_b,existing_district_mean,Moong(Green Gram),977,0.1634,0.2317,52.46,0.0147
+experiment_b,existing_district_mean,Onion,598,3.6305,5.0051,14980.29,4.1932
+experiment_b,existing_district_mean,Papaya,69,6.4211,13.4308,12446.58,3.484
+experiment_b,existing_district_mean,Pome Granet,8,9.6073,9.6517,745.25,0.2086
+experiment_b,existing_district_mean,Ragi,326,0.3407,0.5505,98.81,0.0277
+experiment_b,existing_district_mean,Rice,1164,0.569,0.7612,674.37,0.1888
+experiment_b,existing_district_mean,Sapota,20,6.6314,7.1625,1026.03,0.2872
+experiment_b,existing_district_mean,Small millets,332,0.1741,0.284,26.77,0.0075
+experiment_b,existing_district_mean,Soyabean,257,0.3473,0.4569,53.65,0.015
+experiment_b,existing_district_mean,Sugarcane,628,12.785,19.3342,234754.21,65.7107
+experiment_b,existing_district_mean,Sunflower,423,0.2797,0.411,71.46,0.02
+experiment_b,existing_district_mean,Tobacco,188,0.555,0.9064,154.45,0.0432
+experiment_b,existing_district_mean,Tomato,40,8.8908,11.1047,4932.61,1.3807
+experiment_b,existing_district_mean,Turmeric,315,0.92,1.8429,1069.83,0.2995
+experiment_b,existing_district_mean,Urad,868,0.153,0.2052,36.54,0.0102
+experiment_b,existing_district_mean,Gram,550,0.2719,0.4166,95.47,0.0267
+experiment_b,existing_district_mean,Potato,494,3.0259,4.2335,8853.65,2.4783
+experiment_b,existing_district_mean,Safflower,97,0.2627,0.4333,18.21,0.0051
+experiment_b,existing_district_mean,Sweet potato,358,1.7465,3.1304,3508.08,0.982
+experiment_b,existing_district_mean,Wheat,595,0.5167,0.6688,266.11,0.0745
+experiment_b,existing_district_mean,Cabbage,36,13.9301,14.8415,7929.69,2.2196
+experiment_b,existing_district_mean,Cashewnut,100,0.1329,0.1651,2.73,0.0008
+experiment_b,existing_district_mean,Banana,192,8.0757,14.9021,42637.71,11.9348
+experiment_b,existing_district_mean,Sesamum,661,0.1156,0.1695,18.99,0.0053
+experiment_b,existing_district_mean,Tapioca,122,5.2887,7.0141,6002.1,1.6801
+experiment_b,existing_district_mean,Rapeseed &Mustard,549,0.2203,0.3326,60.74,0.017
+experiment_b,existing_district_mean,Dry ginger,188,2.7665,5.8587,6453.01,1.8063
+experiment_b,existing_district_mean,Niger seed,150,0.0748,0.113,1.91,0.0005
+experiment_b,existing_district_mean,Paddy,103,0.6622,0.953,93.55,0.0262
+experiment_b,existing_district_mean,Orange,36,0.8578,1.4877,79.68,0.0223
+experiment_b,existing_district_mean,Black pepper,87,0.1956,0.3301,9.48,0.0027
+experiment_b,existing_district_mean,Ginger,74,0.6546,1.48,162.08,0.0454
+experiment_b,existing_district_mean,Masoor,392,0.2259,0.3321,43.24,0.0121
+experiment_b,existing_district_mean,Pineapple,51,1.2425,1.5474,122.12,0.0342
+experiment_b,existing_district_mean,Barley,325,0.5253,0.7115,164.51,0.046
+experiment_b,existing_district_mean,Sannhamp,190,0.4569,0.7004,93.22,0.0261
+experiment_b,existing_district_mean,Garlic,270,0.8557,1.4065,534.13,0.1495
+experiment_b,existing_district_mean,Guar seed,142,0.0801,0.1237,2.17,0.0006
+experiment_b,existing_district_mean,Cardamom,29,0.0306,0.0491,0.07,0.0
+experiment_b,existing_district_mean,Drum Stick,22,0.4075,0.4774,5.01,0.0014
+experiment_b,existing_district_mean,Lentil,9,3.7877,3.7877,129.12,0.0361
+experiment_b,existing_random_forest,Arhar/Tur,614,0.2543,0.376,86.79,0.0168
+experiment_b,existing_random_forest,Bajra,381,0.4649,0.6207,146.78,0.0283
+experiment_b,existing_random_forest,Brinjal,46,10.0389,11.2578,5829.91,1.1252
+experiment_b,existing_random_forest,Castor seed,216,0.3872,0.5755,71.55,0.0138
+experiment_b,existing_random_forest,Coriander,284,0.1528,0.3752,39.97,0.0077
+experiment_b,existing_random_forest,Dry chillies,476,0.5304,1.0228,497.96,0.0961
+experiment_b,existing_random_forest,Grapes,6,20.6107,21.2519,2709.87,0.523
+experiment_b,existing_random_forest,Groundnut,728,0.389,0.5516,221.49,0.0427
+experiment_b,existing_random_forest,Horse-gram,325,0.2246,0.3304,35.47,0.0068
+experiment_b,existing_random_forest,Jowar,537,0.3937,0.5711,175.16,0.0338
+experiment_b,existing_random_forest,Lemon,20,7.7861,8.5377,1457.83,0.2814
+experiment_b,existing_random_forest,Linseed,332,0.1378,0.2289,17.39,0.0034
+experiment_b,existing_random_forest,Maize,1204,0.7242,1.0696,1377.45,0.2659
+experiment_b,existing_random_forest,Mango,50,4.51,5.5503,1540.3,0.2973
+experiment_b,existing_random_forest,Moong(Green Gram),977,0.1382,0.1969,37.89,0.0073
+experiment_b,existing_random_forest,Onion,598,2.445,4.2289,10694.6,2.0641
+experiment_b,existing_random_forest,Papaya,69,26.4669,46.6802,150353.63,29.0187
+experiment_b,existing_random_forest,Pome Granet,8,13.595,13.6277,1485.71,0.2867
+experiment_b,existing_random_forest,Ragi,326,0.2772,0.3919,50.07,0.0097
+experiment_b,existing_random_forest,Rice,1164,0.4493,0.6279,458.97,0.0886
+experiment_b,existing_random_forest,Sapota,20,10.5577,10.9056,2378.65,0.4591
+experiment_b,existing_random_forest,Small millets,332,0.1656,0.2666,23.6,0.0046
+experiment_b,existing_random_forest,Soyabean,257,0.3229,0.4389,49.5,0.0096
+experiment_b,existing_random_forest,Sugarcane,628,12.5637,19.5249,239408.15,46.2065
+experiment_b,existing_random_forest,Sunflower,423,0.2419,0.389,64.0,0.0124
+experiment_b,existing_random_forest,Tobacco,188,0.5179,0.8533,136.87,0.0264
+experiment_b,existing_random_forest,Tomato,40,16.1053,17.3249,12006.04,2.3172
+experiment_b,existing_random_forest,Turmeric,315,1.2261,2.7806,2435.55,0.4701
+experiment_b,existing_random_forest,Urad,868,0.1291,0.1796,27.99,0.0054
+experiment_b,existing_random_forest,Gram,550,0.3006,0.449,110.86,0.0214
+experiment_b,existing_random_forest,Potato,494,2.8912,4.2021,8722.83,1.6835
+experiment_b,existing_random_forest,Safflower,97,0.2743,0.4345,18.32,0.0035
+experiment_b,existing_random_forest,Sweet potato,358,1.5498,2.686,2582.75,0.4985
+experiment_b,existing_random_forest,Wheat,595,0.3195,0.4435,117.02,0.0226
+experiment_b,existing_random_forest,Cabbage,36,18.9058,19.5941,13821.48,2.6676
+experiment_b,existing_random_forest,Cashewnut,100,0.2463,0.4461,19.9,0.0038
+experiment_b,existing_random_forest,Banana,192,7.0258,14.3193,39368.23,7.5982
+experiment_b,existing_random_forest,Sesamum,661,0.1047,0.152,15.26,0.0029
+experiment_b,existing_random_forest,Tapioca,122,3.9429,5.9301,4290.19,0.828
+experiment_b,existing_random_forest,Rapeseed &Mustard,549,0.2094,0.3341,61.28,0.0118
+experiment_b,existing_random_forest,Dry ginger,188,3.5216,8.2778,12882.28,2.4863
+experiment_b,existing_random_forest,Niger seed,150,0.0713,0.1077,1.74,0.0003
+experiment_b,existing_random_forest,Paddy,103,0.6881,1.4411,213.91,0.0413
+experiment_b,existing_random_forest,Orange,36,1.2867,1.9402,135.52,0.0262
+experiment_b,existing_random_forest,Black pepper,87,0.5869,0.9981,86.67,0.0167
+experiment_b,existing_random_forest,Ginger,74,0.9277,1.7356,222.9,0.043
+experiment_b,existing_random_forest,Masoor,392,0.2105,0.3021,35.78,0.0069
+experiment_b,existing_random_forest,Pineapple,51,1.4931,2.3352,278.11,0.0537
+experiment_b,existing_random_forest,Barley,325,0.5179,0.6861,152.97,0.0295
+experiment_b,existing_random_forest,Sannhamp,190,0.5403,0.8195,127.6,0.0246
+experiment_b,existing_random_forest,Garlic,270,1.0538,1.9243,999.81,0.193
+experiment_b,existing_random_forest,Guar seed,142,0.1194,0.2158,6.61,0.0013
+experiment_b,existing_random_forest,Cardamom,29,0.0405,0.0682,0.13,0.0
+experiment_b,existing_random_forest,Drum Stick,22,0.6142,0.7455,12.23,0.0024
+experiment_b,existing_random_forest,Lentil,9,1.5716,1.5929,22.83,0.0044
+experiment_b,challenger_min_obs_1,Arhar/Tur,614,0.2591,0.3879,92.38,0.0268
+experiment_b,challenger_min_obs_1,Bajra,381,0.4278,0.581,128.59,0.0373
+experiment_b,challenger_min_obs_1,Brinjal,46,7.6956,8.4138,3256.47,0.9437
+experiment_b,challenger_min_obs_1,Castor seed,216,0.2107,0.3338,24.06,0.007
+experiment_b,challenger_min_obs_1,Coriander,284,0.1102,0.2031,11.72,0.0034
+experiment_b,challenger_min_obs_1,Dry chillies,476,0.6223,1.3401,854.85,0.2477
+experiment_b,challenger_min_obs_1,Grapes,6,3.4583,6.0404,218.92,0.0634
+experiment_b,challenger_min_obs_1,Groundnut,728,0.3453,0.4926,176.68,0.0512
+experiment_b,challenger_min_obs_1,Horse-gram,325,0.1325,0.1977,12.7,0.0037
+experiment_b,challenger_min_obs_1,Jowar,537,0.417,0.6436,222.45,0.0645
+experiment_b,challenger_min_obs_1,Lemon,20,3.8598,5.2396,549.07,0.1591
+experiment_b,challenger_min_obs_1,Linseed,332,0.1326,0.2023,13.58,0.0039
+experiment_b,challenger_min_obs_1,Maize,1204,0.8605,1.255,1896.31,0.5495
+experiment_b,challenger_min_obs_1,Mango,50,3.5955,5.031,1265.57,0.3667
+experiment_b,challenger_min_obs_1,Moong(Green Gram),977,0.1545,0.2207,47.61,0.0138
+experiment_b,challenger_min_obs_1,Onion,598,3.2055,4.4083,11621.0,3.3676
+experiment_b,challenger_min_obs_1,Papaya,69,5.1222,13.1677,11963.79,3.467
+experiment_b,challenger_min_obs_1,Pome Granet,8,9.6073,9.6517,745.25,0.216
+experiment_b,challenger_min_obs_1,Ragi,326,0.2974,0.432,60.85,0.0176
+experiment_b,challenger_min_obs_1,Rice,1164,0.5295,0.7144,594.06,0.1722
+experiment_b,challenger_min_obs_1,Sapota,20,6.6314,7.1625,1026.03,0.2973
+experiment_b,challenger_min_obs_1,Small millets,332,0.1759,0.2855,27.06,0.0078
+experiment_b,challenger_min_obs_1,Soyabean,257,0.3483,0.4581,53.92,0.0156
+experiment_b,challenger_min_obs_1,Sugarcane,628,12.5405,19.1444,230166.69,66.6993
+experiment_b,challenger_min_obs_1,Sunflower,423,0.2863,0.4325,79.12,0.0229
+experiment_b,challenger_min_obs_1,Tobacco,188,0.457,0.8071,122.46,0.0355
+experiment_b,challenger_min_obs_1,Tomato,40,8.8908,11.1047,4932.61,1.4294
+experiment_b,challenger_min_obs_1,Turmeric,315,0.8871,1.8366,1062.58,0.3079
+experiment_b,challenger_min_obs_1,Urad,868,0.1464,0.1998,34.65,0.01
+experiment_b,challenger_min_obs_1,Gram,550,0.272,0.4173,95.77,0.0278
+experiment_b,challenger_min_obs_1,Potato,494,2.7342,4.099,8300.19,2.4053
+experiment_b,challenger_min_obs_1,Safflower,97,0.2637,0.4334,18.22,0.0053
+experiment_b,challenger_min_obs_1,Sweet potato,358,1.6553,3.0918,3422.3,0.9917
+experiment_b,challenger_min_obs_1,Wheat,595,0.5161,0.6683,265.73,0.077
+experiment_b,challenger_min_obs_1,Cabbage,36,13.9301,14.8415,7929.69,2.2979
+experiment_b,challenger_min_obs_1,Cashewnut,100,0.1351,0.1689,2.85,0.0008
+experiment_b,challenger_min_obs_1,Banana,192,7.7673,14.7979,42043.78,12.1837
+experiment_b,challenger_min_obs_1,Sesamum,661,0.1092,0.16,16.92,0.0049
+experiment_b,challenger_min_obs_1,Tapioca,122,4.2788,6.6093,5329.35,1.5444
+experiment_b,challenger_min_obs_1,Rapeseed &Mustard,549,0.2208,0.3334,61.04,0.0177
+experiment_b,challenger_min_obs_1,Dry ginger,188,2.4416,5.0657,4824.39,1.398
+experiment_b,challenger_min_obs_1,Niger seed,150,0.0754,0.1142,1.96,0.0006
+experiment_b,challenger_min_obs_1,Paddy,103,0.4899,0.823,69.76,0.0202
+experiment_b,challenger_min_obs_1,Orange,36,0.7591,1.4313,73.75,0.0214
+experiment_b,challenger_min_obs_1,Black pepper,87,0.2039,0.3403,10.08,0.0029
+experiment_b,challenger_min_obs_1,Ginger,74,0.64,1.4094,146.99,0.0426
+experiment_b,challenger_min_obs_1,Masoor,392,0.2272,0.3335,43.6,0.0126
+experiment_b,challenger_min_obs_1,Pineapple,51,1.0251,1.3742,96.31,0.0279
+experiment_b,challenger_min_obs_1,Barley,325,0.5496,0.7172,167.17,0.0484
+experiment_b,challenger_min_obs_1,Sannhamp,190,0.8019,1.158,254.79,0.0738
+experiment_b,challenger_min_obs_1,Garlic,270,0.7738,1.3723,508.49,0.1474
+experiment_b,challenger_min_obs_1,Guar seed,142,0.0865,0.1368,2.66,0.0008
+experiment_b,challenger_min_obs_1,Cardamom,29,0.0306,0.0491,0.07,0.0
+experiment_b,challenger_min_obs_1,Drum Stick,22,0.4075,0.4774,5.01,0.0015
+experiment_b,challenger_min_obs_1,Lentil,9,3.7877,3.7877,129.12,0.0374
+experiment_b,challenger_min_obs_3,Arhar/Tur,614,0.2592,0.388,92.43,0.027
+experiment_b,challenger_min_obs_3,Bajra,381,0.4024,0.5474,114.18,0.0333
+experiment_b,challenger_min_obs_3,Brinjal,46,6.1709,6.9235,2205.0,0.6429
+experiment_b,challenger_min_obs_3,Castor seed,216,0.2062,0.3269,23.09,0.0067
+experiment_b,challenger_min_obs_3,Coriander,284,0.1105,0.1948,10.78,0.0031
+experiment_b,challenger_min_obs_3,Dry chillies,476,0.6301,1.3385,852.74,0.2486
+experiment_b,challenger_min_obs_3,Grapes,6,3.3554,6.1056,223.67,0.0652
+experiment_b,challenger_min_obs_3,Groundnut,728,0.3655,0.5244,200.22,0.0584
+experiment_b,challenger_min_obs_3,Horse-gram,325,0.1282,0.1945,12.3,0.0036
+experiment_b,challenger_min_obs_3,Jowar,537,0.4341,0.6669,238.8,0.0696
+experiment_b,challenger_min_obs_3,Lemon,20,3.8598,5.2396,549.07,0.1601
+experiment_b,challenger_min_obs_3,Linseed,332,0.1322,0.2015,13.48,0.0039
+experiment_b,challenger_min_obs_3,Maize,1204,0.8775,1.2807,1974.78,0.5758
+experiment_b,challenger_min_obs_3,Mango,50,3.2388,4.2064,884.67,0.258
+experiment_b,challenger_min_obs_3,Moong(Green Gram),977,0.1523,0.217,46.01,0.0134
+experiment_b,challenger_min_obs_3,Onion,598,3.1769,4.3662,11400.23,3.3241
+experiment_b,challenger_min_obs_3,Papaya,69,6.3438,14.4193,14346.32,4.1832
+experiment_b,challenger_min_obs_3,Pome Granet,8,9.6073,9.6517,745.25,0.2173
+experiment_b,challenger_min_obs_3,Ragi,326,0.3377,0.5561,100.83,0.0294
+experiment_b,challenger_min_obs_3,Rice,1164,0.5314,0.7157,596.16,0.1738
+experiment_b,challenger_min_obs_3,Sapota,20,6.6314,7.1625,1026.03,0.2992
+experiment_b,challenger_min_obs_3,Small millets,332,0.1748,0.2839,26.77,0.0078
+experiment_b,challenger_min_obs_3,Soyabean,257,0.3493,0.4593,54.21,0.0158
+experiment_b,challenger_min_obs_3,Sugarcane,628,12.3449,18.9869,226396.15,66.0134
+experiment_b,challenger_min_obs_3,Sunflower,423,0.2818,0.4263,76.87,0.0224
+experiment_b,challenger_min_obs_3,Tobacco,188,0.4439,0.765,110.03,0.0321
+experiment_b,challenger_min_obs_3,Tomato,40,8.8908,10.9697,4813.33,1.4035
+experiment_b,challenger_min_obs_3,Turmeric,315,0.8752,1.7874,1006.37,0.2934
+experiment_b,challenger_min_obs_3,Urad,868,0.1456,0.1959,33.32,0.0097
+experiment_b,challenger_min_obs_3,Gram,550,0.2727,0.4179,96.04,0.028
+experiment_b,challenger_min_obs_3,Potato,494,2.6962,4.0109,7947.03,2.3172
+experiment_b,challenger_min_obs_3,Safflower,97,0.2643,0.4339,18.26,0.0053
+experiment_b,challenger_min_obs_3,Sweet potato,358,1.7372,3.1504,3553.18,1.036
+experiment_b,challenger_min_obs_3,Wheat,595,0.5145,0.6669,264.65,0.0772
+experiment_b,challenger_min_obs_3,Cabbage,36,13.9301,14.8415,7929.69,2.3122
+experiment_b,challenger_min_obs_3,Cashewnut,100,0.1366,0.1699,2.89,0.0008
+experiment_b,challenger_min_obs_3,Banana,192,7.975,14.8697,42453.01,12.3786
+experiment_b,challenger_min_obs_3,Sesamum,661,0.1097,0.1607,17.08,0.005
+experiment_b,challenger_min_obs_3,Tapioca,122,5.2709,6.9946,5968.8,1.7404
+experiment_b,challenger_min_obs_3,Rapeseed &Mustard,549,0.2201,0.3327,60.76,0.0177
+experiment_b,challenger_min_obs_3,Dry ginger,188,2.4425,5.0591,4811.69,1.403
+experiment_b,challenger_min_obs_3,Niger seed,150,0.0754,0.1142,1.96,0.0006
+experiment_b,challenger_min_obs_3,Paddy,103,0.6641,0.9671,96.33,0.0281
+experiment_b,challenger_min_obs_3,Orange,36,0.8578,1.4877,79.68,0.0232
+experiment_b,challenger_min_obs_3,Black pepper,87,0.191,0.3161,8.69,0.0025
+experiment_b,challenger_min_obs_3,Ginger,74,0.9193,1.6324,197.2,0.0575
+experiment_b,challenger_min_obs_3,Masoor,392,0.2247,0.3282,42.21,0.0123
+experiment_b,challenger_min_obs_3,Pineapple,51,1.23,1.5267,118.87,0.0347
+experiment_b,challenger_min_obs_3,Barley,325,0.526,0.7118,164.64,0.048
+experiment_b,challenger_min_obs_3,Sannhamp,190,0.7698,1.1234,239.8,0.0699
+experiment_b,challenger_min_obs_3,Garlic,270,0.7929,1.4549,571.54,0.1667
+experiment_b,challenger_min_obs_3,Guar seed,142,0.0842,0.1345,2.57,0.0007
+experiment_b,challenger_min_obs_3,Cardamom,29,0.0356,0.0532,0.08,0.0
+experiment_b,challenger_min_obs_3,Drum Stick,22,0.4144,0.5137,5.8,0.0017
+experiment_b,challenger_min_obs_3,Lentil,9,3.7877,3.7877,129.12,0.0376
+experiment_b,challenger_min_obs_5,Arhar/Tur,614,0.2552,0.382,89.61,0.0261
+experiment_b,challenger_min_obs_5,Bajra,381,0.4074,0.5545,117.17,0.0342
+experiment_b,challenger_min_obs_5,Brinjal,46,6.1709,6.9235,2205.0,0.6434
+experiment_b,challenger_min_obs_5,Castor seed,216,0.2091,0.3268,23.07,0.0067
+experiment_b,challenger_min_obs_5,Coriander,284,0.1097,0.1989,11.23,0.0033
+experiment_b,challenger_min_obs_5,Dry chillies,476,0.6343,1.3436,859.32,0.2507
+experiment_b,challenger_min_obs_5,Grapes,6,3.3554,6.1056,223.67,0.0653
+experiment_b,challenger_min_obs_5,Groundnut,728,0.3688,0.5276,202.64,0.0591
+experiment_b,challenger_min_obs_5,Horse-gram,325,0.1292,0.194,12.23,0.0036
+experiment_b,challenger_min_obs_5,Jowar,537,0.4358,0.6678,239.47,0.0699
+experiment_b,challenger_min_obs_5,Lemon,20,3.8598,5.2396,549.07,0.1602
+experiment_b,challenger_min_obs_5,Linseed,332,0.1304,0.195,12.62,0.0037
+experiment_b,challenger_min_obs_5,Maize,1204,0.8805,1.2819,1978.57,0.5773
+experiment_b,challenger_min_obs_5,Mango,50,3.3499,4.6089,1062.11,0.3099
+experiment_b,challenger_min_obs_5,Moong(Green Gram),977,0.1523,0.2168,45.93,0.0134
+experiment_b,challenger_min_obs_5,Onion,598,3.1888,4.392,11535.0,3.3658
+experiment_b,challenger_min_obs_5,Papaya,69,6.7956,14.4692,14445.63,4.2151
+experiment_b,challenger_min_obs_5,Pome Granet,8,9.6073,9.6517,745.25,0.2175
+experiment_b,challenger_min_obs_5,Ragi,326,0.3377,0.5541,100.1,0.0292
+experiment_b,challenger_min_obs_5,Rice,1164,0.5322,0.7157,596.31,0.174
+experiment_b,challenger_min_obs_5,Sapota,20,6.6314,7.1625,1026.03,0.2994
+experiment_b,challenger_min_obs_5,Small millets,332,0.173,0.2845,26.87,0.0078
+experiment_b,challenger_min_obs_5,Soyabean,257,0.3512,0.4597,54.32,0.0159
+experiment_b,challenger_min_obs_5,Sugarcane,628,12.3452,18.9901,226471.64,66.0817
+experiment_b,challenger_min_obs_5,Sunflower,423,0.2817,0.4244,76.17,0.0222
+experiment_b,challenger_min_obs_5,Tobacco,188,0.4142,0.6893,89.32,0.0261
+experiment_b,challenger_min_obs_5,Tomato,40,8.8908,10.9697,4813.33,1.4045
+experiment_b,challenger_min_obs_5,Turmeric,315,0.7567,1.4808,690.73,0.2015
+experiment_b,challenger_min_obs_5,Urad,868,0.1462,0.1965,33.51,0.0098
+experiment_b,challenger_min_obs_5,Gram,550,0.2694,0.4122,93.43,0.0273
+experiment_b,challenger_min_obs_5,Potato,494,2.7125,3.9663,7771.29,2.2676
+experiment_b,challenger_min_obs_5,Safflower,97,0.2643,0.4332,18.2,0.0053
+experiment_b,challenger_min_obs_5,Sweet potato,358,1.6974,3.1073,3456.67,1.0086
+experiment_b,challenger_min_obs_5,Wheat,595,0.5123,0.6654,263.41,0.0769
+experiment_b,challenger_min_obs_5,Cabbage,36,13.9301,14.8415,7929.69,2.3138
+experiment_b,challenger_min_obs_5,Cashewnut,100,0.1405,0.1793,3.21,0.0009
+experiment_b,challenger_min_obs_5,Banana,192,7.9544,14.8356,42258.46,12.3305
+experiment_b,challenger_min_obs_5,Sesamum,661,0.11,0.1607,17.08,0.005
+experiment_b,challenger_min_obs_5,Tapioca,122,5.2849,6.9956,5970.53,1.7421
+experiment_b,challenger_min_obs_5,Rapeseed &Mustard,549,0.2201,0.3322,60.57,0.0177
+experiment_b,challenger_min_obs_5,Dry ginger,188,2.455,5.0905,4871.73,1.4215
+experiment_b,challenger_min_obs_5,Niger seed,150,0.0757,0.1177,2.08,0.0006
+experiment_b,challenger_min_obs_5,Paddy,103,0.5099,0.8458,73.69,0.0215
+experiment_b,challenger_min_obs_5,Orange,36,1.56,2.3122,192.47,0.0562
+experiment_b,challenger_min_obs_5,Black pepper,87,0.1965,0.321,8.97,0.0026
+experiment_b,challenger_min_obs_5,Ginger,74,0.9193,1.6324,197.2,0.0575
+experiment_b,challenger_min_obs_5,Masoor,392,0.2246,0.3275,42.05,0.0123
+experiment_b,challenger_min_obs_5,Pineapple,51,1.2627,1.7618,158.31,0.0462
+experiment_b,challenger_min_obs_5,Barley,325,0.5259,0.709,163.39,0.0477
+experiment_b,challenger_min_obs_5,Sannhamp,190,0.453,0.7002,93.16,0.0272
+experiment_b,challenger_min_obs_5,Garlic,270,0.8708,1.485,595.43,0.1737
+experiment_b,challenger_min_obs_5,Guar seed,142,0.0835,0.1319,2.47,0.0007
+experiment_b,challenger_min_obs_5,Cardamom,29,0.0356,0.0532,0.08,0.0
+experiment_b,challenger_min_obs_5,Drum Stick,22,0.4144,0.5137,5.8,0.0017
+experiment_b,challenger_min_obs_5,Lentil,9,3.7877,3.7877,129.12,0.0377
+experiment_b,rf_one_hot,Arhar/Tur,614,0.3379,0.4848,144.29,0.0383
+experiment_b,rf_one_hot,Bajra,381,0.6341,0.8555,278.83,0.074
+experiment_b,rf_one_hot,Brinjal,46,6.6488,7.5412,2615.99,0.6943
+experiment_b,rf_one_hot,Castor seed,216,0.4602,0.5339,61.57,0.0163
+experiment_b,rf_one_hot,Coriander,284,0.461,0.4893,68.01,0.0181
+experiment_b,rf_one_hot,Dry chillies,476,1.0231,1.9408,1792.98,0.4759
+experiment_b,rf_one_hot,Grapes,6,5.0803,7.7215,357.73,0.0949
+experiment_b,rf_one_hot,Groundnut,728,0.5692,0.8521,528.54,0.1403
+experiment_b,rf_one_hot,Horse-gram,325,0.4216,0.4792,74.64,0.0198
+experiment_b,rf_one_hot,Jowar,537,0.5573,0.8867,422.19,0.1121
+experiment_b,rf_one_hot,Lemon,20,7.5226,8.3153,1382.89,0.367
+experiment_b,rf_one_hot,Linseed,332,0.3879,0.451,67.53,0.0179
+experiment_b,rf_one_hot,Maize,1204,1.0689,1.5326,2828.04,0.7506
+experiment_b,rf_one_hot,Mango,50,7.0882,8.2844,3431.56,0.9108
+experiment_b,rf_one_hot,Moong(Green Gram),977,0.4305,0.484,228.86,0.0607
+experiment_b,rf_one_hot,Onion,598,2.7407,4.2264,10681.55,2.8351
+experiment_b,rf_one_hot,Papaya,69,7.8589,14.083,13684.81,3.6322
+experiment_b,rf_one_hot,Pome Granet,8,13.2701,13.3023,1415.61,0.3757
+experiment_b,rf_one_hot,Ragi,326,0.6637,0.9956,323.11,0.0858
+experiment_b,rf_one_hot,Rice,1164,0.7958,0.9908,1142.69,0.3033
+experiment_b,rf_one_hot,Sapota,20,10.2942,10.6441,2265.93,0.6014
+experiment_b,rf_one_hot,Small millets,332,0.3773,0.4545,68.59,0.0182
+experiment_b,rf_one_hot,Soyabean,257,0.4523,0.5719,84.05,0.0223
+experiment_b,rf_one_hot,Sugarcane,628,12.7372,19.0404,227673.12,60.4284
+experiment_b,rf_one_hot,Sunflower,423,0.4144,0.5218,115.19,0.0306
+experiment_b,rf_one_hot,Tobacco,188,1.5837,2.2587,959.09,0.2546
+experiment_b,rf_one_hot,Tomato,40,14.8171,16.1505,10433.53,2.7692
+experiment_b,rf_one_hot,Turmeric,315,2.0093,3.2218,3269.7,0.8678
+experiment_b,rf_one_hot,Urad,868,0.3849,0.4438,170.96,0.0454
+experiment_b,rf_one_hot,Gram,550,0.3334,0.4589,115.81,0.0307
+experiment_b,rf_one_hot,Potato,494,2.9715,4.244,8897.82,2.3616
+experiment_b,rf_one_hot,Safflower,97,0.4268,0.4986,24.11,0.0064
+experiment_b,rf_one_hot,Sweet potato,358,1.5892,2.803,2812.64,0.7465
+experiment_b,rf_one_hot,Wheat,595,1.0508,1.3434,1073.84,0.285
+experiment_b,rf_one_hot,Cabbage,36,14.7976,16.6451,9974.1,2.6473
+experiment_b,rf_one_hot,Cashewnut,100,0.5079,0.5575,31.08,0.0082
+experiment_b,rf_one_hot,Banana,192,6.9428,14.0406,37850.38,10.0461
+experiment_b,rf_one_hot,Sesamum,661,0.5192,0.5726,216.71,0.0575
+experiment_b,rf_one_hot,Tapioca,122,4.1944,6.0395,4450.07,1.1811
+experiment_b,rf_one_hot,Rapeseed &Mustard,549,0.3973,0.4993,136.84,0.0363
+experiment_b,rf_one_hot,Dry ginger,188,3.8654,8.8702,14791.82,3.926
+experiment_b,rf_one_hot,Niger seed,150,0.5987,0.6219,58.02,0.0154
+experiment_b,rf_one_hot,Paddy,103,1.1318,1.4486,216.14,0.0574
+experiment_b,rf_one_hot,Orange,36,8.4901,8.7805,2775.52,0.7367
+experiment_b,rf_one_hot,Black pepper,87,0.8856,0.9968,86.45,0.0229
+experiment_b,rf_one_hot,Ginger,74,7.4211,7.6361,4314.98,1.1453
+experiment_b,rf_one_hot,Masoor,392,0.3039,0.3806,56.79,0.0151
+experiment_b,rf_one_hot,Pineapple,51,1.5313,2.2925,268.04,0.0711
+experiment_b,rf_one_hot,Barley,325,1.2066,1.5398,770.52,0.2045
+experiment_b,rf_one_hot,Sannhamp,190,0.8527,1.1914,269.69,0.0716
+experiment_b,rf_one_hot,Garlic,270,1.1307,1.8975,972.13,0.258
+experiment_b,rf_one_hot,Guar seed,142,0.1533,0.1735,4.27,0.0011
+experiment_b,rf_one_hot,Cardamom,29,0.8413,0.8451,20.71,0.0055
+experiment_b,rf_one_hot,Drum Stick,22,0.3836,0.4815,5.1,0.0014
+experiment_b,rf_one_hot,Lentil,9,0.1249,0.1255,0.14,0.0
+experiment_b,et_one_hot,Arhar/Tur,614,0.334,0.4843,144.01,0.0354
+experiment_b,et_one_hot,Bajra,381,0.645,0.8676,286.77,0.0704
+experiment_b,et_one_hot,Brinjal,46,7.4634,8.4922,3317.43,0.8147
+experiment_b,et_one_hot,Castor seed,216,0.4469,0.5224,58.95,0.0145
+experiment_b,et_one_hot,Coriander,284,0.4416,0.4698,62.67,0.0154
+experiment_b,et_one_hot,Dry chillies,476,1.0248,1.9499,1809.79,0.4444
+experiment_b,et_one_hot,Grapes,6,8.4263,9.8499,582.13,0.143
+experiment_b,et_one_hot,Groundnut,728,0.5802,0.8635,542.78,0.1333
+experiment_b,et_one_hot,Horse-gram,325,0.4088,0.4624,69.49,0.0171
+experiment_b,et_one_hot,Jowar,537,0.565,0.896,431.08,0.1059
+experiment_b,et_one_hot,Lemon,20,7.5437,8.3345,1389.26,0.3412
+experiment_b,et_one_hot,Linseed,332,0.3704,0.4348,62.77,0.0154
+experiment_b,et_one_hot,Maize,1204,1.103,1.5649,2948.34,0.724
+experiment_b,et_one_hot,Mango,50,7.1093,8.3025,3446.56,0.8464
+experiment_b,et_one_hot,Moong(Green Gram),977,0.4134,0.4664,212.55,0.0522
+experiment_b,et_one_hot,Onion,598,2.7163,4.2083,10590.6,2.6008
+experiment_b,et_one_hot,Papaya,69,9.5417,15.499,16575.2,4.0705
+experiment_b,et_one_hot,Pome Granet,8,13.2912,13.3234,1420.1,0.3487
+experiment_b,et_one_hot,Ragi,326,0.6725,1.0059,329.86,0.081
+experiment_b,et_one_hot,Rice,1164,0.7919,1.0086,1184.14,0.2908
+experiment_b,et_one_hot,Sapota,20,10.3153,10.6645,2274.64,0.5586
+experiment_b,et_one_hot,Small millets,332,0.3687,0.4446,65.61,0.0161
+experiment_b,et_one_hot,Soyabean,257,0.4599,0.5811,86.78,0.0213
+experiment_b,et_one_hot,Sugarcane,628,14.1528,19.8138,246544.72,60.5453
+experiment_b,et_one_hot,Sunflower,423,0.4129,0.5231,115.76,0.0284
+experiment_b,et_one_hot,Tobacco,188,1.5911,2.2714,969.96,0.2382
+experiment_b,et_one_hot,Tomato,40,16.1824,17.4114,12126.28,2.9779
+experiment_b,et_one_hot,Turmeric,315,2.0221,3.2345,3295.54,0.8093
+experiment_b,et_one_hot,Urad,868,0.3671,0.4263,157.71,0.0387
+experiment_b,et_one_hot,Gram,550,0.3316,0.4602,116.48,0.0286
+experiment_b,et_one_hot,Potato,494,2.91,4.1135,8359.0,2.0528
+experiment_b,et_one_hot,Safflower,97,0.4139,0.4873,23.03,0.0057
+experiment_b,et_one_hot,Sweet potato,358,1.5588,2.8323,2871.84,0.7053
+experiment_b,et_one_hot,Wheat,595,0.937,1.1752,821.72,0.2018
+experiment_b,et_one_hot,Cabbage,36,18.2656,18.9699,12954.91,3.1814
+experiment_b,et_one_hot,Cashewnut,100,0.4884,0.539,29.05,0.0071
+experiment_b,et_one_hot,Banana,192,6.8201,14.3312,39433.35,9.6839
+experiment_b,et_one_hot,Sesamum,661,0.5,0.5539,202.82,0.0498
+experiment_b,et_one_hot,Tapioca,122,4.2212,5.9978,4388.79,1.0778
+experiment_b,et_one_hot,Rapeseed &Mustard,549,0.3941,0.4977,135.99,0.0334
+experiment_b,et_one_hot,Dry ginger,188,4.2086,9.1567,15762.82,3.871
+experiment_b,et_one_hot,Niger seed,150,0.5783,0.6016,54.3,0.0133
+experiment_b,et_one_hot,Paddy,103,1.1509,1.4647,220.98,0.0543
+experiment_b,et_one_hot,Orange,36,10.1941,10.4384,3922.55,0.9633
+experiment_b,et_one_hot,Black pepper,87,0.8912,1.0061,88.06,0.0216
+experiment_b,et_one_hot,Ginger,74,7.4416,7.6567,4338.22,1.0654
+experiment_b,et_one_hot,Masoor,392,0.295,0.374,54.83,0.0135
+experiment_b,et_one_hot,Pineapple,51,1.3855,2.3623,284.61,0.0699
+experiment_b,et_one_hot,Barley,325,1.2248,1.556,786.82,0.1932
+experiment_b,et_one_hot,Sannhamp,190,0.8487,1.1966,272.06,0.0668
+experiment_b,et_one_hot,Garlic,270,1.1371,1.8803,954.64,0.2344
+experiment_b,et_one_hot,Guar seed,142,0.1369,0.158,3.55,0.0009
+experiment_b,et_one_hot,Cardamom,29,0.8201,0.824,19.69,0.0048
+experiment_b,et_one_hot,Drum Stick,22,0.3778,0.4782,5.03,0.0012
+experiment_b,et_one_hot,Lentil,9,0.1037,0.1045,0.1,0.0
+experiment_b,xgb_native_categorical,Arhar/Tur,614,0.2457,0.3697,83.91,0.0104
+experiment_b,xgb_native_categorical,Bajra,381,0.3781,0.4926,92.45,0.0114
+experiment_b,xgb_native_categorical,Brinjal,46,8.9659,10.414,4988.79,0.6161
+experiment_b,xgb_native_categorical,Castor seed,216,0.2495,0.348,26.17,0.0032
+experiment_b,xgb_native_categorical,Coriander,284,0.1177,0.1584,7.12,0.0009
+experiment_b,xgb_native_categorical,Dry chillies,476,0.5887,1.1501,629.59,0.0778
+experiment_b,xgb_native_categorical,Grapes,6,5.0885,5.4468,178.01,0.022
+experiment_b,xgb_native_categorical,Groundnut,728,0.3375,0.4611,154.77,0.0191
+experiment_b,xgb_native_categorical,Horse-gram,325,0.1174,0.1794,10.46,0.0013
+experiment_b,xgb_native_categorical,Jowar,537,0.3904,0.573,176.3,0.0218
+experiment_b,xgb_native_categorical,Lemon,20,83.175,84.105,141473.16,17.472
+experiment_b,xgb_native_categorical,Linseed,332,0.148,0.2094,14.56,0.0018
+experiment_b,xgb_native_categorical,Maize,1204,0.6944,0.9979,1198.9,0.1481
+experiment_b,xgb_native_categorical,Mango,50,2.9853,5.0957,1298.3,0.1603
+experiment_b,xgb_native_categorical,Moong(Green Gram),977,0.1542,0.2086,42.53,0.0053
+experiment_b,xgb_native_categorical,Onion,598,2.3723,3.7374,8352.82,1.0316
+experiment_b,xgb_native_categorical,Papaya,69,8.4694,17.1328,20253.75,2.5014
+experiment_b,xgb_native_categorical,Pome Granet,8,76.5023,78.0587,48745.34,6.0201
+experiment_b,xgb_native_categorical,Ragi,326,0.316,0.451,66.31,0.0082
+experiment_b,xgb_native_categorical,Rice,1164,0.4341,0.6172,443.34,0.0548
+experiment_b,xgb_native_categorical,Sapota,20,80.4034,81.4596,132713.17,16.3902
+experiment_b,xgb_native_categorical,Small millets,332,0.2205,0.2967,29.23,0.0036
+experiment_b,xgb_native_categorical,Soyabean,257,0.3441,0.4605,54.51,0.0067
+experiment_b,xgb_native_categorical,Sugarcane,628,12.3743,20.6326,267341.11,33.0168
+experiment_b,xgb_native_categorical,Sunflower,423,0.2793,0.4192,74.34,0.0092
+experiment_b,xgb_native_categorical,Tobacco,188,0.4772,0.6554,80.75,0.01
+experiment_b,xgb_native_categorical,Tomato,40,7.4433,8.8943,3164.34,0.3908
+experiment_b,xgb_native_categorical,Turmeric,315,0.9161,1.6574,865.34,0.1069
+experiment_b,xgb_native_categorical,Urad,868,0.1328,0.1834,29.21,0.0036
+experiment_b,xgb_native_categorical,Gram,550,0.2612,0.4018,88.8,0.011
+experiment_b,xgb_native_categorical,Potato,494,2.6665,4.0145,7961.56,0.9833
+experiment_b,xgb_native_categorical,Safflower,97,0.2559,0.4104,16.33,0.002
+experiment_b,xgb_native_categorical,Sweet potato,358,1.7271,3.1784,3616.55,0.4466
+experiment_b,xgb_native_categorical,Wheat,595,0.3615,0.4976,147.34,0.0182
+experiment_b,xgb_native_categorical,Cabbage,36,51.2477,51.7514,96415.44,11.9074
+experiment_b,xgb_native_categorical,Cashewnut,100,0.176,0.2199,4.84,0.0006
+experiment_b,xgb_native_categorical,Banana,192,7.2151,14.7571,41812.27,5.1638
+experiment_b,xgb_native_categorical,Sesamum,661,0.1376,0.1812,21.7,0.0027
+experiment_b,xgb_native_categorical,Tapioca,122,3.8583,5.8309,4147.91,0.5123
+experiment_b,xgb_native_categorical,Rapeseed &Mustard,549,0.2213,0.3126,53.64,0.0066
+experiment_b,xgb_native_categorical,Dry ginger,188,3.4578,8.3887,13229.61,1.6339
+experiment_b,xgb_native_categorical,Niger seed,150,0.0899,0.1328,2.65,0.0003
+experiment_b,xgb_native_categorical,Paddy,103,0.3895,0.5632,32.67,0.004
+experiment_b,xgb_native_categorical,Orange,36,0.7677,1.417,72.29,0.0089
+experiment_b,xgb_native_categorical,Black pepper,87,0.4498,0.7471,48.57,0.006
+experiment_b,xgb_native_categorical,Ginger,74,0.7959,1.7988,239.43,0.0296
+experiment_b,xgb_native_categorical,Masoor,392,0.1963,0.2906,33.1,0.0041
+experiment_b,xgb_native_categorical,Pineapple,51,1.9077,3.4873,620.22,0.0766
+experiment_b,xgb_native_categorical,Barley,325,0.4117,0.561,102.29,0.0126
+experiment_b,xgb_native_categorical,Sannhamp,190,0.7985,1.0564,212.05,0.0262
+experiment_b,xgb_native_categorical,Garlic,270,0.9166,1.5399,640.23,0.0791
+experiment_b,xgb_native_categorical,Guar seed,142,0.3692,0.9187,119.84,0.0148
+experiment_b,xgb_native_categorical,Cardamom,29,0.0815,0.0974,0.28,0.0
+experiment_b,xgb_native_categorical,Drum Stick,22,0.4958,0.5553,6.78,0.0008
+experiment_b,xgb_native_categorical,Lentil,9,28.2154,28.8226,7476.7,0.9234
+experiment_b,rf_target_encoded,Arhar/Tur,614,0.244,0.3479,74.32,0.0145
+experiment_b,rf_target_encoded,Bajra,381,0.4379,0.5581,118.67,0.0232
+experiment_b,rf_target_encoded,Brinjal,46,6.1563,6.8025,2128.62,0.4158
+experiment_b,rf_target_encoded,Castor seed,216,0.1943,0.2879,17.9,0.0035
+experiment_b,rf_target_encoded,Coriander,284,0.0965,0.1516,6.53,0.0013
+experiment_b,rf_target_encoded,Dry chillies,476,0.6779,1.2121,699.33,0.1366
+experiment_b,rf_target_encoded,Grapes,6,6.4192,7.9437,378.62,0.074
+experiment_b,rf_target_encoded,Groundnut,728,0.3888,0.5488,219.28,0.0428
+experiment_b,rf_target_encoded,Horse-gram,325,0.1529,0.2246,16.4,0.0032
+experiment_b,rf_target_encoded,Jowar,537,0.4518,0.657,231.79,0.0453
+experiment_b,rf_target_encoded,Lemon,20,4.1121,5.5114,607.5,0.1187
+experiment_b,rf_target_encoded,Linseed,332,0.1391,0.2121,14.94,0.0029
+experiment_b,rf_target_encoded,Maize,1204,0.8643,1.2434,1861.47,0.3637
+experiment_b,rf_target_encoded,Mango,50,4.2462,5.641,1591.04,0.3108
+experiment_b,rf_target_encoded,Moong(Green Gram),977,0.1533,0.2122,44.01,0.0086
+experiment_b,rf_target_encoded,Onion,598,2.8147,4.3816,11480.45,2.2428
+experiment_b,rf_target_encoded,Papaya,69,23.1298,40.1936,111471.48,21.7771
+experiment_b,rf_target_encoded,Pome Granet,8,9.1302,9.1839,674.75,0.1318
+experiment_b,rf_target_encoded,Ragi,326,0.3341,0.4597,68.9,0.0135
+experiment_b,rf_target_encoded,Rice,1164,0.4943,0.6829,542.76,0.106
+experiment_b,rf_target_encoded,Sapota,20,6.7435,7.2699,1057.04,0.2065
+experiment_b,rf_target_encoded,Small millets,332,0.1923,0.2935,28.61,0.0056
+experiment_b,rf_target_encoded,Soyabean,257,0.438,0.6092,95.37,0.0186
+experiment_b,rf_target_encoded,Sugarcane,628,12.6963,19.8525,247507.56,48.3531
+experiment_b,rf_target_encoded,Sunflower,423,0.3021,0.4619,90.24,0.0176
+experiment_b,rf_target_encoded,Tobacco,188,1.414,2.1286,851.8,0.1664
+experiment_b,rf_target_encoded,Tomato,40,5.9878,7.5279,2266.79,0.4428
+experiment_b,rf_target_encoded,Turmeric,315,0.824,1.6953,905.3,0.1769
+experiment_b,rf_target_encoded,Urad,868,0.1436,0.1996,34.57,0.0068
+experiment_b,rf_target_encoded,Gram,550,0.2723,0.416,95.18,0.0186
+experiment_b,rf_target_encoded,Potato,494,3.0052,4.193,8685.07,1.6967
+experiment_b,rf_target_encoded,Safflower,97,0.2487,0.4125,16.51,0.0032
+experiment_b,rf_target_encoded,Sweet potato,358,2.5248,3.3087,3919.1,0.7656
+experiment_b,rf_target_encoded,Wheat,595,0.3998,0.5312,167.91,0.0328
+experiment_b,rf_target_encoded,Cabbage,36,37.3133,38.5832,53591.91,10.4697
+experiment_b,rf_target_encoded,Cashewnut,100,0.186,0.2243,5.03,0.001
+experiment_b,rf_target_encoded,Banana,192,7.0704,14.2377,38920.9,7.6036
+experiment_b,rf_target_encoded,Sesamum,661,0.1014,0.1498,14.82,0.0029
+experiment_b,rf_target_encoded,Tapioca,122,4.6064,6.219,4718.4,0.9218
+experiment_b,rf_target_encoded,Rapeseed &Mustard,549,0.2117,0.3194,56.0,0.0109
+experiment_b,rf_target_encoded,Dry ginger,188,3.6544,8.6796,14163.22,2.7669
+experiment_b,rf_target_encoded,Niger seed,150,0.083,0.1176,2.07,0.0004
+experiment_b,rf_target_encoded,Paddy,103,0.4222,0.6221,39.86,0.0078
+experiment_b,rf_target_encoded,Orange,36,3.344,3.8596,536.27,0.1048
+experiment_b,rf_target_encoded,Black pepper,87,0.6328,0.8802,67.41,0.0132
+experiment_b,rf_target_encoded,Ginger,74,0.9855,1.5013,166.79,0.0326
+experiment_b,rf_target_encoded,Masoor,392,0.2175,0.305,36.46,0.0071
+experiment_b,rf_target_encoded,Pineapple,51,1.842,2.6703,363.65,0.071
+experiment_b,rf_target_encoded,Barley,325,0.4404,0.6187,124.4,0.0243
+experiment_b,rf_target_encoded,Sannhamp,190,0.5762,0.8281,130.3,0.0255
+experiment_b,rf_target_encoded,Garlic,270,0.8491,1.5373,638.06,0.1247
+experiment_b,rf_target_encoded,Guar seed,142,0.195,0.444,28.0,0.0055
+experiment_b,rf_target_encoded,Cardamom,29,0.0418,0.0672,0.13,0.0
+experiment_b,rf_target_encoded,Drum Stick,22,0.5988,0.7607,12.73,0.0025
+experiment_b,rf_target_encoded,Lentil,9,5.6401,5.6632,288.64,0.0564

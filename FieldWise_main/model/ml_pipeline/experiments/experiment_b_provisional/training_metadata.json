@@ -1,0 +1,44 @@
+{
+  "experiment_name": "experiment_b_provisional",
+  "timestamp": "2026-11-17T10:38:53.119190",
+  "python_version": "3.13.5",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "library_versions": {
+    "sklearn": "1.8.0",
+    "xgboost": "3.2.0",
+    "pandas": "2.3.3",
+    "numpy": "2.4.1",
+    "joblib": "1.5.2"
+  },
+  "random_seed": 42,
+  "training_times_seconds": {
+    "historical_district_mean": 0.024,
+    "historical_state_mean": 0.012,
+    "random_forest": 3.264,
+    "extra_trees": 1.224,
+    "hist_gradient_boosting": 1.22,
+    "xgboost": 0.5
+  },
+  "models_serialized": [
+    "historical_district_mean.joblib",
+    "historical_state_mean.joblib",
+    "random_forest.joblib",
+    "extra_trees.joblib",
+    "hist_gradient_boosting.joblib",
+    "xgboost.joblib"
+  ],
+  "features": {
+    "categorical": [
+      "State",
+      "District",
+      "Season",
+      "Crop"
+    ],
+    "numerical": [
+      "Crop_Year",
+      "district_normal_annual_rainfall_mm",
+      "district_normal_monsoon_rainfall_mm"
+    ],
+    "target": "Yield_Tonnes_Per_Ha"
+  }
+}

@@ -1,0 +1,1674 @@
+{
+  "metadata": {
+    "pipeline_stage": "Phase 3A.6: Training Eligibility and Split Reconciliation",
+    "timestamp": "2026-11-17T10:24:12.640499",
+    "overall_status": "ALL_ASSERTIONS_PASSED",
+    "scientific_validation_disclaimer": "IMPORTANT: Passing automated assertion checks confirms relational schema conformance, unit segregation, dynamic set equality, numerical row-by-row derivation fidelity, and crop-specific screening thresholds. It does NOT constitute empirical scientific validation of field predictive capability. Benchmark cross-validation metrics apply strictly to the 22-class augmented dataset, and historical yield data reflects government district-level aggregates with inherent unmeasured spatial, microclimatic, and farm-management variability."
+  },
+  "crop_recommendation_benchmark_validation": {
+    "dataset": "cleaned_crop_recommendation_benchmark.csv",
+    "status": "PASSED",
+    "rows": 2200,
+    "columns": 10,
+    "crops_count": 22,
+    "balanced_benchmark_flag": true,
+    "overlapping_crops_with_fieldwise": [
+      "banana",
+      "chickpea",
+      "cotton",
+      "lentil",
+      "maize",
+      "mango",
+      "rice"
+    ],
+    "missing_fieldwise_crops_count": 12,
+    "missing_fieldwise_crops": [
+      "barley",
+      "groundnut",
+      "jowar",
+      "millets",
+      "mustard",
+      "onion",
+      "potato",
+      "soybean",
+      "sugarcane",
+      "sunflower",
+      "tomato",
+      "wheat"
+    ],
+    "validation_protocol_note": "Benchmark cross-validation accuracy (~99%) applies exclusively to this 22-class augmented dataset and must not be conflated with empirical real-world farm accuracy."
+  },
+  "crop_yield_regression_validation": {
+    "dataset": "cleaned_crop_yield.csv",
+    "status": "PASSED",
+    "raw_universe_rows": 246091,
+    "final_cleaned_rows": 227573,
+    "target_unit": "Metric Tonnes per Hectare",
+    "unique_crops_total": 97,
+    "verified_documented_crops_count": 60,
+    "unmapped_crops_count": 37,
+    "crop_threshold_consistency_audit": {
+      "total_verified_records": 210503,
+      "total_records_le_threshold_T": 210435,
+      "total_records_between_T_and_2T": 68,
+      "crops_count_between_T_and_2T": 21,
+      "total_records_above_2T": 0,
+      "retained_high_observations_details": {
+        "Arhar/Tur": {
+          "count": 3,
+          "screening_threshold_T": 4.5,
+          "max_observed_yield": 8.0,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Bajra": {
+          "count": 2,
+          "screening_threshold_T": 7.0,
+          "max_observed_yield": 13.946,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Barley": {
+          "count": 3,
+          "screening_threshold_T": 8.0,
+          "max_observed_yield": 10.0,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Cashewnut": {
+          "count": 1,
+          "screening_threshold_T": 4.0,
+          "max_observed_yield": 7.0,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Coriander": {
+          "count": 4,
+          "screening_threshold_T": 4.0,
+          "max_observed_yield": 7.059,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Dry chillies": {
+          "count": 10,
+          "screening_threshold_T": 12.0,
+          "max_observed_yield": 16.667,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Groundnut": {
+          "count": 1,
+          "screening_threshold_T": 8.0,
+          "max_observed_yield": 14.925,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Guar seed": {
+          "count": 2,
+          "screening_threshold_T": 15.0,
+          "max_observed_yield": 15.28,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Jowar": {
+          "count": 2,
+          "screening_threshold_T": 8.0,
+          "max_observed_yield": 14.569,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Maize": {
+          "count": 2,
+          "screening_threshold_T": 16.0,
+          "max_observed_yield": 25.677,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Niger seed": {
+          "count": 3,
+          "screening_threshold_T": 3.0,
+          "max_observed_yield": 5.438,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Onion": {
+          "count": 5,
+          "screening_threshold_T": 55.0,
+          "max_observed_yield": 74.043,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Potato": {
+          "count": 3,
+          "screening_threshold_T": 60.0,
+          "max_observed_yield": 100.0,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Rapeseed &Mustard": {
+          "count": 5,
+          "screening_threshold_T": 5.5,
+          "max_observed_yield": 8.542,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Rice": {
+          "count": 3,
+          "screening_threshold_T": 15.0,
+          "max_observed_yield": 15.19,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Sannhamp": {
+          "count": 1,
+          "screening_threshold_T": 10.0,
+          "max_observed_yield": 14.0,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Small millets": {
+          "count": 5,
+          "screening_threshold_T": 6.0,
+          "max_observed_yield": 10.198,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Soyabean": {
+          "count": 5,
+          "screening_threshold_T": 6.0,
+          "max_observed_yield": 11.444,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Sunflower": {
+          "count": 1,
+          "screening_threshold_T": 5.0,
+          "max_observed_yield": 10.0,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Turmeric": {
+          "count": 3,
+          "screening_threshold_T": 20.0,
+          "max_observed_yield": 25.0,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        },
+        "Urad": {
+          "count": 4,
+          "screening_threshold_T": 3.5,
+          "max_observed_yield": 6.0,
+          "notes": "Retained in cleaned dataset as high observation; flagged for manual agronomic review (NOT deleted)"
+        }
+      },
+      "handling_explanation": "Records with T < yield <= 2T are retained in cleaned_crop_yield.csv as high observations / flagged for manual review to avoid artificial distribution truncation. Only extreme outliers > 2T were dropped."
+    },
+    "multidimensional_training_eligibility": [
+      {
+        "prov_status": "provisional",
+        "crop_identity": "individual_crop",
+        "yield_rev": "<= T",
+        "rain_status": "matched",
+        "record_count": 34895,
+        "distinct_crops": 30
+      },
+      {
+        "prov_status": "provisional",
+        "crop_identity": "individual_crop",
+        "yield_rev": "<= T",
+        "rain_status": "unmatched",
+        "record_count": 11212,
+        "distinct_crops": 29
+      },
+      {
+        "prov_status": "provisional",
+        "crop_identity": "individual_crop",
+        "yield_rev": "T < yield <= 2T",
+        "rain_status": "matched",
+        "record_count": 15,
+        "distinct_crops": 6
+      },
+      {
+        "prov_status": "provisional",
+        "crop_identity": "individual_crop",
+        "yield_rev": "T < yield <= 2T",
+        "rain_status": "unmatched",
+        "record_count": 14,
+        "distinct_crops": 6
+      },
+      {
+        "prov_status": "unmapped",
+        "crop_identity": "ambiguous_product_basis",
+        "yield_rev": "unmapped_retained",
+        "rain_status": "matched",
+        "record_count": 23,
+        "distinct_crops": 2
+      },
+      {
+        "prov_status": "unmapped",
+        "crop_identity": "ambiguous_product_basis",
+        "yield_rev": "unmapped_retained",
+        "rain_status": "unmatched",
+        "record_count": 8,
+        "distinct_crops": 2
+      },
+      {
+        "prov_status": "unmapped",
+        "crop_identity": "composite_residual_category",
+        "yield_rev": "unmapped_retained",
+        "rain_status": "matched",
+        "record_count": 9955,
+        "distinct_crops": 12
+      },
+      {
+        "prov_status": "unmapped",
+        "crop_identity": "composite_residual_category",
+        "yield_rev": "unmapped_retained",
+        "rain_status": "unmatched",
+        "record_count": 2968,
+        "distinct_crops": 12
+      },
+      {
+        "prov_status": "unmapped",
+        "crop_identity": "individual_crop_minor",
+        "yield_rev": "unmapped_retained",
+        "rain_status": "matched",
+        "record_count": 2465,
+        "distinct_crops": 20
+      },
+      {
+        "prov_status": "unmapped",
+        "crop_identity": "individual_crop_minor",
+        "yield_rev": "unmapped_retained",
+        "rain_status": "unmatched",
+        "record_count": 786,
+        "distinct_crops": 16
+      },
+      {
+        "prov_status": "unmapped",
+        "crop_identity": "macro_aggregate_total",
+        "yield_rev": "unmapped_retained",
+        "rain_status": "matched",
+        "record_count": 611,
+        "distinct_crops": 3
+      },
+      {
+        "prov_status": "unmapped",
+        "crop_identity": "macro_aggregate_total",
+        "yield_rev": "unmapped_retained",
+        "rain_status": "unmatched",
+        "record_count": 254,
+        "distinct_crops": 3
+      },
+      {
+        "prov_status": "verified",
+        "crop_identity": "individual_crop",
+        "yield_rev": "<= T",
+        "rain_status": "matched",
+        "record_count": 126375,
+        "distinct_crops": 30
+      },
+      {
+        "prov_status": "verified",
+        "crop_identity": "individual_crop",
+        "yield_rev": "<= T",
+        "rain_status": "unmatched",
+        "record_count": 37953,
+        "distinct_crops": 30
+      },
+      {
+        "prov_status": "verified",
+        "crop_identity": "individual_crop",
+        "yield_rev": "T < yield <= 2T",
+        "rain_status": "matched",
+        "record_count": 24,
+        "distinct_crops": 12
+      },
+      {
+        "prov_status": "verified",
+        "crop_identity": "individual_crop",
+        "yield_rev": "T < yield <= 2T",
+        "rain_status": "unmatched",
+        "record_count": 15,
+        "distinct_crops": 7
+      }
+    ],
+    "eligibility_summary": {
+      "conditional_high_yield": {
+        "record_count": 39,
+        "distinct_crops": 18,
+        "share_pct": 0.02
+      },
+      "conditional_other": {
+        "record_count": 3280,
+        "distinct_crops": 33,
+        "share_pct": 1.44
+      },
+      "conditional_unmatched_rainfall": {
+        "record_count": 49165,
+        "distinct_crops": 59,
+        "share_pct": 21.6
+      },
+      "eligible_prime": {
+        "record_count": 126375,
+        "distinct_crops": 30,
+        "share_pct": 55.53
+      },
+      "eligible_provisional": {
+        "record_count": 34895,
+        "distinct_crops": 30,
+        "share_pct": 15.33
+      },
+      "excluded": {
+        "record_count": 13819,
+        "distinct_crops": 17,
+        "share_pct": 6.07
+      }
+    },
+    "chronological_splits_total": {
+      "training_1997_2011": {
+        "record_count": 191270,
+        "distinct_states": 33,
+        "distinct_districts": 631,
+        "distinct_crops": 87,
+        "share_pct": 84.05
+      },
+      "validation_2012_2013": {
+        "record_count": 25398,
+        "distinct_states": 26,
+        "distinct_districts": 552,
+        "distinct_crops": 73,
+        "share_pct": 11.16
+      },
+      "test_2014_2015_sealed": {
+        "record_count": 10905,
+        "distinct_states": 22,
+        "distinct_districts": 426,
+        "distinct_crops": 70,
+        "share_pct": 4.79
+      },
+      "exact_sum_assertion": "PASSED"
+    },
+    "chronological_splits_eligible": {
+      "eligible_total_records": 161270,
+      "training_1997_2011": 137164,
+      "validation_2012_2013": 17254,
+      "test_2014_2015_sealed": 6852,
+      "exact_sum_assertion": "PASSED"
+    },
+    "chronological_splits_excluded": {
+      "excluded_total_records": 13819,
+      "training_1997_2011": 11877,
+      "validation_2012_2013": 1280,
+      "test_2014_2015_sealed": 662,
+      "exact_sum_assertion": "PASSED"
+    },
+    "verified_crops_threshold_audit": {
+      "Arhar/Tur": {
+        "records_count": 7457,
+        "screening_threshold_t_ha": 4.5,
+        "extreme_plausibility_limit_t_ha": 9.0,
+        "records_le_screening_threshold": 7454,
+        "records_between_T_and_2T": 3,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 8.0,
+        "median_observed_yield_t_ha": 0.732,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "air_dry_clean_pulse_seed_10_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean dry pigeonpea seed at 10-12% moisture.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Bajra": {
+        "records_count": 5360,
+        "screening_threshold_t_ha": 7.0,
+        "extreme_plausibility_limit_t_ha": 14.0,
+        "records_le_screening_threshold": 5358,
+        "records_between_T_and_2T": 2,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 13.946,
+        "median_observed_yield_t_ha": 1.035,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "air_dry_pearl_millet_grain_12_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean pearl millet grain at 12% moisture.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Banana": {
+        "records_count": 3104,
+        "screening_threshold_t_ha": 140.0,
+        "extreme_plausibility_limit_t_ha": 280.0,
+        "records_le_screening_threshold": 3104,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 138.421,
+        "median_observed_yield_t_ha": 22.0,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "fresh_fruit_bunch_75_pct_moisture",
+        "moisture_or_harvest_form_notes": "Whole fresh fruit bunches. Edible pulp-to-peel ratio ~2:1.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Barley": {
+        "records_count": 4078,
+        "screening_threshold_t_ha": 8.0,
+        "extreme_plausibility_limit_t_ha": 16.0,
+        "records_le_screening_threshold": 4075,
+        "records_between_T_and_2T": 3,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 10.0,
+        "median_observed_yield_t_ha": 1.68,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "air_dry_clean_grain_12_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean threshed barley grain at 12% moisture.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Bhindi": {
+        "records_count": 117,
+        "screening_threshold_t_ha": 25.0,
+        "extreme_plausibility_limit_t_ha": 50.0,
+        "records_le_screening_threshold": 117,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 19.452,
+        "median_observed_yield_t_ha": 7.0,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "fresh_tender_pod_89_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh tender edible pods (~88-90% moisture).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Black pepper": {
+        "records_count": 903,
+        "screening_threshold_t_ha": 10.0,
+        "extreme_plausibility_limit_t_ha": 20.0,
+        "records_le_screening_threshold": 903,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 9.989,
+        "median_observed_yield_t_ha": 0.624,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "sun_dried_black_peppercorn_11_pct_moisture",
+        "moisture_or_harvest_form_notes": "Sun-dried black peppercorns (~11% moisture). Green-to-dry ratio ~3:1.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Brinjal": {
+        "records_count": 267,
+        "screening_threshold_t_ha": 35.0,
+        "extreme_plausibility_limit_t_ha": 70.0,
+        "records_le_screening_threshold": 267,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 29.983,
+        "median_observed_yield_t_ha": 9.092,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "fresh_fruit_92_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh tender marketable eggplant fruit (~92% water).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Cabbage": {
+        "records_count": 97,
+        "screening_threshold_t_ha": 70.0,
+        "extreme_plausibility_limit_t_ha": 140.0,
+        "records_le_screening_threshold": 97,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 67.212,
+        "median_observed_yield_t_ha": 18.772,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "fresh_compact_head_92_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh trimmed marketable heads containing ~90-93% moisture.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Cardamom": {
+        "records_count": 341,
+        "screening_threshold_t_ha": 3.0,
+        "extreme_plausibility_limit_t_ha": 6.0,
+        "records_le_screening_threshold": 341,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 2.873,
+        "median_observed_yield_t_ha": 0.085,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "cured_dry_capsule_10_pct_moisture",
+        "moisture_or_harvest_form_notes": "Commercial cured green cardamom capsules at 10-12% moisture. Fresh green capsule weight is ~5x dry capsule.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Cashewnut": {
+        "records_count": 1064,
+        "screening_threshold_t_ha": 4.0,
+        "extreme_plausibility_limit_t_ha": 8.0,
+        "records_le_screening_threshold": 1063,
+        "records_between_T_and_2T": 1,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 7.0,
+        "median_observed_yield_t_ha": 0.397,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "raw_unshelled_nut_in_shell_8_pct_moisture",
+        "moisture_or_harvest_form_notes": "Raw unshelled cashew nuts with pericarp (~8% moisture). Kernel recovery ~25-28%.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Cashewnut Raw": {
+        "records_count": 35,
+        "screening_threshold_t_ha": 4.0,
+        "extreme_plausibility_limit_t_ha": 8.0,
+        "records_le_screening_threshold": 35,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 1.026,
+        "median_observed_yield_t_ha": 0.467,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "raw_unshelled_nut_in_shell_8_pct_moisture",
+        "moisture_or_harvest_form_notes": "Raw unshelled cashew nuts (alias of Cashewnut in DAC&FW records).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Castor seed": {
+        "records_count": 3257,
+        "screening_threshold_t_ha": 8.0,
+        "extreme_plausibility_limit_t_ha": 16.0,
+        "records_le_screening_threshold": 3257,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 7.5,
+        "median_observed_yield_t_ha": 0.5,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "dry_clean_seed_6_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean dehulled castor seed (~6% moisture).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Coffee": {
+        "records_count": 6,
+        "screening_threshold_t_ha": 4.0,
+        "extreme_plausibility_limit_t_ha": 8.0,
+        "records_le_screening_threshold": 6,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 0.802,
+        "median_observed_yield_t_ha": 0.74,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "cured_clean_green_coffee_bean_11_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean cured green coffee beans (Arabica/Robusta) at 10-11% moisture. Fresh cherry is ~5-6x bean weight.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Coriander": {
+        "records_count": 3313,
+        "screening_threshold_t_ha": 4.0,
+        "extreme_plausibility_limit_t_ha": 8.0,
+        "records_le_screening_threshold": 3309,
+        "records_between_T_and_2T": 4,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 7.059,
+        "median_observed_yield_t_ha": 0.48,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "dry_clean_seed_9_pct_moisture",
+        "moisture_or_harvest_form_notes": "Dry clean coriander seeds (schizocarps) at 9-10% moisture.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Drum Stick": {
+        "records_count": 58,
+        "screening_threshold_t_ha": 10.0,
+        "extreme_plausibility_limit_t_ha": 20.0,
+        "records_le_screening_threshold": 58,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 2.052,
+        "median_observed_yield_t_ha": 0.964,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "fresh_tender_pod_87_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh green moringa pods (~85-88% moisture).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Dry chillies": {
+        "records_count": 6399,
+        "screening_threshold_t_ha": 12.0,
+        "extreme_plausibility_limit_t_ha": 24.0,
+        "records_le_screening_threshold": 6389,
+        "records_between_T_and_2T": 10,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 16.667,
+        "median_observed_yield_t_ha": 0.92,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "sun_dried_cured_red_pod_10_pct_moisture",
+        "moisture_or_harvest_form_notes": "Sun-dried cured ripe chillies (~10% moisture). Caution: fresh green chilli yield is ~3.5-4x dry yield.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Dry ginger": {
+        "records_count": 2987,
+        "screening_threshold_t_ha": 40.0,
+        "extreme_plausibility_limit_t_ha": 80.0,
+        "records_le_screening_threshold": 2987,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 39.065,
+        "median_observed_yield_t_ha": 2.492,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "sun_dried_cured_rhizome_10_pct_moisture",
+        "moisture_or_harvest_form_notes": "Sun-dried cured rhizomes (~10-12% moisture). Fresh-to-dry conversion ratio ~4.5:1.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Garlic": {
+        "records_count": 3215,
+        "screening_threshold_t_ha": 25.0,
+        "extreme_plausibility_limit_t_ha": 50.0,
+        "records_le_screening_threshold": 3215,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 23.636,
+        "median_observed_yield_t_ha": 2.889,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "cured_dry_bulb_65_pct_moisture",
+        "moisture_or_harvest_form_notes": "Cured dry bulbs with papery scales (~62-66% moisture).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Ginger": {
+        "records_count": 241,
+        "screening_threshold_t_ha": 25.0,
+        "extreme_plausibility_limit_t_ha": 50.0,
+        "records_le_screening_threshold": 241,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 20.0,
+        "median_observed_yield_t_ha": 8.692,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "fresh_green_rhizome_80_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh green unpeeled rhizomes (~78-82% water content).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Gram": {
+        "records_count": 7185,
+        "screening_threshold_t_ha": 5.0,
+        "extreme_plausibility_limit_t_ha": 10.0,
+        "records_le_screening_threshold": 7185,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 4.808,
+        "median_observed_yield_t_ha": 0.806,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "air_dry_clean_pulse_seed_10_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean threshed chickpea seed at 10-12% moisture content.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Grapes": {
+        "records_count": 110,
+        "screening_threshold_t_ha": 45.0,
+        "extreme_plausibility_limit_t_ha": 90.0,
+        "records_le_screening_threshold": 110,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 42.928,
+        "median_observed_yield_t_ha": 23.948,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "fresh_table_grape_80_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh marketable table/wine grape clusters (~78-82% water).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Groundnut": {
+        "records_count": 8730,
+        "screening_threshold_t_ha": 8.0,
+        "extreme_plausibility_limit_t_ha": 16.0,
+        "records_le_screening_threshold": 8729,
+        "records_between_T_and_2T": 1,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 14.925,
+        "median_observed_yield_t_ha": 1.046,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "dry_pod_in_shell_7_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean sun-dried pods in shell (~7-8% moisture). Shelling turnover ~70%.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Guar seed": {
+        "records_count": 1244,
+        "screening_threshold_t_ha": 15.0,
+        "extreme_plausibility_limit_t_ha": 30.0,
+        "records_le_screening_threshold": 1242,
+        "records_between_T_and_2T": 2,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 15.28,
+        "median_observed_yield_t_ha": 0.818,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "dry_clean_seed_10_pct_moisture",
+        "moisture_or_harvest_form_notes": "Air-dry clean cluster bean seed (~10% moisture). Pod yield is ~4x seed yield.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Horse-gram": {
+        "records_count": 3812,
+        "screening_threshold_t_ha": 4.0,
+        "extreme_plausibility_limit_t_ha": 8.0,
+        "records_le_screening_threshold": 3812,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 3.103,
+        "median_observed_yield_t_ha": 0.4,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "air_dry_clean_pulse_seed_10_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean dry kulthi pulse seed at 10% moisture.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Jowar": {
+        "records_count": 6960,
+        "screening_threshold_t_ha": 8.0,
+        "extreme_plausibility_limit_t_ha": 16.0,
+        "records_le_screening_threshold": 6958,
+        "records_between_T_and_2T": 2,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 14.569,
+        "median_observed_yield_t_ha": 0.968,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "air_dry_sorghum_grain_12_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean grain sorghum at 12% moisture content.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Lemon": {
+        "records_count": 39,
+        "screening_threshold_t_ha": 20.0,
+        "extreme_plausibility_limit_t_ha": 40.0,
+        "records_le_screening_threshold": 39,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 18.576,
+        "median_observed_yield_t_ha": 7.357,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "fresh_citrus_fruit_89_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh acid lime/lemon fruit (~88-90% water).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Lentil": {
+        "records_count": 31,
+        "screening_threshold_t_ha": 4.0,
+        "extreme_plausibility_limit_t_ha": 8.0,
+        "records_le_screening_threshold": 31,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 0.848,
+        "median_observed_yield_t_ha": 0.81,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "air_dry_clean_pulse_seed_10_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean dry lentil seed at 10-12% moisture.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Linseed": {
+        "records_count": 4339,
+        "screening_threshold_t_ha": 5.5,
+        "extreme_plausibility_limit_t_ha": 11.0,
+        "records_le_screening_threshold": 4339,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 5.091,
+        "median_observed_yield_t_ha": 0.462,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "dry_clean_seed_7_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean flaxseed/linseed at 7% moisture.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Maize": {
+        "records_count": 13715,
+        "screening_threshold_t_ha": 16.0,
+        "extreme_plausibility_limit_t_ha": 32.0,
+        "records_le_screening_threshold": 13713,
+        "records_between_T_and_2T": 2,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 25.677,
+        "median_observed_yield_t_ha": 1.8,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "air_dry_shelled_grain_14_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean shelled dry grain normalized to 14% moisture content.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Mango": {
+        "records_count": 335,
+        "screening_threshold_t_ha": 25.0,
+        "extreme_plausibility_limit_t_ha": 50.0,
+        "records_le_screening_threshold": 335,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 23.219,
+        "median_observed_yield_t_ha": 4.783,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "fresh_fruit_83_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh mature harvest fruit (~80-84% moisture).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Masoor": {
+        "records_count": 4124,
+        "screening_threshold_t_ha": 4.0,
+        "extreme_plausibility_limit_t_ha": 8.0,
+        "records_le_screening_threshold": 4124,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 3.571,
+        "median_observed_yield_t_ha": 0.683,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "air_dry_clean_pulse_seed_10_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean dry red lentil seed at 10-12% moisture (botanically identical to Lentil).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Moong(Green Gram)": {
+        "records_count": 10031,
+        "screening_threshold_t_ha": 3.5,
+        "extreme_plausibility_limit_t_ha": 7.0,
+        "records_le_screening_threshold": 10031,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 2.5,
+        "median_observed_yield_t_ha": 0.423,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "air_dry_clean_pulse_seed_10_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean dry mungbean seed at 10-12% moisture.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Niger seed": {
+        "records_count": 2000,
+        "screening_threshold_t_ha": 3.0,
+        "extreme_plausibility_limit_t_ha": 6.0,
+        "records_le_screening_threshold": 1997,
+        "records_between_T_and_2T": 3,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 5.438,
+        "median_observed_yield_t_ha": 0.289,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "dry_clean_seed_7_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean dry niger seed at 7-8% moisture.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Onion": {
+        "records_count": 6976,
+        "screening_threshold_t_ha": 55.0,
+        "extreme_plausibility_limit_t_ha": 110.0,
+        "records_le_screening_threshold": 6971,
+        "records_between_T_and_2T": 5,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 74.043,
+        "median_observed_yield_t_ha": 10.299,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "cured_dry_bulb_85_pct_moisture",
+        "moisture_or_harvest_form_notes": "Field-cured dry bulbs with tops trimmed (~84-86% moisture).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Orange": {
+        "records_count": 237,
+        "screening_threshold_t_ha": 25.0,
+        "extreme_plausibility_limit_t_ha": 50.0,
+        "records_le_screening_threshold": 237,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 20.109,
+        "median_observed_yield_t_ha": 9.97,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "fresh_citrus_fruit_87_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh whole fruit (~86-88% water).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Paddy": {
+        "records_count": 479,
+        "screening_threshold_t_ha": 15.0,
+        "extreme_plausibility_limit_t_ha": 30.0,
+        "records_le_screening_threshold": 479,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 5.32,
+        "median_observed_yield_t_ha": 1.719,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "unmilled_rough_grain_with_husk_13_pct_moisture",
+        "moisture_or_harvest_form_notes": "Rough paddy grain with husk (~13% moisture). Hull-to-rice ratio ~66%.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Papaya": {
+        "records_count": 412,
+        "screening_threshold_t_ha": 140.0,
+        "extreme_plausibility_limit_t_ha": 280.0,
+        "records_le_screening_threshold": 412,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 134.143,
+        "median_observed_yield_t_ha": 17.872,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "fresh_fruit_88_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh commercial whole fruit at table-ripe maturity.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Pineapple": {
+        "records_count": 247,
+        "screening_threshold_t_ha": 35.0,
+        "extreme_plausibility_limit_t_ha": 70.0,
+        "records_le_screening_threshold": 247,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 32.099,
+        "median_observed_yield_t_ha": 14.647,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "fresh_fruit_86_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh mature fruit with crown (~85-87% moisture).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Pome Granet": {
+        "records_count": 21,
+        "screening_threshold_t_ha": 20.0,
+        "extreme_plausibility_limit_t_ha": 40.0,
+        "records_le_screening_threshold": 21,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 16.36,
+        "median_observed_yield_t_ha": 13.4,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "fresh_fruit_78_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh whole pomegranate fruit (~76-80% moisture).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Potato": {
+        "records_count": 6909,
+        "screening_threshold_t_ha": 60.0,
+        "extreme_plausibility_limit_t_ha": 120.0,
+        "records_le_screening_threshold": 6906,
+        "records_between_T_and_2T": 3,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 100.0,
+        "median_observed_yield_t_ha": 10.841,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "fresh_unpeeled_tuber_78_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh marketable ware tubers (~78% water, ~20-22% dry matter).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Ragi": {
+        "records_count": 4112,
+        "screening_threshold_t_ha": 10.0,
+        "extreme_plausibility_limit_t_ha": 20.0,
+        "records_le_screening_threshold": 4112,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 9.75,
+        "median_observed_yield_t_ha": 1.068,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "air_dry_finger_millet_grain_12_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean finger millet grain at 12% standard moisture content.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Rapeseed &Mustard": {
+        "records_count": 7509,
+        "screening_threshold_t_ha": 5.5,
+        "extreme_plausibility_limit_t_ha": 11.0,
+        "records_le_screening_threshold": 7504,
+        "records_between_T_and_2T": 5,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 8.542,
+        "median_observed_yield_t_ha": 0.717,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "dry_clean_seed_6_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean dry oilseed (Brassica juncea / campestris) at 6-8% moisture.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Rice": {
+        "records_count": 15075,
+        "screening_threshold_t_ha": 15.0,
+        "extreme_plausibility_limit_t_ha": 30.0,
+        "records_le_screening_threshold": 15072,
+        "records_between_T_and_2T": 3,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 15.19,
+        "median_observed_yield_t_ha": 1.939,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "milled_or_clean_grain_12_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean dry grain at 12-14% moisture (DAC&FW state reported series).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Rubber": {
+        "records_count": 29,
+        "screening_threshold_t_ha": 4.0,
+        "extreme_plausibility_limit_t_ha": 8.0,
+        "records_le_screening_threshold": 29,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 1.488,
+        "median_observed_yield_t_ha": 1.187,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "dry_rubber_content_drc",
+        "moisture_or_harvest_form_notes": "Commercial Dry Rubber Content (DRC) coagulated sheet/crepe (~1-2% moisture). Raw latex is ~30-35% DRC.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Safflower": {
+        "records_count": 1296,
+        "screening_threshold_t_ha": 4.0,
+        "extreme_plausibility_limit_t_ha": 8.0,
+        "records_le_screening_threshold": 1296,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 2.8,
+        "median_observed_yield_t_ha": 0.5,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "dry_clean_seed_6_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean dry spiny/non-spiny safflower seed at 6-7% moisture.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Sannhamp": {
+        "records_count": 2139,
+        "screening_threshold_t_ha": 10.0,
+        "extreme_plausibility_limit_t_ha": 20.0,
+        "records_le_screening_threshold": 2138,
+        "records_between_T_and_2T": 1,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 14.0,
+        "median_observed_yield_t_ha": 0.5,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "air_dry_retted_fiber_12_pct_moisture",
+        "moisture_or_harvest_form_notes": "Air-dry extracted bast fiber (~12% moisture). Total dry stem biomass is ~4x fiber yield.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Sapota": {
+        "records_count": 39,
+        "screening_threshold_t_ha": 20.0,
+        "extreme_plausibility_limit_t_ha": 40.0,
+        "records_le_screening_threshold": 39,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 19.884,
+        "median_observed_yield_t_ha": 9.407,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "fresh_fruit_72_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh ripe sapodilla fruit (~70-74% moisture).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Sesamum": {
+        "records_count": 8710,
+        "screening_threshold_t_ha": 3.0,
+        "extreme_plausibility_limit_t_ha": 6.0,
+        "records_le_screening_threshold": 8710,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 1.8,
+        "median_observed_yield_t_ha": 0.333,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "dry_clean_seed_6_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean dry sesame seeds at 6% moisture content.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Small millets": {
+        "records_count": 4557,
+        "screening_threshold_t_ha": 6.0,
+        "extreme_plausibility_limit_t_ha": 12.0,
+        "records_le_screening_threshold": 4552,
+        "records_between_T_and_2T": 5,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 10.198,
+        "median_observed_yield_t_ha": 0.6,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "air_dry_grain_12_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean grain of minor millets (kodo, foxtail, proso, barnyard, little) at 12% moisture.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Soyabean": {
+        "records_count": 3175,
+        "screening_threshold_t_ha": 6.0,
+        "extreme_plausibility_limit_t_ha": 12.0,
+        "records_le_screening_threshold": 3170,
+        "records_between_T_and_2T": 5,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 11.444,
+        "median_observed_yield_t_ha": 1.0,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "dry_clean_seed_8_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean threshed dry soybeans at 8-10% moisture.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Sugarcane": {
+        "records_count": 7801,
+        "screening_threshold_t_ha": 180.0,
+        "extreme_plausibility_limit_t_ha": 360.0,
+        "records_le_screening_threshold": 7801,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 179.867,
+        "median_observed_yield_t_ha": 53.241,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "fresh_vegetative_stalk",
+        "moisture_or_harvest_form_notes": "Fresh millable cane containing ~70-75% water. Commercial sucrose recovery 9-11%.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Sunflower": {
+        "records_count": 5464,
+        "screening_threshold_t_ha": 5.0,
+        "extreme_plausibility_limit_t_ha": 10.0,
+        "records_le_screening_threshold": 5463,
+        "records_between_T_and_2T": 1,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 10.0,
+        "median_observed_yield_t_ha": 0.8,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "dry_clean_seed_7_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean sun-dried sunflower achenes (~7-8% moisture).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Sweet potato": {
+        "records_count": 4111,
+        "screening_threshold_t_ha": 45.0,
+        "extreme_plausibility_limit_t_ha": 90.0,
+        "records_le_screening_threshold": 4111,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 38.125,
+        "median_observed_yield_t_ha": 8.237,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "fresh_storage_tuber_72_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh marketable storage roots (~70-74% moisture).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Tapioca": {
+        "records_count": 1583,
+        "screening_threshold_t_ha": 75.0,
+        "extreme_plausibility_limit_t_ha": 150.0,
+        "records_le_screening_threshold": 1583,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 70.516,
+        "median_observed_yield_t_ha": 11.45,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "fresh_storage_root_65_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh harvested cassava roots containing ~60-65% moisture and ~30-35% starch.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Tea": {
+        "records_count": 60,
+        "screening_threshold_t_ha": 9.0,
+        "extreme_plausibility_limit_t_ha": 18.0,
+        "records_le_screening_threshold": 60,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 8.765,
+        "median_observed_yield_t_ha": 2.301,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "made_tea_processed_dry_leaf_3_pct_moisture",
+        "moisture_or_harvest_form_notes": "Commercial made black tea (~3% moisture). Green leaf weight is ~4.5x made tea.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Tobacco": {
+        "records_count": 2636,
+        "screening_threshold_t_ha": 8.0,
+        "extreme_plausibility_limit_t_ha": 16.0,
+        "records_le_screening_threshold": 2636,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 8.0,
+        "median_observed_yield_t_ha": 1.123,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "farm_cured_dry_leaf_12_pct_moisture",
+        "moisture_or_harvest_form_notes": "Barn-cured or sun-cured dry leaf (~10-12% moisture).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Tomato": {
+        "records_count": 275,
+        "screening_threshold_t_ha": 80.0,
+        "extreme_plausibility_limit_t_ha": 160.0,
+        "records_le_screening_threshold": 275,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 50.205,
+        "median_observed_yield_t_ha": 9.642,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "fresh_fruit_94_pct_moisture",
+        "moisture_or_harvest_form_notes": "Fresh ripe salad/processing fruit with ~93-95% water content.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Turmeric": {
+        "records_count": 4160,
+        "screening_threshold_t_ha": 20.0,
+        "extreme_plausibility_limit_t_ha": 40.0,
+        "records_le_screening_threshold": 4157,
+        "records_between_T_and_2T": 3,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 25.0,
+        "median_observed_yield_t_ha": 2.0,
+        "provenance_status": "provisional_agronomic_estimate",
+        "product_basis": "cured_dry_rhizome_10_pct_moisture",
+        "moisture_or_harvest_form_notes": "Officially cured dry rhizome (Spice Board standard). Caution: local district figures occasionally conflate with green rhizome (15-25 t/ha).",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Urad": {
+        "records_count": 9662,
+        "screening_threshold_t_ha": 3.5,
+        "extreme_plausibility_limit_t_ha": 7.0,
+        "records_le_screening_threshold": 9658,
+        "records_between_T_and_2T": 4,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 6.0,
+        "median_observed_yield_t_ha": 0.463,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "air_dry_clean_pulse_seed_10_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean dry blackgram seed at 10-12% moisture.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      },
+      "Wheat": {
+        "records_count": 7875,
+        "screening_threshold_t_ha": 12.0,
+        "extreme_plausibility_limit_t_ha": 24.0,
+        "records_le_screening_threshold": 7875,
+        "records_between_T_and_2T": 0,
+        "records_above_2T": 0,
+        "max_observed_yield_t_ha": 7.462,
+        "median_observed_yield_t_ha": 1.892,
+        "provenance_status": "verified_source_passage",
+        "product_basis": "air_dry_clean_grain_12_pct_moisture",
+        "moisture_or_harvest_form_notes": "Clean threshed wheat grain at 12% moisture. Distinct from total biological biomass.",
+        "status": "PASS_WITHIN_EXTREME_LIMITS"
+      }
+    },
+    "unmapped_crops_inventory": {
+      "Bean": {
+        "records_count": 20,
+        "min_observed_yield_t_ha": 1.294,
+        "median_observed_yield_t_ha": 1.333,
+        "max_observed_yield_t_ha": 1.4,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Beans & Mutter(Vegetable)": {
+        "records_count": 102,
+        "min_observed_yield_t_ha": 0.111,
+        "median_observed_yield_t_ha": 5.116,
+        "max_observed_yield_t_ha": 10.729,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Bitter Gourd": {
+        "records_count": 10,
+        "min_observed_yield_t_ha": 5.0,
+        "median_observed_yield_t_ha": 5.374,
+        "max_observed_yield_t_ha": 8.0,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Blackgram": {
+        "records_count": 99,
+        "min_observed_yield_t_ha": 0.399,
+        "median_observed_yield_t_ha": 0.742,
+        "max_observed_yield_t_ha": 1.019,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Bottle Gourd": {
+        "records_count": 11,
+        "min_observed_yield_t_ha": 7.0,
+        "median_observed_yield_t_ha": 7.2,
+        "max_observed_yield_t_ha": 10.0,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Carrot": {
+        "records_count": 19,
+        "min_observed_yield_t_ha": 0.889,
+        "median_observed_yield_t_ha": 7.5,
+        "max_observed_yield_t_ha": 9.964,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Cashewnut Processed": {
+        "records_count": 19,
+        "min_observed_yield_t_ha": 0.034,
+        "median_observed_yield_t_ha": 0.114,
+        "max_observed_yield_t_ha": 0.2,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Cauliflower": {
+        "records_count": 18,
+        "min_observed_yield_t_ha": 5.539,
+        "median_observed_yield_t_ha": 8.6,
+        "max_observed_yield_t_ha": 10.499,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Citrus Fruit": {
+        "records_count": 180,
+        "min_observed_yield_t_ha": 0.412,
+        "median_observed_yield_t_ha": 4.747,
+        "max_observed_yield_t_ha": 20.892,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Colocosia": {
+        "records_count": 11,
+        "min_observed_yield_t_ha": 9.5,
+        "median_observed_yield_t_ha": 9.509,
+        "max_observed_yield_t_ha": 9.523,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Cond-spcs other": {
+        "records_count": 18,
+        "min_observed_yield_t_ha": 0.179,
+        "median_observed_yield_t_ha": 0.816,
+        "max_observed_yield_t_ha": 1.245,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Cowpea(Lobia)": {
+        "records_count": 545,
+        "min_observed_yield_t_ha": 0.061,
+        "median_observed_yield_t_ha": 0.371,
+        "max_observed_yield_t_ha": 3.25,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Jack Fruit": {
+        "records_count": 71,
+        "min_observed_yield_t_ha": 0.005,
+        "median_observed_yield_t_ha": 9.667,
+        "max_observed_yield_t_ha": 11.5,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Jobster": {
+        "records_count": 9,
+        "min_observed_yield_t_ha": 0.933,
+        "median_observed_yield_t_ha": 1.0,
+        "max_observed_yield_t_ha": 1.071,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Kapas": {
+        "records_count": 12,
+        "min_observed_yield_t_ha": 0.106,
+        "median_observed_yield_t_ha": 0.912,
+        "max_observed_yield_t_ha": 1.282,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Khesari": {
+        "records_count": 1354,
+        "min_observed_yield_t_ha": 0.049,
+        "median_observed_yield_t_ha": 0.769,
+        "max_observed_yield_t_ha": 2.61,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Korra": {
+        "records_count": 126,
+        "min_observed_yield_t_ha": 0.1,
+        "median_observed_yield_t_ha": 0.708,
+        "max_observed_yield_t_ha": 1.267,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Moth": {
+        "records_count": 751,
+        "min_observed_yield_t_ha": 0.005,
+        "median_observed_yield_t_ha": 0.333,
+        "max_observed_yield_t_ha": 1.0,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Oilseeds total": {
+        "records_count": 413,
+        "min_observed_yield_t_ha": 0.195,
+        "median_observed_yield_t_ha": 0.978,
+        "max_observed_yield_t_ha": 2.754,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Other  Rabi pulses": {
+        "records_count": 3051,
+        "min_observed_yield_t_ha": 0.011,
+        "median_observed_yield_t_ha": 0.543,
+        "max_observed_yield_t_ha": 22.707,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Other Cereals & Millets": {
+        "records_count": 608,
+        "min_observed_yield_t_ha": 0.167,
+        "median_observed_yield_t_ha": 0.816,
+        "max_observed_yield_t_ha": 4.0,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Other Fresh Fruits": {
+        "records_count": 153,
+        "min_observed_yield_t_ha": 0.122,
+        "median_observed_yield_t_ha": 3.073,
+        "max_observed_yield_t_ha": 25.258,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Other Kharif pulses": {
+        "records_count": 3511,
+        "min_observed_yield_t_ha": 0.005,
+        "median_observed_yield_t_ha": 0.454,
+        "max_observed_yield_t_ha": 12.667,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Other Vegetables": {
+        "records_count": 95,
+        "min_observed_yield_t_ha": 0.023,
+        "median_observed_yield_t_ha": 5.0,
+        "max_observed_yield_t_ha": 19.003,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Peas & beans (Pulses)": {
+        "records_count": 4415,
+        "min_observed_yield_t_ha": 0.048,
+        "median_observed_yield_t_ha": 0.961,
+        "max_observed_yield_t_ha": 13.589,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Perilla": {
+        "records_count": 9,
+        "min_observed_yield_t_ha": 0.529,
+        "median_observed_yield_t_ha": 0.6,
+        "max_observed_yield_t_ha": 0.625,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Pome Fruit": {
+        "records_count": 169,
+        "min_observed_yield_t_ha": 0.531,
+        "median_observed_yield_t_ha": 5.564,
+        "max_observed_yield_t_ha": 57.14,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Pulses total": {
+        "records_count": 264,
+        "min_observed_yield_t_ha": 0.005,
+        "median_observed_yield_t_ha": 0.665,
+        "max_observed_yield_t_ha": 3.0,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Rajmash Kholar": {
+        "records_count": 18,
+        "min_observed_yield_t_ha": 1.2,
+        "median_observed_yield_t_ha": 1.252,
+        "max_observed_yield_t_ha": 1.29,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Redish": {
+        "records_count": 19,
+        "min_observed_yield_t_ha": 1.513,
+        "median_observed_yield_t_ha": 8.92,
+        "max_observed_yield_t_ha": 10.333,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Ricebean (nagadal)": {
+        "records_count": 10,
+        "min_observed_yield_t_ha": 1.083,
+        "median_observed_yield_t_ha": 1.11,
+        "max_observed_yield_t_ha": 1.133,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Samai": {
+        "records_count": 87,
+        "min_observed_yield_t_ha": 0.154,
+        "median_observed_yield_t_ha": 0.529,
+        "max_observed_yield_t_ha": 1.0,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Total foodgrain": {
+        "records_count": 188,
+        "min_observed_yield_t_ha": 0.095,
+        "median_observed_yield_t_ha": 1.47,
+        "max_observed_yield_t_ha": 3.682,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Turnip": {
+        "records_count": 6,
+        "min_observed_yield_t_ha": 0.395,
+        "median_observed_yield_t_ha": 0.619,
+        "max_observed_yield_t_ha": 0.8,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "Varagu": {
+        "records_count": 58,
+        "min_observed_yield_t_ha": 0.331,
+        "median_observed_yield_t_ha": 1.0,
+        "max_observed_yield_t_ha": 1.92,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "other misc. pulses": {
+        "records_count": 49,
+        "min_observed_yield_t_ha": 0.005,
+        "median_observed_yield_t_ha": 0.282,
+        "max_observed_yield_t_ha": 1.028,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      },
+      "other oilseeds": {
+        "records_count": 572,
+        "min_observed_yield_t_ha": 0.032,
+        "median_observed_yield_t_ha": 0.5,
+        "max_observed_yield_t_ha": 32.575,
+        "screening_threshold": null,
+        "handling": "RETAINED_IN_DATASET_MANUAL_REVIEW"
+      }
+    },
+    "numeric_verification": {
+      "max_cleaned_yield_numerical_difference": 0.0005000000000023874,
+      "max_cotton_numerical_difference": 0.000500000000000167,
+      "max_jute_mesta_numerical_difference": 0.0005000000000006111,
+      "max_coconut_numerical_difference": 0.005000000000000782,
+      "max_arecanut_numerical_difference": 0.0005000000000006111,
+      "max_unverified_numerical_difference": 5.684341886080802e-14,
+      "tolerance_used": "<= 0.001 for 3-decimal rounded targets (half-unit rounding bound: 0.0005)",
+      "set_equality_all_datasets": "VERIFIED_EXACT_EQUALITY_ALL_6_DATASETS",
+      "row_by_row_verification_status": "PASSED_ALL_DATASETS"
+    },
+    "rainfall_join_verification": {
+      "matched_records_count": 174363,
+      "unmatched_records_count": 53210,
+      "rainfall_match_rate_pct": 76.62,
+      "rainfall_value_discrepancy_annual": 0.0,
+      "rainfall_value_discrepancy_monsoon": 0.0,
+      "source_duplicate_keys_count": 0,
+      "source_conflicting_keys_count": 0,
+      "total_unmatched_state_district_pairs": 177,
+      "top_unmatched_districts": [
+        {
+          "State": "KARNATAKA",
+          "District": "BELAGAVI",
+          "crop_records_count": 856
+        },
+        {
+          "State": "KARNATAKA",
+          "District": "CHAMARAJANAGAR",
+          "crop_records_count": 787
+        },
+        {
+          "State": "ANDHRA PRADESH",
+          "District": "KADAPA",
+          "crop_records_count": 777
+        },
+        {
+          "State": "ANDHRA PRADESH",
+          "District": "VISAKHAPATANAM",
+          "crop_records_count": 757
+        },
+        {
+          "State": "KARNATAKA",
+          "District": "BANGALORE RURAL",
+          "crop_records_count": 755
+        },
+        {
+          "State": "KARNATAKA",
+          "District": "BAGALKOT",
+          "crop_records_count": 671
+        },
+        {
+          "State": "TELANGANA",
+          "District": "MEDAK",
+          "crop_records_count": 666
+        },
+        {
+          "State": "TELANGANA",
+          "District": "RANGAREDDI",
+          "crop_records_count": 643
+        },
+        {
+          "State": "ANDHRA PRADESH",
+          "District": "SPSR NELLORE",
+          "crop_records_count": 636
+        },
+        {
+          "State": "KARNATAKA",
+          "District": "BENGALURU URBAN",
+          "crop_records_count": 634
+        },
+        {
+          "State": "TELANGANA",
+          "District": "ADILABAD",
+          "crop_records_count": 615
+        },
+        {
+          "State": "TELANGANA",
+          "District": "MAHBUBNAGAR",
+          "crop_records_count": 615
+        },
+        {
+          "State": "KARNATAKA",
+          "District": "UTTAR KANNAD",
+          "crop_records_count": 614
+        },
+        {
+          "State": "TELANGANA",
+          "District": "NIZAMABAD",
+          "crop_records_count": 605
+        },
+        {
+          "State": "WEST BENGAL",
+          "District": "MEDINIPUR WEST",
+          "crop_records_count": 580
+        },
+        {
+          "State": "BIHAR",
+          "District": "PASHCHIM CHAMPARAN",
+          "crop_records_count": 561
+        },
+        {
+          "State": "TELANGANA",
+          "District": "KHAMMAM",
+          "crop_records_count": 546
+        },
+        {
+          "State": "TELANGANA",
+          "District": "KARIMNAGAR",
+          "crop_records_count": 545
+        },
+        {
+          "State": "CHHATTISGARH",
+          "District": "JANJGIR-CHAMPA",
+          "crop_records_count": 540
+        },
+        {
+          "State": "WEST BENGAL",
+          "District": "BARDHAMAN",
+          "crop_records_count": 538
+        }
+      ],
+      "unmatched_reasons_summary": {
+        "state_bifurcation_telangana": "Telangana created in 2014; IMD 30-year normal table recorded these districts under Andhra Pradesh",
+        "district_divisions": "Districts split after 2000 (e.g., Medinipur bifurcated into Paschim/Purba Medinipur; Bangalore into Rural/Urban; Bagalkot from Bijapur)",
+        "spelling_nomenclature_variants": "Historic IMD spelling differences (e.g., Visakhapatanam vs Visakhapatnam, SPSR Nellore vs Nellore, Kadapa vs Cuddapah)"
+      }
+    },
+    "segregated_datasets_counts": {
+      "segregated_coconut_nuts_yield": 1957,
+      "segregated_cotton_bales_yield": 4327,
+      "segregated_jute_mesta_bales_yield": 3196,
+      "segregated_arecanut_yield": 1578,
+      "segregated_unverified_unit_yield": 35
+    },
+    "dropped_subsets_counts": {
+      "D1_null_production": 3730,
+      "D2_invalid_area": 0,
+      "D3_zero_production": 3523,
+      "D4_negligible_yield": 124,
+      "extreme_tonne_outliers": 47,
+      "extreme_fiber_outliers": 1
+    },
+    "set_reconciliation": {
+      "pairwise_disjointness_verified": true,
+      "mathematical_universe_reconciliation": "PERFECT (Exact 0 discrepancy)"
+    }
+  }
+}

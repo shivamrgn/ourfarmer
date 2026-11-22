@@ -1,0 +1,68 @@
+{
+  "metadata": {
+    "phase": "Phase 3C.4.1 (Consolidated Safety Specification Corrections)",
+    "specification_version": "1.1.0-CONSOLIDATED-CORRECTIONS",
+    "timestamp_iso": "2026-11-19T14:20:00Z",
+    "execution_status": "CONSOLIDATED_SPECIFICATION_VERIFIED",
+    "read_only_application_preservation_verified": true
+  },
+  "water_model_corrections": {
+    "unsupported_fixed_water_quantities_removed": true,
+    "fixed_120mm_partial_irrigation_removed": true,
+    "fixed_600_1800mm_assured_irrigation_removed": true,
+    "fixed_75_percent_monsoon_fraction_removed": true,
+    "unmeasured_irrigation_depth_status": "UNKNOWN_PROVISIONAL",
+    "universal_rainfall_exclusions_removed": true
+  },
+  "eligibility_rules_metrics": {
+    "total_rules_count": 100,
+    "canonical_crops_covered": 19,
+    "status_breakdown": {
+      "HARD_EXCLUSION": 61,
+      "SOFT_PENALTY": 26,
+      "WARNING_ONLY": 8,
+      "UNKNOWN": 4,
+      "NOT_APPLICABLE": 1
+    },
+    "flowering_heat_stress_converted_to_warnings": true,
+    "traceable_evidence_for_all_hard_exclusions": true
+  },
+  "fertilizer_safety_metrics": {
+    "blanket_multipliers_removed": true,
+    "four_nutrient_concepts_decoupled": true,
+    "dap_nitrogen_credit_deducted": true,
+    "dap_nitrogen_credit_rate": 0.18,
+    "stoichiometric_conversions_enforced": true,
+    "commercial_bags_restricted_to_verified_stcr": true,
+    "missing_stcr_fallback": "ADVISORY_ONLY"
+  },
+  "canonical_catalogue_metrics": {
+    "total_canonical_crops": 19,
+    "readiness_breakdown": {
+      "PRODUCTION_READY": 9,
+      "CONDITIONALLY_RECOMMENDABLE": 9,
+      "RESTRICTED_ORCHARD_PROVISIONAL": 1
+    },
+    "taxonomy_millets_standardized": "Pennisetum glaucum (Bajra/Pearl Millet)",
+    "taxonomy_jowar_confirmed": "Sorghum bicolor",
+    "mango_classified_orchard_perennial": true,
+    "region_aware_planting_windows_included": true
+  },
+  "scoring_architecture_metrics": {
+    "hybrid_two_tier_preserved": true,
+    "liebig_penalty_preserved": true,
+    "unknown_gating_handled": true,
+    "data_completeness_index_defined": true,
+    "score_non_comparability_enforced": true,
+    "two_dimensional_reporting_enforced": true,
+    "deterministic_rejection_boundary_defined": true,
+    "calibrated_probability_claims_prohibited": true
+  },
+  "acceptance_tests_metrics": {
+    "total_acceptance_tests": 15,
+    "regression_scenarios_covered": 5,
+    "boundary_edge_tests_covered": 10,
+    "unsupported_assumptions_removed": true,
+    "zero_modifications_to_live_code": true
+  }
+}

@@ -1,0 +1,498 @@
+/* ============================================================
+   FARMER SUPPORT, BEYOND AI SECTION
+   Government schemes, crop insurance, subsidies, and support programs.
+   Interactive personalized discovery flow.
+   ============================================================ */
+
+.fs-section {
+  padding: var(--space-20) 0;
+  background: linear-gradient(180deg, #f6f3eb 0%, var(--color-cream) 40%, #f7f4ed 100%);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-parchment);
+}
+
+/* Background ambient glows */
+.fs-section::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -50px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(35, 94, 58, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.fs-section::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196, 124, 43, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Header */
+.fs-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto var(--space-10) auto;
+}
+
+.fs-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-green-800);
+  background: rgba(35, 94, 58, 0.08);
+  border: 1px solid rgba(35, 94, 58, 0.2);
+  padding: 4px 14px;
+  border-radius: 9999px;
+  margin-bottom: var(--space-3);
+}
+
+.fs-eyebrow__badge {
+  font-size: 0.625rem;
+  background: #fef3c7;
+  color: #b45309;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.fs-heading {
+  font-family: var(--font-display);
+  font-size: clamp(var(--text-3xl), 3.8vw, var(--text-5xl));
+  font-weight: 800;
+  color: var(--color-green-950);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+}
+
+.fs-subtext {
+  font-size: var(--text-base);
+  color: var(--color-slate);
+  line-height: var(--leading-normal);
+  max-width: 640px;
+  margin: 0 auto var(--space-4) auto;
+}
+
+/* Concept Discovery Flow Banner */
+.fs-discovery-flow {
+  background: #ffffff;
+  border: 1px solid rgba(220, 212, 195, 0.95);
+  border-radius: 16px;
+  padding: var(--space-6) var(--space-8);
+  box-shadow: 0 4px 16px rgba(30, 26, 21, 0.04);
+  max-width: 980px;
+  margin: 0 auto var(--space-12) auto;
+}
+
+.fs-flow-caption {
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-green-700);
+  text-align: center;
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.fs-flow-caption::before,
+.fs-flow-caption::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: rgba(35, 94, 58, 0.3);
+}
+
+.fs-flow-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.fs-flow-step {
+  flex: 1;
+  background: #fbf9f4;
+  border: 1px solid rgba(220, 212, 195, 0.7);
+  border-radius: 12px;
+  padding: var(--space-4);
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.fs-flow-step:hover {
+  transform: translateY(-2px);
+  border-color: rgba(35, 94, 58, 0.4);
+}
+
+.fs-flow-step--target {
+  background: linear-gradient(135deg, #f0faf4 0%, #e3f6ea 100%);
+  border-color: rgba(58, 156, 95, 0.45);
+  box-shadow: 0 4px 12px rgba(26, 74, 46, 0.06);
+}
+
+.fs-step-tag {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-slate);
+  margin-bottom: 4px;
+}
+
+.fs-flow-step--target .fs-step-tag {
+  color: var(--color-green-800);
+}
+
+.fs-step-title {
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fs-step-desc {
+  font-size: 0.75rem;
+  color: var(--color-slate);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Arrow Connector */
+.fs-flow-arrow {
+  color: var(--color-amber);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* 4-Card Grid */
+.fs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+  margin-bottom: var(--space-12);
+  align-items: stretch;
+}
+
+/* Feature Card */
+.fs-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(220, 212, 195, 0.85);
+  box-shadow: 0 2px 10px rgba(30, 26, 21, 0.04);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.28s ease;
+  padding: var(--space-6);
+  position: relative;
+}
+
+.fs-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(30, 26, 21, 0.08);
+}
+
+/* Card Accent Styling */
+.fs-card--schemes:hover { border-color: rgba(35, 94, 58, 0.45); }
+.fs-card--schemes .fs-card__icon-wrap {
+  background: #f0faf4;
+  color: var(--color-green-700);
+  border: 1px solid rgba(35, 94, 58, 0.15);
+}
+
+.fs-card--insurance:hover { border-color: rgba(37, 99, 235, 0.45); }
+.fs-card--insurance .fs-card__icon-wrap {
+  background: #eff6ff;
+  color: #2563eb;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+}
+
+.fs-card--subsidies:hover { border-color: rgba(217, 119, 6, 0.45); }
+.fs-card--subsidies .fs-card__icon-wrap {
+  background: #fffbeb;
+  color: #d97706;
+  border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+.fs-card--programs:hover { border-color: rgba(13, 148, 136, 0.45); }
+.fs-card--programs .fs-card__icon-wrap {
+  background: #f0fdfa;
+  color: #0d9488;
+  border: 1px solid rgba(13, 148, 136, 0.2);
+}
+
+/* Card Header */
+.fs-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.fs-card__icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.fs-card:hover .fs-card__icon-wrap {
+  transform: scale(1.08);
+}
+
+.fs-card__category {
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-slate);
+  background: #f5f2ea;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.fs-card__title {
+  font-family: var(--font-ui);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: 0 0 var(--space-2) 0;
+  line-height: 1.3;
+}
+
+.fs-card__desc {
+  font-size: 0.8125rem;
+  color: var(--color-slate);
+  line-height: 1.5;
+  margin: 0 0 var(--space-4) 0;
+  min-height: 42px;
+}
+
+/* Representative Scheme List */
+.fs-card__schemes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-4) 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  border-top: 1px dashed rgba(220, 212, 195, 0.7);
+  padding-top: var(--space-3);
+}
+
+.fs-card__schemes-list li {
+  font-size: 0.75rem;
+  color: var(--color-charcoal);
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  line-height: 1.35;
+}
+
+.fs-card__bullet {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 6px;
+  background-color: var(--color-green-700);
+}
+
+.fs-card--insurance .fs-card__bullet { background-color: #2563eb; }
+.fs-card--subsidies .fs-card__bullet { background-color: #d97706; }
+.fs-card--programs .fs-card__bullet { background-color: #0d9488; }
+
+/* Card Footer: Discovery Tag */
+.fs-card__footer {
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(240, 235, 224, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fs-card__badge {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-stone);
+}
+
+.fs-card__status-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-green-800);
+  background: rgba(35, 94, 58, 0.08);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.fs-card__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-green-500);
+}
+
+/* CTA & Disclaimer Box */
+.fs-action-wrap {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.fs-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--color-green-800) 0%, var(--color-green-700) 100%);
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(26, 74, 46, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-bottom: var(--space-4);
+}
+
+.fs-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(26, 74, 46, 0.35);
+  background: linear-gradient(135deg, var(--color-green-700) 0%, var(--color-green-600) 100%);
+}
+
+.fs-cta-btn svg {
+  transition: transform 0.2s ease;
+}
+
+.fs-cta-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* Clear Demo Disclaimer */
+.fs-disclaimer {
+  background: rgba(254, 243, 199, 0.6);
+  border: 1px solid rgba(217, 119, 6, 0.25);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 0.75rem;
+  color: #78350f;
+  line-height: 1.45;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: left;
+}
+
+.fs-disclaimer svg {
+  flex-shrink: 0;
+  color: #b45309;
+}
+
+/* Scroll reveal */
+.fs-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.fs-reveal--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE STYLES
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 1080px) {
+  .fs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 768px) {
+  .fs-flow-steps {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .fs-flow-arrow {
+    transform: rotate(90deg);
+    padding: 4px 0;
+  }
+
+  .fs-discovery-flow {
+    padding: var(--space-5);
+  }
+}
+
+@media (max-width: 580px) {
+  .fs-section {
+    padding: var(--space-14) 0;
+  }
+
+  .fs-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .fs-heading {
+    font-size: var(--text-2xl);
+  }
+
+  .fs-card__desc {
+    min-height: auto;
+  }
+
+  .fs-disclaimer {
+    flex-direction: column;
+    text-align: center;
+  }
+}

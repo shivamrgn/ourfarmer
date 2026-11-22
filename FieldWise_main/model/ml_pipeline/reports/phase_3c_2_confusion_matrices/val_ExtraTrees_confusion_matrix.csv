@@ -1,0 +1,8 @@
+,banana,chickpea,cotton,lentil,maize,mango,rice
+banana,15,0,0,0,0,0,0
+chickpea,0,15,0,0,0,0,0
+cotton,0,0,15,0,0,0,0
+lentil,0,0,0,15,0,0,0
+maize,0,0,0,0,15,0,0
+mango,0,0,0,0,0,15,0
+rice,0,0,0,0,0,0,15

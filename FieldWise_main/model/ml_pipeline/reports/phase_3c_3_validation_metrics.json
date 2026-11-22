@@ -1,0 +1,906 @@
+{
+  "metadata": {
+    "phase": "Phase 3C.3 (Agronomic Validation of the 19-Crop Recommendation Engine)",
+    "audit_timestamp_iso": "2026-11-19T13:30:00Z",
+    "scope": "FieldWise_main/model/ml_pipeline/",
+    "execution_status": "COMPLETED"
+  },
+  "inventory_summary": {
+    "canonical_crops_count": 19,
+    "backend_crops_count": 16,
+    "frontend_crops_count": 16,
+    "shared_crops_count": 13,
+    "backend_only_crops": [
+      "banana",
+      "mango",
+      "jowar"
+    ],
+    "frontend_only_crops": [
+      "sunflower",
+      "barley",
+      "millets"
+    ],
+    "benchmark_overlap_crops_count": 7,
+    "benchmark_missing_crops_count": 12
+  },
+  "evidence_matrix_summary": {
+    "total_evaluated_parameters": 190,
+    "classification_counts": {
+      "A": 142,
+      "B": 10,
+      "C": 1,
+      "D": 37,
+      "E": 0
+    },
+    "classification_percentages": {
+      "A": 74.74,
+      "B": 5.26,
+      "C": 0.53,
+      "D": 19.47,
+      "E": 0.0
+    },
+    "agreement_status_counts": {
+      "Agrees": 142,
+      "Partial": 10,
+      "Disagrees": 18,
+      "Missing": 19,
+      "Conflict": 1
+    },
+    "high_confidence_evidence_count": 178,
+    "critical_unsupported_findings": [
+      "Rainfall ranges across all 19 crops reflect monthly/single-event rainfall (30-300 mm) rather than seasonal crop water requirements (350-2500 mm).",
+      "NPK parameters hardcode fertilizer application rates (RDF) rather than soil test availability ranges (Soil Health Card standard).",
+      "Irrigation requirements and water delivery regimes are completely unrepresented in recommendation logic."
+    ]
+  },
+  "backend_frontend_consistency_summary": {
+    "total_discrepancies_identified": 89,
+    "severity_distribution": {
+      "Critical": 0,
+      "High": 22,
+      "Medium": 61,
+      "Low": 19
+    },
+    "critical_inconsistencies": [
+      "Catalog asymmetry: Backend has banana, mango, jowar; Frontend has sunflower, barley, millets.",
+      "Season definition conflict for Sugarcane: Backend classifies as 'Kharif', Frontend classifies as 'Annual'.",
+      "Tomato yield expectation mismatch: Backend base yield = 20 t/ha, Frontend base yield = 35 t/ha (+75% divergence).",
+      "Sugarcane base yield mismatch: Backend = 80 t/ha, Frontend = 70 t/ha.",
+      "Fertilizer prescription divergences in dosage, splits, and nutrient carriers for mustard, tomato, and onion."
+    ]
+  },
+  "safety_audit_findings": {
+    "hard_constraints_enforced": false,
+    "season_filtered_at_inference": false,
+    "irrigation_dependency_checked": false,
+    "soil_incompatibility_rejection": false,
+    "lethal_ph_penalty_enforced": false,
+    "additive_scoring_risk": "Critical (Additive soft scoring allows crops with lethal pH, severe water deficit, or off-season timing to achieve >75% confidence).",
+    "stress_test_scenarios_evaluated": {
+      "S1": {
+        "title": "Arid Desert Drought (Jaisalmer)",
+        "inputs": {
+          "rainfall": 40,
+          "temperature": 38,
+          "humidity": 25,
+          "soilType": "Sandy",
+          "nitrogen": 25,
+          "phosphorus": 15,
+          "potassium": 120,
+          "ph": 8.2
+        },
+        "backend": [
+          {
+            "id": "lentil",
+            "name": "Lentil",
+            "season": "Rabi",
+            "confidence": 55.2,
+            "yieldPrediction": 1.1,
+            "breakdown": {
+              "rainfall": 22,
+              "temperature": 9.5,
+              "humidity": 16,
+              "soil": 0,
+              "nitrogen": 8,
+              "phosphorus": 0.3,
+              "potassium": 0,
+              "phBonus": 5
+            }
+          },
+          {
+            "id": "jowar",
+            "name": "Jowar (Sorghum)",
+            "season": "Kharif",
+            "confidence": 53.8,
+            "yieldPrediction": 2.2,
+            "breakdown": {
+              "rainfall": 21.6,
+              "temperature": 22,
+              "humidity": 15.5,
+              "soil": 0,
+              "nitrogen": 0,
+              "phosphorus": 0,
+              "potassium": 0,
+              "phBonus": 0
+            }
+          },
+          {
+            "id": "chickpea",
+            "name": "Chickpea",
+            "season": "Rabi",
+            "confidence": 50,
+            "yieldPrediction": 1.3,
+            "breakdown": {
+              "rainfall": 22,
+              "temperature": 4.9,
+              "humidity": 15.1,
+              "soil": 0,
+              "nitrogen": 8,
+              "phosphorus": 0,
+              "potassium": 0,
+              "phBonus": 5
+            }
+          },
+          {
+            "id": "cotton",
+            "name": "Cotton",
+            "season": "Kharif",
+            "confidence": 46.1,
+            "yieldPrediction": 1.7,
+            "breakdown": {
+              "rainfall": 16,
+              "temperature": 20.1,
+              "humidity": 9.7,
+              "soil": 0,
+              "nitrogen": 0,
+              "phosphorus": 0,
+              "potassium": 0,
+              "phBonus": 5
+            }
+          },
+          {
+            "id": "mango",
+            "name": "Mango",
+            "season": "Zaid",
+            "confidence": 40.1,
+            "yieldPrediction": 8.3,
+            "breakdown": {
+              "rainfall": 17.2,
+              "temperature": 22,
+              "humidity": 4,
+              "soil": 0,
+              "nitrogen": 0,
+              "phosphorus": 0.5,
+              "potassium": 0.4,
+              "phBonus": 0
+            }
+          },
+          {
+            "id": "tomato",
+            "name": "Tomato",
+            "season": "Rabi",
+            "confidence": 38.7,
+            "yieldPrediction": 16.5,
+            "breakdown": {
+              "rainfall": 22,
+              "temperature": 12.5,
+              "humidity": 2.2,
+              "soil": 0,
+              "nitrogen": 0,
+              "phosphorus": 0,
+              "potassium": 6,
+              "phBonus": 0
+            }
+          }
+        ],
+        "frontend": [
+          {
+            "id": "millets",
+            "name": "Millets (Bajra / Jowar)",
+            "season": "Kharif",
+            "confidence": 61.8,
+            "yieldPrediction": 2
+          },
+          {
+            "id": "chickpea",
+            "name": "Chickpea (Gram)",
+            "season": "Rabi",
+            "confidence": 46.3,
+            "yieldPrediction": 1.5
+          },
+          {
+            "id": "cotton",
+            "name": "Cotton",
+            "season": "Kharif",
+            "confidence": 46.1,
+            "yieldPrediction": 1.9
+          },
+          {
+            "id": "barley",
+            "name": "Barley",
+            "season": "Rabi",
+            "confidence": 45,
+            "yieldPrediction": 2.6
+          },
+          {
+            "id": "groundnut",
+            "name": "Groundnut (Peanut)",
+            "season": "Kharif",
+            "confidence": 36.6,
+            "yieldPrediction": 2
+          }
+        ]
+      },
+      "S2": {
+        "title": "Monsoon High-Rainfall Paddy Wetland (Assam/WB)",
+        "inputs": {
+          "rainfall": 1200,
+          "temperature": 29,
+          "humidity": 88,
+          "soilType": "Clay",
+          "nitrogen": 100,
+          "phosphorus": 50,
+          "potassium": 50,
+          "ph": 6
+        },
+        "backend": [
+          {
+            "id": "rice",
+            "name": "Rice",
+            "season": "Kharif",
+            "confidence": 80,
+            "yieldPrediction": 4.5,
+            "breakdown": {
+              "rainfall": 0,
+              "temperature": 22,
+              "humidity": 16,
+              "soil": 20,
+              "nitrogen": 8,
+              "phosphorus": 6,
+              "potassium": 6,
+              "phBonus": 10
+            }
+          },
+          {
+            "id": "mango",
+            "name": "Mango",
+            "season": "Zaid",
+            "confidence": 59.9,
+            "yieldPrediction": 9.2,
+            "breakdown": {
+              "rainfall": 0,
+              "temperature": 22,
+              "humidity": 13.9,
+              "soil": 0,
+              "nitrogen": 8,
+              "phosphorus": 6,
+              "potassium": 6,
+              "phBonus": 10
+            }
+          },
+          {
+            "id": "cotton",
+            "name": "Cotton",
+            "season": "Kharif",
+            "confidence": 54.4,
+            "yieldPrediction": 1.8,
+            "breakdown": {
+              "rainfall": 0,
+              "temperature": 22,
+              "humidity": 7.8,
+              "soil": 0,
+              "nitrogen": 8,
+              "phosphorus": 6,
+              "potassium": 6,
+              "phBonus": 10
+            }
+          },
+          {
+            "id": "onion",
+            "name": "Onion",
+            "season": "Rabi",
+            "confidence": 54.2,
+            "yieldPrediction": 19.7,
+            "breakdown": {
+              "rainfall": 0,
+              "temperature": 21.8,
+              "humidity": 7.8,
+              "soil": 0,
+              "nitrogen": 8,
+              "phosphorus": 6,
+              "potassium": 6,
+              "phBonus": 10
+            }
+          },
+          {
+            "id": "jowar",
+            "name": "Jowar (Sorghum)",
+            "season": "Kharif",
+            "confidence": 53.7,
+            "yieldPrediction": 2.2,
+            "breakdown": {
+              "rainfall": 0,
+              "temperature": 22,
+              "humidity": 10.7,
+              "soil": 0,
+              "nitrogen": 8,
+              "phosphorus": 6,
+              "potassium": 2.4,
+              "phBonus": 10
+            }
+          },
+          {
+            "id": "wheat",
+            "name": "Wheat",
+            "season": "Rabi",
+            "confidence": 51.7,
+            "yieldPrediction": 3.1,
+            "breakdown": {
+              "rainfall": 0,
+              "temperature": 19.1,
+              "humidity": 7.8,
+              "soil": 0,
+              "nitrogen": 8,
+              "phosphorus": 6,
+              "potassium": 6,
+              "phBonus": 10
+            }
+          }
+        ],
+        "frontend": [
+          {
+            "id": "rice",
+            "name": "Rice (Paddy)",
+            "season": "Kharif",
+            "confidence": 80,
+            "yieldPrediction": 4.5
+          },
+          {
+            "id": "cotton",
+            "name": "Cotton",
+            "season": "Kharif",
+            "confidence": 72.5,
+            "yieldPrediction": 2.1
+          },
+          {
+            "id": "wheat",
+            "name": "Wheat",
+            "season": "Rabi",
+            "confidence": 51.7,
+            "yieldPrediction": 3.1
+          },
+          {
+            "id": "maize",
+            "name": "Maize (Corn)",
+            "season": "Kharif",
+            "confidence": 49.1,
+            "yieldPrediction": 4.4
+          },
+          {
+            "id": "groundnut",
+            "name": "Groundnut (Peanut)",
+            "season": "Kharif",
+            "confidence": 48.5,
+            "yieldPrediction": 2.2
+          },
+          {
+            "id": "soybean",
+            "name": "Soybean",
+            "season": "Kharif",
+            "confidence": 47.5,
+            "yieldPrediction": 1.7
+          }
+        ]
+      },
+      "S3": {
+        "title": "Peak Kharif Summer Sowing (Punjab July Heat)",
+        "inputs": {
+          "rainfall": 180,
+          "temperature": 35,
+          "humidity": 75,
+          "soilType": "Loamy",
+          "nitrogen": 120,
+          "phosphorus": 60,
+          "potassium": 50,
+          "ph": 7
+        },
+        "backend": [
+          {
+            "id": "rice",
+            "name": "Rice",
+            "season": "Kharif",
+            "confidence": 99,
+            "yieldPrediction": 4.9,
+            "breakdown": {
+              "rainfall": 22,
+              "temperature": 22,
+              "humidity": 16,
+              "soil": 20,
+              "nitrogen": 8,
+              "phosphorus": 6,
+              "potassium": 6,
+              "phBonus": 10
+            }
+          },
+          {
+            "id": "maize",
+            "name": "Maize",
+            "season": "Kharif",
+            "confidence": 92.1,
+            "yieldPrediction": 5.3,
+            "breakdown": {
+              "rainfall": 15.2,
+              "temperature": 20.1,
+              "humidity": 16,
+              "soil": 20,
+              "nitrogen": 8,
+              "phosphorus": 6,
+              "potassium": 6,
+              "phBonus": 10
+            }
+          },
+          {
+            "id": "sugarcane",
+            "name": "Sugarcane",
+            "season": "Kharif",
+            "confidence": 87.9,
+            "yieldPrediction": 83.6,
+            "breakdown": {
+              "rainfall": 22,
+              "temperature": 22,
+              "humidity": 16,
+              "soil": 20,
+              "nitrogen": 0.7,
+              "phosphorus": 6,
+              "potassium": 0,
+              "phBonus": 10
+            }
+          },
+          {
+            "id": "banana",
+            "name": "Banana",
+            "season": "Kharif",
+            "confidence": 87.9,
+            "yieldPrediction": 36.6,
+            "breakdown": {
+              "rainfall": 22,
+              "temperature": 22,
+              "humidity": 16,
+              "soil": 20,
+              "nitrogen": 0.7,
+              "phosphorus": 6,
+              "potassium": 0,
+              "phBonus": 10
+            }
+          },
+          {
+            "id": "mango",
+            "name": "Mango",
+            "season": "Zaid",
+            "confidence": 81.7,
+            "yieldPrediction": 10.2,
+            "breakdown": {
+              "rainfall": 21.9,
+              "temperature": 22,
+              "humidity": 16,
+              "soil": 0,
+              "nitrogen": 8,
+              "phosphorus": 6,
+              "potassium": 6,
+              "phBonus": 10
+            }
+          },
+          {
+            "id": "onion",
+            "name": "Onion",
+            "season": "Rabi",
+            "confidence": 72.2,
+            "yieldPrediction": 21.4,
+            "breakdown": {
+              "rainfall": 0,
+              "temperature": 14.2,
+              "humidity": 15.1,
+              "soil": 20,
+              "nitrogen": 8,
+              "phosphorus": 6,
+              "potassium": 6,
+              "phBonus": 10
+            }
+          }
+        ],
+        "frontend": [
+          {
+            "id": "rice",
+            "name": "Rice (Paddy)",
+            "season": "Kharif",
+            "confidence": 99,
+            "yieldPrediction": 4.9
+          },
+          {
+            "id": "maize",
+            "name": "Maize (Corn)",
+            "season": "Kharif",
+            "confidence": 92.1,
+            "yieldPrediction": 5.3
+          },
+          {
+            "id": "sugarcane",
+            "name": "Sugarcane",
+            "season": "Annual",
+            "confidence": 89.9,
+            "yieldPrediction": 73.8
+          },
+          {
+            "id": "groundnut",
+            "name": "Groundnut (Peanut)",
+            "season": "Kharif",
+            "confidence": 69.4,
+            "yieldPrediction": 2.4
+          },
+          {
+            "id": "wheat",
+            "name": "Wheat",
+            "season": "Rabi",
+            "confidence": 67.6,
+            "yieldPrediction": 3.3
+          },
+          {
+            "id": "soybean",
+            "name": "Soybean",
+            "season": "Kharif",
+            "confidence": 64.9,
+            "yieldPrediction": 1.9
+          }
+        ]
+      },
+      "S4": {
+        "title": "Severe Soil Alkalinity (pH 9.2)",
+        "inputs": {
+          "rainfall": 90,
+          "temperature": 28,
+          "humidity": 60,
+          "soilType": "Sandy Loam",
+          "nitrogen": 80,
+          "phosphorus": 40,
+          "potassium": 40,
+          "ph": 9.2
+        },
+        "backend": [
+          {
+            "id": "mango",
+            "name": "Mango",
+            "season": "Zaid",
+            "confidence": 87.3,
+            "yieldPrediction": 10.4,
+            "breakdown": {
+              "rainfall": 22,
+              "temperature": 22,
+              "humidity": 16,
+              "soil": 20,
+              "nitrogen": 8,
+              "phosphorus": 6,
+              "potassium": 2,
+              "phBonus": 0
+            }
+          },
+          {
+            "id": "groundnut",
+            "name": "Groundnut",
+            "season": "Kharif",
+            "confidence": 83.6,
+            "yieldPrediction": 2.1,
+            "breakdown": {
+              "rainfall": 22,
+              "temperature": 22,
+              "humidity": 16,
+              "soil": 20,
+              "nitrogen": 0,
+              "phosphorus": 6,
+              "potassium": 6,
+              "phBonus": 0
+            }
+          },
+          {
+            "id": "chickpea",
+            "name": "Chickpea",
+            "season": "Rabi",
+            "confidence": 80.6,
+            "yieldPrediction": 1.5,
+            "breakdown": {
+              "rainfall": 20.3,
+              "temperature": 20.3,
+              "humidity": 16,
+              "soil": 20,
+              "nitrogen": 0,
+              "phosphorus": 6,
+              "potassium": 6,
+              "phBonus": 0
+            }
+          },
+          {
+            "id": "wheat",
+            "name": "Wheat",
+            "season": "Rabi",
+            "confidence": 78.5,
+            "yieldPrediction": 3.5,
+            "breakdown": {
+              "rainfall": 22,
+              "temperature": 20.3,
+              "humidity": 16,
+              "soil": 20,
+              "nitrogen": 0.5,
+              "phosphorus": 1.5,
+              "potassium": 6,
+              "phBonus": 0
+            }
+          },
+          {
+            "id": "maize",
+            "name": "Maize",
+            "season": "Kharif",
+            "confidence": 78.2,
+            "yieldPrediction": 5,
+            "breakdown": {
+              "rainfall": 22,
+              "temperature": 22,
+              "humidity": 16,
+              "soil": 20,
+              "nitrogen": 0,
+              "phosphorus": 0,
+              "potassium": 6,
+              "phBonus": 0
+            }
+          },
+          {
+            "id": "onion",
+            "name": "Onion",
+            "season": "Rabi",
+            "confidence": 77.6,
+            "yieldPrediction": 22,
+            "breakdown": {
+              "rainfall": 16.6,
+              "temperature": 22,
+              "humidity": 16,
+              "soil": 20,
+              "nitrogen": 8,
+              "phosphorus": 1.2,
+              "potassium": 1.5,
+              "phBonus": 0
+            }
+          }
+        ],
+        "frontend": [
+          {
+            "id": "sunflower",
+            "name": "Sunflower",
+            "season": "Zaid",
+            "confidence": 86.9,
+            "yieldPrediction": 1.9
+          },
+          {
+            "id": "groundnut",
+            "name": "Groundnut (Peanut)",
+            "season": "Kharif",
+            "confidence": 83.6,
+            "yieldPrediction": 2.6
+          },
+          {
+            "id": "wheat",
+            "name": "Wheat",
+            "season": "Rabi",
+            "confidence": 78.5,
+            "yieldPrediction": 3.5
+          },
+          {
+            "id": "maize",
+            "name": "Maize (Corn)",
+            "season": "Kharif",
+            "confidence": 78.2,
+            "yieldPrediction": 5
+          },
+          {
+            "id": "millets",
+            "name": "Millets (Bajra / Jowar)",
+            "season": "Kharif",
+            "confidence": 77.4,
+            "yieldPrediction": 2.2
+          },
+          {
+            "id": "onion",
+            "name": "Onion",
+            "season": "Rabi",
+            "confidence": 73.8,
+            "yieldPrediction": 19.6
+          }
+        ]
+      },
+      "S5": {
+        "title": "Real-World Soil Health Card Test (Medium Fertile Plain)",
+        "inputs": {
+          "rainfall": 220,
+          "temperature": 28,
+          "humidity": 75,
+          "soilType": "Clay Loam",
+          "nitrogen": 320,
+          "phosphorus": 28,
+          "potassium": 210,
+          "ph": 6.8
+        },
+        "backend": [
+          {
+            "id": "banana",
+            "name": "Banana",
+            "season": "Kharif",
+            "confidence": 85.8,
+            "yieldPrediction": 36.3,
+            "breakdown": {
+              "rainfall": 20.3,
+              "temperature": 22,
+              "humidity": 16,
+              "soil": 20,
+              "nitrogen": 0,
+              "phosphorus": 0.1,
+              "potassium": 6,
+              "phBonus": 10
+            }
+          },
+          {
+            "id": "sugarcane",
+            "name": "Sugarcane",
+            "season": "Kharif",
+            "confidence": 81.8,
+            "yieldPrediction": 81.5,
+            "breakdown": {
+              "rainfall": 22,
+              "temperature": 22,
+              "humidity": 16,
+              "soil": 20,
+              "nitrogen": 0,
+              "phosphorus": 0,
+              "potassium": 0,
+              "phBonus": 10
+            }
+          },
+          {
+            "id": "rice",
+            "name": "Rice",
+            "season": "Kharif",
+            "confidence": 64.3,
+            "yieldPrediction": 4.2,
+            "breakdown": {
+              "rainfall": 22,
+              "temperature": 22,
+              "humidity": 16,
+              "soil": 0,
+              "nitrogen": 0,
+              "phosphorus": 0.7,
+              "potassium": 0,
+              "phBonus": 10
+            }
+          },
+          {
+            "id": "soybean",
+            "name": "Soybean",
+            "season": "Kharif",
+            "confidence": 61.8,
+            "yieldPrediction": 2.3,
+            "breakdown": {
+              "rainfall": 0,
+              "temperature": 22,
+              "humidity": 16,
+              "soil": 20,
+              "nitrogen": 0,
+              "phosphorus": 0,
+              "potassium": 0,
+              "phBonus": 10
+            }
+          },
+          {
+            "id": "mango",
+            "name": "Mango",
+            "season": "Zaid",
+            "confidence": 59.9,
+            "yieldPrediction": 9.2,
+            "breakdown": {
+              "rainfall": 14.7,
+              "temperature": 22,
+              "humidity": 16,
+              "soil": 0,
+              "nitrogen": 0,
+              "phosphorus": 3.2,
+              "potassium": 0,
+              "phBonus": 10
+            }
+          },
+          {
+            "id": "wheat",
+            "name": "Wheat",
+            "season": "Rabi",
+            "confidence": 59.5,
+            "yieldPrediction": 3.2,
+            "breakdown": {
+              "rainfall": 0,
+              "temperature": 20.3,
+              "humidity": 15.1,
+              "soil": 20,
+              "nitrogen": 0,
+              "phosphorus": 0,
+              "potassium": 0,
+              "phBonus": 10
+            }
+          }
+        ],
+        "frontend": [
+          {
+            "id": "rice",
+            "name": "Rice (Paddy)",
+            "season": "Kharif",
+            "confidence": 82.5,
+            "yieldPrediction": 4.6
+          },
+          {
+            "id": "sugarcane",
+            "name": "Sugarcane",
+            "season": "Annual",
+            "confidence": 81.8,
+            "yieldPrediction": 71.3
+          },
+          {
+            "id": "soybean",
+            "name": "Soybean",
+            "season": "Kharif",
+            "confidence": 61.8,
+            "yieldPrediction": 1.9
+          },
+          {
+            "id": "wheat",
+            "name": "Wheat",
+            "season": "Rabi",
+            "confidence": 59.5,
+            "yieldPrediction": 3.2
+          },
+          {
+            "id": "chickpea",
+            "name": "Chickpea (Gram)",
+            "season": "Rabi",
+            "confidence": 53.5,
+            "yieldPrediction": 1.6
+          },
+          {
+            "id": "lentil",
+            "name": "Lentil (Masoor)",
+            "season": "Rabi",
+            "confidence": 50.4,
+            "yieldPrediction": 1.1
+          }
+        ]
+      }
+    }
+  },
+  "final_verdicts": {
+    "1_canonical_crop_taxonomy_quality": {
+      "verdict": "Approved with limitations",
+      "rationale": "Well-structured 19-crop inventory covering major Indian agricultural staples, but requires clear separation of RDF vs soil test ranges and corrected rainfall semantics."
+    },
+    "2_agronomic_parameter_evidence_quality": {
+      "verdict": "Requires correction",
+      "rationale": "High-fidelity agronomic evidence supports thermal, pH, and soil texture ranges, but rainfall (understated by 5x-10x) and NPK units (fertilizer application vs soil test) require fundamental restructuring."
+    },
+    "3_backend_rule_engine_defensibility": {
+      "verdict": "Requires correction",
+      "rationale": "Purely additive Gaussian scoring without hard limiting factors (Liebig's Law) permits out-of-season, water-starved, or soil-toxic crops to receive high confidence recommendations."
+    },
+    "4_frontend_fallback_consistency": {
+      "verdict": "Requires correction",
+      "rationale": "Split-brain catalog (16 vs 16 with 3 disjoint crops each) and pervasive parameter/yield/fertilizer deltas cause recommendations to fluctuate when switching between online and offline modes."
+    },
+    "5_suitability_for_future_controlled_code_changes": {
+      "verdict": "Approved with limitations",
+      "rationale": "Audited evidence matrix and identified discrepancies provide an exact, mathematically sound specification for refactoring the heuristic rules and training a safe ML model."
+    },
+    "6_production_readiness": {
+      "verdict": "Rejected",
+      "rationale": "In accordance with Phase 3C.3 scope, production approval is strictly withheld pending implementation of hard agronomic gating, catalog synchronization, and calibrated soil-test nutrient mapping."
+    }
+  }
+}

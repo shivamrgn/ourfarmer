@@ -1,0 +1,181 @@
+Crop,Model,Validation_Samples_Exp_A,Validation_Samples_Exp_B,MAE_Exp_A,MAE_Exp_B,MAE_Absolute_Diff_B_minus_A,MAE_Pct_Change
+Arhar/Tur,historical_district_mean,614,614,0.2578,0.2578,0.0,0.0
+Arhar/Tur,historical_state_mean,614,614,0.2743,0.2743,0.0,0.0
+Arhar/Tur,random_forest,614,614,0.2313,0.2543,0.023,9.96
+Arhar/Tur,extra_trees,614,614,0.2331,0.2396,0.0065,2.81
+Arhar/Tur,hist_gradient_boosting,614,614,0.4044,0.3898,-0.0146,-3.62
+Arhar/Tur,xgboost,614,614,0.3307,0.3021,-0.0286,-8.66
+Bajra,historical_district_mean,381,381,0.4179,0.4179,0.0,0.0
+Bajra,historical_state_mean,381,381,0.464,0.464,0.0,0.0
+Bajra,random_forest,381,381,0.3785,0.4649,0.0864,22.83
+Bajra,extra_trees,381,381,0.4894,0.4535,-0.0358,-7.32
+Bajra,hist_gradient_boosting,381,381,0.5456,0.5017,-0.0439,-8.05
+Bajra,xgboost,381,381,0.4238,0.4305,0.0067,1.58
+Banana,historical_district_mean,192,192,8.0757,8.0757,0.0,0.0
+Banana,historical_state_mean,192,192,8.5345,8.5345,0.0,0.0
+Banana,random_forest,192,192,6.9607,7.0258,0.065,0.93
+Banana,extra_trees,192,192,7.0079,7.0755,0.0675,0.96
+Banana,hist_gradient_boosting,192,192,8.7838,8.0478,-0.7361,-8.38
+Banana,xgboost,192,192,7.1834,7.3096,0.1262,1.76
+Barley,historical_district_mean,325,325,0.5253,0.5253,0.0,0.0
+Barley,historical_state_mean,325,325,0.5991,0.5991,0.0,0.0
+Barley,random_forest,325,325,0.3669,0.5179,0.151,41.17
+Barley,extra_trees,325,325,0.4308,0.4205,-0.0104,-2.41
+Barley,hist_gradient_boosting,325,325,0.6058,0.6056,-0.0001,-0.02
+Barley,xgboost,325,325,0.4546,0.4426,-0.0121,-2.65
+Cabbage,historical_district_mean,36,36,13.9301,13.9301,0.0,0.0
+Cabbage,historical_state_mean,36,36,13.9301,13.9301,0.0,0.0
+Cabbage,random_forest,36,36,18.702,18.9058,0.2038,1.09
+Cabbage,extra_trees,36,36,17.7728,18.3523,0.5795,3.26
+Cabbage,hist_gradient_boosting,36,36,14.0197,13.2162,-0.8035,-5.73
+Cabbage,xgboost,36,36,12.8491,11.2454,-1.6037,-12.48
+Castor seed,historical_district_mean,216,216,0.2115,0.2115,0.0,0.0
+Castor seed,historical_state_mean,216,216,0.2109,0.2109,0.0,0.0
+Castor seed,random_forest,216,216,0.5616,0.3872,-0.1744,-31.05
+Castor seed,extra_trees,216,216,0.5531,0.3276,-0.2255,-40.77
+Castor seed,hist_gradient_boosting,216,216,0.8978,0.5655,-0.3323,-37.01
+Castor seed,xgboost,216,216,0.7364,0.5216,-0.2147,-29.16
+Gram,historical_district_mean,550,550,0.2719,0.2719,0.0,0.0
+Gram,historical_state_mean,550,550,0.2883,0.2883,0.0,0.0
+Gram,random_forest,550,550,0.2656,0.3006,0.0351,13.22
+Gram,extra_trees,550,550,0.2817,0.3179,0.0362,12.87
+Gram,hist_gradient_boosting,550,550,0.4222,0.4485,0.0262,6.22
+Gram,xgboost,550,550,0.3509,0.3999,0.049,13.97
+Grapes,historical_district_mean,6,6,3.4583,3.4583,0.0,0.0
+Grapes,historical_state_mean,6,6,3.3554,3.3554,0.0,0.0
+Grapes,random_forest,6,6,20.2546,20.6107,0.3561,1.76
+Grapes,extra_trees,6,6,19.4572,20.0443,0.5871,3.02
+Grapes,hist_gradient_boosting,6,6,15.3447,16.3929,1.0482,6.83
+Grapes,xgboost,6,6,20.2636,19.916,-0.3476,-1.72
+Groundnut,historical_district_mean,728,728,0.3975,0.3975,0.0,0.0
+Groundnut,historical_state_mean,728,728,0.4279,0.4279,0.0,0.0
+Groundnut,random_forest,728,728,0.3935,0.389,-0.0045,-1.16
+Groundnut,extra_trees,728,728,0.3464,0.3905,0.0441,12.75
+Groundnut,hist_gradient_boosting,728,728,0.498,0.4994,0.0014,0.28
+Groundnut,xgboost,728,728,0.4174,0.4482,0.0307,7.36
+Jowar,historical_district_mean,537,537,0.4537,0.4537,0.0,0.0
+Jowar,historical_state_mean,537,537,0.4838,0.4838,0.0,0.0
+Jowar,random_forest,537,537,0.5819,0.3937,-0.1882,-32.34
+Jowar,extra_trees,537,537,0.5048,0.4264,-0.0785,-15.55
+Jowar,hist_gradient_boosting,537,537,0.55,0.5105,-0.0396,-7.19
+Jowar,xgboost,537,537,0.5049,0.5104,0.0055,1.09
+Lentil,historical_district_mean,9,9,4.6289,3.7877,-0.8412,-18.17
+Lentil,historical_state_mean,9,9,4.6289,3.7877,-0.8412,-18.17
+Lentil,random_forest,9,9,0.392,1.5716,1.1797,300.96
+Lentil,extra_trees,9,9,0.5484,0.5992,0.0508,9.26
+Lentil,hist_gradient_boosting,9,9,0.2214,0.0921,-0.1293,-58.39
+Lentil,xgboost,9,9,0.1117,0.0896,-0.0222,-19.84
+Maize,historical_district_mean,1204,1204,0.9302,0.9302,0.0,0.0
+Maize,historical_state_mean,1204,1204,0.9667,0.9667,0.0,0.0
+Maize,random_forest,1204,1204,0.7619,0.7242,-0.0377,-4.95
+Maize,extra_trees,1204,1204,0.7011,0.7088,0.0077,1.1
+Maize,hist_gradient_boosting,1204,1204,1.0029,1.0231,0.0202,2.02
+Maize,xgboost,1204,1204,0.7262,0.7962,0.07,9.64
+Masoor,historical_district_mean,392,392,0.2259,0.2259,0.0,0.0
+Masoor,historical_state_mean,392,392,0.2377,0.2377,0.0,0.0
+Masoor,random_forest,392,392,0.2091,0.2105,0.0014,0.67
+Masoor,extra_trees,392,392,0.212,0.2161,0.0041,1.95
+Masoor,hist_gradient_boosting,392,392,0.26,0.2328,-0.0272,-10.46
+Masoor,xgboost,392,392,0.2989,0.2983,-0.0006,-0.22
+Moong(Green Gram),historical_district_mean,977,977,0.1634,0.1634,0.0,0.0
+Moong(Green Gram),historical_state_mean,977,977,0.1643,0.1643,0.0,0.0
+Moong(Green Gram),random_forest,977,977,0.1379,0.1382,0.0003,0.21
+Moong(Green Gram),extra_trees,977,977,0.1944,0.1921,-0.0023,-1.2
+Moong(Green Gram),hist_gradient_boosting,977,977,0.3618,0.3124,-0.0494,-13.64
+Moong(Green Gram),xgboost,977,977,0.2211,0.2455,0.0244,11.05
+Onion,historical_district_mean,598,598,3.6305,3.6305,0.0,0.0
+Onion,historical_state_mean,598,598,4.0442,4.0442,0.0,0.0
+Onion,random_forest,598,598,2.4994,2.445,-0.0544,-2.18
+Onion,extra_trees,598,598,2.7607,2.8923,0.1317,4.77
+Onion,hist_gradient_boosting,598,598,3.1263,3.2487,0.1224,3.92
+Onion,xgboost,598,598,2.59,2.901,0.311,12.01
+Paddy,historical_district_mean,103,103,0.6622,0.6622,0.0,0.0
+Paddy,historical_state_mean,103,103,0.6554,0.6554,0.0,0.0
+Paddy,random_forest,103,103,0.7912,0.6881,-0.1031,-13.03
+Paddy,extra_trees,103,103,0.5501,0.5038,-0.0463,-8.42
+Paddy,hist_gradient_boosting,103,103,1.2664,1.6174,0.351,27.72
+Paddy,xgboost,103,103,0.456,0.8838,0.4278,93.83
+Papaya,historical_district_mean,69,69,6.4211,6.4211,0.0,0.0
+Papaya,historical_state_mean,69,69,6.9468,6.9468,0.0,0.0
+Papaya,random_forest,69,69,26.5856,26.4669,-0.1187,-0.45
+Papaya,extra_trees,69,69,26.29,26.2832,-0.0068,-0.03
+Papaya,hist_gradient_boosting,69,69,23.2579,22.4392,-0.8188,-3.52
+Papaya,xgboost,69,69,20.9889,18.0139,-2.9751,-14.17
+Potato,historical_district_mean,494,494,3.0259,3.0259,0.0,0.0
+Potato,historical_state_mean,494,494,3.6083,3.6083,0.0,0.0
+Potato,random_forest,494,494,2.9049,2.8912,-0.0137,-0.47
+Potato,extra_trees,494,494,2.9429,3.037,0.0941,3.2
+Potato,hist_gradient_boosting,494,494,3.298,3.3068,0.0088,0.27
+Potato,xgboost,494,494,3.0348,3.146,0.1113,3.67
+Ragi,historical_district_mean,326,326,0.3407,0.3407,0.0,0.0
+Ragi,historical_state_mean,326,326,0.3472,0.3472,0.0,0.0
+Ragi,random_forest,326,326,0.2728,0.2772,0.0044,1.6
+Ragi,extra_trees,326,326,0.3475,0.3611,0.0136,3.91
+Ragi,hist_gradient_boosting,326,326,0.4343,0.4371,0.0029,0.66
+Ragi,xgboost,326,326,0.4019,0.3812,-0.0207,-5.16
+Rapeseed &Mustard,historical_district_mean,549,549,0.2203,0.2203,0.0,0.0
+Rapeseed &Mustard,historical_state_mean,549,549,0.2663,0.2663,0.0,0.0
+Rapeseed &Mustard,random_forest,549,549,0.2146,0.2094,-0.0051,-2.4
+Rapeseed &Mustard,extra_trees,549,549,0.2429,0.2628,0.0199,8.19
+Rapeseed &Mustard,hist_gradient_boosting,549,549,0.4859,0.411,-0.0749,-15.41
+Rapeseed &Mustard,xgboost,549,549,0.3744,0.407,0.0326,8.7
+Rice,historical_district_mean,1164,1164,0.569,0.569,0.0,0.0
+Rice,historical_state_mean,1164,1164,0.6735,0.6735,0.0,0.0
+Rice,random_forest,1164,1164,0.4541,0.4493,-0.0048,-1.06
+Rice,extra_trees,1164,1164,0.4785,0.4845,0.0059,1.24
+Rice,hist_gradient_boosting,1164,1164,0.6757,0.6907,0.015,2.22
+Rice,xgboost,1164,1164,0.5257,0.5475,0.0218,4.15
+Sesamum,historical_district_mean,661,661,0.1156,0.1156,0.0,0.0
+Sesamum,historical_state_mean,661,661,0.1251,0.1251,0.0,0.0
+Sesamum,random_forest,661,661,0.1033,0.1047,0.0015,1.43
+Sesamum,extra_trees,661,661,0.1939,0.165,-0.0289,-14.9
+Sesamum,hist_gradient_boosting,661,661,0.4895,0.4847,-0.0048,-0.98
+Sesamum,xgboost,661,661,0.3846,0.3291,-0.0556,-14.45
+Soyabean,historical_district_mean,257,257,0.3473,0.3473,0.0,0.0
+Soyabean,historical_state_mean,257,257,0.3869,0.3869,0.0,0.0
+Soyabean,random_forest,257,257,0.3221,0.3229,0.0008,0.24
+Soyabean,extra_trees,257,257,0.4167,0.4682,0.0515,12.37
+Soyabean,hist_gradient_boosting,257,257,0.4675,0.4692,0.0018,0.38
+Soyabean,xgboost,257,257,0.4047,0.4054,0.0007,0.18
+Sugarcane,historical_district_mean,628,628,12.785,12.785,0.0,0.0
+Sugarcane,historical_state_mean,628,628,14.1494,14.1494,0.0,0.0
+Sugarcane,random_forest,628,628,12.5304,12.5637,0.0333,0.27
+Sugarcane,extra_trees,628,628,14.151,14.576,0.4249,3.0
+Sugarcane,hist_gradient_boosting,628,628,13.5728,13.2702,-0.3027,-2.23
+Sugarcane,xgboost,628,628,12.4874,12.5249,0.0375,0.3
+Sunflower,historical_district_mean,423,423,0.2797,0.2797,0.0,0.0
+Sunflower,historical_state_mean,423,423,0.2814,0.2814,0.0,0.0
+Sunflower,random_forest,423,423,0.2482,0.2419,-0.0063,-2.54
+Sunflower,extra_trees,423,423,0.3094,0.3448,0.0353,11.42
+Sunflower,hist_gradient_boosting,423,423,0.5361,0.4986,-0.0375,-7.0
+Sunflower,xgboost,423,423,0.4353,0.3819,-0.0534,-12.27
+Sweet potato,historical_district_mean,358,358,1.7465,1.7465,0.0,0.0
+Sweet potato,historical_state_mean,358,358,1.7846,1.7846,0.0,0.0
+Sweet potato,random_forest,358,358,1.3903,1.5498,0.1595,11.48
+Sweet potato,extra_trees,358,358,1.5843,1.6992,0.1149,7.25
+Sweet potato,hist_gradient_boosting,358,358,2.3691,2.2862,-0.083,-3.5
+Sweet potato,xgboost,358,358,1.7647,1.625,-0.1397,-7.91
+Tapioca,historical_district_mean,122,122,5.2887,5.2887,0.0,0.0
+Tapioca,historical_state_mean,122,122,5.5037,5.5037,0.0,0.0
+Tapioca,random_forest,122,122,3.8838,3.9429,0.059,1.52
+Tapioca,extra_trees,122,122,4.0543,4.1853,0.131,3.23
+Tapioca,hist_gradient_boosting,122,122,5.0956,4.8239,-0.2717,-5.33
+Tapioca,xgboost,122,122,4.1497,4.0143,-0.1354,-3.26
+Tomato,historical_district_mean,40,40,8.8908,8.8908,0.0,0.0
+Tomato,historical_state_mean,40,40,8.8908,8.8908,0.0,0.0
+Tomato,random_forest,40,40,7.094,16.1053,9.0112,127.03
+Tomato,extra_trees,40,40,12.2355,15.0,2.7645,22.59
+Tomato,hist_gradient_boosting,40,40,13.8245,13.2388,-0.5858,-4.24
+Tomato,xgboost,40,40,14.61,14.3906,-0.2194,-1.5
+Urad,historical_district_mean,868,868,0.153,0.153,0.0,0.0
+Urad,historical_state_mean,868,868,0.1613,0.1613,0.0,0.0
+Urad,random_forest,868,868,0.1326,0.1291,-0.0035,-2.64
+Urad,extra_trees,868,868,0.1277,0.1345,0.0068,5.32
+Urad,hist_gradient_boosting,868,868,0.3296,0.2835,-0.0461,-13.98
+Urad,xgboost,868,868,0.2442,0.2201,-0.0241,-9.87
+Wheat,historical_district_mean,595,595,0.5167,0.5167,0.0,0.0
+Wheat,historical_state_mean,595,595,0.5689,0.5689,0.0,0.0
+Wheat,random_forest,595,595,0.3582,0.3195,-0.0388,-10.82
+Wheat,extra_trees,595,595,0.3555,0.3733,0.0178,5.0
+Wheat,hist_gradient_boosting,595,595,0.7006,0.7134,0.0128,1.82
+Wheat,xgboost,595,595,0.4658,0.4544,-0.0114,-2.44

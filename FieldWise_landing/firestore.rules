@@ -1,0 +1,69 @@
+rules_version = '2';
+
+// FieldWise Firestore Security Rules
+// Collection: users/{userId}
+//   - Only the authenticated Firebase owner may access their own document.
+//   - On create, uid and email must match the authenticated token (request.auth).
+//   - On update, protected fields (role, uid, email, createdAt) cannot be modified.
+//   - Reject password and passwordHash fields on all operations.
+//   - Unauthenticated access is rejected across all documents.
+//   - Strict default-deny for all other collections.
+//
+// NOTE: DO NOT deploy automatically. Deploy only via Firebase Console or:
+//       firebase deploy --only firestore:rules
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── users/{userId} ────────────────────────────────────────────────────────
+    match /users/{userId} {
+
+      // Helper: is this request from the authenticated owner?
+      function isOwner() {
+        return request.auth != null && request.auth.uid == userId;
+      }
+
+      // Helper: immutable fields must not be changed on update
+      function immutableFieldsUnchanged() {
+        return !request.resource.data.diff(resource.data).affectedKeys()
+          .hasAny(['uid', 'email', 'createdAt', 'role']);
+      }
+
+      // Helper: reject password and passwordHash fields on any write
+      function noPasswordFields() {
+        return !request.resource.data.keys().hasAny(['passwordHash', 'password']);
+      }
+
+      // Read: strictly authenticated owner
+      allow read: if isOwner();
+
+      // Create: strictly authenticated owner, valid token claims, no password fields
+      allow create: if isOwner()
+        && noPasswordFields()
+        && request.resource.data.uid == userId
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.role == 'Farmer';
+
+      // Update: strictly authenticated owner, immutable fields unchanged, valid token claims, no password fields
+      allow update: if isOwner()
+        && immutableFieldsUnchanged()
+        && noPasswordFields()
+        && request.resource.data.uid == userId
+        && request.resource.data.email == request.auth.token.email;
+
+      // Delete: disabled from client
+      allow delete: if false;
+    }
+
+    // ── farmers/{farmerId} (legacy collection — read-only for migration) ─────
+    match /farmers/{farmerId} {
+      allow read: if request.auth != null && request.auth.uid == farmerId;
+      allow write: if false;
+    }
+
+    // ── Default-Deny: All other paths ─────────────────────────────────────────
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

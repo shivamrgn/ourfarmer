@@ -1,0 +1,406 @@
+{
+  "metadata": {
+    "project": "FieldWise Agricultural Intelligence",
+    "audit_phase": "Phase 3A.3: Yield Unit Integrity and Independent Validation",
+    "timestamp": "2026-11-17T09:32:47.275038"
+  },
+  "raw_datasets": {
+    "agriculture_in_india": {
+      "dataset_name": "agriculture_in_india.csv",
+      "description": "Historical crop production statistics in India (1997-2015) published by DAC&FW / Ministry of Agriculture",
+      "rows": 246091,
+      "columns": 7,
+      "column_names": [
+        "State_Name",
+        "District_Name",
+        "Crop_Year",
+        "Season",
+        "Crop",
+        "Area",
+        "Production"
+      ],
+      "dtypes": {
+        "State_Name": "object",
+        "District_Name": "object",
+        "Crop_Year": "int64",
+        "Season": "object",
+        "Crop": "object",
+        "Area": "float64",
+        "Production": "float64"
+      },
+      "missing_values": {
+        "State_Name": 0,
+        "District_Name": 0,
+        "Crop_Year": 0,
+        "Season": 0,
+        "Crop": 0,
+        "Area": 0,
+        "Production": 3730
+      },
+      "missing_percentage": {
+        "State_Name": 0.0,
+        "District_Name": 0.0,
+        "Crop_Year": 0.0,
+        "Season": 0.0,
+        "Crop": 0.0,
+        "Area": 0.0,
+        "Production": 1.52
+      },
+      "duplicates": 0,
+      "unique_states_count": 33,
+      "unique_districts_count": 646,
+      "unique_crops_count": 124,
+      "year_min": 1997,
+      "year_max": 2015,
+      "area_stats": {
+        "min": 0.04,
+        "median": 582.0,
+        "mean": 12002.82086370489,
+        "max": 8580100.0,
+        "std": 50523.40401891372
+      },
+      "production_stats": {
+        "min": 0.0,
+        "median": 729.0,
+        "mean": 582503.442250981,
+        "max": 1250800000.0,
+        "std": 17065813.172410317
+      },
+      "yield_stats": {
+        "min": 0.0,
+        "p25": 0.5135135135135135,
+        "median": 1.0,
+        "p75": 2.3554502369668247,
+        "p95": 22.448275862068964,
+        "p99": 82.66371191135714,
+        "max": 88000.0,
+        "mean": 41.64905917459431,
+        "std": 817.5728390253759
+      },
+      "top_crops_by_frequency": {
+        "Rice": 15104,
+        "Maize": 13947,
+        "Moong(Green Gram)": 10318,
+        "Urad": 9850,
+        "Sesamum": 9046,
+        "Groundnut": 8834,
+        "Sugarcane": 7921,
+        "Wheat": 7899,
+        "Rapeseed &Mustard": 7592,
+        "Arhar/Tur": 7578,
+        "Gram": 7361,
+        "Jowar": 7065,
+        "Onion": 7012,
+        "Potato": 6931,
+        "Dry chillies": 6489
+      }
+    },
+    "district_rainfall_normal": {
+      "dataset_name": "district_rainfall_normal.csv",
+      "description": "District-wise 30-year normal rainfall statistics from the Indian Meteorological Department (IMD)",
+      "rows": 641,
+      "columns": 19,
+      "column_names": [
+        "STATE_UT_NAME",
+        "DISTRICT",
+        "JAN",
+        "FEB",
+        "MAR",
+        "APR",
+        "MAY",
+        "JUN",
+        "JUL",
+        "AUG",
+        "SEP",
+        "OCT",
+        "NOV",
+        "DEC",
+        "ANNUAL",
+        "Jan-Feb",
+        "Mar-May",
+        "Jun-Sep",
+        "Oct-Dec"
+      ],
+      "dtypes": {
+        "STATE_UT_NAME": "object",
+        "DISTRICT": "object",
+        "JAN": "float64",
+        "FEB": "float64",
+        "MAR": "float64",
+        "APR": "float64",
+        "MAY": "float64",
+        "JUN": "float64",
+        "JUL": "float64",
+        "AUG": "float64",
+        "SEP": "float64",
+        "OCT": "float64",
+        "NOV": "float64",
+        "DEC": "float64",
+        "ANNUAL": "float64",
+        "Jan-Feb": "float64",
+        "Mar-May": "float64",
+        "Jun-Sep": "float64",
+        "Oct-Dec": "float64"
+      },
+      "missing_values": {
+        "STATE_UT_NAME": 0,
+        "DISTRICT": 0,
+        "JAN": 0,
+        "FEB": 0,
+        "MAR": 0,
+        "APR": 0,
+        "MAY": 0,
+        "JUN": 0,
+        "JUL": 0,
+        "AUG": 0,
+        "SEP": 0,
+        "OCT": 0,
+        "NOV": 0,
+        "DEC": 0,
+        "ANNUAL": 0,
+        "Jan-Feb": 0,
+        "Mar-May": 0,
+        "Jun-Sep": 0,
+        "Oct-Dec": 0
+      },
+      "duplicates": 0,
+      "unique_states": 35,
+      "unique_districts": 637,
+      "annual_rainfall_stats": {
+        "min_mm": 94.6,
+        "median_mm": 1116.2,
+        "mean_mm": 1346.9695787831513,
+        "max_mm": 7229.3,
+        "std_mm": 838.878873833242
+      },
+      "monsoon_rainfall_stats": {
+        "min_mm": 39.6,
+        "median_mm": 896.6,
+        "mean_mm": 1007.8023400936038,
+        "max_mm": 5228.0
+      }
+    },
+    "kaggle_crop_recommendation_benchmark": {
+      "dataset_name": "kaggle_crop_recommendation_benchmark.csv",
+      "description": "Augmented agricultural dataset compiled and engineered from Indian climate, soil, and fertilizer research data",
+      "author": "Atharva Ingle",
+      "source_url": "https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset",
+      "license": "Apache 2.0",
+      "methodology": "Augmented agricultural data based on Indian climate, soil, and fertilizer research data (removes unsupported claims of Gaussian synthetic generation)",
+      "provenance_category": "Category_C_Augmented",
+      "rows": 2200,
+      "columns": 8,
+      "column_names": [
+        "N",
+        "P",
+        "K",
+        "temperature",
+        "humidity",
+        "ph",
+        "rainfall",
+        "label"
+      ],
+      "dtypes": {
+        "N": "int64",
+        "P": "int64",
+        "K": "int64",
+        "temperature": "float64",
+        "humidity": "float64",
+        "ph": "float64",
+        "rainfall": "float64",
+        "label": "object"
+      },
+      "missing_values": {
+        "N": 0,
+        "P": 0,
+        "K": 0,
+        "temperature": 0,
+        "humidity": 0,
+        "ph": 0,
+        "rainfall": 0,
+        "label": 0
+      },
+      "duplicates": 0,
+      "unique_crops_count": 22,
+      "crops": [
+        "apple",
+        "banana",
+        "blackgram",
+        "chickpea",
+        "coconut",
+        "coffee",
+        "cotton",
+        "grapes",
+        "jute",
+        "kidneybeans",
+        "lentil",
+        "maize",
+        "mango",
+        "mothbeans",
+        "mungbean",
+        "muskmelon",
+        "orange",
+        "papaya",
+        "pigeonpeas",
+        "pomegranate",
+        "rice",
+        "watermelon"
+      ],
+      "observations_per_crop": {
+        "rice": 100,
+        "maize": 100,
+        "jute": 100,
+        "cotton": 100,
+        "coconut": 100,
+        "papaya": 100,
+        "orange": 100,
+        "apple": 100,
+        "muskmelon": 100,
+        "watermelon": 100,
+        "grapes": 100,
+        "mango": 100,
+        "banana": 100,
+        "pomegranate": 100,
+        "lentil": 100,
+        "blackgram": 100,
+        "mungbean": 100,
+        "mothbeans": 100,
+        "pigeonpeas": 100,
+        "kidneybeans": 100,
+        "chickpea": 100,
+        "coffee": 100
+      },
+      "feature_ranges": {
+        "N": {
+          "min": 0.0,
+          "median": 37.0,
+          "mean": 50.551818181818184,
+          "max": 140.0,
+          "std": 36.9173338337566
+        },
+        "P": {
+          "min": 5.0,
+          "median": 51.0,
+          "mean": 53.36272727272727,
+          "max": 145.0,
+          "std": 32.98588273858715
+        },
+        "K": {
+          "min": 5.0,
+          "median": 32.0,
+          "mean": 48.14909090909091,
+          "max": 205.0,
+          "std": 50.64793054666013
+        },
+        "temperature": {
+          "min": 8.825674745,
+          "median": 25.5986932,
+          "mean": 25.616243851779544,
+          "max": 43.67549305,
+          "std": 5.063748599958843
+        },
+        "humidity": {
+          "min": 14.25803981,
+          "median": 80.473145665,
+          "mean": 71.48177921778637,
+          "max": 99.98187601,
+          "std": 22.263811589761083
+        },
+        "ph": {
+          "min": 3.504752314,
+          "median": 6.42504527,
+          "mean": 6.469480065256364,
+          "max": 9.93509073,
+          "std": 0.7739376880298733
+        },
+        "rainfall": {
+          "min": 20.21126747,
+          "median": 94.86762427,
+          "mean": 103.46365541576817,
+          "max": 298.5601175,
+          "std": 54.95838852487813
+        }
+      }
+    }
+  },
+  "processed_datasets": {
+    "cleaned_crop_yield": {
+      "filename": "cleaned_crop_yield.csv",
+      "rows": 227573,
+      "columns": 10,
+      "target_unit": "Metric Tonnes per Hectare (Pure mass basis)",
+      "unique_crops": 97,
+      "unique_states": 33,
+      "yield_stats": {
+        "min": 0.005,
+        "median": 1.0,
+        "mean": 4.522234337992645,
+        "max": 179.867
+      }
+    },
+    "segregated_cotton_bales_yield": {
+      "filename": "segregated_cotton_bales_yield.csv",
+      "rows": 4327,
+      "columns": 12,
+      "target_unit": "Bales of 170 kg lint per Hectare",
+      "unique_crops": 1,
+      "unique_states": 25,
+      "yield_stats": {
+        "min": 0.029,
+        "median": 1.371,
+        "mean": 1.5792671596949386,
+        "max": 8.866
+      }
+    },
+    "segregated_jute_mesta_bales_yield": {
+      "filename": "segregated_jute_mesta_bales_yield.csv",
+      "rows": 3196,
+      "columns": 12,
+      "target_unit": "Bales of 180 kg clean fiber per Hectare",
+      "unique_crops": 3,
+      "unique_states": 16,
+      "yield_stats": {
+        "min": 0.091,
+        "median": 7.179,
+        "mean": 7.278549749687109,
+        "max": 24.95
+      }
+    },
+    "segregated_coconut_nuts_yield": {
+      "filename": "segregated_coconut_nuts_yield.csv",
+      "rows": 1957,
+      "columns": 11,
+      "target_unit": "Nuts per Hectare",
+      "unique_crops": 1,
+      "unique_states": 12,
+      "yield_stats": {
+        "min": 0.01,
+        "median": 43.12,
+        "mean": 4042.468257537047,
+        "max": 38800.0
+      }
+    },
+    "segregated_arecanut_yield": {
+      "filename": "segregated_arecanut_yield.csv",
+      "rows": 1578,
+      "columns": 11,
+      "target_unit": "Raw reported ratio per Hectare (state-mixed cured vs fresh nuts)",
+      "unique_crops": 3,
+      "unique_states": 10,
+      "yield_stats": {
+        "min": 0.04,
+        "median": 1.227,
+        "mean": 2.2041634980988594,
+        "max": 19.3
+      }
+    },
+    "segregated_unverified_unit_yield": {
+      "filename": "segregated_unverified_unit_yield.csv",
+      "rows": 35,
+      "columns": 12,
+      "target_unit": "Unverified reporting unit anomalies (Sugarcane >180, Cotton MH 1997 >10)",
+      "unique_crops": 2,
+      "unique_states": 5
+    }
+  }
+}
