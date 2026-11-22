@@ -1,0 +1,86 @@
+# =============================================================================
+# FieldWise Phase 3A: Local Staging Simulation Compose File
+# File Reference: docs/deployment/templates/docker-compose.staging.yml
+# =============================================================================
+# Safe template for orchestrating staging simulation with isolated networking.
+# NOTE: DO NOT commit real secrets into this file. Supply via .env.staging.
+# =============================================================================
+
+version: '3.8'
+
+services:
+  # ─── Express Backend + Python Engine ──────────────────────────────────────
+  backend:
+    build:
+      context: ../../../
+      dockerfile: docs/deployment/templates/Dockerfile.backend
+    container_name: fieldwise-backend-staging
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=staging
+      - PORT=3001
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_EXPIRES_IN=7d
+      - FRONTEND_URL=https://staging.fieldwise.agri,https://app.staging.fieldwise.agri,http://localhost:5173,http://localhost:5174
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_SERVICE_ROLE_KEY=${SUPABASE_SERVICE_ROLE_KEY}
+      - SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
+      - ENABLE_V2_CLOUD_PERSISTENCE=true
+      - FIREBASE_PROJECT_ID=${FIREBASE_PROJECT_ID:-fieldwise-6db7b}
+      - FIELDWISE_PYTHON_PATH=python3
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/api/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+    networks:
+      - fieldwise-net
+
+  # ─── Main Farmer Dashboard Frontend ──────────────────────────────────────
+  main-frontend:
+    image: node:22-bookworm-slim
+    container_name: fieldwise-main-staging
+    restart: unless-stopped
+    working_dir: /app/FieldWise_main
+    volumes:
+      - ../../../FieldWise_main:/app/FieldWise_main
+    ports:
+      - "5174:5174"
+    environment:
+      - VITE_API_URL=http://localhost:3001
+      - VITE_LANDING_APP_URL=http://localhost:5173
+      - VITE_SUPABASE_URL=${SUPABASE_URL}
+      - VITE_SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
+      - VITE_GEMINI_API_KEY=${VITE_GEMINI_API_KEY}
+    command: sh -c "npm ci && npm run build && npx serve -s dist -l 5174"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - fieldwise-net
+
+  # ─── Landing Page Frontend ───────────────────────────────────────────────
+  landing-frontend:
+    image: node:22-bookworm-slim
+    container_name: fieldwise-landing-staging
+    restart: unless-stopped
+    working_dir: /app/FieldWise_landing
+    volumes:
+      - ../../../FieldWise_landing:/app/FieldWise_landing
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_MAIN_APP_URL=http://localhost:5174
+      - VITE_API_URL=http://localhost:3001
+      - VITE_FIREBASE_API_KEY=${VITE_FIREBASE_API_KEY}
+      - VITE_FIREBASE_AUTH_DOMAIN=${VITE_FIREBASE_AUTH_DOMAIN}
+      - VITE_FIREBASE_PROJECT_ID=${VITE_FIREBASE_PROJECT_ID}
+    command: sh -c "npm ci && npm run build && npx serve -s dist -l 5173"
+    networks:
+      - fieldwise-net
+
+networks:
+  fieldwise-net:
+    driver: bridge

@@ -18,6 +18,9 @@ const predictRoutes = require('./routes/predict');
 const predictV2Routes = require('./routes/v2/predict');
 const schemesRoutes = require('./routes/schemes');
 const expertSupportRoutes = require('./routes/expertSupport');
+const farmProfileRoutes = require('./routes/farmProfile');
+const farmerRoutes = require('./routes/farmer');
+const diseaseRoutes = require('./routes/disease');
 
 const app = express();
 
@@ -113,6 +116,9 @@ app.use('/api/predict', predictRoutes);
 app.use('/api/v2/predict', predictV2Routes);
 app.use('/api/schemes', schemesRoutes);
 app.use('/api/expert-support', expertSupportRoutes);
+app.use('/api/farm-profile', farmProfileRoutes);
+app.use('/api/farmer', farmerRoutes);
+app.use('/api/disease', diseaseRoutes);
 
 // ─── 404 Handler ─────────────────────────────────────────────────────────────
 

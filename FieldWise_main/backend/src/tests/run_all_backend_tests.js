@@ -50,6 +50,16 @@ const testSuites = [
         file: 'src/tests/backend_config_security.test.js',
         useNodeTest: true,
     },
+    {
+        name: 'Phase 3A.2: V1 Backend-Mediated Persistence Tests',
+        file: 'src/tests/v1_backend_persistence.test.js',
+        useNodeTest: true,
+    },
+    {
+        name: 'Phase 3A.2: Gemini Disease Detection Tests',
+        file: 'src/tests/gemini_disease_detection.test.js',
+        useNodeTest: true,
+    },
 ];
 
 function runAllBackendTests() {

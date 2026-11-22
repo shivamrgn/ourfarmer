@@ -48,6 +48,18 @@ export const supabase = createClient(
   }
 );
 
+// Backend API URL for authenticated persistence mediation
+const API_URL = (import.meta as any).env?.VITE_API_URL || 'http://localhost:3001';
+
+// Helper to retrieve active backend JWT token from authentication stores
+export function getAuthToken(): string | null {
+  if (typeof localStorage === 'undefined') return null;
+  return localStorage.getItem('fieldwise_auth_token') ||
+         localStorage.getItem('croppredict_token') ||
+         localStorage.getItem('token') ||
+         null;
+}
+
 // Helper to get active farmer ID reliably from localStorage
 export function getActiveFarmerId(): string {
   if (typeof localStorage === 'undefined') return 'farmer_main';
@@ -149,6 +161,32 @@ export async function ensureParentFarmerExists(farmerId: string, email?: string,
  * Upserts a farmer record in Supabase.
  */
 export async function syncFarmerToSupabase(farmer: DbFarmer): Promise<{ success: boolean; error?: string }> {
+  const token = getAuthToken();
+  if (token && typeof fetch !== 'undefined') {
+    try {
+      const res = await fetch(`${API_URL}/api/farmer/sync`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(farmer)
+      });
+      if (res.ok) {
+        const json = await res.json();
+        if (json.success) {
+          console.log('✅ [Backend-Mediation] Synced farmer via backend:', farmer.id);
+          return { success: true };
+        }
+      }
+      const errJson = await res.json().catch(() => ({}));
+      console.warn('[Backend-Mediation] syncFarmer error:', errJson.message || res.statusText);
+      return { success: false, error: errJson.message || `Backend sync failed (${res.status})` };
+    } catch (networkErr: any) {
+      console.warn('[Backend-Mediation] Network error reaching backend, attempting direct fallback:', networkErr.message);
+    }
+  }
+
   if (!isSupabaseConfigured) return { success: false, error: 'Supabase not configured' };
   try {
     const { error } = await supabase
@@ -179,6 +217,32 @@ export async function syncFarmerToSupabase(farmer: DbFarmer): Promise<{ success:
  * Saves a farm profile (soil, conditions, location) to Supabase without relying on onConflict constraints.
  */
 export async function syncFarmProfileToSupabase(profile: DbFarmProfile): Promise<{ success: boolean; error?: string }> {
+  const token = getAuthToken();
+  if (token && typeof fetch !== 'undefined') {
+    try {
+      const res = await fetch(`${API_URL}/api/farm-profile`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(profile)
+      });
+      if (res.ok) {
+        const json = await res.json();
+        if (json.success) {
+          console.log('✅ [Backend-Mediation] Synced farm profile via backend for farmer:', profile.farmer_id);
+          return { success: true };
+        }
+      }
+      const errJson = await res.json().catch(() => ({}));
+      console.warn('[Backend-Mediation] syncFarmProfile error:', errJson.message || res.statusText);
+      return { success: false, error: errJson.message || `Backend sync failed (${res.status})` };
+    } catch (networkErr: any) {
+      console.warn('[Backend-Mediation] Network error reaching backend, attempting direct fallback:', networkErr.message);
+    }
+  }
+
   if (!isSupabaseConfigured) return { success: false, error: 'Supabase not configured' };
   try {
     const farmerId = profile.farmer_id || getActiveFarmerId();
@@ -240,7 +304,28 @@ export async function syncFarmProfileToSupabase(profile: DbFarmProfile): Promise
  * Fetches farmer row from public.farmers by farmerId.
  */
 export async function fetchFarmerFromSupabase(farmerId: string): Promise<DbFarmer | null> {
-  if (!isSupabaseConfigured || !farmerId || farmerId === 'farmer_main') return null;
+  if (!farmerId || farmerId === 'farmer_main') return null;
+  const token = getAuthToken();
+  if (token && typeof fetch !== 'undefined') {
+    try {
+      const res = await fetch(`${API_URL}/api/farmer/profile`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      if (res.ok) {
+        const json = await res.json();
+        if (json.success && json.farmer) {
+          return json.farmer as DbFarmer;
+        }
+      }
+    } catch (networkErr: any) {
+      console.warn('[Backend-Mediation] Network error fetching farmer, attempting fallback:', networkErr.message);
+    }
+  }
+
+  if (!isSupabaseConfigured) return null;
   try {
     const { data, error } = await supabase
       .from('farmers')
@@ -263,7 +348,28 @@ export async function fetchFarmerFromSupabase(farmerId: string): Promise<DbFarme
  * Fetches the latest farm profile for a farmer from public.farm_profiles.
  */
 export async function fetchFarmProfileFromSupabase(farmerId: string): Promise<DbFarmProfile | null> {
-  if (!isSupabaseConfigured || !farmerId || farmerId === 'farmer_main') return null;
+  if (!farmerId || farmerId === 'farmer_main') return null;
+  const token = getAuthToken();
+  if (token && typeof fetch !== 'undefined') {
+    try {
+      const res = await fetch(`${API_URL}/api/farm-profile`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      if (res.ok) {
+        const json = await res.json();
+        if (json.success && json.profile) {
+          return json.profile as DbFarmProfile;
+        }
+      }
+    } catch (networkErr: any) {
+      console.warn('[Backend-Mediation] Network error fetching farm profile, attempting fallback:', networkErr.message);
+    }
+  }
+
+  if (!isSupabaseConfigured) return null;
   try {
     const { data, error } = await supabase
       .from('farm_profiles')
@@ -290,7 +396,28 @@ export async function fetchFarmProfileFromSupabase(farmerId: string): Promise<Db
  * Fetches the latest crop prediction for a farmer from public.crop_predictions.
  */
 export async function fetchLatestPredictionFromSupabase(farmerId: string): Promise<DbCropPrediction | null> {
-  if (!isSupabaseConfigured || !farmerId || farmerId === 'farmer_main') return null;
+  if (!farmerId || farmerId === 'farmer_main') return null;
+  const token = getAuthToken();
+  if (token && typeof fetch !== 'undefined') {
+    try {
+      const res = await fetch(`${API_URL}/api/predict/history?limit=1`, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+      if (res.ok) {
+        const json = await res.json();
+        if (json.success && json.history && json.history.length > 0) {
+          return json.history[0] as DbCropPrediction;
+        }
+      }
+    } catch (networkErr: any) {
+      console.warn('[Backend-Mediation] Network error fetching latest prediction, attempting fallback:', networkErr.message);
+    }
+  }
+
+  if (!isSupabaseConfigured) return null;
   try {
     const { data, error } = await supabase
       .from('crop_predictions')
@@ -317,6 +444,32 @@ export async function fetchLatestPredictionFromSupabase(farmerId: string): Promi
  * Saves a crop prediction to Supabase history.
  */
 export async function savePredictionToSupabase(prediction: DbCropPrediction): Promise<{ success: boolean; error?: string }> {
+  const token = getAuthToken();
+  if (token && typeof fetch !== 'undefined') {
+    try {
+      const res = await fetch(`${API_URL}/api/predict/save`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(prediction)
+      });
+      if (res.ok) {
+        const json = await res.json();
+        if (json.success) {
+          console.log('✅ [Backend-Mediation] Saved crop prediction via backend:', prediction.recommended_crop);
+          return { success: true };
+        }
+      }
+      const errJson = await res.json().catch(() => ({}));
+      console.warn('[Backend-Mediation] savePrediction error:', errJson.message || res.statusText);
+      return { success: false, error: errJson.message || `Backend save failed (${res.status})` };
+    } catch (networkErr: any) {
+      console.warn('[Backend-Mediation] Network error saving prediction, attempting fallback:', networkErr.message);
+    }
+  }
+
   if (!isSupabaseConfigured) return { success: false, error: 'Supabase not configured' };
   try {
     const farmerId = prediction.farmer_id || getActiveFarmerId();
