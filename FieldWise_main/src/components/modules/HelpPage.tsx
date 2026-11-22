@@ -172,9 +172,9 @@ const HelpPage = ({ onNavigate }: HelpPageProps) => {
                     <div className="p-2 bg-orange-100 dark:bg-orange-950/60 rounded-lg group-hover:scale-105 transition-transform">
                       <FileText className="h-5 w-5 text-orange-600" />
                     </div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-orange-600 transition-colors">Documentation</h3>
+                    <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-orange-600 transition-colors">Learning & Guides</h3>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Detailed technical documentation and API guides</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Practical step-by-step feature guides and farming knowledge</p>
                   <Button
                     variant="outline"
                     size="sm"
@@ -184,7 +184,7 @@ const HelpPage = ({ onNavigate }: HelpPageProps) => {
                       onNavigate?.("documentation");
                     }}
                   >
-                    Read Docs
+                    View Learning Centre
                   </Button>
                 </CardContent>
               </Card>
