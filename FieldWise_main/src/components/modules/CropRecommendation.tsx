@@ -10,7 +10,7 @@ import { useWeather } from "@/components/dashboard/WeatherContext";
 import { useAuth } from "@/context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { predictApi, V2ApiError } from "@/lib/api";
-import { CropPredictionResult } from "@/lib/predictorEngine";
+import { CropPredictionResult, CROPS, FERTILIZERS, CropData } from "@/lib/predictorEngine";
 import { savePredictionToSupabase, fetchLatestPredictionFromSupabase, getActiveFarmerId } from "@/lib/supabase";
 import { PredictionFormV2 } from "../v2/PredictionFormV2";
 import { PredictionResultsV2 } from "../v2/PredictionResultsV2";
@@ -77,6 +77,100 @@ const INDIAN_STATES = [
   'Tamil Nadu', 'Uttar Pradesh', 'West Bengal',
 ];
 
+function findCrop(cropInput: any): CropData {
+  if (typeof cropInput === 'object' && cropInput !== null && Array.isArray(cropInput.soilTypes)) {
+    return {
+      id: cropInput.id || 'crop_custom',
+      name: cropInput.name || 'Recommended Crop',
+      season: cropInput.season || 'All Season',
+      minRainfall: cropInput.minRainfall ?? 100,
+      maxRainfall: cropInput.maxRainfall ?? 200,
+      minTemperature: cropInput.minTemperature ?? 18,
+      maxTemperature: cropInput.maxTemperature ?? 30,
+      minHumidity: cropInput.minHumidity ?? 50,
+      maxHumidity: cropInput.maxHumidity ?? 80,
+      soilTypes: Array.isArray(cropInput.soilTypes) ? cropInput.soilTypes : ['Loamy', 'Alluvial', 'Clay Loam'],
+      nitrogenRange: Array.isArray(cropInput.nitrogenRange) ? cropInput.nitrogenRange : [60, 100],
+      phosphorusRange: Array.isArray(cropInput.phosphorusRange) ? cropInput.phosphorusRange : [40, 60],
+      potassiumRange: Array.isArray(cropInput.potassiumRange) ? cropInput.potassiumRange : [40, 60],
+      phRange: Array.isArray(cropInput.phRange) ? cropInput.phRange : [6.0, 7.5],
+      yieldPerHectare: cropInput.yieldPerHectare ?? 3.5,
+      icon: cropInput.icon || '🌱',
+      description: cropInput.description || '',
+    };
+  }
+
+  const rawName = typeof cropInput === 'string'
+    ? cropInput
+    : (cropInput?.name || cropInput?.id || cropInput?.cropName || 'Wheat');
+
+  const normalized = String(rawName).toLowerCase().trim();
+
+  const found = CROPS.find(c => {
+    const cId = c.id.toLowerCase();
+    const cName = c.name.toLowerCase();
+    const cBaseName = cName.split(/[\s(]/)[0];
+    return (
+      cId === normalized ||
+      cName === normalized ||
+      normalized.includes(cId) ||
+      normalized.includes(cBaseName) ||
+      cName.includes(normalized)
+    );
+  });
+
+  if (found) {
+    return found;
+  }
+
+  return {
+    id: 'crop_custom',
+    name: String(rawName || 'Recommended Crop'),
+    season: 'All Season',
+    minRainfall: 80,
+    maxRainfall: 160,
+    minTemperature: 18,
+    maxTemperature: 30,
+    minHumidity: 50,
+    maxHumidity: 80,
+    soilTypes: ['Loamy', 'Alluvial', 'Black', 'Sandy Loam', 'Clay Loam'],
+    nitrogenRange: [60, 100],
+    phosphorusRange: [40, 60],
+    potassiumRange: [40, 60],
+    phRange: [6.0, 7.5],
+    yieldPerHectare: 3.5,
+    icon: '🌱',
+    description: `Optimal agronomic thresholds for ${rawName}.`,
+  };
+}
+
+function normalizePrediction(raw: any): CropPredictionResult {
+  const crop = findCrop(raw?.crop || raw?.name || raw?.cropName);
+  const rawConf = raw?.confidence;
+  const numConf = typeof rawConf === 'number'
+    ? rawConf
+    : (Number(String(rawConf || '95').replace(/[^0-9.]/g, '')) || 95);
+
+  return {
+    crop,
+    confidence: Math.round(numConf * 10) / 10,
+    yieldPrediction: raw?.yieldPrediction || crop.yieldPerHectare,
+    scoreBreakdown: raw?.scoreBreakdown || {
+      rainfall: 20,
+      temperature: 20,
+      humidity: 15,
+      soil: 20,
+      nitrogen: 8,
+      phosphorus: 6,
+      potassium: 6,
+      phBonus: 5,
+    },
+    fertilizers: Array.isArray(raw?.fertilizers) && raw.fertilizers.length > 0
+      ? raw.fertilizers
+      : (FERTILIZERS[crop.id] || []),
+  };
+}
+
 export const CropRecommendation = ({ onNavigate }: CropRecommendationProps) => {
   const { user } = useAuth();
   const navigate = useNavigate();
@@ -114,11 +208,10 @@ export const CropRecommendation = ({ onNavigate }: CropRecommendationProps) => {
         if (isIdentityStale()) return;
 
         if (savedDbPred && savedDbPred.recommended_crop) {
-          const restoredPred: CropPredictionResult = {
+          const restoredPred: CropPredictionResult = normalizePrediction({
             crop: savedDbPred.recommended_crop,
             confidence: savedDbPred.confidence || '95%',
-            reasoning: 'Restored from your authenticated farm prediction records.',
-          };
+          });
           const restoredInputs: ModelInputs = {
             rainfall: savedDbPred.rainfall !== null && savedDbPred.rainfall !== undefined ? savedDbPred.rainfall : 150,
             temperature: savedDbPred.temperature !== null && savedDbPred.temperature !== undefined ? savedDbPred.temperature : 25,
@@ -238,7 +331,10 @@ export const CropRecommendation = ({ onNavigate }: CropRecommendationProps) => {
   const [isAnalyzing, setIsAnalyzing] = useState<boolean>(false);
   const [predictionResults, setPredictionResults] = useState<CropPredictionResult[] | null>(() => {
     const saved = getSavedCropRec();
-    return saved?.predictions || null;
+    if (saved && Array.isArray(saved.predictions) && saved.predictions.length > 0) {
+      return saved.predictions.map(normalizePrediction);
+    }
+    return null;
   });
   const [submittedInputs, setSubmittedInputs] = useState<ModelInputs | null>(() => {
     const saved = getSavedCropRec();
@@ -357,7 +453,8 @@ export const CropRecommendation = ({ onNavigate }: CropRecommendationProps) => {
     setIsAnalyzing(true);
     try {
       const res = await predictApi.predict(inputs);
-      const predictions = res.data?.predictions || [];
+      const rawPredictions = res.data?.predictions || [];
+      const predictions = rawPredictions.map(normalizePrediction);
       setPredictionResults(predictions);
       setSubmittedInputs({ ...inputs });
 
@@ -463,8 +560,8 @@ export const CropRecommendation = ({ onNavigate }: CropRecommendationProps) => {
     ? `${profile.farmer.district}, ${profile.farmer.state}`
     : profile.farmer.state || user?.location;
 
-  const primaryRec = predictionResults && predictionResults.length > 0 ? predictionResults[0] : null;
-  const alternativeRecs = predictionResults && predictionResults.length > 1 ? predictionResults.slice(1) : [];
+  const primaryRec = predictionResults && predictionResults.length > 0 ? normalizePrediction(predictionResults[0]) : null;
+  const alternativeRecs = predictionResults && predictionResults.length > 1 ? predictionResults.slice(1).map(normalizePrediction) : [];
 
   return (
     <div className="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8 space-y-8">
@@ -719,7 +816,7 @@ export const CropRecommendation = ({ onNavigate }: CropRecommendationProps) => {
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between">
                   <Label htmlFor="ph" className="text-xs font-medium">
-                    Soil pH: <span className="font-bold text-gray-900 dark:text-white">{inputs.ph.toFixed(1)}</span>
+                    Soil pH: <span className="font-bold text-gray-900 dark:text-white">{typeof inputs.ph === 'number' && !isNaN(inputs.ph) ? inputs.ph.toFixed(1) : Number(inputs.ph || 6.5).toFixed(1)}</span>
                   </Label>
                   {renderSourceBadge(origins.ph)}
                 </div>
@@ -983,7 +1080,7 @@ export const CropRecommendation = ({ onNavigate }: CropRecommendationProps) => {
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
                     <div className="h-16 w-16 rounded-2xl bg-emerald-100 dark:bg-emerald-900/60 text-3xl flex items-center justify-center shadow-inner shrink-0">
-                      {primaryRec.crop.icon || "🌱"}
+                      {primaryRec.crop?.icon || "🌱"}
                     </div>
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
@@ -991,13 +1088,13 @@ export const CropRecommendation = ({ onNavigate }: CropRecommendationProps) => {
                           Primary Recommendation
                         </span>
                         <Badge variant="outline" className="text-xs border-emerald-300 text-emerald-700">
-                          {primaryRec.crop.season} Season
+                          {primaryRec.crop?.season || "All Season"} Season
                         </Badge>
                       </div>
                       <h3 className="text-2xl font-extrabold text-gray-900 dark:text-white">
-                        {primaryRec.crop.name}
+                        {primaryRec.crop?.name || "Recommended Crop"}
                       </h3>
-                      {primaryRec.crop.description && (
+                      {primaryRec.crop?.description && (
                         <p className="text-xs text-gray-600 dark:text-gray-300 mt-1 max-w-xl">
                           {primaryRec.crop.description}
                         </p>
@@ -1026,7 +1123,7 @@ export const CropRecommendation = ({ onNavigate }: CropRecommendationProps) => {
                     Why this recommendation?
                   </h4>
                   <p className="text-xs text-gray-500 dark:text-gray-400">
-                    Evaluated against the exact physiological thresholds of {primaryRec.crop.name}:
+                    Evaluated against the exact physiological thresholds of {primaryRec.crop?.name || 'this crop'}:
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
@@ -1034,14 +1131,14 @@ export const CropRecommendation = ({ onNavigate }: CropRecommendationProps) => {
                     <div className="p-3 rounded-xl bg-gray-50 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-800 space-y-1">
                       <div className="font-semibold text-gray-900 dark:text-white flex items-center justify-between">
                         <span>Soil Compatibility</span>
-                        {primaryRec.crop.soilTypes.some(st => st.toLowerCase() === inputs.soilType.toLowerCase()) ? (
+                        {Array.isArray(primaryRec.crop?.soilTypes) && primaryRec.crop.soilTypes.some(st => typeof st === 'string' && st.toLowerCase() === String(inputs?.soilType || '').toLowerCase()) ? (
                           <Badge className="bg-emerald-100 text-emerald-800 text-[10px] h-4">Compatible</Badge>
                         ) : (
                           <Badge variant="outline" className="text-[10px] h-4">Moderate</Badge>
                         )}
                       </div>
                       <p className="text-gray-500 dark:text-gray-400 text-[11px]">
-                        Your <strong>{inputs.soilType}</strong> soil is evaluated against {primaryRec.crop.name}'s preferred soils: {primaryRec.crop.soilTypes.join(", ")}.
+                        Your <strong>{inputs.soilType}</strong> soil is evaluated against {primaryRec.crop?.name || 'the recommended crop'}'s preferred soils: {Array.isArray(primaryRec.crop?.soilTypes) ? primaryRec.crop.soilTypes.join(", ") : inputs.soilType}.
                       </p>
                     </div>
 
@@ -1052,7 +1149,7 @@ export const CropRecommendation = ({ onNavigate }: CropRecommendationProps) => {
                         <span className="text-gray-500 text-[11px]">{inputs.temperature}°C</span>
                       </div>
                       <p className="text-gray-500 dark:text-gray-400 text-[11px]">
-                        Optimal temperature range is <strong>{primaryRec.crop.minTemperature}°C – {primaryRec.crop.maxTemperature}°C</strong>. Current input is {inputs.temperature}°C.
+                        Optimal temperature range is <strong>{primaryRec.crop?.minTemperature ?? 18}°C – {primaryRec.crop?.maxTemperature ?? 30}°C</strong>. Current input is {inputs.temperature}°C.
                       </p>
                     </div>
 
@@ -1063,7 +1160,7 @@ export const CropRecommendation = ({ onNavigate }: CropRecommendationProps) => {
                         <span className="text-gray-500 text-[11px]">{inputs.rainfall} mm</span>
                       </div>
                       <p className="text-gray-500 dark:text-gray-400 text-[11px]">
-                        Optimal annual rainfall is <strong>{primaryRec.crop.minRainfall} – {primaryRec.crop.maxRainfall} mm</strong>. Your farm baseline is {inputs.rainfall} mm.
+                        Optimal annual rainfall is <strong>{primaryRec.crop?.minRainfall ?? 80} – {primaryRec.crop?.maxRainfall ?? 160} mm</strong>. Your farm baseline is {inputs.rainfall} mm.
                       </p>
                     </div>
 
@@ -1071,22 +1168,22 @@ export const CropRecommendation = ({ onNavigate }: CropRecommendationProps) => {
                     <div className="p-3 rounded-xl bg-gray-50 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-800 space-y-1">
                       <div className="font-semibold text-gray-900 dark:text-white flex items-center justify-between">
                         <span>Nutrient (NPK) &amp; pH Balance</span>
-                        <span className="text-gray-500 text-[11px]">pH {inputs.ph.toFixed(1)}</span>
+                        <span className="text-gray-500 text-[11px]">pH {typeof inputs?.ph === 'number' && !isNaN(inputs.ph) ? inputs.ph.toFixed(1) : Number(inputs?.ph || 6.5).toFixed(1)}</span>
                       </div>
                       <p className="text-gray-500 dark:text-gray-400 text-[11px]">
-                        Target NPK: N {primaryRec.crop.nitrogenRange.join("-")}, P {primaryRec.crop.phosphorusRange.join("-")}, K {primaryRec.crop.potassiumRange.join("-")} kg/ha. Soil pH optimal range: {primaryRec.crop.phRange.join("–")}.
+                        Target NPK: N {Array.isArray(primaryRec.crop?.nitrogenRange) ? primaryRec.crop.nitrogenRange.join("-") : '60-100'}, P {Array.isArray(primaryRec.crop?.phosphorusRange) ? primaryRec.crop.phosphorusRange.join("-") : '40-60'}, K {Array.isArray(primaryRec.crop?.potassiumRange) ? primaryRec.crop.potassiumRange.join("-") : '40-60'} kg/ha. Soil pH optimal range: {Array.isArray(primaryRec.crop?.phRange) ? primaryRec.crop.phRange.join("–") : '6.0–7.5'}.
                       </p>
                     </div>
                   </div>
                 </div>
 
                 {/* Recommended Fertilizers for this Crop */}
-                {primaryRec.fertilizers && primaryRec.fertilizers.length > 0 && (
+                {Array.isArray(primaryRec.fertilizers) && primaryRec.fertilizers.length > 0 && (
                   <div className="pt-4 border-t border-gray-100 dark:border-gray-800 space-y-2">
                     <div className="flex items-center justify-between">
                       <h4 className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 flex items-center gap-1.5">
                         <FlaskConical className="h-3.5 w-3.5 text-teal-600" />
-                        Nutrient Management for {primaryRec.crop.name}
+                        Nutrient Management for {primaryRec.crop?.name || 'this crop'}
                       </h4>
                       <button
                         type="button"
@@ -1130,9 +1227,9 @@ export const CropRecommendation = ({ onNavigate }: CropRecommendationProps) => {
                       <Card key={idx} className="border border-gray-200 dark:border-gray-800 shadow-xs p-4 space-y-2">
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2">
-                            <span className="text-xl">{alt.crop.icon || "🌱"}</span>
+                            <span className="text-xl">{alt.crop?.icon || "🌱"}</span>
                             <span className="font-semibold text-sm text-gray-900 dark:text-white">
-                              {alt.crop.name}
+                              {alt.crop?.name || "Suitable Crop"}
                             </span>
                           </div>
                           <Badge variant="outline" className="text-[10px]">
@@ -1140,10 +1237,10 @@ export const CropRecommendation = ({ onNavigate }: CropRecommendationProps) => {
                           </Badge>
                         </div>
                         <p className="text-[11px] text-gray-500 dark:text-gray-400 line-clamp-2">
-                          {alt.crop.description}
+                          {alt.crop?.description}
                         </p>
                         <div className="text-[10px] text-gray-400 pt-1 border-t border-gray-100 dark:border-gray-800 flex justify-between">
-                          <span>Season: {alt.crop.season}</span>
+                          <span>Season: {alt.crop?.season || "All Season"}</span>
                           <span>Est. Yield: ~{alt.yieldPrediction} t/ha</span>
                         </div>
                       </Card>
@@ -1191,7 +1288,7 @@ export const CropRecommendation = ({ onNavigate }: CropRecommendationProps) => {
                     </div>
                     <div className="p-2.5 rounded-lg bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
                       <div className="text-[10px] text-gray-400 uppercase">Soil pH</div>
-                      <div className="font-bold text-gray-900 dark:text-white">{submittedInputs.ph.toFixed(1)}</div>
+                      <div className="font-bold text-gray-900 dark:text-white">{typeof submittedInputs.ph === 'number' && !isNaN(submittedInputs.ph) ? submittedInputs.ph.toFixed(1) : Number(submittedInputs.ph || 6.5).toFixed(1)}</div>
                     </div>
                     <div className="p-2.5 rounded-lg bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
                       <div className="text-[10px] text-gray-400 uppercase">Rainfall</div>
