@@ -76,6 +76,25 @@ function resetCustomDispatcher() {
 }
 
 /**
+ * Validates that a string is well-formed, canonical Base64.
+ * Enforces length % 4 === 0, canonical padding (= at end only, <= 2 chars),
+ * and round-trip equality to reject non-zero padding bits (RFC 4648 §3.5).
+ */
+function isCanonicalBase64(str) {
+    if (typeof str !== 'string' || !str || str.length % 4 !== 0) {
+        return false;
+    }
+    if (!/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4})$/.test(str)) {
+        return false;
+    }
+    try {
+        return Buffer.from(str, 'base64').toString('base64') === str;
+    } catch {
+        return false;
+    }
+}
+
+/**
  * Extracts and sanitizes clean Base64 data and MIME type from a data URL or raw Base64 string.
  */
 function extractBase64AndMime(input, fallbackMime = 'image/jpeg') {
@@ -87,7 +106,7 @@ function extractBase64AndMime(input, fallbackMime = 'image/jpeg') {
         const matches = trimmed.match(/^data:([^;]+);base64,(.+)$/s);
         if (matches) {
             const rawData = matches[2].replace(/\s+/g, '');
-            const isValidBase64 = /^[A-Za-z0-9+/=]+$/.test(rawData);
+            const isValidBase64 = isCanonicalBase64(rawData);
             return {
                 mimeType: matches[1].toLowerCase().trim(),
                 base64Data: rawData,
@@ -98,7 +117,7 @@ function extractBase64AndMime(input, fallbackMime = 'image/jpeg') {
     }
 
     const cleanBase64 = trimmed.replace(/\s+/g, '');
-    const isValidBase64 = /^[A-Za-z0-9+/=]+$/.test(cleanBase64);
+    const isValidBase64 = isCanonicalBase64(cleanBase64);
     return {
         base64Data: cleanBase64,
         mimeType: fallbackMime.toLowerCase().trim(),
@@ -302,7 +321,19 @@ async function diagnoseDisease(req, res) {
         });
     }
 
-    // 7. Metadata-only logging (NEVER log API key or image data!)
+    // 7. Verify detected binary format agrees with declared MIME type
+    const normalizedDeclaredMime = mimeType === 'image/jpg' ? 'image/jpeg' : mimeType;
+    if (detectedFormat !== normalizedDeclaredMime) {
+        return res.status(400).json({
+            success: false,
+            error: {
+                code: 'MIME_TYPE_MISMATCH',
+                message: `Declared image MIME type '${mimeType}' does not match detected binary format '${detectedFormat}'.`,
+            },
+        });
+    }
+
+    // 8. Metadata-only logging (NEVER log API key or image data!)
     console.log(`[DiseaseDiagnosis] Diagnostic request ${requestId}:`, {
         requestId,
         mimeType: detectedFormat,
@@ -311,7 +342,7 @@ async function diagnoseDisease(req, res) {
         timestamp: new Date().toISOString(),
     });
 
-    // 8. Model Selection & Fallback Loop with Cumulative Timeout Guard
+    // 9. Model Selection & Fallback Loop with Cumulative Timeout Guard
     const configuredModel = (process.env.GEMINI_MODEL || DEFAULT_GEMINI_MODEL).trim();
     const candidateFallbackModels = ['gemini-1.5-flash', 'gemini-2.0-flash'];
     const modelsToTry = [
@@ -387,6 +418,7 @@ module.exports = {
     resetCustomDispatcher,
     extractBase64AndMime,
     detectImageFormat,
+    isCanonicalBase64,
     ALLOWED_MIME_TYPES,
     DEFAULT_GEMINI_MODEL,
     PER_MODEL_TIMEOUT_MS,

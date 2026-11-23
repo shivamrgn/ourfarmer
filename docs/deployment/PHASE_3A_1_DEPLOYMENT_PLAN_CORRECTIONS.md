@@ -1,10 +1,10 @@
 # FieldWise — Phase 3A.1: Deployment Plan Corrections & Final Go/No-Go Review
 
-**Document Reference:** `docs/deployment/PHASE_3A_1_DEPLOYMENT_PLAN_CORRECTIONS.md`  
-**Execution Phase:** Phase 3A.1 — Deployment Plan Correction & Security Preflight Review  
-**Role:** Senior DevOps Engineer, Deployment Architect, and Application Security Reviewer  
-**Audit Scope:** Read-Only Verification of Source Code, Migration DDL, Auth Handshake, and Container Configurations  
-**Final Verdict:** **READY WITH CONDITIONS**  
+**Document Reference:** `docs/deployment/PHASE_3A_1_DEPLOYMENT_PLAN_CORRECTIONS.md`
+**Execution Phase:** Phase 3A.1 — Deployment Plan Correction & Security Preflight Review
+**Role:** Senior DevOps Engineer, Deployment Architect, and Application Security Reviewer
+**Audit Scope:** Read-Only Verification of Source Code, Migration DDL, Auth Handshake, and Container Configurations
+**Final Verdict:** **READY WITH CONDITIONS**
 
 ---
 
@@ -14,7 +14,7 @@ Following the initial staging infrastructure preflight report ([`PHASE_3A_STAGIN
 
 ### Core Discoveries & Corrections in Phase 3A.1:
 1. **V1 Supabase Access Disconnect (Highest Priority Finding):**
-   The proposed staging baseline schema ([`V1_Baseline_Schema.sql`](file:///Users/shivamkumar/farmingFinal/FieldWise_main/migrations/V1_Baseline_Schema.sql)) enforces a strict zero-trust security model: **all permissions on `public.farmers`, `public.farm_profiles`, and `public.crop_predictions` are revoked from `anon`, `authenticated`, and `public`**, and granted exclusively to `service_role`.  
+   The proposed staging baseline schema ([`V1_Baseline_Schema.sql`](file:///Users/shivamkumar/farmingFinal/FieldWise_main/migrations/V1_Baseline_Schema.sql)) enforces a strict zero-trust security model: **all permissions on `public.farmers`, `public.farm_profiles`, and `public.crop_predictions` are revoked from `anon`, `authenticated`, and `public`**, and granted exclusively to `service_role`.
    However, the frontend client ([`FieldWise_main/src/lib/supabase.ts`](file:///Users/shivamkumar/farmingFinal/FieldWise_main/src/lib/supabase.ts)) currently attempts to perform **direct browser-to-database queries using the public `anonKey`**. Under the proposed staging schema, **all direct frontend V1 database operations will be rejected with HTTP 403 / permission denied**.
 2. **Plant Disease Detection Workflow & Gemini Vision:**
    Image analysis in [`FieldWise_main/src/components/modules/DiseaseDetection.tsx`](file:///Users/shivamkumar/farmingFinal/FieldWise_main/src/components/modules/DiseaseDetection.tsx) calls [`detectPlantDisease`](file:///Users/shivamkumar/farmingFinal/FieldWise_main/src/services/geminiService.ts#L344-L520), which directly dispatches the base64-encoded leaf image to Google Gemini Vision models (`gemini-3.1-flash-lite`, `gemini-3.8-flash`). It does **not** use local deterministic computer vision. Therefore, `VITE_GEMINI_API_KEY` **is required** for the disease detection feature in staging. However, because it is prefixed with `VITE_`, it is compiled into the client JavaScript bundle and is **not** a server-side secret.
@@ -31,9 +31,9 @@ Following the initial staging infrastructure preflight report ([`PHASE_3A_STAGIN
 
 ### 2.1. The Architectural Disconnect
 In the current codebase, there are two completely different database access paradigms:
-- **V2 Architecture (Backend-Mediated):**  
+- **V2 Architecture (Backend-Mediated):**
   The frontend submits requests to the Express backend (`POST /api/v2/predict`). The backend verifies the farmer's JWT identity and executes database operations using the privileged `SUPABASE_SERVICE_ROLE_KEY` via [`recommendationPersistenceService.js`](file:///Users/shivamkumar/farmingFinal/FieldWise_main/backend/src/services/v2/recommendationPersistenceService.js). **This path succeeds completely under the proposed staging schema.**
-- **V1 Legacy Architecture (Direct Browser Supabase Client):**  
+- **V1 Legacy Architecture (Direct Browser Supabase Client):**
   The frontend initializes `@supabase/supabase-js` in [`src/lib/supabase.ts`](file:///Users/shivamkumar/farmingFinal/FieldWise_main/src/lib/supabase.ts#L40) using `VITE_SUPABASE_ANON_KEY` (the public anon key). Frontend functions then directly invoke `.from('farmers')`, `.from('farm_profiles')`, and `.from('crop_predictions')`.
 
 In [`migrations/V1_Baseline_Schema.sql`](file:///Users/shivamkumar/farmingFinal/FieldWise_main/migrations/V1_Baseline_Schema.sql#L286-L297):
@@ -70,7 +70,7 @@ GRANT SELECT, INSERT ON public.crop_predictions TO service_role;
 | **9** | **V2 Crop Recommendation & Save** | [`backend/src/routes/v2/predict.js`](file:///Users/shivamkumar/farmingFinal/FieldWise_main/backend/src/routes/v2/predict.js)<br>`POST /api/v2/predict` | Express REST API -> Node Bridge -> Python CLI -> `recommendationPersistenceService.js` | `service_role` | **SUCCEEDS**<br>Uses privileged backend key. | Already conforms to secure zero-trust architecture. |
 
 ### 2.3. Recommended Secure Backend-Mediated Resolution
-Under strict zero-trust rules, **we must never enable unrestricted anonymous access or weaken RLS on public tables**.  
+Under strict zero-trust rules, **we must never enable unrestricted anonymous access or weaken RLS on public tables**.
 Instead, the recommended architectural path is:
 1. **Preserve Database Hardening:** Maintain `REVOKE ALL FROM anon, authenticated, public` and `service_role`-only grants in [`V1_Baseline_Schema.sql`](file:///Users/shivamkumar/farmingFinal/FieldWise_main/migrations/V1_Baseline_Schema.sql).
 2. **Backend Proxy Endpoints:** Implement thin Express endpoints in the backend:
@@ -90,17 +90,17 @@ We inspected the complete disease detection call chain:
 - **Client Library:** `@google/generative-ai` (`GoogleGenerativeAI`).
 
 ### 3.2. Concrete Findings:
-1. **Does image analysis call Gemini?**  
+1. **Does image analysis call Gemini?**
    **YES.** In [`DiseaseDetection.tsx:284`](file:///Users/shivamkumar/farmingFinal/FieldWise_main/src/components/modules/DiseaseDetection.tsx#L284), `handleAnalyze` calls `detectPlantDisease(selectedImage, fileMetadata.type, fileMetadata.name)`.
-2. **Are Gemini-related functions actually invoked?**  
+2. **Are Gemini-related functions actually invoked?**
    **YES.** `detectPlantDisease` initializes `new GoogleGenerativeAI(activeApiKey.trim())`, constructs an inline image part, and calls `visionModel.generateContent([imagePart, pathologyPrompt])` targeting candidate models (`gemini-3.1-flash-lite`, `gemini-3.8-flash`, `gemini-3.5-flash-lite`).
-3. **Does disease detection use deterministic computer vision?**  
+3. **Does disease detection use deterministic computer vision?**
    **NO.** There are zero local OpenCV, TensorFlow.js, Canvas pixel heuristics, or deterministic computer vision algorithms in the image diagnostic flow. Diagnosis is performed 100% by the multimodal Gemini LLM.
-4. **Is a Gemini API key necessary for the deployed workflow?**  
-   **YES.** If `VITE_GEMINI_API_KEY` is not configured, line 368 of `geminiService.ts` explicitly throws:  
-   `"Gemini API key is missing. Please configure VITE_GEMINI_API_KEY in your .env file with a valid Google AI Studio API key."`  
+4. **Is a Gemini API key necessary for the deployed workflow?**
+   **YES.** If `VITE_GEMINI_API_KEY` is not configured, line 368 of `geminiService.ts` explicitly throws:
+   `"Gemini API key is missing. Please configure VITE_GEMINI_API_KEY in your .env file with a valid Google AI Studio API key."`
    Without this key, plant disease diagnosis cannot run in staging.
-5. **Is the API key exposed through `VITE_` frontend variables?**  
+5. **Is the API key exposed through `VITE_` frontend variables?**
    **YES.** `VITE_GEMINI_API_KEY` is a client-side environment variable. Vite bakes it directly into the public JavaScript bundle, and the browser makes direct HTTPS requests to `generativelanguage.googleapis.com`. **It is NOT a server-side secret and must never be treated as one.** It should be restricted by HTTP referrer in Google Cloud Console / AI Studio to only permit staging and production URLs (`https://*.fieldwise.agri`).
 
 ---
@@ -110,20 +110,20 @@ We inspected the complete disease detection call chain:
 ### 4.1. Source Inspection of JWT Controls
 We inspected [`FieldWise_main/backend/src/config/validateEnv.js`](file:///Users/shivamkumar/farmingFinal/FieldWise_main/backend/src/config/validateEnv.js) and the test runner [`run_all_backend_tests.js`](file:///Users/shivamkumar/farmingFinal/FieldWise_main/backend/src/tests/run_all_backend_tests.js):
 
-1. **Can deterministic test-only secrets enter staging/production?**  
+1. **Can deterministic test-only secrets enter staging/production?**
    **NO.** [`validateEnv.js:13-35`](file:///Users/shivamkumar/farmingFinal/FieldWise_main/backend/src/config/validateEnv.js#L13-L35) maintains a blacklist of known insecure secrets, including:
-   `'fieldwise-test-only-deterministic-jwt-secret-do-not-use-in-production-2026'`.  
+   `'fieldwise-test-only-deterministic-jwt-secret-do-not-use-in-production-2026'`.
    If `NODE_ENV=staging` or `production`, any attempt to start the server with this secret immediately throws an unrecoverable startup exception (`Startup Failure: Insecure placeholder detected in JWT_SECRET`).
-2. **Can weak fallback secrets exist in production?**  
+2. **Can weak fallback secrets exist in production?**
    **NO.** In staging/production, `validateStartupConfig` requires `jwtSecret.trim().length >= 32`. A secret under 32 characters or containing placeholder tokens (`secret`, `test`, `default`, `changeme`, `your-super-secret...`) causes an immediate process exit (`process.exit(1)`).
-3. **Secret Generation Requirement for Staging:**  
+3. **Secret Generation Requirement for Staging:**
    The staging environment must generate its own distinct 256-bit secret:
    ```bash
    openssl rand -base64 32
    ```
-4. **Firebase Staging Project ID Consistency:**  
+4. **Firebase Staging Project ID Consistency:**
    In [`firebaseVerifyController.js:28-30`](file:///Users/shivamkumar/farmingFinal/FieldWise_main/backend/src/controllers/firebaseVerifyController.js#L28-L30), `getExpectedProjectId()` reads `process.env.FIREBASE_PROJECT_ID`. In staging, setting `FIREBASE_PROJECT_ID=fieldwise-staging` ensures the token verifier strictly rejects tokens issued for development or production Firebase projects.
-5. **Handoff Redirect URL Isolation:**  
+5. **Handoff Redirect URL Isolation:**
    In [`FieldWise_landing/src/App.jsx:110`](file:///Users/shivamkumar/farmingFinal/FieldWise_landing/src/App.jsx#L110), `getTargetMainAppUrl()` reads `import.meta.env.VITE_MAIN_APP_URL`. For staging, this must be set to `https://app.staging.fieldwise.agri` at build time.
 
 ---
@@ -151,7 +151,7 @@ We inspected [`FieldWise_main/backend/src/config/validateEnv.js`](file:///Users/
 
 ### 6.1. Backup Assumptions vs. Reality
 - **Assumption in Draft Report:** "Supabase includes automated daily backups and point-in-time recovery."
-- **Corrected Reality:**  
+- **Corrected Reality:**
   - Supabase **Free Tier** projects provide only basic 1-day daily backups. They do **NOT** provide Point-In-Time Recovery (PITR).
   - PITR is an exclusive feature of Supabase Pro (\$25/mo) and Enterprise tiers.
   - Therefore, we **cannot claim PITR exists** for a free staging instance.

@@ -27,6 +27,7 @@ const app = require('../server');
 const {
     setCustomDispatcher,
     resetCustomDispatcher,
+    isCanonicalBase64,
 } = require('../controllers/diseaseDetectionController');
 
 const JWT_SECRET = process.env.JWT_SECRET || 'fieldwise-test-only-deterministic-jwt-secret-do-not-use-in-production-2026';
@@ -300,5 +301,75 @@ describe('FieldWise Phase 3A.2.2: Hardened Gemini Disease Detection Tests', () =
         }
 
         assert.strictEqual(hitRateLimit, true, 'Rate limiter must enforce HTTP 429 after 20 requests');
+    });
+
+    // ── 11. Non-Canonical Base64 Rejection ───────────────────────────────────
+    test('11. Non-canonical base64 payloads (middle padding, wrong length, non-zero padding bits) return 400 IMAGE_CORRUPTED', async () => {
+        const token = generateTestToken();
+
+        // 11.1 Non-multiple of 4 length
+        const res1 = await invokeExpress('POST', '/api/disease/diagnose', {
+            image: 'AAAAA', // 5 chars
+            mimeType: 'image/jpeg',
+        }, { authorization: `Bearer ${token}` });
+        assert.strictEqual(res1.status, 400);
+        assert.strictEqual(res1.body.error.code, 'IMAGE_CORRUPTED');
+
+        // 11.2 Padding in the middle
+        const res2 = await invokeExpress('POST', '/api/disease/diagnose', {
+            image: 'abc=def=',
+            mimeType: 'image/jpeg',
+        }, { authorization: `Bearer ${token}` });
+        assert.strictEqual(res2.status, 400);
+        assert.strictEqual(res2.body.error.code, 'IMAGE_CORRUPTED');
+
+        // 11.3 Non-zero trailing bits before padding (ZE==)
+        const res3 = await invokeExpress('POST', '/api/disease/diagnose', {
+            image: 'ZE==',
+            mimeType: 'image/jpeg',
+        }, { authorization: `Bearer ${token}` });
+        assert.strictEqual(res3.status, 400);
+        assert.strictEqual(res3.body.error.code, 'IMAGE_CORRUPTED');
+    });
+
+    // ── 12. MIME Type Mismatch Rejection ─────────────────────────────────────
+    test('12. Declared MIME type mismatch with detected binary format returns 400 MIME_TYPE_MISMATCH', async () => {
+        const token = generateTestToken();
+
+        // Declared PNG but sent valid JPEG magic bytes
+        const res1 = await invokeExpress('POST', '/api/disease/diagnose', {
+            image: validJpegBase64,
+            mimeType: 'image/png',
+        }, { authorization: `Bearer ${token}` });
+
+        assert.strictEqual(res1.status, 400);
+        assert.strictEqual(res1.body.error.code, 'MIME_TYPE_MISMATCH');
+        assert.ok(res1.body.error.message.includes("Declared image MIME type 'image/png' does not match detected binary format 'image/jpeg'"));
+
+        // Declared JPEG but sent valid PNG magic bytes
+        const res2 = await invokeExpress('POST', '/api/disease/diagnose', {
+            image: validPngBase64,
+            mimeType: 'image/jpeg',
+        }, { authorization: `Bearer ${token}` });
+
+        assert.strictEqual(res2.status, 400);
+        assert.strictEqual(res2.body.error.code, 'MIME_TYPE_MISMATCH');
+        assert.ok(res2.body.error.message.includes("Declared image MIME type 'image/jpeg' does not match detected binary format 'image/png'"));
+    });
+
+    // ── 13. isCanonicalBase64 Helper Verification ────────────────────────────
+    test('13. isCanonicalBase64 helper strictly verifies RFC 4648 canonical encoding', () => {
+        assert.strictEqual(isCanonicalBase64(''), false);
+        assert.strictEqual(isCanonicalBase64(null), false);
+        assert.strictEqual(isCanonicalBase64(undefined), false);
+        assert.strictEqual(isCanonicalBase64('A'), false);
+        assert.strictEqual(isCanonicalBase64('AA'), false);
+        assert.strictEqual(isCanonicalBase64('AAA'), false);
+        assert.strictEqual(isCanonicalBase64('abc=def='), false);
+        assert.strictEqual(isCanonicalBase64('ZE=='), false); // Non-zero padding bits
+        assert.strictEqual(isCanonicalBase64('ZA=='), true);  // Canonical 1-byte
+        assert.strictEqual(isCanonicalBase64('ZWE='), true);  // Canonical 2-byte
+        assert.strictEqual(isCanonicalBase64(validJpegBase64), true);
+        assert.strictEqual(isCanonicalBase64(validPngBase64), true);
     });
 });
