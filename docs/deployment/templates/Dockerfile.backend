@@ -27,9 +27,9 @@ RUN npm ci --omit=dev --ignore-scripts && npm cache clean --force
 # Copy backend application source
 COPY FieldWise_main/backend/src ./src
 
-# Copy frozen Python recommendation engine and pipeline into the container
+# Copy model directory (includes V1 predictor engine and V2 frozen Python pipeline)
 WORKDIR /app
-COPY FieldWise_main/model/ml_pipeline ./FieldWise_main/model/ml_pipeline
+COPY FieldWise_main/model ./FieldWise_main/model
 
 # Switch back to backend working directory for runtime execution
 WORKDIR /app/FieldWise_main/backend
