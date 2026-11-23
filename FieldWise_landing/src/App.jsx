@@ -1,3 +1,4 @@
+// FieldWise Landing Portal — Staging Build v1.0.1
 import { useState, useEffect } from 'react'
 import './index.css'
 import Navbar from './components/Navbar'
