@@ -128,6 +128,33 @@ export default function Dashboard({ user, onLogout, onBackToLanding }) {
   }
 
   const handleLaunchMainApp = async () => {
+    const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(user || {}))))
+    const paramName = user?.isDemo ? 'demoSession' : 'session'
+
+    // 1. Explicit environment variable if configured
+    const envUrl = import.meta.env.VITE_MAIN_APP_URL
+    if (envUrl) {
+      const isLocal = envUrl.includes('localhost') || envUrl.includes('127.0.0.1')
+      if (!isLocal) {
+        window.location.href = `${envUrl.replace(/\/+$/, '')}?${paramName}=${encoded}`
+        return
+      }
+    }
+
+    // 2. Check if running on remote staging or production host
+    if (typeof window !== 'undefined') {
+      const hostname = window.location.hostname || ''
+      if (hostname.includes('fieldwise-landing-staging.pages.dev') || hostname.includes('pages.dev')) {
+        window.location.href = `https://fieldwise-main-staging.pages.dev?${paramName}=${encoded}`
+        return
+      }
+      if (hostname.includes('staging.fieldwise.agri')) {
+        window.location.href = `https://staging-app.fieldwise.agri?${paramName}=${encoded}`
+        return
+      }
+    }
+
+    // 3. Fallback candidate ports for local dev
     const candidates = ['http://localhost:5174', 'http://localhost:8080']
     for (const url of candidates) {
       try {
@@ -135,8 +162,7 @@ export default function Dashboard({ user, onLogout, onBackToLanding }) {
         const timer = setTimeout(() => controller.abort(), 350)
         await fetch(url, { mode: 'no-cors', signal: controller.signal })
         clearTimeout(timer)
-        const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(user || {}))))
-        window.location.href = `${url}?session=${encoded}`
+        window.location.href = `${url}?${paramName}=${encoded}`
         return
       } catch {}
     }

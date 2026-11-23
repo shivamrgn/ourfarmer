@@ -116,7 +116,18 @@ function App() {
       }
     }
 
-    // 2. Candidate ports for FieldWise_main: 5174 (standard) or 8080 (alternate)
+    // 2. Remote staging fallback based on current hostname
+    if (typeof window !== 'undefined') {
+      const hostname = window.location.hostname || ''
+      if (hostname.includes('fieldwise-landing-staging.pages.dev') || hostname.includes('pages.dev')) {
+        return 'https://fieldwise-main-staging.pages.dev'
+      }
+      if (hostname.includes('staging.fieldwise.agri')) {
+        return 'https://staging-app.fieldwise.agri'
+      }
+    }
+
+    // 3. Candidate ports for FieldWise_main: 5174 (standard) or 8080 (alternate)
     const candidates = ['http://localhost:5174', 'http://localhost:8080']
     for (const cand of candidates) {
       if (await checkUrlActive(cand)) {
@@ -124,7 +135,7 @@ function App() {
       }
     }
 
-    // 3. Fallback to null if neither external server is responding
+    // 4. Fallback to null if neither external server is responding
     return null
   }
 

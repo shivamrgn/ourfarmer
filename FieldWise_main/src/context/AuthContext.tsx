@@ -65,11 +65,42 @@ function clearStoredSession() {
 }
 
 // ── FieldWise_landing URL (override in .env as VITE_LANDING_APP_URL) ──────────
-const LANDING_APP_URL =
-  (import.meta as { env?: Record<string, string> }).env?.VITE_LANDING_APP_URL ||
-  (typeof window !== "undefined"
-    ? `${window.location.protocol}//${window.location.hostname || "localhost"}:5173`
-    : "http://localhost:5173");
+export function getLandingAppUrl(): string {
+  const envUrl = (import.meta as { env?: Record<string, string> }).env?.VITE_LANDING_APP_URL;
+  if (envUrl && envUrl.trim()) {
+    return envUrl.trim().replace(/\/+$/, "");
+  }
+
+  if (typeof window !== "undefined") {
+    const hostname = window.location.hostname || "localhost";
+    const isLocal =
+      hostname === "localhost" ||
+      hostname === "127.0.0.1" ||
+      hostname.startsWith("192.168.") ||
+      hostname === "0.0.0.0";
+    if (isLocal) {
+      return `${window.location.protocol}//${hostname}:5173`;
+    }
+    // Remote Staging & Production Hostname Mapping
+    if (hostname.includes("fieldwise-main-staging.pages.dev") || hostname.includes("fieldwise-main")) {
+      return "https://fieldwise-landing-staging.pages.dev";
+    }
+    if (hostname.includes("staging-app.fieldwise.agri")) {
+      return "https://staging.fieldwise.agri";
+    }
+    if (hostname.includes("app.fieldwise.agri")) {
+      return "https://fieldwise.agri";
+    }
+    if (hostname.endsWith(".pages.dev")) {
+      return "https://fieldwise-landing-staging.pages.dev";
+    }
+    return "https://fieldwise-landing-staging.pages.dev";
+  }
+
+  return "http://localhost:5173";
+}
+
+const LANDING_APP_URL = getLandingAppUrl();
 
 // ── Backend API base URL ───────────────────────────────────────────────────────
 const API_BASE_URL =
@@ -413,6 +444,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       return false;
     }
   };
+
+  // Auto-redirect to landing login if unauthenticated and not on public paths
+  useEffect(() => {
+    if (!initializing && !user) {
+      const publicPaths = ["/terms", "/privacy"];
+      if (typeof window !== "undefined" && !publicPaths.includes(window.location.pathname)) {
+        const timer = setTimeout(() => {
+          window.location.href = `${getLandingAppUrl()}?auth=login`;
+        }, 1200);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [initializing, user]);
 
   const value = useMemo(
     () => ({ user: user || DEFAULT_FARMER, login, register, logout, updateUser, isLoading: initializing }),
