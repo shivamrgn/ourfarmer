@@ -108,8 +108,11 @@ function App() {
   const getTargetMainAppUrl = async () => {
     // 1. Explicit environment variable if configured
     const envUrl = import.meta.env.VITE_MAIN_APP_URL
-    if (envUrl && await checkUrlActive(envUrl)) {
-      return envUrl
+    if (envUrl) {
+      const isLocal = envUrl.includes('localhost') || envUrl.includes('127.0.0.1')
+      if (!isLocal || await checkUrlActive(envUrl)) {
+        return envUrl
+      }
     }
 
     // 2. Candidate ports for FieldWise_main: 5174 (standard) or 8080 (alternate)
