@@ -6,9 +6,11 @@
 
 FROM node:22-bookworm-slim AS base
 
-# Install Python 3 standard library runtime and curl for healthcheck
+# Install Python 3 standard library runtime, build tools, and curl for healthcheck
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 \
+    make \
+    g++ \
     ca-certificates \
     curl \
     && rm -rf /var/lib/apt/lists/*
@@ -18,9 +20,9 @@ WORKDIR /app
 # Copy backend package manifests for reproducible layer-cached dependency install
 COPY FieldWise_main/backend/package*.json ./FieldWise_main/backend/
 
-# Install production dependencies only
+# Install production dependencies only (using --ignore-scripts to avoid unnecessary native compilation on Node 22)
 WORKDIR /app/FieldWise_main/backend
-RUN npm ci --omit=dev && npm cache clean --force
+RUN npm ci --omit=dev --ignore-scripts && npm cache clean --force
 
 # Copy backend application source
 COPY FieldWise_main/backend/src ./src
