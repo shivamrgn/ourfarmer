@@ -1,0 +1,53 @@
+# =============================================================================
+# FieldWise Dual-Runtime Containerfile (Node.js 22 + Python 3.11+)
+# File Reference: Dockerfile / docs/deployment/templates/Dockerfile.backend
+# Designed for Google Cloud Run Deployment
+# =============================================================================
+
+FROM node:22-bookworm-slim AS base
+
+# Install Python 3 standard library runtime and curl for healthcheck
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 \
+    ca-certificates \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy backend package manifests for reproducible layer-cached dependency install
+COPY FieldWise_main/backend/package*.json ./FieldWise_main/backend/
+
+# Install production dependencies only
+WORKDIR /app/FieldWise_main/backend
+RUN npm ci --omit=dev && npm cache clean --force
+
+# Copy backend application source
+COPY FieldWise_main/backend/src ./src
+
+# Copy frozen Python recommendation engine and pipeline into the container
+WORKDIR /app
+COPY FieldWise_main/model/ml_pipeline ./FieldWise_main/model/ml_pipeline
+
+# Switch back to backend working directory for runtime execution
+WORKDIR /app/FieldWise_main/backend
+
+# Create unprivileged application user and initialize permissions
+RUN groupadd -r fieldwise && useradd -r -g fieldwise -d /app fieldwise && \
+    mkdir -p data && chown -R fieldwise:fieldwise /app
+
+USER fieldwise
+
+# Default container environment variables (Cloud Run overrides PORT dynamically)
+ENV NODE_ENV=staging \
+    PORT=3001 \
+    FIELDWISE_PYTHON_PATH=python3 \
+    FIELDWISE_BRIDGE_TIMEOUT_MS=10000
+
+EXPOSE 3001
+
+# Healthcheck probing backend health endpoint dynamically using runtime PORT
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+    CMD curl -f http://localhost:${PORT:-3001}/api/health || exit 1
+
+CMD ["node", "src/server.js"]

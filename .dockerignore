@@ -1,0 +1,55 @@
+# =============================================================================
+# FieldWise Container Build Ignore File (.dockerignore)
+# Enforces zero leakage of secrets, dependencies, and model checkpoints.
+# =============================================================================
+
+# Version control & Git metadata
+.git/
+.gitignore
+.gitattributes
+
+# Environment files & local secrets (CRITICAL SECURITY INVARIANT)
+.env
+.env.*
+.env*.local
+!.env.example
+!.env.staging.example
+
+# Host-installed Node.js dependencies & build outputs (reproducibility)
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+dist-ssr/
+build/
+.vite/
+npm-debug.log*
+
+# Local databases & run-time storage
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+FieldWise_main/backend/data/*.db
+FieldWise_main/backend/data/*.db-*
+
+# Python caches, virtual environments & offline model binaries
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+env/
+*.joblib
+**/*.joblib
+
+# OS & IDE metadata
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
