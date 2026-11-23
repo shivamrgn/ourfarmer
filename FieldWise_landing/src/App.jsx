@@ -48,6 +48,15 @@ function App() {
 
   // ── Smooth scroll & URL cleanup on initial load ────────────────────────────
   useEffect(() => {
+    // If arriving from a logout request, sign out from Firebase Auth in background
+    if (isLogoutRequested) {
+      logoutFarmer().catch(() => {})
+    }
+
+    // Pre-warm backend API container to avoid cold-start delays on login/register
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://fieldwise-backend-staging.onrender.com'
+    fetch(`${apiUrl}/api/health`, { mode: 'no-cors' }).catch(() => {})
+
     if (window.location.search.includes('logout=true') || window.location.search.includes('auth=')) {
       const cleanUrl = window.location.pathname + window.location.hash
       window.history.replaceState({}, '', cleanUrl || '/')

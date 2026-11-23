@@ -97,6 +97,15 @@ try {
 }
 export { auth, db, googleProvider }
 
+/** Helper to prevent optional Firestore calls from hanging on WebChannel connections */
+function withTimeout(promise, ms = 500) {
+  let timer
+  const timeout = new Promise((_, reject) => {
+    timer = setTimeout(() => reject(new Error('Firestore timeout')), ms)
+  })
+  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer))
+}
+
 // ── Google Sign-In ─────────────────────────────────────────────────────────────
 /**
  * Sign in using Firebase GoogleAuthProvider popup.
@@ -148,50 +157,49 @@ export async function signInWithGoogle() {
 
   const firebaseUser = cred.user
   const uid = firebaseUser.uid
-  let extra = {}
 
-  // Upsert Firestore profile document users/{uid}
+  // Upsert Firestore profile document users/{uid} in background without blocking auth
   if (db) {
-    try {
-      const userDocRef = doc(db, 'users', uid)
-      const snap = await getDoc(userDocRef)
-      if (!snap.exists()) {
-        await setDoc(userDocRef, {
-          uid,
-          email:       firebaseUser.email,
-          displayName: firebaseUser.displayName || firebaseUser.email?.split('@')[0] || 'Farmer',
-          photoURL:    firebaseUser.photoURL || '',
-          role:        'Farmer',
-          provider:    'google',
-          phone:       '',
-          address:     'Gujarat, India',
-          createdAt:   serverTimestamp(),
-          updatedAt:   serverTimestamp(),
-          isDemo:      false
-        })
-      } else {
-        // Document exists: preserve farmer-entered fields (phone, address, etc.)
-        const existing = snap.data() || {}
-        extra = existing
-        await updateDoc(userDocRef, {
-          displayName: existing.displayName || firebaseUser.displayName || 'Farmer',
-          photoURL:    firebaseUser.photoURL || existing.photoURL || '',
-          provider:    'google',
-          updatedAt:   serverTimestamp()
-        })
+    (async () => {
+      try {
+        const userDocRef = doc(db, 'users', uid)
+        const snap = await withTimeout(getDoc(userDocRef), 500)
+        if (!snap.exists()) {
+          await withTimeout(setDoc(userDocRef, {
+            uid,
+            email:       firebaseUser.email,
+            displayName: firebaseUser.displayName || firebaseUser.email?.split('@')[0] || 'Farmer',
+            photoURL:    firebaseUser.photoURL || '',
+            role:        'Farmer',
+            provider:    'google',
+            phone:       '',
+            address:     'Gujarat, India',
+            createdAt:   serverTimestamp(),
+            updatedAt:   serverTimestamp(),
+            isDemo:      false
+          }), 500)
+        } else {
+          const existing = snap.data() || {}
+          await withTimeout(updateDoc(userDocRef, {
+            displayName: existing.displayName || firebaseUser.displayName || 'Farmer',
+            photoURL:    firebaseUser.photoURL || existing.photoURL || '',
+            provider:    'google',
+            updatedAt:   serverTimestamp()
+          }), 500)
+        }
+      } catch (fsErr) {
+        console.warn('[FieldWise] Firestore Google profile sync notice:', fsErr?.code || fsErr?.message)
       }
-    } catch (fsErr) {
-      console.warn('[FieldWise] Firestore Google profile write notice:', fsErr?.code || fsErr?.message)
-    }
+    })()
   }
 
   const profile = {
     uid,
-    displayName: firebaseUser.displayName || extra.displayName || firebaseUser.email?.split('@')[0] || 'Farmer',
+    displayName: firebaseUser.displayName || firebaseUser.email?.split('@')[0] || 'Farmer',
     email:       firebaseUser.email,
-    address:     extra.address   || 'Gujarat, India',
-    contact_no:  extra.phone     || '',
-    photoURL:    firebaseUser.photoURL || extra.photoURL || '',
+    address:     'Gujarat, India',
+    contact_no:  '',
+    photoURL:    firebaseUser.photoURL || '',
     provider:    'google',
     isDemo:      false,
     role:        'Farmer'
@@ -245,23 +253,24 @@ export async function linkGoogleAccount({ email, password, pendingCredential }) 
     throw new Error(linkErr.message || 'Failed to link Google account.')
   }
 
-  // 3. Update Firestore profile to reflect linked provider and photoURL
-  let extra = {}
+  // 3. Update Firestore profile to reflect linked provider and photoURL in background
   if (db) {
-    try {
-      const userDocRef = doc(db, 'users', user.uid)
-      const snap = await getDoc(userDocRef)
-      if (snap.exists()) {
-        extra = snap.data() || {}
-        await updateDoc(userDocRef, {
-          photoURL: user.photoURL || extra.photoURL || '',
-          provider: 'google',
-          updatedAt: serverTimestamp()
-        })
+    (async () => {
+      try {
+        const userDocRef = doc(db, 'users', user.uid)
+        const snap = await withTimeout(getDoc(userDocRef), 500)
+        if (snap?.exists()) {
+          const extraData = snap.data() || {}
+          await withTimeout(updateDoc(userDocRef, {
+            photoURL: user.photoURL || extraData.photoURL || '',
+            provider: 'google',
+            updatedAt: serverTimestamp()
+          }), 500)
+        }
+      } catch (fsErr) {
+        console.warn('[FieldWise] Firestore linking update notice:', fsErr?.code || fsErr?.message)
       }
-    } catch (fsErr) {
-      console.warn('[FieldWise] Firestore linking update notice:', fsErr?.code || fsErr?.message)
-    }
+    })()
   }
 
   const profile = {
@@ -311,26 +320,22 @@ export async function registerFarmer({ name, email, password, address, contact_n
 
   const uid = firebaseUser.uid
 
-  // 2. Write profile to Firestore users/{uid}
-  //    NOTE: No password hash is stored. Firebase Auth owns credentials.
+  // 2. Write profile to Firestore users/{uid} in the background without blocking registration
+  //    NOTE: Authentication has already succeeded in Firebase Auth.
   if (db) {
-    try {
-      await setDoc(doc(db, 'users', uid), {
-        uid,
-        email:      firebaseUser.email,
-        displayName: name,
-        role:       'Farmer',
-        phone:      contact_no || '',
-        address:    address || 'Vadodara, Gujarat',
-        createdAt:  serverTimestamp(),
-        updatedAt:  serverTimestamp(),
-        isDemo:     false
-      })
-    } catch (fsErr) {
-      // Profile write failure is non-fatal: auth succeeded, user can still use the app.
-      // Profile data can be re-written on next login via loginFarmer().
-      console.warn('[FieldWise] Firestore profile write failed (non-fatal):', fsErr?.code || fsErr?.message)
-    }
+    withTimeout(setDoc(doc(db, 'users', uid), {
+      uid,
+      email:       firebaseUser.email,
+      displayName: name,
+      role:       'Farmer',
+      phone:      contact_no || '',
+      address:    address || 'Vadodara, Gujarat',
+      createdAt:  serverTimestamp(),
+      updatedAt:  serverTimestamp(),
+      isDemo:     false
+    }), 500).catch((fsErr) => {
+      console.warn('[FieldWise] Background Firestore profile write notice:', fsErr?.code || fsErr?.message)
+    })
   }
 
   // 3. Build the session profile from the confirmed Firebase Auth user.
@@ -386,33 +391,16 @@ export async function loginFarmer({ email, password }) {
     throw new Error(err.message || 'Login failed. Please try again.')
   }
 
-  // Fetch the Firestore profile for display data (non-fatal if unavailable)
+  // Fetch optional Firestore profile for display data (bounded to 400ms max)
   let extra = {}
   if (db) {
     try {
-      const snap = await getDoc(doc(db, 'users', firebaseUser.uid))
-      if (snap.exists()) {
-        extra = snap.data()
-      } else {
-        // Profile document missing — write it now (handles accounts created before Firestore write)
-        try {
-          await setDoc(doc(db, 'users', firebaseUser.uid), {
-            uid:         firebaseUser.uid,
-            email:       firebaseUser.email,
-            displayName: firebaseUser.displayName || cleanEmail.split('@')[0],
-            role:        'Farmer',
-            phone:       '',
-            address:     'Gujarat, India',
-            createdAt:   serverTimestamp(),
-            updatedAt:   serverTimestamp(),
-            isDemo:      false
-          })
-        } catch (writeErr) {
-          console.warn('[FieldWise] Could not create missing profile document:', writeErr?.code)
-        }
+      const snap = await withTimeout(getDoc(doc(db, 'users', firebaseUser.uid)), 400)
+      if (snap?.exists()) {
+        extra = snap.data() || {}
       }
-    } catch (fsErr) {
-      console.warn('[FieldWise] Firestore profile fetch failed (non-fatal):', fsErr?.code || fsErr?.message)
+    } catch {
+      // Non-fatal: timeout or unreachable Firestore falls back to Firebase Auth user immediately
     }
   }
 

@@ -408,7 +408,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     localStorage.removeItem("cropswild_crop_recommendation_last");
     localStorage.removeItem("cropswild_fertilizer_recommendation_last");
     localStorage.removeItem("cropswild_disease_detection_last");
-    window.location.href = `${LANDING_APP_URL}?logout=true`;
+    window.location.replace(`${getLandingAppUrl()}?logout=true`);
   };
 
   // ── Auto-expire session when 24-hour TTL expires ────────────────────────────
@@ -450,10 +450,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (!initializing && !user) {
       const publicPaths = ["/terms", "/privacy"];
       if (typeof window !== "undefined" && !publicPaths.includes(window.location.pathname)) {
-        const timer = setTimeout(() => {
-          window.location.href = `${getLandingAppUrl()}?auth=login`;
-        }, 1200);
-        return () => clearTimeout(timer);
+        window.location.replace(`${getLandingAppUrl()}?auth=login`);
       }
     }
   }, [initializing, user]);
