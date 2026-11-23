@@ -48,8 +48,25 @@ export const supabase = createClient(
   }
 );
 
+const resolveApiUrl = (): string => {
+  const envUrl = (import.meta as any).env?.VITE_API_URL;
+  if (envUrl && envUrl.trim()) {
+    const isLocal = envUrl.includes('localhost') || envUrl.includes('127.0.0.1');
+    if (!isLocal || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'))) {
+      return envUrl.trim().replace(/\/+$/, '');
+    }
+  }
+  if (typeof window !== 'undefined') {
+    const hostname = window.location.hostname || '';
+    if (hostname.includes('pages.dev') || hostname.includes('onrender.com') || hostname.includes('fieldwise.agri')) {
+      return 'https://fieldwise-backend-staging.onrender.com';
+    }
+  }
+  return 'https://fieldwise-backend-staging.onrender.com';
+};
+
 // Backend API URL for authenticated persistence mediation
-const API_URL = (import.meta as any).env?.VITE_API_URL || 'http://localhost:3001';
+const API_URL = resolveApiUrl();
 
 // Helper to retrieve active backend JWT token from authentication stores
 export function getAuthToken(): string | null {

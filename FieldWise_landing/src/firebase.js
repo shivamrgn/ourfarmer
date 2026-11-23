@@ -89,7 +89,8 @@ let app, auth, db, googleProvider
 try {
   app  = !getApps().length ? initializeApp(firebaseConfig) : getApp()
   auth = getAuth(app)
-  db   = getFirestore(app)
+  // Only initialize Firestore when explicitly requested via VITE_USE_FIRESTORE to avoid WebChannel hangs
+  db   = env.VITE_USE_FIRESTORE === 'true' ? getFirestore(app) : null
   googleProvider = new GoogleAuthProvider()
   googleProvider.setCustomParameters({ prompt: 'select_account' })
 } catch (err) {
@@ -273,12 +274,18 @@ export async function linkGoogleAccount({ email, password, pendingCredential }) 
     })()
   }
 
+  let extra = {}
+  try {
+    const rawLocal = localStorage.getItem('fieldwise_active_user')
+    if (rawLocal) extra = JSON.parse(rawLocal) || {}
+  } catch {}
+
   const profile = {
     uid:         user.uid,
     displayName: user.displayName || extra.displayName || cleanEmail.split('@')[0],
     email:       user.email,
     address:     extra.address || 'Gujarat, India',
-    contact_no:  extra.phone || '',
+    contact_no:  extra.contact_no || extra.phone || '',
     photoURL:    user.photoURL || extra.photoURL || '',
     provider:    'google',
     isDemo:      false,
@@ -391,13 +398,24 @@ export async function loginFarmer({ email, password }) {
     throw new Error(err.message || 'Login failed. Please try again.')
   }
 
-  // Fetch optional Firestore profile for display data (bounded to 400ms max)
-  let extra = {}
+  // Read any saved profile metadata from previous registration/login if available
+  let localExtra = {}
+  try {
+    const rawLocal = localStorage.getItem('fieldwise_active_user')
+    if (rawLocal) {
+      const parsed = JSON.parse(rawLocal)
+      if (parsed?.uid === firebaseUser.uid) {
+        localExtra = parsed
+      }
+    }
+  } catch {}
+
+  let extra = localExtra
   if (db) {
     try {
       const snap = await withTimeout(getDoc(doc(db, 'users', firebaseUser.uid)), 400)
       if (snap?.exists()) {
-        extra = snap.data() || {}
+        extra = { ...localExtra, ...(snap.data() || {}) }
       }
     } catch {
       // Non-fatal: timeout or unreachable Firestore falls back to Firebase Auth user immediately
@@ -408,8 +426,9 @@ export async function loginFarmer({ email, password }) {
     uid:         firebaseUser.uid,
     displayName: firebaseUser.displayName || extra.displayName || cleanEmail.split('@')[0],
     email:       firebaseUser.email,
-    address:     extra.address    || 'Gujarat, India',
-    contact_no:  extra.phone      || '',
+    address:     extra.address    || 'Vadodara, Gujarat',
+    contact_no:  extra.contact_no || extra.phone || '',
+    photoURL:    firebaseUser.photoURL || extra.photoURL || '',
     isDemo:      false,
     role:        'Farmer'
   }

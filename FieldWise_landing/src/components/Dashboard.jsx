@@ -152,6 +152,10 @@ export default function Dashboard({ user, onLogout, onBackToLanding }) {
         window.location.href = `https://staging-app.fieldwise.agri?${paramName}=${encoded}`
         return
       }
+      if (hostname !== 'localhost' && hostname !== '127.0.0.1') {
+        window.location.href = `https://fieldwise-main-staging.pages.dev?${paramName}=${encoded}`
+        return
+      }
     }
 
     // 3. Fallback candidate ports for local dev

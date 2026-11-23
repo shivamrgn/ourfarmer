@@ -25,8 +25,22 @@ const jwt = require('jsonwebtoken');
 // ── Project ID configuration & consistency ───────────────────────────────────
 const DEFAULT_PROJECT_ID = 'fieldwise-6db7b';
 
+function getAllowedProjectIds() {
+    const list = [
+        process.env.FIREBASE_PROJECT_ID,
+        'fieldwise-staging',
+        'fieldwise-6db7b',
+    ].filter(Boolean);
+    return Array.from(new Set(list));
+}
+
 function getExpectedProjectId() {
     return process.env.FIREBASE_PROJECT_ID || DEFAULT_PROJECT_ID;
+}
+
+function isAllowedProjectId(projectId) {
+    if (!projectId || typeof projectId !== 'string') return false;
+    return getAllowedProjectIds().includes(projectId);
 }
 
 // ── In-Memory Single-Use Handoff Store ────────────────────────────────────────
@@ -174,15 +188,16 @@ async function verifyTokenWithGooglePublicKeys(idToken, expectedProjectId) {
 
     const { header, payload } = decodedComplete;
 
-    // 1. Verify Project Consistency: Token audience must match expected project
-    if (payload.aud !== expectedProjectId) {
+    // 1. Verify Project Consistency: Token audience must match an allowed project
+    const tokenProjectId = payload.aud;
+    if (!isAllowedProjectId(tokenProjectId)) {
         const err = new Error('PROJECT_ID_MISMATCH');
         err.code = 'PROJECT_ID_MISMATCH';
         throw err;
     }
 
-    // 2. Verify Issuer: Must match expected secure token issuer
-    const expectedIssuer = `https://securetoken.google.com/${expectedProjectId}`;
+    // 2. Verify Issuer: Must match expected secure token issuer for this project
+    const expectedIssuer = `https://securetoken.google.com/${tokenProjectId}`;
     if (payload.iss !== expectedIssuer) {
         const err = new Error('PROJECT_ID_MISMATCH');
         err.code = 'PROJECT_ID_MISMATCH';
@@ -237,7 +252,7 @@ async function verifyTokenWithGooglePublicKeys(idToken, expectedProjectId) {
     try {
         const verified = jwt.verify(idToken, cert, {
             algorithms: ['RS256'],
-            audience: expectedProjectId,
+            audience: tokenProjectId,
             issuer: expectedIssuer,
         });
 
@@ -295,7 +310,7 @@ async function verifyFirebaseTokenUniversal(idToken) {
     if (admin) {
         const decoded = await admin.auth().verifyIdToken(idToken, true);
 
-        if (decoded.aud !== expectedProjectId || decoded.iss !== `https://securetoken.google.com/${expectedProjectId}`) {
+        if (!isAllowedProjectId(decoded.aud) || decoded.iss !== `https://securetoken.google.com/${decoded.aud}`) {
             const err = new Error('PROJECT_ID_MISMATCH');
             err.code = 'PROJECT_ID_MISMATCH';
             throw err;

@@ -103,8 +103,24 @@ export function getLandingAppUrl(): string {
 const LANDING_APP_URL = getLandingAppUrl();
 
 // ── Backend API base URL ───────────────────────────────────────────────────────
-const API_BASE_URL =
-  (import.meta as { env?: Record<string, string> }).env?.VITE_API_URL || "http://localhost:3001";
+export function getApiBaseUrl(): string {
+  const envUrl = (import.meta as { env?: Record<string, string> }).env?.VITE_API_URL;
+  if (envUrl && envUrl.trim()) {
+    const isLocal = envUrl.includes("localhost") || envUrl.includes("127.0.0.1");
+    if (!isLocal || (typeof window !== "undefined" && (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"))) {
+      return envUrl.trim().replace(/\/+$/, "");
+    }
+  }
+  if (typeof window !== "undefined") {
+    const hostname = window.location.hostname || "";
+    if (hostname.includes("pages.dev") || hostname.includes("onrender.com") || hostname.includes("fieldwise.agri")) {
+      return "https://fieldwise-backend-staging.onrender.com";
+    }
+  }
+  return "https://fieldwise-backend-staging.onrender.com";
+}
+
+const API_BASE_URL = getApiBaseUrl();
 
 // ── Map profile shape → AuthUser ──────────────────────────────────────────────
 function mapFirebaseProfile(raw: Record<string, unknown>): AuthUser {

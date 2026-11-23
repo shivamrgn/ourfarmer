@@ -20,6 +20,80 @@ import AuthModal from './components/AuthModal'
 import Dashboard from './components/Dashboard'
 import { logoutFarmer, readValidSession, clearSession, SESSION_TTL_MS, auth } from './firebase'
 
+// ── Canonical Domain Enforcement ───────────────────────────────────────────
+if (
+  typeof window !== 'undefined' &&
+  window.location.hostname.endsWith('.fieldwise-landing-staging.pages.dev') &&
+  window.location.hostname !== 'fieldwise-landing-staging.pages.dev'
+) {
+  window.location.replace(
+    `https://fieldwise-landing-staging.pages.dev${window.location.pathname}${window.location.search}${window.location.hash}`
+  )
+}
+
+// ── Smart URL Resolvers ────────────────────────────────────────────────────
+export const getApiBaseUrl = () => {
+  const envUrl = import.meta.env.VITE_API_URL
+  if (envUrl && envUrl.trim()) {
+    const isLocal = envUrl.includes('localhost') || envUrl.includes('127.0.0.1')
+    if (!isLocal || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'))) {
+      return envUrl.trim().replace(/\/+$/, '')
+    }
+  }
+  if (typeof window !== 'undefined') {
+    const hostname = window.location.hostname || ''
+    if (hostname.includes('pages.dev') || hostname.includes('onrender.com') || hostname.includes('fieldwise.agri')) {
+      return 'https://fieldwise-backend-staging.onrender.com'
+    }
+  }
+  return 'https://fieldwise-backend-staging.onrender.com'
+}
+
+export const getTargetMainAppUrl = async () => {
+  if (typeof window !== 'undefined') {
+    const hostname = window.location.hostname || ''
+    if (hostname.includes('fieldwise-landing-staging.pages.dev') || hostname.includes('pages.dev')) {
+      return 'https://fieldwise-main-staging.pages.dev'
+    }
+    if (hostname.includes('staging.fieldwise.agri')) {
+      return 'https://staging-app.fieldwise.agri'
+    }
+  }
+
+  const envUrl = import.meta.env.VITE_MAIN_APP_URL
+  if (envUrl) {
+    const isLocal = envUrl.includes('localhost') || envUrl.includes('127.0.0.1')
+    if (!isLocal) {
+      return envUrl.trim().replace(/\/+$/, '')
+    }
+    if (await checkUrlActive(envUrl)) {
+      return envUrl
+    }
+  }
+
+  const candidates = ['http://localhost:5174', 'http://localhost:8080']
+  for (const cand of candidates) {
+    if (await checkUrlActive(cand)) {
+      return cand
+    }
+  }
+
+  return 'https://fieldwise-main-staging.pages.dev'
+}
+
+// Check whether a target port is actively running and responding
+const checkUrlActive = async (url) => {
+  try {
+    const controller = new AbortController()
+    const timer = setTimeout(() => controller.abort(), 350)
+    await fetch(url, { mode: 'no-cors', signal: controller.signal })
+    clearTimeout(timer)
+    return true
+  } catch {
+    return false
+  }
+}
+
 function App() {
   // Check if logout was requested via URL query param (e.g. from FieldWise_main)
   const isLogoutRequested =
@@ -54,7 +128,7 @@ function App() {
     }
 
     // Pre-warm backend API container to avoid cold-start delays on login/register
-    const apiUrl = import.meta.env.VITE_API_URL || 'https://fieldwise-backend-staging.onrender.com'
+    const apiUrl = getApiBaseUrl()
     fetch(`${apiUrl}/api/health`, { mode: 'no-cors' }).catch(() => {})
 
     if (window.location.search.includes('logout=true') || window.location.search.includes('auth=')) {
@@ -101,53 +175,6 @@ function App() {
     setAuthModalOpen(false)
   }
 
-  // ── FIELDWISE_MAIN URL RESOLUTION ──────────────────────────────────────────
-  // Check whether a target port is actively running and responding
-  const checkUrlActive = async (url) => {
-    try {
-      const controller = new AbortController()
-      const timer = setTimeout(() => controller.abort(), 350)
-      await fetch(url, { mode: 'no-cors', signal: controller.signal })
-      clearTimeout(timer)
-      return true
-    } catch {
-      return false
-    }
-  }
-
-  const getTargetMainAppUrl = async () => {
-    // 1. Explicit environment variable if configured
-    const envUrl = import.meta.env.VITE_MAIN_APP_URL
-    if (envUrl) {
-      const isLocal = envUrl.includes('localhost') || envUrl.includes('127.0.0.1')
-      if (!isLocal || await checkUrlActive(envUrl)) {
-        return envUrl
-      }
-    }
-
-    // 2. Remote staging fallback based on current hostname
-    if (typeof window !== 'undefined') {
-      const hostname = window.location.hostname || ''
-      if (hostname.includes('fieldwise-landing-staging.pages.dev') || hostname.includes('pages.dev')) {
-        return 'https://fieldwise-main-staging.pages.dev'
-      }
-      if (hostname.includes('staging.fieldwise.agri')) {
-        return 'https://staging-app.fieldwise.agri'
-      }
-    }
-
-    // 3. Candidate ports for FieldWise_main: 5174 (standard) or 8080 (alternate)
-    const candidates = ['http://localhost:5174', 'http://localhost:8080']
-    for (const cand of candidates) {
-      if (await checkUrlActive(cand)) {
-        return cand
-      }
-    }
-
-    // 4. Fallback to null if neither external server is responding
-    return null
-  }
-
   // ── Helper: Create a single-use handoff code with backend over POST body ───
   // The Firebase ID token is sent in the HTTPS POST body and NEVER appears in URLs,
   // browser history, analytics, or application logs.
@@ -158,7 +185,7 @@ function App() {
     }
 
     const idToken = await firebaseUser.getIdToken(true)
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001'
+    const apiUrl = getApiBaseUrl()
 
     const res = await fetch(`${apiUrl}/api/auth/handoff/create`, {
       method: 'POST',
